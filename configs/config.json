@@ -167,7 +167,6 @@
   ],
   "ALGORITHM_NAMES": [
     "BruteForce",
-    "Apriori",
     "FPGrowth",
     "MultiProcessing",
     "RW"

@@ -21,7 +21,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'algorithms'))
 
 from ATE_update import calculate_ate_safe
-from apriori_algorithm import calc_utility_for_subgroups as fpgrowth_oracle
+from brute_force_algorithm import calc_utility_for_subgroups as brute_force_oracle
 
 # Load config
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
@@ -58,7 +58,7 @@ def oracle_is_heterogeneous(
         - violation_info: Dict with violating subgroup info (None if homogeneous)
     """
     # Call FPGrowth with mode=0 (homogeneity check)
-    result = fpgrowth_oracle(
+    result = brute_force_oracle(
         mode=0,
         algorithm=fpgrowth,
         df=df,

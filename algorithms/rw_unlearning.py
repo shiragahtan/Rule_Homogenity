@@ -28,7 +28,7 @@ def _onehot_lookup(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, Tuple[str,
     return pd.concat(parts, axis=1), lookup
 
 
-def _homog_random_walks_direct(
+def _homog_rw_direct(
         df: pd.DataFrame,
         *,
         treatment_col: str,
@@ -214,9 +214,9 @@ def calc_utility_for_subgroups(
 ) -> Tuple[bool, int]:
     outcome_col = outcome_col or tgtO
     if outcome_col is None: raise ValueError("Need outcome_col")
-    if utility_all is None: raise ValueError("Need utility_all for Random Walk")
+    if utility_all is None: raise ValueError("Need utility_all for RW")
     if mode != 1:
-        return _homog_random_walks_direct(
+        return _homog_rw_direct(
             df,
             treatment_col=treatment_col,
             outcome_col=outcome_col,

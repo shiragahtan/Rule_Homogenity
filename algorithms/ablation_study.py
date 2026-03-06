@@ -18,7 +18,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
 
 from ATE_update import calculate_ate_safe
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from apriori_algorithm import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
+from brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
 from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 
 # --- Configuration ---
@@ -106,7 +106,7 @@ def run_algorithm(algo_name, df, tgtO, delta, epsilon, utility_all, attr_vals=No
     if algo_name == "FPGrowth":
         _fpgrowth_kw = dict(common, algorithm=fpgrowth)
         with timer() as elapsed:
-            result = apriori_calc_utility_for_subgroups(**_fpgrowth_kw)
+            result = brute_force_calc_utility_for_subgroups(**_fpgrowth_kw)
         runtime = elapsed()
         
     elif algo_name == "RW_Direct":

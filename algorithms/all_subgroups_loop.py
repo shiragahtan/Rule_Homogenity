@@ -17,7 +17,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
 
 from ATE_update import calculate_ate_safe
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from apriori_algorithm import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
+from brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
 from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 from greedy_algorithm import calc_utility_for_subgroups as greedy_calc_utility_for_subgroups
 from random_algorithm import calc_utility_for_subgroups as random_calc_utility_for_subgroups
@@ -274,8 +274,9 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
         rw_common = common.copy()
         rw_common['mode'] = 0
         algo_dispatch = {
-            "Apriori": (apriori_calc_utility_for_subgroups, dict(common, algorithm=apriori)),
-            "FPGrowth": (apriori_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
+            "BruteForce": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
+            "Apriori": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=apriori)),
+            "FPGrowth": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
             "RW": (rw_unlearning_calc_utility_for_subgroups,
                    dict(rw_common, algorithm=apriori, size_stop=0.8, attribute_weights=ATTRIBUTE_WEIGHTS)),
             "Greedy": (greedy_calc_utility_for_subgroups, common),
@@ -285,7 +286,7 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
             "WTE": (run_wte_homogeneity_baseline, common)
         }
         dispatch_key = "RW" if chosen_algorithm_name == "RW" else chosen_algorithm_name
-        if chosen_algorithm_name == "Naive": dispatch_key = "FPGrowth"
+        if chosen_algorithm_name == "Naive": dispatch_key = "BruteForce"
 
         target_func, kwargs = algo_dispatch[dispatch_key]
         _, count = run_single_execution(target_func, kwargs, chosen_algorithm_name, chosen_mode, condition, treatment,
