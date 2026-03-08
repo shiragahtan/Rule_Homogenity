@@ -138,7 +138,7 @@ def calculate_rw_accuracy(df_data, metric_col):
     return pd.DataFrame(accuracy_results)
 
 def generate_graphs():
-    results_dir = Path("../graphs")
+    results_dir = main_script._REPO_ROOT / "graphs"
 
     # --- 2. Attributes Processing ---
     attr_file = results_dir / f"{main_script.CHOSEN_DS}_scalability_attributes.csv"

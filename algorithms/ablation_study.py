@@ -21,15 +21,17 @@ from mlxtend.frequent_patterns import fpgrowth, apriori
 from brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
 from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 
-# --- Configuration ---
-with open('../configs/config.json', 'r') as f:
+# --- Configuration (paths relative to repo root so clone-and-run works) ---
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_config_path = _REPO_ROOT / 'configs' / 'config.json'
+with open(_config_path, 'r') as f:
     config = json.load(f)
 
 CHOSEN_DS = config["CHOSEN_DATASET"]
 ds_config = config['DATASETS'][CHOSEN_DS]
 
-FULL_DATASET_PATH = ds_config['FULL_DATASET_PATH']
-RULES_FILE = ds_config['RULES_FILE']
+FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
+RULES_FILE = str((Path(__file__).resolve().parent / ds_config['RULES_FILE']).resolve())
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 TREATMENT_COL = config['TREATMENT_COL']
@@ -334,7 +336,7 @@ def run_ablation_study():
     
     # Save raw results
     results_df = pd.DataFrame(results)
-    results_dir = Path("../ablation_results")
+    results_dir = _REPO_ROOT / "ablation_results"
     results_dir.mkdir(exist_ok=True)
     
     total_elapsed = perf_counter() - start_time
@@ -812,7 +814,7 @@ if __name__ == "__main__":
     results_df = run_ablation_study()
     
     # Generate visualizations and report
-    results_dir = Path("../ablation_results")
+    results_dir = _REPO_ROOT / "ablation_results"
     generate_visualizations(results_df, results_dir)
     
     print("\n🎉 Ablation study complete with visualizations!")

@@ -13,9 +13,10 @@ from ATE_update import calculate_ate_safe
 from typing import Dict, List, Tuple, Any, Callable, Optional, Union
 from numpy.linalg import LinAlgError
 
-# Load config safely
+# Load config safely (repo-root relative so clone-and-run works)
+_CONFIG_PATH = Path(__file__).resolve().parent.parent / 'configs' / 'config.json'
 try:
-    with open('../configs/config.json', 'r') as f:
+    with open(_CONFIG_PATH, 'r') as f:
         config = json.load(f)
     BINARY_TREATMENT = config.get('TREATMENT_COL', 'TempTreatment')
 except (FileNotFoundError, KeyError):

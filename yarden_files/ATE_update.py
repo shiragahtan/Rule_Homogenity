@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -9,8 +10,9 @@ from numpy.linalg import LinAlgError
 # ---------------------------------------------------------
 # 1. LOAD CONFIG & IMMUTABLE ATTRIBUTES
 # ---------------------------------------------------------
+_CONFIG_PATH = Path(__file__).resolve().parent.parent / 'configs' / 'config.json'
 try:
-    with open('../configs/config.json', 'r') as f:
+    with open(_CONFIG_PATH, 'r') as f:
         config = json.load(f)
 
     TREATMENT_COL = config.get('TREATMENT_COL', 'TempTreatment')

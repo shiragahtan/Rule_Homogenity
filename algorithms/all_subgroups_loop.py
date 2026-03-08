@@ -27,7 +27,11 @@ from algorithms.code.code.main import run_wte_homogeneity_baseline
 # --- Configuration ---
 TIMEOUT_SECONDS = 3600
 
-with open('../configs/config.json', 'r') as f:
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_config_path = _REPO_ROOT / 'configs' / 'config.json'
+if not _config_path.exists():
+    raise FileNotFoundError(f"Config not found: {_config_path}")
+with open(_config_path, 'r') as f:
     config = json.load(f)
 
 CHOSEN_DS = config["CHOSEN_DATASET"]
@@ -35,8 +39,9 @@ if CHOSEN_DS not in config['DATASETS']:
     raise ValueError(f"Dataset '{CHOSEN_DS}' not found in config.json")
 
 ds_config = config['DATASETS'][CHOSEN_DS]
-FULL_DATASET_PATH = ds_config['FULL_DATASET_PATH']
-RULES_FILE = ds_config['RULES_FILE']
+# Resolve paths relative to repo root so script works from any cwd
+FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
+RULES_FILE = str((Path(__file__).resolve().parent / ds_config['RULES_FILE']).resolve())
 DELTAS = ds_config['DELTAS']
 EPSILONS = ds_config['EPSILONS']
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
@@ -70,7 +75,7 @@ def worker_wrapper(func, kwargs, result_queue):
 def save_results_to_csv(algorithm_name, subgroup_data, num_subgroups, condition, treatment, delta, index=0):
     if isinstance(subgroup_data, bool): return ""
     subgroup_df = pd.DataFrame(subgroup_data)
-    results_dir = Path("../algorithms_results")
+    results_dir = _REPO_ROOT / "algorithms_results"
     results_dir.mkdir(exist_ok=True)
     output_file = results_dir / f"{CHOSEN_DS}_{algorithm_name}_subgroups_results_delta_{delta}_{index}.csv"
     subgroup_df.to_csv(output_file, index=False)
@@ -100,7 +105,7 @@ def _append_dict_to_excel(excel_path: Path, new_row_dict: dict):
 
 
 def append_timing_results(algorithm_name, condition, treatment, num_subgroups, delta, runtime_seconds):
-    results_dir = Path("../graphs")
+    results_dir = _REPO_ROOT / "graphs"
     results_dir.mkdir(exist_ok=True)
     csv_path = results_dir / f"{CHOSEN_DS}_algorithms_time.csv"
     _append_dict_to_csv(csv_path, {
@@ -118,7 +123,7 @@ def append_timing_results(algorithm_name, condition, treatment, num_subgroups, d
 
 def append_homogeneity_results(algorithm_name, treatment, condition, delta, epsilon, status, runtime,
                                num_subgroups=None, enumeration_time=None, iteration_time=None):
-    results_dir = Path("../graphs")
+    results_dir = _REPO_ROOT / "graphs"
     results_dir.mkdir(exist_ok=True)
     xlsx_path = results_dir / f"{CHOSEN_DS}_homogeneity_results.xlsx"
     current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -142,7 +147,7 @@ def append_homogeneity_results(algorithm_name, treatment, condition, delta, epsi
 
 def save_scalability_results(algorithm_name, condition, treatment, num_subgroups, delta, epsilon, status,
                              runtime_seconds, mode, metric_value):
-    results_dir = Path("../graphs")
+    results_dir = _REPO_ROOT / "graphs"
     results_dir.mkdir(exist_ok=True)
     if mode == 2:
         csv_path = results_dir / f"{CHOSEN_DS}_scalability_rows.csv"
@@ -376,7 +381,7 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
 
 
 def clean_results_files(mode):
-    results_dir_graphs = Path("../graphs")
+    results_dir_graphs = _REPO_ROOT / "graphs"
     results_dir_graphs.mkdir(exist_ok=True)
 
     # Define file mapping for all modes

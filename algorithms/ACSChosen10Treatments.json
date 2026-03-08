@@ -1,0 +1,10 @@
+{"condition": {"Sex": "1"}, "treatment": {"Educational attainment": "14"}, "utility": 17500.0, "coverage": 50.0}
+{"condition": {"Sex": "2"}, "treatment": {"Educational attainment": "14"}, "utility": 16000.0, "coverage": 48.0}
+{"condition": {"Age": "30"}, "treatment": {"Public health coverage": "1"}, "utility": 12000.0, "coverage": 45.0}
+{"condition": {"Age": "30"}, "treatment": {"Private health insurance coverage": "2"}, "utility": 14000.0, "coverage": 44.0}
+{"condition": {"With a disability": "1"}, "treatment": {"Educational attainment": "14"}, "utility": 11000.0, "coverage": 25.0}
+{"condition": {"With a disability": "2"}, "treatment": {"Insurance through a current or former employer or union": "2"}, "utility": 18000.0, "coverage": 55.0}
+{"condition": {"Sex": "1"}, "treatment": {"Public health coverage": "2"}, "utility": 13000.0, "coverage": 52.0}
+{"condition": {"Sex": "2"}, "treatment": {"Private health insurance coverage": "1"}, "utility": 15000.0, "coverage": 50.0}
+{"condition": {"Age": "25"}, "treatment": {"Educational attainment": "16"}, "utility": 19000.0, "coverage": 40.0}
+{"condition": {"Age": "35"}, "treatment": {"Medicare, for people 65 and older, or people with certain disabilities": "2"}, "utility": 9000.0, "coverage": 30.0}

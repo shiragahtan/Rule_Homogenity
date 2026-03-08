@@ -2,7 +2,7 @@
   "CHOSEN_DATASET": "acs",
   "DATASETS": {
     "german": {
-      "FULL_DATASET_PATH": "../german_credit/german_data_not_encoded.csv",
+      "FULL_DATASET_PATH": "data/german_credit/german_data_not_encoded.csv",
       "RULES_FILE": "GermanChosen10Treatments.json",
       "DELTAS": [
         50
@@ -63,7 +63,7 @@
       }
     },
     "so": {
-      "FULL_DATASET_PATH": "../stackoverflow/so_countries_col_new.csv",
+      "FULL_DATASET_PATH": "data/stackoverflow/so_countries_col_new.csv",
       "RULES_FILE": "Chosen10Treatments.json",
       "DELTAS": [
         100
@@ -119,7 +119,7 @@
       }
     },
     "acs": {
-      "FULL_DATASET_PATH": "../acs/acs_encoded.csv",
+      "FULL_DATASET_PATH": "acs/acs_encoded.csv",
       "RULES_FILE": "ACSChosen10Treatments.json",
       "DELTAS": [
         100
