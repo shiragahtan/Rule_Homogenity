@@ -22,7 +22,8 @@ from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utili
 from greedy_algorithm import calc_utility_for_subgroups as greedy_calc_utility_for_subgroups
 from random_algorithm import calc_utility_for_subgroups as random_calc_utility_for_subgroups
 from causalForest_algorithm import calc_utility_for_subgroups as causalForest_calc_utility_for_subgroups
-from algorithms.code.code.main import run_wte_homogeneity_baseline
+
+# WTE import is lazy (needs xgboost) — only loaded when algorithm "WTE" is used
 
 # --- Configuration ---
 TIMEOUT_SECONDS = 3600
@@ -288,12 +289,15 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
             "Random": (random_calc_utility_for_subgroups,
                        dict(common, n_subgroups=force_n_subgroups if force_n_subgroups else 1000)),
             "CausalForest": (causalForest_calc_utility_for_subgroups, common),
-            "WTE": (run_wte_homogeneity_baseline, common)
         }
         dispatch_key = "RW" if chosen_algorithm_name == "RW" else chosen_algorithm_name
         if chosen_algorithm_name == "Naive": dispatch_key = "BruteForce"
 
-        target_func, kwargs = algo_dispatch[dispatch_key]
+        if dispatch_key == "WTE":
+            from algorithms.code.code.main import run_wte_homogeneity_baseline
+            target_func, kwargs = run_wte_homogeneity_baseline, common
+        else:
+            target_func, kwargs = algo_dispatch[dispatch_key]
         _, count = run_single_execution(target_func, kwargs, chosen_algorithm_name, chosen_mode, condition, treatment,
                                         delta, epsilon, utility_time, attr_vals_time, i, metric_value=metric_value)
         execution_stats.append((epsilon, count))
