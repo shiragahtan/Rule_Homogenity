@@ -17,21 +17,22 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
 
 from ATE_update import calculate_ate_safe
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
+from apriori_algorithm import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
 from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 from greedy_algorithm import calc_utility_for_subgroups as greedy_calc_utility_for_subgroups
 from random_algorithm import calc_utility_for_subgroups as random_calc_utility_for_subgroups
 from causalForest_algorithm import calc_utility_for_subgroups as causalForest_calc_utility_for_subgroups
-
-# WTE import is lazy (needs xgboost) — only loaded when algorithm "WTE" is used
+from algorithms.code.code.main import run_wte_homogeneity_baseline
 
 # --- Configuration ---
 TIMEOUT_SECONDS = 3600
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _config_path = _REPO_ROOT / 'configs' / 'config.json'
+
 if not _config_path.exists():
     raise FileNotFoundError(f"Config not found: {_config_path}")
+
 with open(_config_path, 'r') as f:
     config = json.load(f)
 
@@ -40,7 +41,7 @@ if CHOSEN_DS not in config['DATASETS']:
     raise ValueError(f"Dataset '{CHOSEN_DS}' not found in config.json")
 
 ds_config = config['DATASETS'][CHOSEN_DS]
-# Resolve paths relative to repo root so script works from any cwd
+# Resolve paths securely to the repo root
 FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
 RULES_FILE = str((Path(__file__).resolve().parent / ds_config['RULES_FILE']).resolve())
 DELTAS = ds_config['DELTAS']
@@ -50,7 +51,6 @@ ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 
 # ALGORITHM_NAMES = ["RW", "FPGrowth"]
 ALGORITHM_NAMES = ["FPGrowth"]
-# ALGORITHM_NAMES = ["MultiProcessing"]
 # ALGORITHM_NAMES = ["FPGrowth", "RW"]
 RUN_RANDOM_BASELINE = True
 NUM_RW_RUNS = 3
@@ -280,24 +280,19 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
         rw_common = common.copy()
         rw_common['mode'] = 0
         algo_dispatch = {
-            "BruteForce": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
-            "Apriori": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=apriori)),
-            "FPGrowth": (brute_force_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
+            "Apriori": (apriori_calc_utility_for_subgroups, dict(common, algorithm=apriori)),
+            "FPGrowth": (apriori_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
             "RW": (rw_unlearning_calc_utility_for_subgroups,
                    dict(rw_common, algorithm=apriori, size_stop=0.8, attribute_weights=ATTRIBUTE_WEIGHTS)),
             "Greedy": (greedy_calc_utility_for_subgroups, common),
             "Random": (random_calc_utility_for_subgroups,
                        dict(common, n_subgroups=force_n_subgroups if force_n_subgroups else 1000)),
             "CausalForest": (causalForest_calc_utility_for_subgroups, common),
+            "WTE": (run_wte_homogeneity_baseline, common)
         }
         dispatch_key = "RW" if chosen_algorithm_name == "RW" else chosen_algorithm_name
-        if chosen_algorithm_name == "Naive": dispatch_key = "BruteForce"
 
-        if dispatch_key == "WTE":
-            from algorithms.code.code.main import run_wte_homogeneity_baseline
-            target_func, kwargs = run_wte_homogeneity_baseline, common
-        else:
-            target_func, kwargs = algo_dispatch[dispatch_key]
+        target_func, kwargs = algo_dispatch[dispatch_key]
         _, count = run_single_execution(target_func, kwargs, chosen_algorithm_name, chosen_mode, condition, treatment,
                                         delta, epsilon, utility_time, attr_vals_time, i, metric_value=metric_value)
         execution_stats.append((epsilon, count))
@@ -324,6 +319,14 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
 
     if c_attr not in full_df.columns or t_attr not in full_df.columns: return
     print(f"--- Processing Rule #{i + 1}: {c_attr}={c_val} -> {t_attr}={t_val} ---")
+
+    # Type mismatch protection
+    if c_val not in full_df[c_attr].values:
+        if str(c_val) in full_df[c_attr].values:
+            c_val = str(c_val)
+        elif str(c_val).isdigit() and int(c_val) in full_df[c_attr].values:
+            c_val = int(c_val)
+
     try:
         sub_df = full_df[full_df[c_attr] == c_val].copy()
     except KeyError:
@@ -357,7 +360,8 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
 
         if len(sub_df_encoded) < curr_delta: continue
         print(f"Running for delta: {curr_delta}")
-        attr_pass = attr_time if chosen_algorithm_name == "Naive" else 0
+
+        attr_pass = 0
 
         if chosen_algorithm_name == "RW":
             rw_all_runs_data = []
