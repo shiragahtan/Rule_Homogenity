@@ -1,9 +1,9 @@
 {
-  "CHOSEN_DATASET": "acs",
+  "CHOSEN_DATASET": "so",
   "DATASETS": {
     "german": {
-      "FULL_DATASET_PATH": "data/german_credit/german_data_not_encoded.csv",
-      "RULES_FILE": "GermanChosen10Treatments.json",
+      "FULL_DATASET_PATH": "datasets/german_not_encoded.csv",
+      "RULES_FILE": "configs/GermanChosen10Treatments.json",
       "DELTAS": [
         50
       ],
@@ -63,8 +63,8 @@
       }
     },
     "so": {
-      "FULL_DATASET_PATH": "data/stackoverflow/so_countries_col_new.csv",
-      "RULES_FILE": "Chosen10Treatments.json",
+      "FULL_DATASET_PATH": "datasets/stackoverflow_not_encoded.csv",
+      "RULES_FILE": "configs/Chosen10Treatments.json",
       "DELTAS": [
         100
       ],
@@ -119,8 +119,8 @@
       }
     },
     "acs": {
-      "FULL_DATASET_PATH": "acs/acs_encoded.csv",
-      "RULES_FILE": "ACSChosen10Treatments.json",
+      "FULL_DATASET_PATH": "datasets/acs_encoded.csv",
+      "RULES_FILE": "configs/ACSChosen10Treatments.json",
       "DELTAS": [
         100
       ],
@@ -166,9 +166,12 @@
     "hybrid"
   ],
   "ALGORITHM_NAMES": [
-    "BruteForce",
+    "Apriori",
     "FPGrowth",
-    "MultiProcessing",
-    "RW"
+    "Random",
+    "Greedy",
+    "CausalForest",
+    "RW",
+    "WTE"
   ]
 }

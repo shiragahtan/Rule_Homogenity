@@ -22,7 +22,7 @@ WONG = {
 
 
 def generate_graphs():
-    results_dir = Path(__file__).resolve().parent.parent / "graphs"
+    results_dir = Path(__file__).resolve().parent.parent / "results"
 
     for ds in DATASETS:
         row_file = results_dir / f"{ds}_scalability_rows.csv"

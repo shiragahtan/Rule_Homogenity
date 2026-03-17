@@ -18,37 +18,8 @@ class BaseLinearRegression:
     def compute_exact_solution(self, X, y):
         """Compute linear regression solution using normal equations."""
         start = time.perf_counter()
-        XTX = X.T @ X
-        
-        # Add regularization to prevent singular matrix issues
-        # Check condition number to detect numerical instability
-        try:
-            cond_num = np.linalg.cond(XTX)
-            if cond_num > 1e10 or np.isnan(cond_num) or np.isinf(cond_num):
-                # Matrix is ill-conditioned, add small regularization
-                ridge_param = 1e-6 * np.trace(XTX) / XTX.shape[0]
-                XTX = XTX + ridge_param * np.eye(XTX.shape[0])
-        except:
-            # If condition number computation fails, add regularization
-            ridge_param = 1e-6 * np.trace(XTX) / XTX.shape[0]
-            XTX = XTX + ridge_param * np.eye(XTX.shape[0])
-        
-        # Suppress warnings for divide by zero (we've handled it above)
-        with np.errstate(divide='ignore', invalid='ignore', over='ignore'):
-            try:
-                XTX_inv = np.linalg.inv(XTX)
-                beta_hat = XTX_inv @ X.T @ y
-                
-                # Check for NaN or Inf in results
-                if np.any(np.isnan(beta_hat)) or np.any(np.isinf(beta_hat)):
-                    # Fall back to pseudo-inverse
-                    XTX_inv = np.linalg.pinv(XTX)
-                    beta_hat = XTX_inv @ X.T @ y
-            except np.linalg.LinAlgError:
-                # If inversion fails, use pseudo-inverse
-                XTX_inv = np.linalg.pinv(XTX)
-                beta_hat = XTX_inv @ X.T @ y
-        
+        XTX_inv = np.linalg.inv(X.T @ X)
+        beta_hat = XTX_inv @ X.T @ y
         return beta_hat, XTX_inv
 
     def woodbury_update(self, X_remove):

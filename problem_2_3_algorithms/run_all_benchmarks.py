@@ -856,7 +856,7 @@ def main():
     
     if args.dataset == 'acs':
         ds_cfg = {
-            'treatment_file': str(proj_root / "algorithms" / "ACSChosen10Treatments.json"),
+            'treatment_file': str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             'outcome_col': "Wages or salary income past 12 months",
             'base_dataset_path': str(proj_root / "acs" / "acs_encoded.csv"),
             'delta_min_pct': 5.0,  # Same as ablation study: DELTA_PERCENTAGES = [0.05, 0.10, 0.15, 0.20] = 5%, 10%, 15%, 20%

@@ -29,7 +29,7 @@ except ModuleNotFoundError:  # pragma: no cover
 
 # Add project paths
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from find_smallest_epsilon import find_smallest_epsilon_achieving_homogeneity
 
@@ -953,7 +953,7 @@ Algorithm:
     if args.dataset == 'acs':
         proj_root = Path(__file__).resolve().parent.parent
         ds_kwargs = dict(
-            treatment_file=str(proj_root / "algorithms" / "ACSChosen10Treatments.json"),
+            treatment_file=str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             outcome_col="Wages or salary income past 12 months",
             base_dataset_path=str(proj_root / "acs" / "acs_encoded.csv"),
             delta_percentages=[5, 10, 15, 20],

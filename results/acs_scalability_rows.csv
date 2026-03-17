@@ -1,0 +1,1201 @@
+date,algorithm,chosen_treatment,chosen_condition,num_subgroups,delta,epsilon,status,dataset_percentage,run_time_seconds
+2026-02-17 13:01:07,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},16,10,17500,NOT Homogeneous,0.1,1.1328908298164606
+2026-02-17 13:01:08,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},16,10,17500,NOT Homogeneous,0.1,1.0043805204331875
+2026-02-17 13:01:10,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},69,10,17500,NOT Homogeneous,0.1,1.2241370510309935
+2026-02-17 13:01:11,RW,{'Public health coverage': 2},{'With a disability': 2},97,10,17500,NOT Homogeneous,0.1,1.1202864311635494
+2026-02-17 13:01:12,RW,{'Public health coverage': 2},{'With a disability': 2},82,10,17500,NOT Homogeneous,0.1,1.1660450380295515
+2026-02-17 13:01:13,RW,{'Public health coverage': 2},{'With a disability': 2},10,10,17500,NOT Homogeneous,0.1,0.9084750916808844
+2026-02-17 13:01:14,RW,{'Private health insurance coverage': 2},{'With a disability': 2},27,10,17500,NOT Homogeneous,0.1,1.0166611447930336
+2026-02-17 13:01:15,RW,{'Private health insurance coverage': 2},{'With a disability': 2},26,10,17500,NOT Homogeneous,0.1,1.049953667446971
+2026-02-17 13:01:16,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,0.9738025292754173
+2026-02-17 13:01:18,RW,{'Educational attainment': 20},{'With a disability': 2},466,10,17500,NOT Homogeneous,0.1,2.502220595255494
+2026-02-17 13:01:20,RW,{'Educational attainment': 20},{'With a disability': 2},343,10,17500,NOT Homogeneous,0.1,2.1186522860080004
+2026-02-17 13:01:23,RW,{'Educational attainment': 20},{'With a disability': 2},292,10,17500,NOT Homogeneous,0.1,2.0307458024472
+2026-02-17 13:01:23,RW,{'Educational attainment': 21},{'With a disability': 2},22,10,17500,NOT Homogeneous,0.1,0.9230042602866888
+2026-02-17 13:01:25,RW,{'Educational attainment': 21},{'With a disability': 2},227,10,17500,NOT Homogeneous,0.1,1.6827663369476795
+2026-02-17 13:01:26,RW,{'Educational attainment': 21},{'With a disability': 2},88,10,17500,NOT Homogeneous,0.1,1.1395467333495617
+2026-02-17 13:01:27,RW,{'Educational attainment': 22},{'With a disability': 2},17,10,17500,NOT Homogeneous,0.1,0.9450914226472378
+2026-02-17 13:01:28,RW,{'Educational attainment': 22},{'With a disability': 2},128,10,17500,NOT Homogeneous,0.1,1.168877087533474
+2026-02-17 13:01:29,RW,{'Educational attainment': 22},{'With a disability': 2},16,10,17500,NOT Homogeneous,0.1,0.9003754463046789
+2026-02-17 13:01:30,RW,{'Educational attainment': 20},{'Sex': 2},62,10,17500,NOT Homogeneous,0.1,0.9766222070902586
+2026-02-17 13:01:32,RW,{'Educational attainment': 20},{'Sex': 2},382,10,17500,NOT Homogeneous,0.1,2.137234164401889
+2026-02-17 13:01:34,RW,{'Educational attainment': 20},{'Sex': 2},234,10,17500,NOT Homogeneous,0.1,1.492408586665988
+2026-02-17 13:01:35,RW,{'Educational attainment': 21},{'Sex': 1},113,10,17500,NOT Homogeneous,0.1,1.09660698287189
+2026-02-17 13:01:36,RW,{'Educational attainment': 21},{'Sex': 1},66,10,17500,NOT Homogeneous,0.1,0.9421075470745564
+2026-02-17 13:01:37,RW,{'Educational attainment': 21},{'Sex': 1},85,10,17500,NOT Homogeneous,0.1,0.9807290397584438
+2026-02-17 13:01:38,RW,{'Educational attainment': 20},{'Sex': 1},57,10,17500,NOT Homogeneous,0.1,0.888408824801445
+2026-02-17 13:01:39,RW,{'Educational attainment': 20},{'Sex': 1},64,10,17500,NOT Homogeneous,0.1,0.9140249416232109
+2026-02-17 13:01:40,RW,{'Educational attainment': 20},{'Sex': 1},61,10,17500,NOT Homogeneous,0.1,0.9644836187362671
+2026-02-17 13:01:41,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},17,10,17500,NOT Homogeneous,0.1,0.9949780665338039
+2026-02-17 13:01:42,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.95631318166852
+2026-02-17 13:01:43,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},89,10,17500,NOT Homogeneous,0.1,1.1504620518535376
+2026-02-17 13:01:45,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},12,10,17500,NOT Homogeneous,0.1,1.8771184608340263
+2026-02-17 13:01:47,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},11,10,17500,NOT Homogeneous,0.1,1.8656086586415768
+2026-02-17 13:01:49,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},11,10,17500,NOT Homogeneous,0.1,1.9621649738401175
+2026-02-17 13:01:50,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},34,10,17500,NOT Homogeneous,0.1,1.3035035245120525
+2026-02-17 13:01:51,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},4,10,17500,NOT Homogeneous,0.1,1.0499696303158998
+2026-02-17 13:01:52,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},1,10,17500,NOT Homogeneous,0.1,0.989786209538579
+2026-02-17 13:01:53,FPGrowth,{'Educational attainment': 20},{'Sex': 2},50,10,17500,NOT Homogeneous,0.1,1.1451331619173288
+2026-02-17 13:01:54,FPGrowth,{'Educational attainment': 21},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.7346942853182554
+2026-02-17 13:01:55,FPGrowth,{'Educational attainment': 20},{'Sex': 1},54,10,17500,NOT Homogeneous,0.1,1.1641156431287527
+2026-02-17 13:01:57,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},12,10,17500,NOT Homogeneous,0.1,1.259292345494032
+2026-02-17 13:01:58,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},16,10,17500,NOT Homogeneous,0.1,1.1353103127330542
+2026-02-17 13:01:59,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},112,10,17500,NOT Homogeneous,0.1,1.3209756892174482
+2026-02-17 13:02:01,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},323,10,17500,NOT Homogeneous,0.1,1.9354653041809797
+2026-02-17 13:02:02,RW,{'Public health coverage': 2},{'With a disability': 2},94,10,17500,NOT Homogeneous,0.1,1.377447172999382
+2026-02-17 13:02:04,RW,{'Public health coverage': 2},{'With a disability': 2},182,10,17500,NOT Homogeneous,0.1,1.5594187024980783
+2026-02-17 13:02:05,RW,{'Public health coverage': 2},{'With a disability': 2},1,10,17500,NOT Homogeneous,0.1,0.9079681057482958
+2026-02-17 13:02:06,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,1.0353468414396048
+2026-02-17 13:02:07,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,1.063390076160431
+2026-02-17 13:02:08,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,10,17500,NOT Homogeneous,0.1,1.1005343552678823
+2026-02-17 13:02:10,RW,{'Educational attainment': 20},{'With a disability': 2},167,10,17500,NOT Homogeneous,0.1,1.618019824847579
+2026-02-17 13:02:12,RW,{'Educational attainment': 20},{'With a disability': 2},217,10,17500,NOT Homogeneous,0.1,1.821830477565527
+2026-02-17 13:02:13,RW,{'Educational attainment': 20},{'With a disability': 2},42,10,17500,NOT Homogeneous,0.1,0.999881848692894
+2026-02-17 13:02:14,RW,{'Educational attainment': 21},{'With a disability': 2},163,10,17500,NOT Homogeneous,0.1,1.362778028473258
+2026-02-17 13:02:15,RW,{'Educational attainment': 21},{'With a disability': 2},113,10,17500,NOT Homogeneous,0.1,1.2600111402571201
+2026-02-17 13:02:18,RW,{'Educational attainment': 21},{'With a disability': 2},561,10,17500,NOT Homogeneous,0.1,3.059342786669731
+2026-02-17 13:02:19,RW,{'Educational attainment': 22},{'With a disability': 2},43,10,17500,NOT Homogeneous,0.1,0.990026194602251
+2026-02-17 13:02:20,RW,{'Educational attainment': 22},{'With a disability': 2},45,10,17500,NOT Homogeneous,0.1,1.051063183695078
+2026-02-17 13:02:22,RW,{'Educational attainment': 22},{'With a disability': 2},76,10,17500,NOT Homogeneous,0.1,1.1529861763119698
+2026-02-17 13:02:29,RW,{'Educational attainment': 20},{'Sex': 2},1577,10,17500,Homogeneous,0.1,7.1796832252293825
+2026-02-17 13:02:36,RW,{'Educational attainment': 20},{'Sex': 2},1558,10,17500,Homogeneous,0.1,6.98085155710578
+2026-02-17 13:02:43,RW,{'Educational attainment': 20},{'Sex': 2},1578,10,17500,Homogeneous,0.1,7.644878486171365
+2026-02-17 13:02:44,RW,{'Educational attainment': 21},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.7100062556564808
+2026-02-17 13:02:45,RW,{'Educational attainment': 21},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.7303105257451534
+2026-02-17 13:02:46,RW,{'Educational attainment': 21},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.7694559525698423
+2026-02-17 13:02:46,RW,{'Educational attainment': 20},{'Sex': 1},41,10,17500,NOT Homogeneous,0.1,0.7945757061243057
+2026-02-17 13:02:47,RW,{'Educational attainment': 20},{'Sex': 1},17,10,17500,NOT Homogeneous,0.1,0.7068108711391687
+2026-02-17 13:02:48,RW,{'Educational attainment': 20},{'Sex': 1},32,10,17500,NOT Homogeneous,0.1,0.7500417400151491
+2026-02-17 13:02:49,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},22,10,17500,NOT Homogeneous,0.1,0.9368969891220331
+2026-02-17 13:02:50,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},39,10,17500,NOT Homogeneous,0.1,0.9376229029148817
+2026-02-17 13:02:51,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,10,17500,NOT Homogeneous,0.1,0.8241572175174952
+2026-02-17 13:02:52,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},5,10,17500,NOT Homogeneous,0.1,1.7096694242209196
+2026-02-17 13:02:54,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},3,10,17500,NOT Homogeneous,0.1,1.7336477097123861
+2026-02-17 13:02:56,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,10,17500,NOT Homogeneous,0.1,1.718331528827548
+2026-02-17 13:02:59,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},222,10,17500,NOT Homogeneous,0.1,2.941084783524275
+2026-02-17 13:03:00,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},72,10,17500,NOT Homogeneous,0.1,1.5885634757578373
+2026-02-17 13:03:02,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},19,10,17500,NOT Homogeneous,0.1,1.157311437651515
+2026-02-17 13:03:37,FPGrowth,{'Educational attainment': 20},{'Sex': 2},3964,10,17500,Homogeneous,0.1,35.61968172900379
+2026-02-17 13:03:38,FPGrowth,{'Educational attainment': 21},{'Sex': 1},7,10,17500,NOT Homogeneous,0.1,0.685272254049778
+2026-02-17 13:03:39,FPGrowth,{'Educational attainment': 20},{'Sex': 1},4,10,17500,NOT Homogeneous,0.1,0.6692934352904558
+2026-02-17 13:03:40,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,10,17500,NOT Homogeneous,0.1,1.0444603767246008
+2026-02-17 13:03:41,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},93,10,17500,NOT Homogeneous,0.1,1.279526175931096
+2026-02-17 13:03:42,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},34,10,17500,NOT Homogeneous,0.1,1.1709758751094341
+2026-02-17 13:03:43,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},25,10,17500,NOT Homogeneous,0.1,1.0342779885977507
+2026-02-17 13:03:44,RW,{'Public health coverage': 2},{'With a disability': 2},1,10,17500,NOT Homogeneous,0.1,0.9093762412667274
+2026-02-17 13:03:45,RW,{'Public health coverage': 2},{'With a disability': 2},58,10,17500,NOT Homogeneous,0.1,1.061070566996932
+2026-02-17 13:03:46,RW,{'Public health coverage': 2},{'With a disability': 2},1,10,17500,NOT Homogeneous,0.1,0.9206805154681206
+2026-02-17 13:03:47,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,1.0242578238248825
+2026-02-17 13:03:48,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,10,17500,NOT Homogeneous,0.1,1.0885718688368797
+2026-02-17 13:03:49,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,0.9988662973046303
+2026-02-17 13:03:51,RW,{'Educational attainment': 20},{'With a disability': 2},216,10,17500,NOT Homogeneous,0.1,1.6794736981391907
+2026-02-17 13:03:52,RW,{'Educational attainment': 20},{'With a disability': 2},44,10,17500,NOT Homogeneous,0.1,1.1381129957735538
+2026-02-17 13:03:53,RW,{'Educational attainment': 20},{'With a disability': 2},94,10,17500,NOT Homogeneous,0.1,1.19584839977324
+2026-02-17 13:03:55,RW,{'Educational attainment': 21},{'With a disability': 2},92,10,17500,NOT Homogeneous,0.1,1.2368018329143524
+2026-02-17 13:03:56,RW,{'Educational attainment': 21},{'With a disability': 2},82,10,17500,NOT Homogeneous,0.1,1.2688184771686792
+2026-02-17 13:03:57,RW,{'Educational attainment': 21},{'With a disability': 2},21,10,17500,NOT Homogeneous,0.1,0.9040985144674778
+2026-02-17 13:03:58,RW,{'Educational attainment': 22},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,0.8258903604000807
+2026-02-17 13:03:59,RW,{'Educational attainment': 22},{'With a disability': 2},9,10,17500,NOT Homogeneous,0.1,0.8691667169332504
+2026-02-17 13:04:00,RW,{'Educational attainment': 22},{'With a disability': 2},71,10,17500,NOT Homogeneous,0.1,1.1904380470514297
+2026-02-17 13:04:07,RW,{'Educational attainment': 20},{'Sex': 2},1445,10,17500,Homogeneous,0.1,6.799290310591459
+2026-02-17 13:04:14,RW,{'Educational attainment': 20},{'Sex': 2},1445,10,17500,Homogeneous,0.1,7.110435090959072
+2026-02-17 13:04:21,RW,{'Educational attainment': 20},{'Sex': 2},1461,10,17500,Homogeneous,0.1,6.8587606549263
+2026-02-17 13:04:22,RW,{'Educational attainment': 21},{'Sex': 1},56,10,17500,NOT Homogeneous,0.1,1.0018462277948856
+2026-02-17 13:04:22,RW,{'Educational attainment': 21},{'Sex': 1},59,10,17500,NOT Homogeneous,0.1,0.9496169202029705
+2026-02-17 13:04:24,RW,{'Educational attainment': 21},{'Sex': 1},151,10,17500,NOT Homogeneous,0.1,1.2993229180574417
+2026-02-17 13:04:25,RW,{'Educational attainment': 20},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.6944624744355679
+2026-02-17 13:04:26,RW,{'Educational attainment': 20},{'Sex': 1},130,10,17500,NOT Homogeneous,0.1,1.2571242451667786
+2026-02-17 13:04:27,RW,{'Educational attainment': 20},{'Sex': 1},39,10,17500,NOT Homogeneous,0.1,0.8389336913824081
+2026-02-17 13:04:28,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.9043921455740929
+2026-02-17 13:04:28,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,10,17500,NOT Homogeneous,0.1,0.882340433076024
+2026-02-17 13:04:29,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,10,17500,NOT Homogeneous,0.1,0.9079346023499966
+2026-02-17 13:04:31,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,10,17500,NOT Homogeneous,0.1,1.5778140258044004
+2026-02-17 13:04:33,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},5,10,17500,NOT Homogeneous,0.1,1.7334908042103052
+2026-02-17 13:04:34,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},3,10,17500,NOT Homogeneous,0.1,1.7281185425817966
+2026-02-17 13:04:37,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},176,10,17500,NOT Homogeneous,0.1,2.402038235217333
+2026-02-17 13:04:38,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},35,10,17500,NOT Homogeneous,0.1,1.247795196250081
+2026-02-17 13:04:39,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},36,10,17500,NOT Homogeneous,0.1,1.285166272893548
+2026-02-17 13:05:14,FPGrowth,{'Educational attainment': 20},{'Sex': 2},3860,10,17500,Homogeneous,0.1,34.83594538457692
+2026-02-17 13:05:15,FPGrowth,{'Educational attainment': 21},{'Sex': 1},36,10,17500,NOT Homogeneous,0.1,0.9222868122160435
+2026-02-17 13:05:16,FPGrowth,{'Educational attainment': 20},{'Sex': 1},20,10,17500,NOT Homogeneous,0.1,0.7961081210523844
+2026-02-17 13:05:17,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,10,17500,NOT Homogeneous,0.1,1.1590363793075085
+2026-02-17 13:05:19,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},77,20,17500,NOT Homogeneous,0.2,1.6969637870788574
+2026-02-17 13:05:21,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},137,20,17500,NOT Homogeneous,0.2,2.1159705836325884
+2026-02-17 13:05:23,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},34,20,17500,NOT Homogeneous,0.2,1.5991414189338684
+2026-02-17 13:05:24,RW,{'Public health coverage': 2},{'With a disability': 2},49,20,17500,NOT Homogeneous,0.2,1.5525786373764277
+2026-02-17 13:05:26,RW,{'Public health coverage': 2},{'With a disability': 2},45,20,17500,NOT Homogeneous,0.2,1.5942544750869274
+2026-02-17 13:05:27,RW,{'Public health coverage': 2},{'With a disability': 2},1,20,17500,NOT Homogeneous,0.2,1.342243192717433
+2026-02-17 13:05:29,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.5425999537110329
+2026-02-17 13:05:30,RW,{'Private health insurance coverage': 2},{'With a disability': 2},18,20,17500,NOT Homogeneous,0.2,1.4376651290804148
+2026-02-17 13:05:32,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.5446638949215412
+2026-02-17 13:05:37,RW,{'Educational attainment': 20},{'With a disability': 2},761,20,17500,NOT Homogeneous,0.2,4.880036301910877
+2026-02-17 13:05:42,RW,{'Educational attainment': 20},{'With a disability': 2},750,20,17500,NOT Homogeneous,0.2,4.766183296218514
+2026-02-17 13:05:46,RW,{'Educational attainment': 20},{'With a disability': 2},548,20,17500,NOT Homogeneous,0.2,3.9269610792398453
+2026-02-17 13:05:48,RW,{'Educational attainment': 21},{'With a disability': 2},170,20,17500,NOT Homogeneous,0.2,2.070743568241596
+2026-02-17 13:05:49,RW,{'Educational attainment': 21},{'With a disability': 2},81,20,17500,NOT Homogeneous,0.2,1.644448421895504
+2026-02-17 13:05:53,RW,{'Educational attainment': 21},{'With a disability': 2},462,20,17500,NOT Homogeneous,0.2,3.3207254465669394
+2026-02-17 13:05:54,RW,{'Educational attainment': 22},{'With a disability': 2},84,20,17500,NOT Homogeneous,0.2,1.545473899692297
+2026-02-17 13:05:56,RW,{'Educational attainment': 22},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.4375117477029562
+2026-02-17 13:05:57,RW,{'Educational attainment': 22},{'With a disability': 2},95,20,17500,NOT Homogeneous,0.2,1.6767783276736736
+2026-02-17 13:05:59,RW,{'Educational attainment': 20},{'Sex': 2},105,20,17500,NOT Homogeneous,0.2,1.3827098216861486
+2026-02-17 13:06:03,RW,{'Educational attainment': 20},{'Sex': 2},796,20,17500,NOT Homogeneous,0.2,4.168037408962846
+2026-02-17 13:06:06,RW,{'Educational attainment': 20},{'Sex': 2},404,20,17500,NOT Homogeneous,0.2,2.5082402881234884
+2026-02-17 13:06:07,RW,{'Educational attainment': 21},{'Sex': 1},130,20,17500,NOT Homogeneous,0.2,1.5440211426466703
+2026-02-17 13:06:09,RW,{'Educational attainment': 21},{'Sex': 1},103,20,17500,NOT Homogeneous,0.2,1.4171588998287916
+2026-02-17 13:06:10,RW,{'Educational attainment': 21},{'Sex': 1},15,20,17500,NOT Homogeneous,0.2,1.0052226278930902
+2026-02-17 13:06:11,RW,{'Educational attainment': 20},{'Sex': 1},113,20,17500,NOT Homogeneous,0.2,1.3085825014859438
+2026-02-17 13:06:14,RW,{'Educational attainment': 20},{'Sex': 1},454,20,17500,NOT Homogeneous,0.2,2.7445438113063574
+2026-02-17 13:06:16,RW,{'Educational attainment': 20},{'Sex': 1},438,20,17500,NOT Homogeneous,0.2,2.675687884911895
+2026-02-17 13:06:17,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,20,17500,NOT Homogeneous,0.2,1.1217398345470428
+2026-02-17 13:06:19,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},31,20,17500,NOT Homogeneous,0.2,1.2599435038864613
+2026-02-17 13:06:20,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},117,20,17500,NOT Homogeneous,0.2,1.5414916966110468
+2026-02-17 13:06:23,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,2.5490499027073383
+2026-02-17 13:06:25,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},8,20,17500,NOT Homogeneous,0.2,2.5802415814250708
+2026-02-17 13:06:28,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},44,20,17500,NOT Homogeneous,0.2,2.8365292251110077
+2026-02-17 13:06:32,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},187,20,17500,NOT Homogeneous,0.2,3.3824556283652782
+2026-02-17 13:06:34,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},45,20,17500,NOT Homogeneous,0.2,2.151267161592841
+2026-02-17 13:06:36,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},50,20,17500,NOT Homogeneous,0.2,2.32411852478981
+2026-02-17 13:06:38,FPGrowth,{'Educational attainment': 20},{'Sex': 2},92,20,17500,NOT Homogeneous,0.2,1.9919361770153046
+2026-02-17 13:06:40,FPGrowth,{'Educational attainment': 21},{'Sex': 1},10,20,17500,NOT Homogeneous,0.2,1.2705898340791464
+2026-02-17 13:06:42,FPGrowth,{'Educational attainment': 20},{'Sex': 1},119,20,17500,NOT Homogeneous,0.2,2.2350912764668465
+2026-02-17 13:06:44,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},10,20,17500,NOT Homogeneous,0.2,1.7402987014502287
+2026-02-17 13:06:45,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},30,20,17500,NOT Homogeneous,0.2,1.620228135958314
+2026-02-17 13:06:47,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.5169138628989458
+2026-02-17 13:06:49,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},115,20,17500,NOT Homogeneous,0.2,1.9852513391524553
+2026-02-17 13:06:51,RW,{'Public health coverage': 2},{'With a disability': 2},16,20,17500,NOT Homogeneous,0.2,1.4867003839462996
+2026-02-17 13:06:52,RW,{'Public health coverage': 2},{'With a disability': 2},1,20,17500,NOT Homogeneous,0.2,1.4668136164546013
+2026-02-17 13:06:54,RW,{'Public health coverage': 2},{'With a disability': 2},120,20,17500,NOT Homogeneous,0.2,1.8869535103440285
+2026-02-17 13:06:56,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.5848106518387794
+2026-02-17 13:06:57,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.4653371889144182
+2026-02-17 13:06:59,RW,{'Private health insurance coverage': 2},{'With a disability': 2},33,20,17500,NOT Homogeneous,0.2,1.5873746797442436
+2026-02-17 13:07:01,RW,{'Educational attainment': 20},{'With a disability': 2},176,20,17500,NOT Homogeneous,0.2,2.2528877183794975
+2026-02-17 13:07:03,RW,{'Educational attainment': 20},{'With a disability': 2},95,20,17500,NOT Homogeneous,0.2,1.7499975301325321
+2026-02-17 13:07:04,RW,{'Educational attainment': 20},{'With a disability': 2},16,20,17500,NOT Homogeneous,0.2,1.4803312625735998
+2026-02-17 13:07:06,RW,{'Educational attainment': 21},{'With a disability': 2},16,20,17500,NOT Homogeneous,0.2,1.3460089433938265
+2026-02-17 13:07:07,RW,{'Educational attainment': 21},{'With a disability': 2},35,20,17500,NOT Homogeneous,0.2,1.4116896837949753
+2026-02-17 13:07:09,RW,{'Educational attainment': 21},{'With a disability': 2},156,20,17500,NOT Homogeneous,0.2,1.9651627521961927
+2026-02-17 13:07:10,RW,{'Educational attainment': 22},{'With a disability': 2},26,20,17500,NOT Homogeneous,0.2,1.4116905611008406
+2026-02-17 13:07:12,RW,{'Educational attainment': 22},{'With a disability': 2},18,20,17500,NOT Homogeneous,0.2,1.3425301983952522
+2026-02-17 13:07:13,RW,{'Educational attainment': 22},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.3001693692058325
+2026-02-17 13:07:21,RW,{'Educational attainment': 20},{'Sex': 2},1318,20,17500,Homogeneous,0.2,8.27346496284008
+2026-02-17 13:07:30,RW,{'Educational attainment': 20},{'Sex': 2},1375,20,17500,Homogeneous,0.2,8.601569645106792
+2026-02-17 13:07:39,RW,{'Educational attainment': 20},{'Sex': 2},1363,20,17500,Homogeneous,0.2,8.62177594192326
+2026-02-17 13:07:40,RW,{'Educational attainment': 21},{'Sex': 1},9,20,17500,NOT Homogeneous,0.2,0.9651713762432337
+2026-02-17 13:07:41,RW,{'Educational attainment': 21},{'Sex': 1},66,20,17500,NOT Homogeneous,0.2,1.3000764418393373
+2026-02-17 13:07:43,RW,{'Educational attainment': 21},{'Sex': 1},225,20,17500,NOT Homogeneous,0.2,1.8746894393116236
+2026-02-17 13:07:44,RW,{'Educational attainment': 20},{'Sex': 1},138,20,17500,NOT Homogeneous,0.2,1.5549873169511557
+2026-02-17 13:07:45,RW,{'Educational attainment': 20},{'Sex': 1},34,20,17500,NOT Homogeneous,0.2,1.062146769836545
+2026-02-17 13:07:46,RW,{'Educational attainment': 20},{'Sex': 1},9,20,17500,NOT Homogeneous,0.2,1.0555177684873343
+2026-02-17 13:07:48,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,20,17500,NOT Homogeneous,0.2,1.158380702137947
+2026-02-17 13:07:49,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},41,20,17500,NOT Homogeneous,0.2,1.2965147942304611
+2026-02-17 13:07:50,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},30,20,17500,NOT Homogeneous,0.2,1.2113140188157558
+2026-02-17 13:07:53,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},5,20,17500,NOT Homogeneous,0.2,2.677600307390094
+2026-02-17 13:07:56,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},22,20,17500,NOT Homogeneous,0.2,2.7343739476054907
+2026-02-17 13:07:58,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},11,20,17500,NOT Homogeneous,0.2,2.5340939313173294
+2026-02-17 13:08:02,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},252,20,17500,NOT Homogeneous,0.2,3.864297328516841
+2026-02-17 13:08:04,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},66,20,17500,NOT Homogeneous,0.2,2.214681312441826
+2026-02-17 13:08:06,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},3,20,17500,NOT Homogeneous,0.2,1.7094615325331688
+2026-02-17 13:08:47,FPGrowth,{'Educational attainment': 20},{'Sex': 2},4874,20,17500,NOT Homogeneous,0.2,40.236280005425215
+2026-02-17 13:08:48,FPGrowth,{'Educational attainment': 21},{'Sex': 1},14,20,17500,NOT Homogeneous,0.2,1.250227015465498
+2026-02-17 13:08:49,FPGrowth,{'Educational attainment': 20},{'Sex': 1},16,20,17500,NOT Homogeneous,0.2,1.5260220672935247
+2026-02-17 13:08:51,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},6,20,17500,NOT Homogeneous,0.2,1.6729591991752386
+2026-02-17 13:08:53,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.5858327876776457
+2026-02-17 13:08:54,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},38,20,17500,NOT Homogeneous,0.2,1.7273098677396774
+2026-02-17 13:08:56,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},49,20,17500,NOT Homogeneous,0.2,1.702833129093051
+2026-02-17 13:08:58,RW,{'Public health coverage': 2},{'With a disability': 2},32,20,17500,NOT Homogeneous,0.2,1.5424435995519161
+2026-02-17 13:08:59,RW,{'Public health coverage': 2},{'With a disability': 2},1,20,17500,NOT Homogeneous,0.2,1.4213675148785114
+2026-02-17 13:09:01,RW,{'Public health coverage': 2},{'With a disability': 2},31,20,17500,NOT Homogeneous,0.2,1.5766168478876352
+2026-02-17 13:09:02,RW,{'Private health insurance coverage': 2},{'With a disability': 2},37,20,17500,NOT Homogeneous,0.2,1.553931811824441
+2026-02-17 13:09:04,RW,{'Private health insurance coverage': 2},{'With a disability': 2},24,20,17500,NOT Homogeneous,0.2,1.7255487833172083
+2026-02-17 13:09:06,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,20,17500,NOT Homogeneous,0.2,1.4578295350074768
+2026-02-17 13:09:07,RW,{'Educational attainment': 20},{'With a disability': 2},15,20,17500,NOT Homogeneous,0.2,1.3819740768522024
+2026-02-17 13:09:09,RW,{'Educational attainment': 20},{'With a disability': 2},21,20,17500,NOT Homogeneous,0.2,1.5325475931167603
+2026-02-17 13:09:10,RW,{'Educational attainment': 20},{'With a disability': 2},145,20,17500,NOT Homogeneous,0.2,1.9223302453756332
+2026-02-17 13:09:12,RW,{'Educational attainment': 21},{'With a disability': 2},16,20,17500,NOT Homogeneous,0.2,1.530997421592474
+2026-02-17 13:09:14,RW,{'Educational attainment': 21},{'With a disability': 2},69,20,17500,NOT Homogeneous,0.2,1.6953085418790579
+2026-02-17 13:09:15,RW,{'Educational attainment': 21},{'With a disability': 2},16,20,17500,NOT Homogeneous,0.2,1.5550868064165115
+2026-02-17 13:09:17,RW,{'Educational attainment': 22},{'With a disability': 2},17,20,17500,NOT Homogeneous,0.2,1.3798737898468971
+2026-02-17 13:09:18,RW,{'Educational attainment': 22},{'With a disability': 2},44,20,17500,NOT Homogeneous,0.2,1.6002916153520346
+2026-02-17 13:09:20,RW,{'Educational attainment': 22},{'With a disability': 2},17,20,17500,NOT Homogeneous,0.2,1.5315544810146093
+2026-02-17 13:09:22,RW,{'Educational attainment': 20},{'Sex': 2},350,20,17500,NOT Homogeneous,0.2,2.483153123408556
+2026-02-17 13:09:27,RW,{'Educational attainment': 20},{'Sex': 2},793,20,17500,NOT Homogeneous,0.2,4.411733992397785
+2026-02-17 13:09:30,RW,{'Educational attainment': 20},{'Sex': 2},603,20,17500,NOT Homogeneous,0.2,3.387373259291053
+2026-02-17 13:09:32,RW,{'Educational attainment': 21},{'Sex': 1},81,20,17500,NOT Homogeneous,0.2,1.2637064009904861
+2026-02-17 13:09:33,RW,{'Educational attainment': 21},{'Sex': 1},64,20,17500,NOT Homogeneous,0.2,1.1783212777227163
+2026-02-17 13:09:34,RW,{'Educational attainment': 21},{'Sex': 1},135,20,17500,NOT Homogeneous,0.2,1.627212505787611
+2026-02-17 13:09:36,RW,{'Educational attainment': 20},{'Sex': 1},84,20,17500,NOT Homogeneous,0.2,1.4668003991246223
+2026-02-17 13:09:37,RW,{'Educational attainment': 20},{'Sex': 1},39,20,17500,NOT Homogeneous,0.2,1.0545397028326988
+2026-02-17 13:09:39,RW,{'Educational attainment': 20},{'Sex': 1},164,20,17500,NOT Homogeneous,0.2,1.677092643454671
+2026-02-17 13:09:40,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,20,17500,NOT Homogeneous,0.2,1.1679368074983358
+2026-02-17 13:09:42,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},132,20,17500,NOT Homogeneous,0.2,1.6997342444956303
+2026-02-17 13:09:43,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},15,20,17500,NOT Homogeneous,0.2,1.1699153818190098
+2026-02-17 13:09:45,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},11,20,17500,NOT Homogeneous,0.2,2.5905075687915087
+2026-02-17 13:09:48,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},21,20,17500,NOT Homogeneous,0.2,2.7890232410281897
+2026-02-17 13:09:51,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},1,20,17500,NOT Homogeneous,0.2,2.5044993199408054
+2026-02-17 13:09:53,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},13,20,17500,NOT Homogeneous,0.2,2.0279714819043875
+2026-02-17 13:09:55,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},1,20,17500,NOT Homogeneous,0.2,1.7891957312822342
+2026-02-17 13:09:57,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},31,20,17500,NOT Homogeneous,0.2,2.02712869271636
+2026-02-17 13:10:06,FPGrowth,{'Educational attainment': 20},{'Sex': 2},918,20,17500,NOT Homogeneous,0.2,9.431168163195252
+2026-02-17 13:10:07,FPGrowth,{'Educational attainment': 21},{'Sex': 1},3,20,17500,NOT Homogeneous,0.2,1.2269881591200829
+2026-02-17 13:10:09,FPGrowth,{'Educational attainment': 20},{'Sex': 1},15,20,17500,NOT Homogeneous,0.2,1.3712176531553268
+2026-02-17 13:10:11,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,20,17500,NOT Homogeneous,0.2,1.7051550764590502
+2026-02-17 13:10:13,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},28,30,17500,NOT Homogeneous,0.3,2.1987370550632477
+2026-02-17 13:10:15,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},27,30,17500,NOT Homogeneous,0.3,2.2691117264330387
+2026-02-17 13:10:17,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},36,30,17500,NOT Homogeneous,0.3,2.0315398052334785
+2026-02-17 13:10:19,RW,{'Public health coverage': 2},{'With a disability': 2},1,30,17500,NOT Homogeneous,0.3,1.850830877199769
+2026-02-17 13:10:21,RW,{'Public health coverage': 2},{'With a disability': 2},25,30,17500,NOT Homogeneous,0.3,1.8644661270081997
+2026-02-17 13:10:23,RW,{'Public health coverage': 2},{'With a disability': 2},25,30,17500,NOT Homogeneous,0.3,2.14687080681324
+2026-02-17 13:10:26,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,2.0947443060576916
+2026-02-17 13:10:27,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,1.9138421397656202
+2026-02-17 13:10:29,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,30,17500,NOT Homogeneous,0.3,1.8659148681908846
+2026-02-17 13:10:32,RW,{'Educational attainment': 20},{'With a disability': 2},69,30,17500,NOT Homogeneous,0.3,2.1860871221870184
+2026-02-17 13:10:35,RW,{'Educational attainment': 20},{'With a disability': 2},310,30,17500,NOT Homogeneous,0.3,3.569780170917511
+2026-02-17 13:10:41,RW,{'Educational attainment': 20},{'With a disability': 2},750,30,17500,NOT Homogeneous,0.3,5.60101019218564
+2026-02-17 13:10:45,RW,{'Educational attainment': 21},{'With a disability': 2},404,30,17500,NOT Homogeneous,0.3,3.8759957123547792
+2026-02-17 13:10:47,RW,{'Educational attainment': 21},{'With a disability': 2},107,30,17500,NOT Homogeneous,0.3,2.3130235821008682
+2026-02-17 13:10:51,RW,{'Educational attainment': 21},{'With a disability': 2},352,30,17500,NOT Homogeneous,0.3,3.686291655525565
+2026-02-17 13:10:53,RW,{'Educational attainment': 22},{'With a disability': 2},39,30,17500,NOT Homogeneous,0.3,1.980505082756281
+2026-02-17 13:10:55,RW,{'Educational attainment': 22},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,1.7742391228675842
+2026-02-17 13:10:57,RW,{'Educational attainment': 22},{'With a disability': 2},30,30,17500,NOT Homogeneous,0.3,1.9618023671209812
+2026-02-17 13:11:08,RW,{'Educational attainment': 20},{'Sex': 2},1543,30,17500,Homogeneous,0.3,11.664336970075965
+2026-02-17 13:11:20,RW,{'Educational attainment': 20},{'Sex': 2},1507,30,17500,Homogeneous,0.3,11.735139269381762
+2026-02-17 13:11:31,RW,{'Educational attainment': 20},{'Sex': 2},1437,30,17500,Homogeneous,0.3,10.987676473334432
+2026-02-17 13:11:34,RW,{'Educational attainment': 21},{'Sex': 1},328,30,17500,NOT Homogeneous,0.3,2.6029240638017654
+2026-02-17 13:11:36,RW,{'Educational attainment': 21},{'Sex': 1},157,30,17500,NOT Homogeneous,0.3,1.9051810540258884
+2026-02-17 13:11:38,RW,{'Educational attainment': 21},{'Sex': 1},378,30,17500,NOT Homogeneous,0.3,2.863807301968336
+2026-02-17 13:11:40,RW,{'Educational attainment': 20},{'Sex': 1},59,30,17500,NOT Homogeneous,0.3,1.4749043211340904
+2026-02-17 13:11:41,RW,{'Educational attainment': 20},{'Sex': 1},37,30,17500,NOT Homogeneous,0.3,1.3644079118967056
+2026-02-17 13:11:43,RW,{'Educational attainment': 20},{'Sex': 1},45,30,17500,NOT Homogeneous,0.3,1.3920462615787983
+2026-02-17 13:11:44,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},30,30,17500,NOT Homogeneous,0.3,1.4291477054357529
+2026-02-17 13:11:45,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.3269401472061872
+2026-02-17 13:11:47,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.3361316602677107
+2026-02-17 13:11:50,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},23,30,17500,NOT Homogeneous,0.3,3.389921061694622
+2026-02-17 13:11:54,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,3.193276885896921
+2026-02-17 13:11:57,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},7,30,17500,NOT Homogeneous,0.3,3.2644277047365904
+2026-02-17 13:12:00,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},77,30,17500,NOT Homogeneous,0.3,3.049863738939166
+2026-02-17 13:12:03,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},8,30,17500,NOT Homogeneous,0.3,2.485583433881402
+2026-02-17 13:12:05,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},13,30,17500,NOT Homogeneous,0.3,2.6868598349392414
+2026-02-17 13:12:59,FPGrowth,{'Educational attainment': 20},{'Sex': 2},6388,30,17500,Homogeneous,0.3,53.81799699179828
+2026-02-17 13:13:01,FPGrowth,{'Educational attainment': 21},{'Sex': 1},2,30,17500,NOT Homogeneous,0.3,1.6123028825968504
+2026-02-17 13:13:03,FPGrowth,{'Educational attainment': 20},{'Sex': 1},42,30,17500,NOT Homogeneous,0.3,1.9051515609025955
+2026-02-17 13:13:05,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},4,30,17500,NOT Homogeneous,0.3,2.262250505387783
+2026-02-17 13:13:08,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},85,30,17500,NOT Homogeneous,0.3,2.4881089348345995
+2026-02-17 13:13:10,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},109,30,17500,NOT Homogeneous,0.3,2.570542210713029
+2026-02-17 13:13:13,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},34,30,17500,NOT Homogeneous,0.3,2.3444893192499876
+2026-02-17 13:13:15,RW,{'Public health coverage': 2},{'With a disability': 2},17,30,17500,NOT Homogeneous,0.3,1.9157429616898298
+2026-02-17 13:13:17,RW,{'Public health coverage': 2},{'With a disability': 2},1,30,17500,NOT Homogeneous,0.3,1.9339042659848928
+2026-02-17 13:13:19,RW,{'Public health coverage': 2},{'With a disability': 2},49,30,17500,NOT Homogeneous,0.3,2.164999833330512
+2026-02-17 13:13:21,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,1.9225937277078629
+2026-02-17 13:13:23,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,1.9168824553489685
+2026-02-17 13:13:25,RW,{'Private health insurance coverage': 2},{'With a disability': 2},21,30,17500,NOT Homogeneous,0.3,2.189150208607316
+2026-02-17 13:13:29,RW,{'Educational attainment': 20},{'With a disability': 2},587,30,17500,NOT Homogeneous,0.3,4.592286674305797
+2026-02-17 13:13:33,RW,{'Educational attainment': 20},{'With a disability': 2},334,30,17500,NOT Homogeneous,0.3,3.5472594667226076
+2026-02-17 13:13:37,RW,{'Educational attainment': 20},{'With a disability': 2},415,30,17500,NOT Homogeneous,0.3,4.080076474696398
+2026-02-17 13:13:40,RW,{'Educational attainment': 21},{'With a disability': 2},213,30,17500,NOT Homogeneous,0.3,2.7885356079787016
+2026-02-17 13:13:42,RW,{'Educational attainment': 21},{'With a disability': 2},64,30,17500,NOT Homogeneous,0.3,2.326755089685321
+2026-02-17 13:13:44,RW,{'Educational attainment': 21},{'With a disability': 2},45,30,17500,NOT Homogeneous,0.3,2.041581939905882
+2026-02-17 13:13:46,RW,{'Educational attainment': 22},{'With a disability': 2},57,30,17500,NOT Homogeneous,0.3,2.001472920179367
+2026-02-17 13:13:48,RW,{'Educational attainment': 22},{'With a disability': 2},17,30,17500,NOT Homogeneous,0.3,1.913877123966813
+2026-02-17 13:13:51,RW,{'Educational attainment': 22},{'With a disability': 2},44,30,17500,NOT Homogeneous,0.3,2.1585976034402847
+2026-02-17 13:13:58,RW,{'Educational attainment': 20},{'Sex': 2},1290,30,17500,NOT Homogeneous,0.3,7.263680057600141
+2026-02-17 13:14:05,RW,{'Educational attainment': 20},{'Sex': 2},1227,30,17500,NOT Homogeneous,0.3,6.92512721568346
+2026-02-17 13:14:10,RW,{'Educational attainment': 20},{'Sex': 2},747,30,17500,NOT Homogeneous,0.3,4.743598377332091
+2026-02-17 13:14:11,RW,{'Educational attainment': 21},{'Sex': 1},52,30,17500,NOT Homogeneous,0.3,1.57205855473876
+2026-02-17 13:14:13,RW,{'Educational attainment': 21},{'Sex': 1},20,30,17500,NOT Homogeneous,0.3,1.5408568009734154
+2026-02-17 13:14:14,RW,{'Educational attainment': 21},{'Sex': 1},89,30,17500,NOT Homogeneous,0.3,1.514763468876481
+2026-02-17 13:14:17,RW,{'Educational attainment': 20},{'Sex': 1},367,30,17500,NOT Homogeneous,0.3,2.709147458896041
+2026-02-17 13:14:19,RW,{'Educational attainment': 20},{'Sex': 1},272,30,17500,NOT Homogeneous,0.3,2.2614487912505865
+2026-02-17 13:14:22,RW,{'Educational attainment': 20},{'Sex': 1},471,30,17500,NOT Homogeneous,0.3,3.138831991702318
+2026-02-17 13:14:24,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.6455124132335186
+2026-02-17 13:14:26,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},29,30,17500,NOT Homogeneous,0.3,1.488971410319209
+2026-02-17 13:14:27,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.4766495637595654
+2026-02-17 13:14:30,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},2,30,17500,NOT Homogeneous,0.3,3.286344964057207
+2026-02-17 13:14:34,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},26,30,17500,NOT Homogeneous,0.3,3.3884662836790085
+2026-02-17 13:14:37,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},13,30,17500,NOT Homogeneous,0.3,3.349512664601207
+2026-02-17 13:14:47,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},827,30,17500,NOT Homogeneous,0.3,9.874933594837785
+2026-02-17 13:14:50,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},83,30,17500,NOT Homogeneous,0.3,3.128430675715208
+2026-02-17 13:14:53,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},4,30,17500,NOT Homogeneous,0.3,2.4549432657659054
+2026-02-17 13:14:55,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1,30,17500,NOT Homogeneous,0.3,1.9135125186294317
+2026-02-17 13:14:57,FPGrowth,{'Educational attainment': 21},{'Sex': 1},29,30,17500,NOT Homogeneous,0.3,1.7437328267842531
+2026-02-17 13:15:00,FPGrowth,{'Educational attainment': 20},{'Sex': 1},164,30,17500,NOT Homogeneous,0.3,2.8255054224282503
+2026-02-17 13:15:02,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},23,30,17500,NOT Homogeneous,0.3,2.2796971816569567
+2026-02-17 13:15:04,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},14,30,17500,NOT Homogeneous,0.3,2.187268268316984
+2026-02-17 13:15:06,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},28,30,17500,NOT Homogeneous,0.3,2.241065200418234
+2026-02-17 13:15:08,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},14,30,17500,NOT Homogeneous,0.3,2.0502030793577433
+2026-02-17 13:15:11,RW,{'Public health coverage': 2},{'With a disability': 2},44,30,17500,NOT Homogeneous,0.3,2.2396964747458696
+2026-02-17 13:15:13,RW,{'Public health coverage': 2},{'With a disability': 2},28,30,17500,NOT Homogeneous,0.3,2.0750561356544495
+2026-02-17 13:15:16,RW,{'Public health coverage': 2},{'With a disability': 2},195,30,17500,NOT Homogeneous,0.3,2.9867538567632437
+2026-02-17 13:15:18,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,1.9043257720768452
+2026-02-17 13:15:20,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,2.161480262875557
+2026-02-17 13:15:22,RW,{'Private health insurance coverage': 2},{'With a disability': 2},40,30,17500,NOT Homogeneous,0.3,2.1863896641880274
+2026-02-17 13:15:24,RW,{'Educational attainment': 20},{'With a disability': 2},42,30,17500,NOT Homogeneous,0.3,1.9881341308355331
+2026-02-17 13:15:27,RW,{'Educational attainment': 20},{'With a disability': 2},133,30,17500,NOT Homogeneous,0.3,2.5381025448441505
+2026-02-17 13:15:29,RW,{'Educational attainment': 20},{'With a disability': 2},86,30,17500,NOT Homogeneous,0.3,2.5363488905131817
+2026-02-17 13:15:32,RW,{'Educational attainment': 21},{'With a disability': 2},78,30,17500,NOT Homogeneous,0.3,2.3212125953286886
+2026-02-17 13:15:34,RW,{'Educational attainment': 21},{'With a disability': 2},135,30,17500,NOT Homogeneous,0.3,2.4489463418722153
+2026-02-17 13:15:37,RW,{'Educational attainment': 21},{'With a disability': 2},279,30,17500,NOT Homogeneous,0.3,3.1965138763189316
+2026-02-17 13:15:39,RW,{'Educational attainment': 22},{'With a disability': 2},9,30,17500,NOT Homogeneous,0.3,2.010921409353614
+2026-02-17 13:15:41,RW,{'Educational attainment': 22},{'With a disability': 2},41,30,17500,NOT Homogeneous,0.3,1.9632298611104488
+2026-02-17 13:15:43,RW,{'Educational attainment': 22},{'With a disability': 2},16,30,17500,NOT Homogeneous,0.3,1.7120336405932903
+2026-02-17 13:15:49,RW,{'Educational attainment': 20},{'Sex': 2},859,30,17500,NOT Homogeneous,0.3,5.482462489977479
+2026-02-17 13:15:55,RW,{'Educational attainment': 20},{'Sex': 2},1070,30,17500,NOT Homogeneous,0.3,6.240425061434507
+2026-02-17 13:16:02,RW,{'Educational attainment': 20},{'Sex': 2},1154,30,17500,NOT Homogeneous,0.3,6.620822263881564
+2026-02-17 13:16:03,RW,{'Educational attainment': 21},{'Sex': 1},36,30,17500,NOT Homogeneous,0.3,1.3323989808559418
+2026-02-17 13:16:07,RW,{'Educational attainment': 21},{'Sex': 1},677,30,17500,NOT Homogeneous,0.3,4.199705267325044
+2026-02-17 13:16:08,RW,{'Educational attainment': 21},{'Sex': 1},36,30,17500,NOT Homogeneous,0.3,1.3450622353702784
+2026-02-17 13:16:10,RW,{'Educational attainment': 20},{'Sex': 1},39,30,17500,NOT Homogeneous,0.3,1.3558842092752457
+2026-02-17 13:16:11,RW,{'Educational attainment': 20},{'Sex': 1},16,30,17500,NOT Homogeneous,0.3,1.2418197747319937
+2026-02-17 13:16:13,RW,{'Educational attainment': 20},{'Sex': 1},185,30,17500,NOT Homogeneous,0.3,1.8719323724508286
+2026-02-17 13:16:14,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.3118982072919607
+2026-02-17 13:16:16,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},14,30,17500,NOT Homogeneous,0.3,1.3589707873761654
+2026-02-17 13:16:17,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,30,17500,NOT Homogeneous,0.3,1.400937331840396
+2026-02-17 13:16:21,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},33,30,17500,NOT Homogeneous,0.3,3.522551665082574
+2026-02-17 13:16:24,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},32,30,17500,NOT Homogeneous,0.3,3.3746659699827433
+2026-02-17 13:16:27,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},2,30,17500,NOT Homogeneous,0.3,3.1529263462871313
+2026-02-17 13:16:31,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},111,30,17500,NOT Homogeneous,0.3,3.345784477889538
+2026-02-17 13:16:33,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},4,30,17500,NOT Homogeneous,0.3,2.526665972545743
+2026-02-17 13:16:36,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},7,30,17500,NOT Homogeneous,0.3,2.506307292729616
+2026-02-17 13:17:18,FPGrowth,{'Educational attainment': 20},{'Sex': 2},4779,30,17500,NOT Homogeneous,0.3,41.64517391473055
+2026-02-17 13:17:19,FPGrowth,{'Educational attainment': 21},{'Sex': 1},10,30,17500,NOT Homogeneous,0.3,1.557344352826476
+2026-02-17 13:17:21,FPGrowth,{'Educational attainment': 20},{'Sex': 1},1,30,17500,NOT Homogeneous,0.3,1.484385408461094
+2026-02-17 13:17:23,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,30,17500,NOT Homogeneous,0.3,2.2466023825109005
+2026-02-17 13:17:26,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},15,40,17500,NOT Homogeneous,0.4,2.3845982383936644
+2026-02-17 13:17:28,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},11,40,17500,NOT Homogeneous,0.4,2.485154813155532
+2026-02-17 13:17:31,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},77,40,17500,NOT Homogeneous,0.4,2.984835423529148
+2026-02-17 13:17:34,RW,{'Public health coverage': 2},{'With a disability': 2},13,40,17500,NOT Homogeneous,0.4,2.428284265100956
+2026-02-17 13:17:38,RW,{'Public health coverage': 2},{'With a disability': 2},236,40,17500,NOT Homogeneous,0.4,4.032373033463955
+2026-02-17 13:17:41,RW,{'Public health coverage': 2},{'With a disability': 2},130,40,17500,NOT Homogeneous,0.4,3.136666590347886
+2026-02-17 13:17:43,RW,{'Private health insurance coverage': 2},{'With a disability': 2},14,40,17500,NOT Homogeneous,0.4,2.6771696507930756
+2026-02-17 13:17:46,RW,{'Private health insurance coverage': 2},{'With a disability': 2},25,40,17500,NOT Homogeneous,0.4,2.5035525113344193
+2026-02-17 13:17:49,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,40,17500,NOT Homogeneous,0.4,2.6076082326471806
+2026-02-17 13:17:52,RW,{'Educational attainment': 20},{'With a disability': 2},184,40,17500,NOT Homogeneous,0.4,3.440235245972872
+2026-02-17 13:17:55,RW,{'Educational attainment': 20},{'With a disability': 2},119,40,17500,NOT Homogeneous,0.4,3.1310421377420425
+2026-02-17 13:17:58,RW,{'Educational attainment': 20},{'With a disability': 2},24,40,17500,NOT Homogeneous,0.4,2.681658308953047
+2026-02-17 13:18:01,RW,{'Educational attainment': 21},{'With a disability': 2},164,40,17500,NOT Homogeneous,0.4,3.2460432052612305
+2026-02-17 13:18:05,RW,{'Educational attainment': 21},{'With a disability': 2},152,40,17500,NOT Homogeneous,0.4,3.2232238352298737
+2026-02-17 13:18:08,RW,{'Educational attainment': 21},{'With a disability': 2},198,40,17500,NOT Homogeneous,0.4,3.5619916319847107
+2026-02-17 13:18:11,RW,{'Educational attainment': 22},{'With a disability': 2},54,40,17500,NOT Homogeneous,0.4,2.640891680493951
+2026-02-17 13:18:13,RW,{'Educational attainment': 22},{'With a disability': 2},17,40,17500,NOT Homogeneous,0.4,2.403621658682823
+2026-02-17 13:18:16,RW,{'Educational attainment': 22},{'With a disability': 2},43,40,17500,NOT Homogeneous,0.4,2.6129594538360834
+2026-02-17 13:18:19,RW,{'Educational attainment': 20},{'Sex': 2},360,40,17500,NOT Homogeneous,0.4,3.4373638443648815
+2026-02-17 13:18:28,RW,{'Educational attainment': 20},{'Sex': 2},1212,40,17500,NOT Homogeneous,0.4,8.300998605787754
+2026-02-17 13:18:35,RW,{'Educational attainment': 20},{'Sex': 2},1146,40,17500,NOT Homogeneous,0.4,7.552723499014974
+2026-02-17 13:18:38,RW,{'Educational attainment': 21},{'Sex': 1},157,40,17500,NOT Homogeneous,0.4,2.6578341387212276
+2026-02-17 13:18:40,RW,{'Educational attainment': 21},{'Sex': 1},17,40,17500,NOT Homogeneous,0.4,1.6848444808274508
+2026-02-17 13:18:42,RW,{'Educational attainment': 21},{'Sex': 1},100,40,17500,NOT Homogeneous,0.4,2.0162259563803673
+2026-02-17 13:18:44,RW,{'Educational attainment': 20},{'Sex': 1},331,40,17500,NOT Homogeneous,0.4,2.764510314911604
+2026-02-17 13:18:47,RW,{'Educational attainment': 20},{'Sex': 1},158,40,17500,NOT Homogeneous,0.4,2.1922358833253384
+2026-02-17 13:18:50,RW,{'Educational attainment': 20},{'Sex': 1},459,40,17500,NOT Homogeneous,0.4,3.8462024219334126
+2026-02-17 13:18:53,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},40,40,17500,NOT Homogeneous,0.4,1.9904363919049501
+2026-02-17 13:18:54,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.8488985989242792
+2026-02-17 13:18:56,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},23,40,17500,NOT Homogeneous,0.4,1.6957150846719742
+2026-02-17 13:19:00,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},7,40,17500,NOT Homogeneous,0.4,3.9438583683222532
+2026-02-17 13:19:04,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},14,40,17500,NOT Homogeneous,0.4,4.256574805825949
+2026-02-17 13:19:09,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},23,40,17500,NOT Homogeneous,0.4,4.588934125378728
+2026-02-17 13:19:14,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},177,40,17500,NOT Homogeneous,0.4,4.857314506545663
+2026-02-17 13:19:19,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},158,40,17500,NOT Homogeneous,0.4,4.8239275477826595
+2026-02-17 13:19:23,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},1,40,17500,NOT Homogeneous,0.4,3.5800376404076815
+2026-02-17 13:19:28,FPGrowth,{'Educational attainment': 20},{'Sex': 2},299,40,17500,NOT Homogeneous,0.4,4.9430594984442
+2026-02-17 13:19:30,FPGrowth,{'Educational attainment': 21},{'Sex': 1},11,40,17500,NOT Homogeneous,0.4,2.120088478550315
+2026-02-17 13:19:32,FPGrowth,{'Educational attainment': 20},{'Sex': 1},29,40,17500,NOT Homogeneous,0.4,2.160201760008931
+2026-02-17 13:19:35,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},5,40,17500,NOT Homogeneous,0.4,2.6379914954304695
+2026-02-17 13:19:38,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},95,40,17500,NOT Homogeneous,0.4,2.9623713735491037
+2026-02-17 13:19:40,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},16,40,17500,NOT Homogeneous,0.4,2.5979726761579514
+2026-02-17 13:19:43,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},45,40,17500,NOT Homogeneous,0.4,2.7105251979082823
+2026-02-17 13:19:46,RW,{'Public health coverage': 2},{'With a disability': 2},102,40,17500,NOT Homogeneous,0.4,3.166102582588792
+2026-02-17 13:19:49,RW,{'Public health coverage': 2},{'With a disability': 2},102,40,17500,NOT Homogeneous,0.4,2.9841054044663906
+2026-02-17 13:19:52,RW,{'Public health coverage': 2},{'With a disability': 2},79,40,17500,NOT Homogeneous,0.4,2.8092429265379906
+2026-02-17 13:19:55,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,40,17500,NOT Homogeneous,0.4,2.826088760048151
+2026-02-17 13:19:58,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,40,17500,NOT Homogeneous,0.4,2.447179479524493
+2026-02-17 13:20:00,RW,{'Private health insurance coverage': 2},{'With a disability': 2},19,40,17500,NOT Homogeneous,0.4,2.3508295975625515
+2026-02-17 13:20:03,RW,{'Educational attainment': 20},{'With a disability': 2},89,40,17500,NOT Homogeneous,0.4,2.8136526476591825
+2026-02-17 13:20:07,RW,{'Educational attainment': 20},{'With a disability': 2},241,40,17500,NOT Homogeneous,0.4,3.6671426072716713
+2026-02-17 13:20:10,RW,{'Educational attainment': 20},{'With a disability': 2},379,40,17500,NOT Homogeneous,0.4,3.9248528759926558
+2026-02-17 13:20:13,RW,{'Educational attainment': 21},{'With a disability': 2},43,40,17500,NOT Homogeneous,0.4,2.8120987322181463
+2026-02-17 13:20:17,RW,{'Educational attainment': 21},{'With a disability': 2},282,40,17500,NOT Homogeneous,0.4,3.9178140982985497
+2026-02-17 13:20:20,RW,{'Educational attainment': 21},{'With a disability': 2},70,40,17500,NOT Homogeneous,0.4,2.6780109852552414
+2026-02-17 13:20:23,RW,{'Educational attainment': 22},{'With a disability': 2},80,40,17500,NOT Homogeneous,0.4,3.1335744205862284
+2026-02-17 13:20:26,RW,{'Educational attainment': 22},{'With a disability': 2},68,40,17500,NOT Homogeneous,0.4,2.586615877225995
+2026-02-17 13:20:28,RW,{'Educational attainment': 22},{'With a disability': 2},29,40,17500,NOT Homogeneous,0.4,2.2816172037273645
+2026-02-17 13:20:41,RW,{'Educational attainment': 20},{'Sex': 2},1377,40,17500,Homogeneous,0.4,12.470873937010765
+2026-02-17 13:20:53,RW,{'Educational attainment': 20},{'Sex': 2},1398,40,17500,Homogeneous,0.4,12.318394938483834
+2026-02-17 13:21:05,RW,{'Educational attainment': 20},{'Sex': 2},1416,40,17500,Homogeneous,0.4,11.948458172380924
+2026-02-17 13:21:07,RW,{'Educational attainment': 21},{'Sex': 1},32,40,17500,NOT Homogeneous,0.4,1.5815122425556183
+2026-02-17 13:21:08,RW,{'Educational attainment': 21},{'Sex': 1},65,40,17500,NOT Homogeneous,0.4,1.7012567110359669
+2026-02-17 13:21:10,RW,{'Educational attainment': 21},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.6087477747350931
+2026-02-17 13:21:13,RW,{'Educational attainment': 20},{'Sex': 1},321,40,17500,NOT Homogeneous,0.4,2.7579758390784264
+2026-02-17 13:21:15,RW,{'Educational attainment': 20},{'Sex': 1},141,40,17500,NOT Homogeneous,0.4,1.9153882954269648
+2026-02-17 13:21:17,RW,{'Educational attainment': 20},{'Sex': 1},106,40,17500,NOT Homogeneous,0.4,1.9804630763828754
+2026-02-17 13:21:18,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.610508732497692
+2026-02-17 13:21:20,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.5794721134006977
+2026-02-17 13:21:22,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},36,40,17500,NOT Homogeneous,0.4,1.7123906705528498
+2026-02-17 13:21:26,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},7,40,17500,NOT Homogeneous,0.4,4.169184744358063
+2026-02-17 13:21:31,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},32,40,17500,NOT Homogeneous,0.4,4.610441666096449
+2026-02-17 13:21:35,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,40,17500,NOT Homogeneous,0.4,3.9589276295155287
+2026-02-17 13:21:40,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},174,40,17500,NOT Homogeneous,0.4,4.9601646941155195
+2026-02-17 13:21:46,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},350,40,17500,NOT Homogeneous,0.4,6.5203275959938765
+2026-02-17 13:21:50,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},2,40,17500,NOT Homogeneous,0.4,3.28689176030457
+2026-02-17 13:22:49,FPGrowth,{'Educational attainment': 20},{'Sex': 2},6880,40,17500,Homogeneous,0.4,59.20301682688296
+2026-02-17 13:22:51,FPGrowth,{'Educational attainment': 21},{'Sex': 1},26,40,17500,NOT Homogeneous,0.4,2.1115583162754774
+2026-02-17 13:22:53,FPGrowth,{'Educational attainment': 20},{'Sex': 1},16,40,17500,NOT Homogeneous,0.4,2.1358298994600773
+2026-02-17 13:22:56,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,40,17500,NOT Homogeneous,0.4,2.511181240901351
+2026-02-17 13:22:59,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},71,40,17500,NOT Homogeneous,0.4,2.7152234353125095
+2026-02-17 13:23:01,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},91,40,17500,NOT Homogeneous,0.4,2.760134870186448
+2026-02-17 13:23:04,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},11,40,17500,NOT Homogeneous,0.4,2.3316190857440233
+2026-02-17 13:23:07,RW,{'Public health coverage': 2},{'With a disability': 2},94,40,17500,NOT Homogeneous,0.4,2.907178182154894
+2026-02-17 13:23:09,RW,{'Public health coverage': 2},{'With a disability': 2},81,40,17500,NOT Homogeneous,0.4,2.747505309060216
+2026-02-17 13:23:13,RW,{'Public health coverage': 2},{'With a disability': 2},262,40,17500,NOT Homogeneous,0.4,3.5155694633722305
+2026-02-17 13:23:15,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,40,17500,NOT Homogeneous,0.4,2.271955532953143
+2026-02-17 13:23:18,RW,{'Private health insurance coverage': 2},{'With a disability': 2},90,40,17500,NOT Homogeneous,0.4,3.0304398629814386
+2026-02-17 13:23:21,RW,{'Private health insurance coverage': 2},{'With a disability': 2},65,40,17500,NOT Homogeneous,0.4,2.569842079654336
+2026-02-17 13:23:24,RW,{'Educational attainment': 20},{'With a disability': 2},181,40,17500,NOT Homogeneous,0.4,3.101794520393014
+2026-02-17 13:23:28,RW,{'Educational attainment': 20},{'With a disability': 2},275,40,17500,NOT Homogeneous,0.4,3.602776685729623
+2026-02-17 13:23:30,RW,{'Educational attainment': 20},{'With a disability': 2},19,40,17500,NOT Homogeneous,0.4,2.217512510716915
+2026-02-17 13:23:32,RW,{'Educational attainment': 21},{'With a disability': 2},9,40,17500,NOT Homogeneous,0.4,2.1877413541078568
+2026-02-17 13:23:35,RW,{'Educational attainment': 21},{'With a disability': 2},151,40,17500,NOT Homogeneous,0.4,2.9261860102415085
+2026-02-17 13:23:38,RW,{'Educational attainment': 21},{'With a disability': 2},132,40,17500,NOT Homogeneous,0.4,2.8317019194364548
+2026-02-17 13:23:40,RW,{'Educational attainment': 22},{'With a disability': 2},62,40,17500,NOT Homogeneous,0.4,2.2838405407965183
+2026-02-17 13:23:43,RW,{'Educational attainment': 22},{'With a disability': 2},9,40,17500,NOT Homogeneous,0.4,2.2485449202358723
+2026-02-17 13:23:45,RW,{'Educational attainment': 22},{'With a disability': 2},43,40,17500,NOT Homogeneous,0.4,2.5112974606454372
+2026-02-17 13:23:57,RW,{'Educational attainment': 20},{'Sex': 2},1375,40,17500,Homogeneous,0.4,11.983951859176159
+2026-02-17 13:24:09,RW,{'Educational attainment': 20},{'Sex': 2},1383,40,17500,Homogeneous,0.4,11.9576972797513
+2026-02-17 13:24:21,RW,{'Educational attainment': 20},{'Sex': 2},1356,40,17500,Homogeneous,0.4,11.829915693029761
+2026-02-17 13:24:22,RW,{'Educational attainment': 21},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.4427569024264812
+2026-02-17 13:24:25,RW,{'Educational attainment': 21},{'Sex': 1},199,40,17500,NOT Homogeneous,0.4,2.322870772331953
+2026-02-17 13:24:26,RW,{'Educational attainment': 21},{'Sex': 1},44,40,17500,NOT Homogeneous,0.4,1.5984893161803484
+2026-02-17 13:24:29,RW,{'Educational attainment': 20},{'Sex': 1},256,40,17500,NOT Homogeneous,0.4,2.546657055616379
+2026-02-17 13:24:30,RW,{'Educational attainment': 20},{'Sex': 1},15,40,17500,NOT Homogeneous,0.4,1.4644488170742989
+2026-02-17 13:24:32,RW,{'Educational attainment': 20},{'Sex': 1},115,40,17500,NOT Homogeneous,0.4,1.9343120325356722
+2026-02-17 13:24:34,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.5168194714933634
+2026-02-17 13:24:36,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,40,17500,NOT Homogeneous,0.4,1.5300785824656487
+2026-02-17 13:24:37,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},25,40,17500,NOT Homogeneous,0.4,1.6798879280686378
+2026-02-17 13:24:41,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,40,17500,NOT Homogeneous,0.4,3.915863459929824
+2026-02-17 13:24:46,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},90,40,17500,NOT Homogeneous,0.4,4.772830871865153
+2026-02-17 13:24:50,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},3,40,17500,NOT Homogeneous,0.4,3.901772242039442
+2026-02-17 13:24:53,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},4,40,17500,NOT Homogeneous,0.4,3.1560982652008533
+2026-02-17 13:24:57,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},48,40,17500,NOT Homogeneous,0.4,3.5323382262140512
+2026-02-17 13:25:00,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},14,40,17500,NOT Homogeneous,0.4,3.396305952221155
+2026-02-17 13:25:58,FPGrowth,{'Educational attainment': 20},{'Sex': 2},6860,40,17500,Homogeneous,0.4,57.71402459219098
+2026-02-17 13:26:00,FPGrowth,{'Educational attainment': 21},{'Sex': 1},44,40,17500,NOT Homogeneous,0.4,2.290164278820157
+2026-02-17 13:26:03,FPGrowth,{'Educational attainment': 20},{'Sex': 1},63,40,17500,NOT Homogeneous,0.4,2.432129615917802
+2026-02-17 13:26:05,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,40,17500,NOT Homogeneous,0.4,2.4957631789147854
+2026-02-17 13:26:08,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,2.7022308222949505
+2026-02-17 13:26:11,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},24,50,17500,NOT Homogeneous,0.5,2.943354183807969
+2026-02-17 13:26:14,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.9250353276729584
+2026-02-17 13:26:18,RW,{'Public health coverage': 2},{'With a disability': 2},103,50,17500,NOT Homogeneous,0.5,3.254350360482931
+2026-02-17 13:26:20,RW,{'Public health coverage': 2},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,2.72801292873919
+2026-02-17 13:26:23,RW,{'Public health coverage': 2},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,2.741036968305707
+2026-02-17 13:26:26,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,50,17500,NOT Homogeneous,0.5,2.752828186377883
+2026-02-17 13:26:29,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,50,17500,NOT Homogeneous,0.5,2.759330589324236
+2026-02-17 13:26:32,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.8160746209323406
+2026-02-17 13:26:34,RW,{'Educational attainment': 20},{'With a disability': 2},20,50,17500,NOT Homogeneous,0.5,2.710233811289072
+2026-02-17 13:26:37,RW,{'Educational attainment': 20},{'With a disability': 2},21,50,17500,NOT Homogeneous,0.5,2.7117760721594095
+2026-02-17 13:26:41,RW,{'Educational attainment': 20},{'With a disability': 2},309,50,17500,NOT Homogeneous,0.5,4.350456802174449
+2026-02-17 13:26:46,RW,{'Educational attainment': 21},{'With a disability': 2},241,50,17500,NOT Homogeneous,0.5,3.9481303337961435
+2026-02-17 13:26:48,RW,{'Educational attainment': 21},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.661119993776083
+2026-02-17 13:26:51,RW,{'Educational attainment': 21},{'With a disability': 2},63,50,17500,NOT Homogeneous,0.5,2.9649367686361074
+2026-02-17 13:26:54,RW,{'Educational attainment': 22},{'With a disability': 2},9,50,17500,NOT Homogeneous,0.5,2.6678867861628532
+2026-02-17 13:26:57,RW,{'Educational attainment': 22},{'With a disability': 2},17,50,17500,NOT Homogeneous,0.5,2.67541709728539
+2026-02-17 13:26:59,RW,{'Educational attainment': 22},{'With a disability': 2},41,50,17500,NOT Homogeneous,0.5,2.7931526210159063
+2026-02-17 13:27:08,RW,{'Educational attainment': 20},{'Sex': 2},1259,50,17500,NOT Homogeneous,0.5,8.481271283701062
+2026-02-17 13:27:16,RW,{'Educational attainment': 20},{'Sex': 2},1218,50,17500,NOT Homogeneous,0.5,8.175007512792945
+2026-02-17 13:27:22,RW,{'Educational attainment': 20},{'Sex': 2},788,50,17500,NOT Homogeneous,0.5,5.808243755251169
+2026-02-17 13:27:24,RW,{'Educational attainment': 21},{'Sex': 1},84,50,17500,NOT Homogeneous,0.5,2.0217648949474096
+2026-02-17 13:27:27,RW,{'Educational attainment': 21},{'Sex': 1},227,50,17500,NOT Homogeneous,0.5,2.69224626198411
+2026-02-17 13:27:29,RW,{'Educational attainment': 21},{'Sex': 1},247,50,17500,NOT Homogeneous,0.5,2.7434210292994976
+2026-02-17 13:27:31,RW,{'Educational attainment': 20},{'Sex': 1},37,50,17500,NOT Homogeneous,0.5,1.7982816230505705
+2026-02-17 13:27:33,RW,{'Educational attainment': 20},{'Sex': 1},9,50,17500,NOT Homogeneous,0.5,1.6453408617526293
+2026-02-17 13:27:35,RW,{'Educational attainment': 20},{'Sex': 1},83,50,17500,NOT Homogeneous,0.5,2.039335133507848
+2026-02-17 13:27:37,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},46,50,17500,NOT Homogeneous,0.5,2.0412876624614
+2026-02-17 13:27:39,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,50,17500,NOT Homogeneous,0.5,1.7907675094902515
+2026-02-17 13:27:41,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,50,17500,NOT Homogeneous,0.5,1.8139530681073666
+2026-02-17 13:27:45,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,4.614733062684536
+2026-02-17 13:27:51,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},60,50,17500,NOT Homogeneous,0.5,5.536694411188364
+2026-02-17 13:27:56,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},7,50,17500,NOT Homogeneous,0.5,4.710286717861891
+2026-02-17 13:28:05,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},540,50,17500,NOT Homogeneous,0.5,8.900501143187284
+2026-02-17 13:28:10,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},168,50,17500,NOT Homogeneous,0.5,5.4442168436944485
+2026-02-17 13:28:15,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},16,50,17500,NOT Homogeneous,0.5,4.041140221059322
+2026-02-17 13:28:55,FPGrowth,{'Educational attainment': 20},{'Sex': 2},4533,50,17500,NOT Homogeneous,0.5,40.06938480772078
+2026-02-17 13:28:57,FPGrowth,{'Educational attainment': 21},{'Sex': 1},27,50,17500,NOT Homogeneous,0.5,2.5648828223347664
+2026-02-17 13:29:04,FPGrowth,{'Educational attainment': 20},{'Sex': 1},477,50,17500,NOT Homogeneous,0.5,6.2224228121340275
+2026-02-17 13:29:07,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},6,50,17500,NOT Homogeneous,0.5,2.949880078434944
+2026-02-17 13:29:10,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.796535724774003
+2026-02-17 13:29:13,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},24,50,17500,NOT Homogeneous,0.5,2.9515234287828207
+2026-02-17 13:29:16,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},42,50,17500,NOT Homogeneous,0.5,3.1558884158730507
+2026-02-17 13:29:19,RW,{'Public health coverage': 2},{'With a disability': 2},27,50,17500,NOT Homogeneous,0.5,2.7221674229949713
+2026-02-17 13:29:21,RW,{'Public health coverage': 2},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.7986129205673933
+2026-02-17 13:29:24,RW,{'Public health coverage': 2},{'With a disability': 2},17,50,17500,NOT Homogeneous,0.5,2.711130341514945
+2026-02-17 13:29:27,RW,{'Private health insurance coverage': 2},{'With a disability': 2},38,50,17500,NOT Homogeneous,0.5,2.916480800136924
+2026-02-17 13:29:30,RW,{'Private health insurance coverage': 2},{'With a disability': 2},28,50,17500,NOT Homogeneous,0.5,2.869602346792817
+2026-02-17 13:29:33,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,50,17500,NOT Homogeneous,0.5,2.7942774202674627
+2026-02-17 13:29:37,RW,{'Educational attainment': 20},{'With a disability': 2},329,50,17500,NOT Homogeneous,0.5,4.5450142454355955
+2026-02-17 13:29:40,RW,{'Educational attainment': 20},{'With a disability': 2},72,50,17500,NOT Homogeneous,0.5,3.0527269188314676
+2026-02-17 13:29:43,RW,{'Educational attainment': 20},{'With a disability': 2},67,50,17500,NOT Homogeneous,0.5,3.0006063412874937
+2026-02-17 13:29:46,RW,{'Educational attainment': 21},{'With a disability': 2},34,50,17500,NOT Homogeneous,0.5,2.8062574360519648
+2026-02-17 13:29:50,RW,{'Educational attainment': 21},{'With a disability': 2},158,50,17500,NOT Homogeneous,0.5,3.6781817972660065
+2026-02-17 13:29:53,RW,{'Educational attainment': 21},{'With a disability': 2},36,50,17500,NOT Homogeneous,0.5,2.740219971165061
+2026-02-17 13:29:56,RW,{'Educational attainment': 22},{'With a disability': 2},34,50,17500,NOT Homogeneous,0.5,2.734872840344906
+2026-02-17 13:29:58,RW,{'Educational attainment': 22},{'With a disability': 2},33,50,17500,NOT Homogeneous,0.5,2.7834955863654613
+2026-02-17 13:30:01,RW,{'Educational attainment': 22},{'With a disability': 2},19,50,17500,NOT Homogeneous,0.5,2.6964845843613148
+2026-02-17 13:30:14,RW,{'Educational attainment': 20},{'Sex': 2},1327,50,17500,Homogeneous,0.5,13.180732728913426
+2026-02-17 13:30:28,RW,{'Educational attainment': 20},{'Sex': 2},1381,50,17500,Homogeneous,0.5,13.70003435947001
+2026-02-17 13:30:41,RW,{'Educational attainment': 20},{'Sex': 2},1330,50,17500,Homogeneous,0.5,13.286314999684691
+2026-02-17 13:30:44,RW,{'Educational attainment': 21},{'Sex': 1},228,50,17500,NOT Homogeneous,0.5,2.7625890504568815
+2026-02-17 13:30:47,RW,{'Educational attainment': 21},{'Sex': 1},168,50,17500,NOT Homogeneous,0.5,2.442772874608636
+2026-02-17 13:30:48,RW,{'Educational attainment': 21},{'Sex': 1},17,50,17500,NOT Homogeneous,0.5,1.6652681436389685
+2026-02-17 13:30:51,RW,{'Educational attainment': 20},{'Sex': 1},134,50,17500,NOT Homogeneous,0.5,2.247668718919158
+2026-02-17 13:30:53,RW,{'Educational attainment': 20},{'Sex': 1},107,50,17500,NOT Homogeneous,0.5,2.0364704485982656
+2026-02-17 13:30:55,RW,{'Educational attainment': 20},{'Sex': 1},103,50,17500,NOT Homogeneous,0.5,2.1306063942611217
+2026-02-17 13:30:57,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},69,50,17500,NOT Homogeneous,0.5,2.067103875800967
+2026-02-17 13:30:59,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},27,50,17500,NOT Homogeneous,0.5,1.8859913907945156
+2026-02-17 13:31:01,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},19,50,17500,NOT Homogeneous,0.5,1.8801926672458649
+2026-02-17 13:31:06,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},25,50,17500,NOT Homogeneous,0.5,4.807964999228716
+2026-02-17 13:31:11,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},72,50,17500,NOT Homogeneous,0.5,5.4448478408157825
+2026-02-17 13:31:16,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},25,50,17500,NOT Homogeneous,0.5,4.912259507924318
+2026-02-17 13:31:24,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},382,50,17500,NOT Homogeneous,0.5,7.290176507085562
+2026-02-17 13:31:30,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},277,50,17500,NOT Homogeneous,0.5,6.489718858152628
+2026-02-17 13:31:34,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},29,50,17500,NOT Homogeneous,0.5,4.13655604980886
+2026-02-17 13:32:39,FPGrowth,{'Educational attainment': 20},{'Sex': 2},7549,50,17500,Homogeneous,0.5,64.14169135130942
+2026-02-17 13:32:41,FPGrowth,{'Educational attainment': 21},{'Sex': 1},18,50,17500,NOT Homogeneous,0.5,2.42507098428905
+2026-02-17 13:32:44,FPGrowth,{'Educational attainment': 20},{'Sex': 1},10,50,17500,NOT Homogeneous,0.5,2.3783340491354465
+2026-02-17 13:32:46,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},3,50,17500,NOT Homogeneous,0.5,2.9199395440518856
+2026-02-17 13:32:49,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},24,50,17500,NOT Homogeneous,0.5,2.8429898098111153
+2026-02-17 13:32:52,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,2.726266762241721
+2026-02-17 13:32:55,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},48,50,17500,NOT Homogeneous,0.5,3.0911715384572744
+2026-02-17 13:32:59,RW,{'Public health coverage': 2},{'With a disability': 2},183,50,17500,NOT Homogeneous,0.5,3.5873007122427225
+2026-02-17 13:33:04,RW,{'Public health coverage': 2},{'With a disability': 2},438,50,17500,NOT Homogeneous,0.5,5.164368404075503
+2026-02-17 13:33:07,RW,{'Public health coverage': 2},{'With a disability': 2},27,50,17500,NOT Homogeneous,0.5,2.8928446043282747
+2026-02-17 13:33:10,RW,{'Private health insurance coverage': 2},{'With a disability': 2},29,50,17500,NOT Homogeneous,0.5,2.8842992894351482
+2026-02-17 13:33:13,RW,{'Private health insurance coverage': 2},{'With a disability': 2},84,50,17500,NOT Homogeneous,0.5,3.2048626206815243
+2026-02-17 13:33:16,RW,{'Private health insurance coverage': 2},{'With a disability': 2},20,50,17500,NOT Homogeneous,0.5,2.9276234693825245
+2026-02-17 13:33:19,RW,{'Educational attainment': 20},{'With a disability': 2},19,50,17500,NOT Homogeneous,0.5,2.6884754467755556
+2026-02-17 13:33:22,RW,{'Educational attainment': 20},{'With a disability': 2},70,50,17500,NOT Homogeneous,0.5,2.907899623736739
+2026-02-17 13:33:25,RW,{'Educational attainment': 20},{'With a disability': 2},46,50,17500,NOT Homogeneous,0.5,2.9943819902837276
+2026-02-17 13:33:28,RW,{'Educational attainment': 21},{'With a disability': 2},38,50,17500,NOT Homogeneous,0.5,2.756175924092531
+2026-02-17 13:33:31,RW,{'Educational attainment': 21},{'With a disability': 2},87,50,17500,NOT Homogeneous,0.5,3.0556951966136694
+2026-02-17 13:33:34,RW,{'Educational attainment': 21},{'With a disability': 2},55,50,17500,NOT Homogeneous,0.5,2.8749087564647198
+2026-02-17 13:33:37,RW,{'Educational attainment': 22},{'With a disability': 2},58,50,17500,NOT Homogeneous,0.5,2.856893964111805
+2026-02-17 13:33:40,RW,{'Educational attainment': 22},{'With a disability': 2},153,50,17500,NOT Homogeneous,0.5,3.260012909770012
+2026-02-17 13:33:43,RW,{'Educational attainment': 22},{'With a disability': 2},48,50,17500,NOT Homogeneous,0.5,2.754367344081402
+2026-02-17 13:33:47,RW,{'Educational attainment': 20},{'Sex': 2},639,50,17500,NOT Homogeneous,0.5,4.735156927257776
+2026-02-17 13:33:50,RW,{'Educational attainment': 20},{'Sex': 2},191,50,17500,NOT Homogeneous,0.5,2.6702879685908556
+2026-02-17 13:33:52,RW,{'Educational attainment': 20},{'Sex': 2},18,50,17500,NOT Homogeneous,0.5,1.7824042700231075
+2026-02-17 13:33:54,RW,{'Educational attainment': 21},{'Sex': 1},36,50,17500,NOT Homogeneous,0.5,1.7637604624032974
+2026-02-17 13:33:55,RW,{'Educational attainment': 21},{'Sex': 1},15,50,17500,NOT Homogeneous,0.5,1.6669245269149542
+2026-02-17 13:33:57,RW,{'Educational attainment': 21},{'Sex': 1},42,50,17500,NOT Homogeneous,0.5,1.8298202939331532
+2026-02-17 13:33:59,RW,{'Educational attainment': 20},{'Sex': 1},37,50,17500,NOT Homogeneous,0.5,1.8212134689092636
+2026-02-17 13:34:01,RW,{'Educational attainment': 20},{'Sex': 1},157,50,17500,NOT Homogeneous,0.5,2.3856765907257795
+2026-02-17 13:34:03,RW,{'Educational attainment': 20},{'Sex': 1},9,50,17500,NOT Homogeneous,0.5,1.6902471911162138
+2026-02-17 13:34:05,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,50,17500,NOT Homogeneous,0.5,1.7582616973668337
+2026-02-17 13:34:07,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,50,17500,NOT Homogeneous,0.5,1.7336575984954834
+2026-02-17 13:34:09,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},27,50,17500,NOT Homogeneous,0.5,1.8612118661403656
+2026-02-17 13:34:13,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},2,50,17500,NOT Homogeneous,0.5,4.678714068606496
+2026-02-17 13:34:18,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},9,50,17500,NOT Homogeneous,0.5,4.695135768502951
+2026-02-17 13:34:23,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},28,50,17500,NOT Homogeneous,0.5,4.846544893458486
+2026-02-17 13:34:29,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},218,50,17500,NOT Homogeneous,0.5,5.729344420135021
+2026-02-17 13:34:33,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},23,50,17500,NOT Homogeneous,0.5,4.1012228056788445
+2026-02-17 13:34:37,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},1,50,17500,NOT Homogeneous,0.5,3.8271475583314896
+2026-02-17 13:34:52,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1474,50,17500,NOT Homogeneous,0.5,14.408619415014982
+2026-02-17 13:34:54,FPGrowth,{'Educational attainment': 21},{'Sex': 1},13,50,17500,NOT Homogeneous,0.5,2.44318381883204
+2026-02-17 13:34:57,FPGrowth,{'Educational attainment': 20},{'Sex': 1},30,50,17500,NOT Homogeneous,0.5,2.5545390713959932
+2026-02-17 13:35:00,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},4,50,17500,NOT Homogeneous,0.5,2.917523806914687
+2026-02-17 13:35:03,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},59,60,17500,NOT Homogeneous,0.6,3.613397976383567
+2026-02-17 13:35:07,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},62,60,17500,NOT Homogeneous,0.6,3.5585171077400446
+2026-02-17 13:35:11,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},59,60,17500,NOT Homogeneous,0.6,3.51219598762691
+2026-02-17 13:35:15,RW,{'Public health coverage': 2},{'With a disability': 2},181,60,17500,NOT Homogeneous,0.6,4.260285032913089
+2026-02-17 13:35:19,RW,{'Public health coverage': 2},{'With a disability': 2},140,60,17500,NOT Homogeneous,0.6,3.770329598337412
+2026-02-17 13:35:23,RW,{'Public health coverage': 2},{'With a disability': 2},218,60,17500,NOT Homogeneous,0.6,4.54379422031343
+2026-02-17 13:35:27,RW,{'Private health insurance coverage': 2},{'With a disability': 2},30,60,17500,NOT Homogeneous,0.6,3.2534761112183332
+2026-02-17 13:35:30,RW,{'Private health insurance coverage': 2},{'With a disability': 2},46,60,17500,NOT Homogeneous,0.6,3.362981842830777
+2026-02-17 13:35:34,RW,{'Private health insurance coverage': 2},{'With a disability': 2},77,60,17500,NOT Homogeneous,0.6,3.762234391644597
+2026-02-17 13:35:40,RW,{'Educational attainment': 20},{'With a disability': 2},467,60,17500,NOT Homogeneous,0.6,5.860808700323105
+2026-02-17 13:35:43,RW,{'Educational attainment': 20},{'With a disability': 2},119,60,17500,NOT Homogeneous,0.6,3.7762199882417917
+2026-02-17 13:35:47,RW,{'Educational attainment': 20},{'With a disability': 2},136,60,17500,NOT Homogeneous,0.6,3.845089701935649
+2026-02-17 13:35:53,RW,{'Educational attainment': 21},{'With a disability': 2},410,60,17500,NOT Homogeneous,0.6,5.6535553354769945
+2026-02-17 13:35:57,RW,{'Educational attainment': 21},{'With a disability': 2},226,60,17500,NOT Homogeneous,0.6,4.352214308455586
+2026-02-17 13:36:03,RW,{'Educational attainment': 21},{'With a disability': 2},418,60,17500,NOT Homogeneous,0.6,5.686735522001982
+2026-02-17 13:36:07,RW,{'Educational attainment': 22},{'With a disability': 2},42,60,17500,NOT Homogeneous,0.6,3.2679972033947706
+2026-02-17 13:36:10,RW,{'Educational attainment': 22},{'With a disability': 2},9,60,17500,NOT Homogeneous,0.6,3.0251472778618336
+2026-02-17 13:36:13,RW,{'Educational attainment': 22},{'With a disability': 2},24,60,17500,NOT Homogeneous,0.6,3.1493333466351032
+2026-02-17 13:36:17,RW,{'Educational attainment': 20},{'Sex': 2},430,60,17500,NOT Homogeneous,0.6,4.218913679942489
+2026-02-17 13:36:24,RW,{'Educational attainment': 20},{'Sex': 2},993,60,17500,NOT Homogeneous,0.6,7.336108783259988
+2026-02-17 13:36:30,RW,{'Educational attainment': 20},{'Sex': 2},668,60,17500,NOT Homogeneous,0.6,5.403365770354867
+2026-02-17 13:36:32,RW,{'Educational attainment': 21},{'Sex': 1},15,60,17500,NOT Homogeneous,0.6,1.9587730020284653
+2026-02-17 13:36:36,RW,{'Educational attainment': 21},{'Sex': 1},366,60,17500,NOT Homogeneous,0.6,3.8501586131751537
+2026-02-17 13:36:39,RW,{'Educational attainment': 21},{'Sex': 1},324,60,17500,NOT Homogeneous,0.6,3.5755316242575645
+2026-02-17 13:36:42,RW,{'Educational attainment': 20},{'Sex': 1},107,60,17500,NOT Homogeneous,0.6,2.4686720855534077
+2026-02-17 13:36:44,RW,{'Educational attainment': 20},{'Sex': 1},140,60,17500,NOT Homogeneous,0.6,2.6214109156280756
+2026-02-17 13:36:46,RW,{'Educational attainment': 20},{'Sex': 1},16,60,17500,NOT Homogeneous,0.6,1.9896324425935745
+2026-02-17 13:36:49,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},37,60,17500,NOT Homogeneous,0.6,2.237584503367543
+2026-02-17 13:36:51,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},24,60,17500,NOT Homogeneous,0.6,2.1638792287558317
+2026-02-17 13:36:53,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},36,60,17500,NOT Homogeneous,0.6,2.217515680938959
+2026-02-17 13:36:59,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},2,60,17500,NOT Homogeneous,0.6,5.371840354055166
+2026-02-17 13:37:04,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},11,60,17500,NOT Homogeneous,0.6,5.429973052814603
+2026-02-17 13:37:10,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,60,17500,NOT Homogeneous,0.6,5.370391611009836
+2026-02-17 13:37:15,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},24,60,17500,NOT Homogeneous,0.6,4.819603046402335
+2026-02-17 13:37:20,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},91,60,17500,NOT Homogeneous,0.6,5.474002292379737
+2026-02-17 13:37:25,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},26,60,17500,NOT Homogeneous,0.6,4.806215152144432
+2026-02-17 13:37:29,FPGrowth,{'Educational attainment': 20},{'Sex': 2},81,60,17500,NOT Homogeneous,0.6,3.5617145970463753
+2026-02-17 13:37:32,FPGrowth,{'Educational attainment': 21},{'Sex': 1},17,60,17500,NOT Homogeneous,0.6,2.882016610354185
+2026-02-17 13:37:35,FPGrowth,{'Educational attainment': 20},{'Sex': 1},1,60,17500,NOT Homogeneous,0.6,2.749207992106676
+2026-02-17 13:37:38,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,60,17500,NOT Homogeneous,0.6,3.35100070387125
+2026-02-17 13:37:42,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},40,60,17500,NOT Homogeneous,0.6,3.478769928216934
+2026-02-17 13:37:45,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},26,60,17500,NOT Homogeneous,0.6,3.3190881945192814
+2026-02-17 13:37:50,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},184,60,17500,NOT Homogeneous,0.6,4.572118375450373
+2026-02-17 13:37:54,RW,{'Public health coverage': 2},{'With a disability': 2},127,60,17500,NOT Homogeneous,0.6,3.7988313883543015
+2026-02-17 13:37:57,RW,{'Public health coverage': 2},{'With a disability': 2},116,60,17500,NOT Homogeneous,0.6,3.9217956885695457
+2026-02-17 13:38:02,RW,{'Public health coverage': 2},{'With a disability': 2},135,60,17500,NOT Homogeneous,0.6,4.049800097942352
+2026-02-17 13:38:05,RW,{'Private health insurance coverage': 2},{'With a disability': 2},37,60,17500,NOT Homogeneous,0.6,3.3781190868467093
+2026-02-17 13:38:08,RW,{'Private health insurance coverage': 2},{'With a disability': 2},21,60,17500,NOT Homogeneous,0.6,3.2465410362929106
+2026-02-17 13:38:12,RW,{'Private health insurance coverage': 2},{'With a disability': 2},28,60,17500,NOT Homogeneous,0.6,3.323202820494771
+2026-02-17 13:38:15,RW,{'Educational attainment': 20},{'With a disability': 2},38,60,17500,NOT Homogeneous,0.6,3.2269192691892385
+2026-02-17 13:38:18,RW,{'Educational attainment': 20},{'With a disability': 2},62,60,17500,NOT Homogeneous,0.6,3.4439909029752016
+2026-02-17 13:38:25,RW,{'Educational attainment': 20},{'With a disability': 2},632,60,17500,NOT Homogeneous,0.6,6.68794646859169
+2026-02-17 13:38:30,RW,{'Educational attainment': 21},{'With a disability': 2},231,60,17500,NOT Homogeneous,0.6,4.328722504898906
+2026-02-17 13:38:34,RW,{'Educational attainment': 21},{'With a disability': 2},202,60,17500,NOT Homogeneous,0.6,4.33295021392405
+2026-02-17 13:38:39,RW,{'Educational attainment': 21},{'With a disability': 2},425,60,17500,NOT Homogeneous,0.6,5.409071918576956
+2026-02-17 13:38:43,RW,{'Educational attainment': 22},{'With a disability': 2},20,60,17500,NOT Homogeneous,0.6,3.211297335103154
+2026-02-17 13:38:46,RW,{'Educational attainment': 22},{'With a disability': 2},131,60,17500,NOT Homogeneous,0.6,3.684652704745531
+2026-02-17 13:38:49,RW,{'Educational attainment': 22},{'With a disability': 2},17,60,17500,NOT Homogeneous,0.6,3.1013698149472475
+2026-02-17 13:39:05,RW,{'Educational attainment': 20},{'Sex': 2},1420,60,17500,Homogeneous,0.6,15.714559918269515
+2026-02-17 13:39:21,RW,{'Educational attainment': 20},{'Sex': 2},1417,60,17500,Homogeneous,0.6,15.34916814044118
+2026-02-17 13:39:36,RW,{'Educational attainment': 20},{'Sex': 2},1445,60,17500,Homogeneous,0.6,15.839114600792527
+2026-02-17 13:39:39,RW,{'Educational attainment': 21},{'Sex': 1},75,60,17500,NOT Homogeneous,0.6,2.2891955841332674
+2026-02-17 13:39:42,RW,{'Educational attainment': 21},{'Sex': 1},172,60,17500,NOT Homogeneous,0.6,2.811481151729822
+2026-02-17 13:39:44,RW,{'Educational attainment': 21},{'Sex': 1},163,60,17500,NOT Homogeneous,0.6,2.777024384588003
+2026-02-17 13:39:47,RW,{'Educational attainment': 20},{'Sex': 1},42,60,17500,NOT Homogeneous,0.6,2.108854131773114
+2026-02-17 13:39:50,RW,{'Educational attainment': 20},{'Sex': 1},305,60,17500,NOT Homogeneous,0.6,3.5222999788820744
+2026-02-17 13:39:53,RW,{'Educational attainment': 20},{'Sex': 1},166,60,17500,NOT Homogeneous,0.6,2.824292693287134
+2026-02-17 13:39:55,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,60,17500,NOT Homogeneous,0.6,2.037460008636117
+2026-02-17 13:39:57,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},30,60,17500,NOT Homogeneous,0.6,2.15023111179471
+2026-02-17 13:40:00,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},35,60,17500,NOT Homogeneous,0.6,2.274130143225193
+2026-02-17 13:40:05,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},3,60,17500,NOT Homogeneous,0.6,5.364525577053428
+2026-02-17 13:40:11,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},56,60,17500,NOT Homogeneous,0.6,5.924448302015662
+2026-02-17 13:40:17,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},3,60,17500,NOT Homogeneous,0.6,5.365552747622132
+2026-02-17 13:40:23,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},162,60,17500,NOT Homogeneous,0.6,6.168998008593917
+2026-02-17 13:40:28,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},30,60,17500,NOT Homogeneous,0.6,4.888401905074716
+2026-02-17 13:40:33,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},10,60,17500,NOT Homogeneous,0.6,4.717361323535442
+2026-02-17 13:40:44,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1017,60,17500,NOT Homogeneous,0.6,11.375167865306139
+2026-02-17 13:40:47,FPGrowth,{'Educational attainment': 21},{'Sex': 1},31,60,17500,NOT Homogeneous,0.6,2.9720379784703255
+2026-02-17 13:40:52,FPGrowth,{'Educational attainment': 20},{'Sex': 1},161,60,17500,NOT Homogeneous,0.6,4.119553733617067
+2026-02-17 13:40:55,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},7,60,17500,NOT Homogeneous,0.6,3.3707612082362175
+2026-02-17 13:40:59,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},79,60,17500,NOT Homogeneous,0.6,3.779821151867509
+2026-02-17 13:41:02,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},32,60,17500,NOT Homogeneous,0.6,3.4765460025519133
+2026-02-17 13:41:06,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},70,60,17500,NOT Homogeneous,0.6,3.5385945234447718
+2026-02-17 13:41:10,RW,{'Public health coverage': 2},{'With a disability': 2},33,60,17500,NOT Homogeneous,0.6,3.41626051440835
+2026-02-17 13:41:13,RW,{'Public health coverage': 2},{'With a disability': 2},1,60,17500,NOT Homogeneous,0.6,3.1335185635834932
+2026-02-17 13:41:18,RW,{'Public health coverage': 2},{'With a disability': 2},261,60,17500,NOT Homogeneous,0.6,5.302903303876519
+2026-02-17 13:41:21,RW,{'Private health insurance coverage': 2},{'With a disability': 2},13,60,17500,NOT Homogeneous,0.6,3.141976408660412
+2026-02-17 13:41:24,RW,{'Private health insurance coverage': 2},{'With a disability': 2},11,60,17500,NOT Homogeneous,0.6,3.1924555860459805
+2026-02-17 13:41:28,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,60,17500,NOT Homogeneous,0.6,3.1780416816473007
+2026-02-17 13:41:32,RW,{'Educational attainment': 20},{'With a disability': 2},211,60,17500,NOT Homogeneous,0.6,4.252418510615826
+2026-02-17 13:41:39,RW,{'Educational attainment': 20},{'With a disability': 2},627,60,17500,NOT Homogeneous,0.6,6.930260557681322
+2026-02-17 13:41:42,RW,{'Educational attainment': 20},{'With a disability': 2},48,60,17500,NOT Homogeneous,0.6,3.361702874302864
+2026-02-17 13:41:49,RW,{'Educational attainment': 21},{'With a disability': 2},544,60,17500,NOT Homogeneous,0.6,6.541706996038556
+2026-02-17 13:41:54,RW,{'Educational attainment': 21},{'With a disability': 2},269,60,17500,NOT Homogeneous,0.6,4.688039142638445
+2026-02-17 13:42:02,RW,{'Educational attainment': 21},{'With a disability': 2},865,60,17500,NOT Homogeneous,0.6,8.540528874844313
+2026-02-17 13:42:05,RW,{'Educational attainment': 22},{'With a disability': 2},17,60,17500,NOT Homogeneous,0.6,3.0821106024086475
+2026-02-17 13:42:08,RW,{'Educational attainment': 22},{'With a disability': 2},9,60,17500,NOT Homogeneous,0.6,3.059554509818554
+2026-02-17 13:42:11,RW,{'Educational attainment': 22},{'With a disability': 2},9,60,17500,NOT Homogeneous,0.6,3.040029490366578
+2026-02-17 13:42:27,RW,{'Educational attainment': 20},{'Sex': 2},1439,60,17500,Homogeneous,0.6,15.47045623883605
+2026-02-17 13:42:43,RW,{'Educational attainment': 20},{'Sex': 2},1484,60,17500,Homogeneous,0.6,15.622915165498853
+2026-02-17 13:42:59,RW,{'Educational attainment': 20},{'Sex': 2},1436,60,17500,Homogeneous,0.6,16.037009244784713
+2026-02-17 13:43:02,RW,{'Educational attainment': 21},{'Sex': 1},230,60,17500,NOT Homogeneous,0.6,3.1170146707445383
+2026-02-17 13:43:04,RW,{'Educational attainment': 21},{'Sex': 1},76,60,17500,NOT Homogeneous,0.6,2.3109297584742308
+2026-02-17 13:43:07,RW,{'Educational attainment': 21},{'Sex': 1},111,60,17500,NOT Homogeneous,0.6,2.5340447053313255
+2026-02-17 13:43:12,RW,{'Educational attainment': 20},{'Sex': 1},694,60,17500,NOT Homogeneous,0.6,5.374087868258357
+2026-02-17 13:43:14,RW,{'Educational attainment': 20},{'Sex': 1},41,60,17500,NOT Homogeneous,0.6,2.131215635687113
+2026-02-17 13:43:16,RW,{'Educational attainment': 20},{'Sex': 1},58,60,17500,NOT Homogeneous,0.6,2.183001831173897
+2026-02-17 13:43:19,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},54,60,17500,NOT Homogeneous,0.6,2.3254973236471415
+2026-02-17 13:43:21,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,60,17500,NOT Homogeneous,0.6,2.001347353681922
+2026-02-17 13:43:23,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},16,60,17500,NOT Homogeneous,0.6,2.1912388503551483
+2026-02-17 13:43:29,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},12,60,17500,NOT Homogeneous,0.6,5.410855667665601
+2026-02-17 13:43:34,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},16,60,17500,NOT Homogeneous,0.6,5.51664250716567
+2026-02-17 13:43:40,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},7,60,17500,NOT Homogeneous,0.6,5.332912562415004
+2026-02-17 13:43:45,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},103,60,17500,NOT Homogeneous,0.6,5.616737125441432
+2026-02-17 13:43:51,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},93,60,17500,NOT Homogeneous,0.6,5.482548208907247
+2026-02-17 13:43:56,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},3,60,17500,NOT Homogeneous,0.6,4.555217310786247
+2026-02-17 13:45:07,FPGrowth,{'Educational attainment': 20},{'Sex': 2},7856,60,17500,Homogeneous,0.6,70.78700049780309
+2026-02-17 13:45:10,FPGrowth,{'Educational attainment': 21},{'Sex': 1},42,60,17500,NOT Homogeneous,0.6,3.053112044930458
+2026-02-17 13:45:15,FPGrowth,{'Educational attainment': 20},{'Sex': 1},270,60,17500,NOT Homogeneous,0.6,5.093175001442432
+2026-02-17 13:45:18,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,60,17500,NOT Homogeneous,0.6,3.3709975332021713
+2026-02-17 13:45:22,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,70,17500,NOT Homogeneous,0.7,3.6284111998975277
+2026-02-17 13:45:26,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},59,70,17500,NOT Homogeneous,0.7,3.955486113205552
+2026-02-17 13:45:30,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},50,70,17500,NOT Homogeneous,0.7,3.869244948029518
+2026-02-17 13:45:34,RW,{'Public health coverage': 2},{'With a disability': 2},22,70,17500,NOT Homogeneous,0.7,3.6706065721809864
+2026-02-17 13:45:38,RW,{'Public health coverage': 2},{'With a disability': 2},60,70,17500,NOT Homogeneous,0.7,4.212443478405476
+2026-02-17 13:45:42,RW,{'Public health coverage': 2},{'With a disability': 2},11,70,17500,NOT Homogeneous,0.7,3.7679312471300364
+2026-02-17 13:45:46,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,70,17500,NOT Homogeneous,0.7,3.6706634536385536
+2026-02-17 13:45:49,RW,{'Private health insurance coverage': 2},{'With a disability': 2},20,70,17500,NOT Homogeneous,0.7,3.6653281319886446
+2026-02-17 13:45:53,RW,{'Private health insurance coverage': 2},{'With a disability': 2},41,70,17500,NOT Homogeneous,0.7,4.145956275984645
+2026-02-17 13:45:58,RW,{'Educational attainment': 20},{'With a disability': 2},160,70,17500,NOT Homogeneous,0.7,4.408581057563424
+2026-02-17 13:46:03,RW,{'Educational attainment': 20},{'With a disability': 2},190,70,17500,NOT Homogeneous,0.7,4.624091509729624
+2026-02-17 13:46:06,RW,{'Educational attainment': 20},{'With a disability': 2},38,70,17500,NOT Homogeneous,0.7,3.736914347857237
+2026-02-17 13:46:10,RW,{'Educational attainment': 21},{'With a disability': 2},16,70,17500,NOT Homogeneous,0.7,3.6459961403161287
+2026-02-17 13:46:14,RW,{'Educational attainment': 21},{'With a disability': 2},64,70,17500,NOT Homogeneous,0.7,3.963193040341139
+2026-02-17 13:46:20,RW,{'Educational attainment': 21},{'With a disability': 2},440,70,17500,NOT Homogeneous,0.7,6.195134600624442
+2026-02-17 13:46:24,RW,{'Educational attainment': 22},{'With a disability': 2},52,70,17500,NOT Homogeneous,0.7,4.002541767433286
+2026-02-17 13:46:28,RW,{'Educational attainment': 22},{'With a disability': 2},86,70,17500,NOT Homogeneous,0.7,3.9205786883831024
+2026-02-17 13:46:32,RW,{'Educational attainment': 22},{'With a disability': 2},16,70,17500,NOT Homogeneous,0.7,3.581145156174898
+2026-02-17 13:46:34,RW,{'Educational attainment': 20},{'Sex': 2},38,70,17500,NOT Homogeneous,0.7,2.478911893442273
+2026-02-17 13:46:41,RW,{'Educational attainment': 20},{'Sex': 2},738,70,17500,NOT Homogeneous,0.7,6.380138928070664
+2026-02-17 13:46:46,RW,{'Educational attainment': 20},{'Sex': 2},497,70,17500,NOT Homogeneous,0.7,5.0989555809646845
+2026-02-17 13:46:48,RW,{'Educational attainment': 21},{'Sex': 1},17,70,17500,NOT Homogeneous,0.7,2.2453546300530434
+2026-02-17 13:46:51,RW,{'Educational attainment': 21},{'Sex': 1},90,70,17500,NOT Homogeneous,0.7,2.628139963373542
+2026-02-17 13:46:54,RW,{'Educational attainment': 21},{'Sex': 1},93,70,17500,NOT Homogeneous,0.7,2.6494983565062284
+2026-02-17 13:46:58,RW,{'Educational attainment': 20},{'Sex': 1},438,70,17500,NOT Homogeneous,0.7,4.418688766658306
+2026-02-17 13:47:00,RW,{'Educational attainment': 20},{'Sex': 1},15,70,17500,NOT Homogeneous,0.7,2.2085266895592213
+2026-02-17 13:47:03,RW,{'Educational attainment': 20},{'Sex': 1},134,70,17500,NOT Homogeneous,0.7,2.982295209541917
+2026-02-17 13:47:06,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},16,70,17500,NOT Homogeneous,0.7,2.398051228374243
+2026-02-17 13:47:08,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},41,70,17500,NOT Homogeneous,0.7,2.4919987972825766
+2026-02-17 13:47:11,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,70,17500,NOT Homogeneous,0.7,2.2903685458004475
+2026-02-17 13:47:17,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},2,70,17500,NOT Homogeneous,0.7,6.063611380755901
+2026-02-17 13:47:23,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},13,70,17500,NOT Homogeneous,0.7,6.273986814543605
+2026-02-17 13:47:30,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},11,70,17500,NOT Homogeneous,0.7,6.25462232157588
+2026-02-17 13:47:38,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},256,70,17500,NOT Homogeneous,0.7,8.131722625344992
+2026-02-17 13:47:46,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},183,70,17500,NOT Homogeneous,0.7,7.397903446108103
+2026-02-17 13:47:51,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},1,70,17500,NOT Homogeneous,0.7,5.335812570527196
+2026-02-17 13:47:57,FPGrowth,{'Educational attainment': 20},{'Sex': 2},239,70,17500,NOT Homogeneous,0.7,5.453919777646661
+2026-02-17 13:48:00,FPGrowth,{'Educational attainment': 21},{'Sex': 1},7,70,17500,NOT Homogeneous,0.7,3.402558594942093
+2026-02-17 13:48:04,FPGrowth,{'Educational attainment': 20},{'Sex': 1},7,70,17500,NOT Homogeneous,0.7,3.4134701415896416
+2026-02-17 13:48:08,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},11,70,17500,NOT Homogeneous,0.7,4.194668557494879
+2026-02-17 13:48:12,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},38,70,17500,NOT Homogeneous,0.7,3.8008937779814005
+2026-02-17 13:48:16,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},48,70,17500,NOT Homogeneous,0.7,3.7893908880650997
+2026-02-17 13:48:19,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,70,17500,NOT Homogeneous,0.7,3.556607685983181
+2026-02-17 13:48:23,RW,{'Public health coverage': 2},{'With a disability': 2},1,70,17500,NOT Homogeneous,0.7,3.545005725696683
+2026-02-17 13:48:28,RW,{'Public health coverage': 2},{'With a disability': 2},272,70,17500,NOT Homogeneous,0.7,5.46556643396616
+2026-02-17 13:48:32,RW,{'Public health coverage': 2},{'With a disability': 2},36,70,17500,NOT Homogeneous,0.7,3.7649156507104635
+2026-02-17 13:48:36,RW,{'Private health insurance coverage': 2},{'With a disability': 2},35,70,17500,NOT Homogeneous,0.7,3.736326824873686
+2026-02-17 13:48:40,RW,{'Private health insurance coverage': 2},{'With a disability': 2},22,70,17500,NOT Homogeneous,0.7,3.7009640764445066
+2026-02-17 13:48:43,RW,{'Private health insurance coverage': 2},{'With a disability': 2},28,70,17500,NOT Homogeneous,0.7,3.6815947368741035
+2026-02-17 13:48:51,RW,{'Educational attainment': 20},{'With a disability': 2},603,70,17500,NOT Homogeneous,0.7,7.268747050315142
+2026-02-17 13:48:58,RW,{'Educational attainment': 20},{'With a disability': 2},571,70,17500,NOT Homogeneous,0.7,7.150430744513869
+2026-02-17 13:49:06,RW,{'Educational attainment': 20},{'With a disability': 2},740,70,17500,NOT Homogeneous,0.7,8.06536865234375
+2026-02-17 13:49:12,RW,{'Educational attainment': 21},{'With a disability': 2},360,70,17500,NOT Homogeneous,0.7,6.046188710257411
+2026-02-17 13:49:16,RW,{'Educational attainment': 21},{'With a disability': 2},13,70,17500,NOT Homogeneous,0.7,3.5054155979305506
+2026-02-17 13:49:21,RW,{'Educational attainment': 21},{'With a disability': 2},307,70,17500,NOT Homogeneous,0.7,5.525368943810463
+2026-02-17 13:49:25,RW,{'Educational attainment': 22},{'With a disability': 2},98,70,17500,NOT Homogeneous,0.7,3.974898122251034
+2026-02-17 13:49:29,RW,{'Educational attainment': 22},{'With a disability': 2},19,70,17500,NOT Homogeneous,0.7,3.537744900211692
+2026-02-17 13:49:33,RW,{'Educational attainment': 22},{'With a disability': 2},119,70,17500,NOT Homogeneous,0.7,4.231050089001656
+2026-02-17 13:49:38,RW,{'Educational attainment': 20},{'Sex': 2},406,70,17500,NOT Homogeneous,0.7,4.611485987901688
+2026-02-17 13:49:41,RW,{'Educational attainment': 20},{'Sex': 2},191,70,17500,NOT Homogeneous,0.7,3.3612027168273926
+2026-02-17 13:49:48,RW,{'Educational attainment': 20},{'Sex': 2},717,70,17500,NOT Homogeneous,0.7,6.515100298449397
+2026-02-17 13:49:50,RW,{'Educational attainment': 21},{'Sex': 1},36,70,17500,NOT Homogeneous,0.7,2.3041621390730143
+2026-02-17 13:49:54,RW,{'Educational attainment': 21},{'Sex': 1},337,70,17500,NOT Homogeneous,0.7,3.964871246367693
+2026-02-17 13:49:57,RW,{'Educational attainment': 21},{'Sex': 1},177,70,17500,NOT Homogeneous,0.7,3.064349301159382
+2026-02-17 13:50:00,RW,{'Educational attainment': 20},{'Sex': 1},217,70,17500,NOT Homogeneous,0.7,3.247685693204403
+2026-02-17 13:50:03,RW,{'Educational attainment': 20},{'Sex': 1},19,70,17500,NOT Homogeneous,0.7,2.252756729722023
+2026-02-17 13:50:06,RW,{'Educational attainment': 20},{'Sex': 1},279,70,17500,NOT Homogeneous,0.7,3.602688819169998
+2026-02-17 13:50:09,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},64,70,17500,NOT Homogeneous,0.7,2.6631959788501263
+2026-02-17 13:50:11,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},12,70,17500,NOT Homogeneous,0.7,2.344307128340006
+2026-02-17 13:50:14,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,70,17500,NOT Homogeneous,0.7,2.2933662347495556
+2026-02-17 13:50:20,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,70,17500,NOT Homogeneous,0.7,6.157653661444783
+2026-02-17 13:50:26,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},2,70,17500,NOT Homogeneous,0.7,6.151789210736752
+2026-02-17 13:50:33,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,70,17500,NOT Homogeneous,0.7,6.1842514388263226
+2026-02-17 13:50:39,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},119,70,17500,NOT Homogeneous,0.7,6.61433868855238
+2026-02-17 13:50:45,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},26,70,17500,NOT Homogeneous,0.7,5.616648506373167
+2026-02-17 13:50:51,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},12,70,17500,NOT Homogeneous,0.7,5.668776853010058
+2026-02-17 13:50:55,FPGrowth,{'Educational attainment': 20},{'Sex': 2},56,70,17500,NOT Homogeneous,0.7,4.08922209776938
+2026-02-17 13:50:58,FPGrowth,{'Educational attainment': 21},{'Sex': 1},11,70,17500,NOT Homogeneous,0.7,3.2505850065499544
+2026-02-17 13:51:04,FPGrowth,{'Educational attainment': 20},{'Sex': 1},230,70,17500,NOT Homogeneous,0.7,5.24684651196003
+2026-02-17 13:51:08,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,70,17500,NOT Homogeneous,0.7,3.957156479358673
+2026-02-17 13:51:12,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},37,70,17500,NOT Homogeneous,0.7,4.1092605125159025
+2026-02-17 13:51:18,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},258,70,17500,NOT Homogeneous,0.7,5.610210316255689
+2026-02-17 13:51:22,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},32,70,17500,NOT Homogeneous,0.7,3.9225705433636904
+2026-02-17 13:51:25,RW,{'Public health coverage': 2},{'With a disability': 2},1,70,17500,NOT Homogeneous,0.7,3.6396839283406734
+2026-02-17 13:51:29,RW,{'Public health coverage': 2},{'With a disability': 2},74,70,17500,NOT Homogeneous,0.7,3.9855020958930254
+2026-02-17 13:51:33,RW,{'Public health coverage': 2},{'With a disability': 2},36,70,17500,NOT Homogeneous,0.7,3.8098171036690474
+2026-02-17 13:51:37,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,70,17500,NOT Homogeneous,0.7,3.652655351907015
+2026-02-17 13:51:41,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,70,17500,NOT Homogeneous,0.7,3.632166240364313
+2026-02-17 13:51:44,RW,{'Private health insurance coverage': 2},{'With a disability': 2},21,70,17500,NOT Homogeneous,0.7,3.725575750693679
+2026-02-17 13:51:48,RW,{'Educational attainment': 20},{'With a disability': 2},46,70,17500,NOT Homogeneous,0.7,3.7596592754125595
+2026-02-17 13:51:56,RW,{'Educational attainment': 20},{'With a disability': 2},734,70,17500,NOT Homogeneous,0.7,8.21875880099833
+2026-02-17 13:52:04,RW,{'Educational attainment': 20},{'With a disability': 2},728,70,17500,NOT Homogeneous,0.7,7.996561426669359
+2026-02-17 13:52:09,RW,{'Educational attainment': 21},{'With a disability': 2},161,70,17500,NOT Homogeneous,0.7,4.480696514248848
+2026-02-17 13:52:15,RW,{'Educational attainment': 21},{'With a disability': 2},351,70,17500,NOT Homogeneous,0.7,5.941291658207774
+2026-02-17 13:52:21,RW,{'Educational attainment': 21},{'With a disability': 2},312,70,17500,NOT Homogeneous,0.7,5.5428902339190245
+2026-02-17 13:52:24,RW,{'Educational attainment': 22},{'With a disability': 2},9,70,17500,NOT Homogeneous,0.7,3.736586384475231
+2026-02-17 13:52:28,RW,{'Educational attainment': 22},{'With a disability': 2},16,70,17500,NOT Homogeneous,0.7,3.5778627656400204
+2026-02-17 13:52:32,RW,{'Educational attainment': 22},{'With a disability': 2},15,70,17500,NOT Homogeneous,0.7,3.595093436539173
+2026-02-17 13:52:35,RW,{'Educational attainment': 20},{'Sex': 2},154,70,17500,NOT Homogeneous,0.7,3.169935677200556
+2026-02-17 13:52:37,RW,{'Educational attainment': 20},{'Sex': 2},15,70,17500,NOT Homogeneous,0.7,2.4026932939887047
+2026-02-17 13:52:40,RW,{'Educational attainment': 20},{'Sex': 2},97,70,17500,NOT Homogeneous,0.7,2.8672117479145527
+2026-02-17 13:52:44,RW,{'Educational attainment': 21},{'Sex': 1},231,70,17500,NOT Homogeneous,0.7,3.5286591332405806
+2026-02-17 13:52:48,RW,{'Educational attainment': 21},{'Sex': 1},341,70,17500,NOT Homogeneous,0.7,3.9867591373622417
+2026-02-17 13:52:52,RW,{'Educational attainment': 21},{'Sex': 1},407,70,17500,NOT Homogeneous,0.7,4.428231852129102
+2026-02-17 13:52:55,RW,{'Educational attainment': 20},{'Sex': 1},35,70,17500,NOT Homogeneous,0.7,2.3250178433954716
+2026-02-17 13:52:57,RW,{'Educational attainment': 20},{'Sex': 1},79,70,17500,NOT Homogeneous,0.7,2.582489127293229
+2026-02-17 13:53:00,RW,{'Educational attainment': 20},{'Sex': 1},88,70,17500,NOT Homogeneous,0.7,2.6560497786849737
+2026-02-17 13:53:02,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},24,70,17500,NOT Homogeneous,0.7,2.41305367462337
+2026-02-17 13:53:05,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,70,17500,NOT Homogeneous,0.7,2.31392409093678
+2026-02-17 13:53:07,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,70,17500,NOT Homogeneous,0.7,2.3076233249157667
+2026-02-17 13:53:13,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},6,70,17500,NOT Homogeneous,0.7,6.129426755011082
+2026-02-17 13:53:20,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},42,70,17500,NOT Homogeneous,0.7,6.672299508005381
+2026-02-17 13:53:27,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},54,70,17500,NOT Homogeneous,0.7,6.746399410068989
+2026-02-17 13:53:36,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},307,70,17500,NOT Homogeneous,0.7,8.877051409333944
+2026-02-17 13:53:42,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},42,70,17500,NOT Homogeneous,0.7,5.84691228158772
+2026-02-17 13:53:48,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},10,70,17500,NOT Homogeneous,0.7,5.504185955971479
+2026-02-17 13:53:51,FPGrowth,{'Educational attainment': 20},{'Sex': 2},9,70,17500,NOT Homogeneous,0.7,3.436171468347311
+2026-02-17 13:53:56,FPGrowth,{'Educational attainment': 21},{'Sex': 1},125,70,17500,NOT Homogeneous,0.7,4.311641266569495
+2026-02-17 13:54:00,FPGrowth,{'Educational attainment': 20},{'Sex': 1},146,70,17500,NOT Homogeneous,0.7,4.473130794242024
+2026-02-17 13:54:04,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},12,70,17500,NOT Homogeneous,0.7,3.893046384677291
+2026-02-17 13:54:09,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},30,80,17500,NOT Homogeneous,0.8,4.349301937967539
+2026-02-17 13:54:13,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},57,80,17500,NOT Homogeneous,0.8,4.492610784247518
+2026-02-17 13:54:18,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},58,80,17500,NOT Homogeneous,0.8,4.738381026312709
+2026-02-17 13:54:22,RW,{'Public health coverage': 2},{'With a disability': 2},42,80,17500,NOT Homogeneous,0.8,4.210961343720555
+2026-02-17 13:54:27,RW,{'Public health coverage': 2},{'With a disability': 2},69,80,17500,NOT Homogeneous,0.8,4.339664490893483
+2026-02-17 13:54:33,RW,{'Public health coverage': 2},{'With a disability': 2},261,80,17500,NOT Homogeneous,0.8,6.277176074683666
+2026-02-17 13:54:37,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,80,17500,NOT Homogeneous,0.8,4.043216513469815
+2026-02-17 13:54:41,RW,{'Private health insurance coverage': 2},{'With a disability': 2},31,80,17500,NOT Homogeneous,0.8,4.261143706738949
+2026-02-17 13:54:46,RW,{'Private health insurance coverage': 2},{'With a disability': 2},28,80,17500,NOT Homogeneous,0.8,4.179046142846346
+2026-02-17 13:54:50,RW,{'Educational attainment': 20},{'With a disability': 2},48,80,17500,NOT Homogeneous,0.8,4.193379808217287
+2026-02-17 13:54:54,RW,{'Educational attainment': 20},{'With a disability': 2},23,80,17500,NOT Homogeneous,0.8,4.0640355329960585
+2026-02-17 13:55:02,RW,{'Educational attainment': 20},{'With a disability': 2},538,80,17500,NOT Homogeneous,0.8,7.5482533145695925
+2026-02-17 13:55:06,RW,{'Educational attainment': 21},{'With a disability': 2},119,80,17500,NOT Homogeneous,0.8,4.5966359712183475
+2026-02-17 13:55:12,RW,{'Educational attainment': 21},{'With a disability': 2},204,80,17500,NOT Homogeneous,0.8,5.239706290885806
+2026-02-17 13:55:16,RW,{'Educational attainment': 21},{'With a disability': 2},32,80,17500,NOT Homogeneous,0.8,4.129112934693694
+2026-02-17 13:55:20,RW,{'Educational attainment': 22},{'With a disability': 2},9,80,17500,NOT Homogeneous,0.8,3.9788273237645626
+2026-02-17 13:55:25,RW,{'Educational attainment': 22},{'With a disability': 2},150,80,17500,NOT Homogeneous,0.8,4.95824134722352
+2026-02-17 13:55:29,RW,{'Educational attainment': 22},{'With a disability': 2},9,80,17500,NOT Homogeneous,0.8,4.011886266991496
+2026-02-17 13:55:32,RW,{'Educational attainment': 20},{'Sex': 2},117,80,17500,NOT Homogeneous,0.8,3.260790953412652
+2026-02-17 13:55:38,RW,{'Educational attainment': 20},{'Sex': 2},468,80,17500,NOT Homogeneous,0.8,5.561704566702247
+2026-02-17 13:55:43,RW,{'Educational attainment': 20},{'Sex': 2},353,80,17500,NOT Homogeneous,0.8,4.656084634363651
+2026-02-17 13:55:46,RW,{'Educational attainment': 21},{'Sex': 1},114,80,17500,NOT Homogeneous,0.8,3.029177015647292
+2026-02-17 13:55:51,RW,{'Educational attainment': 21},{'Sex': 1},574,80,17500,NOT Homogeneous,0.8,5.6455135848373175
+2026-02-17 13:55:54,RW,{'Educational attainment': 21},{'Sex': 1},13,80,17500,NOT Homogeneous,0.8,2.486482484266162
+2026-02-17 13:55:57,RW,{'Educational attainment': 20},{'Sex': 1},122,80,17500,NOT Homogeneous,0.8,3.197045946493745
+2026-02-17 13:56:01,RW,{'Educational attainment': 20},{'Sex': 1},229,80,17500,NOT Homogeneous,0.8,3.703815810382366
+2026-02-17 13:56:03,RW,{'Educational attainment': 20},{'Sex': 1},20,80,17500,NOT Homogeneous,0.8,2.5249241571873426
+2026-02-17 13:56:06,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,80,17500,NOT Homogeneous,0.8,2.550838841125369
+2026-02-17 13:56:09,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},31,80,17500,NOT Homogeneous,0.8,2.6861772760748863
+2026-02-17 13:56:11,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},27,80,17500,NOT Homogeneous,0.8,2.7422957830131054
+2026-02-17 13:56:18,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,80,17500,NOT Homogeneous,0.8,6.816481836140156
+2026-02-17 13:56:25,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},10,80,17500,NOT Homogeneous,0.8,6.974492771551013
+2026-02-17 13:56:33,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},7,80,17500,NOT Homogeneous,0.8,6.915709568187594
+2026-02-17 13:56:41,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},156,80,17500,NOT Homogeneous,0.8,7.909637613222003
+2026-02-17 13:56:52,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},500,80,17500,NOT Homogeneous,0.8,11.6002965439111
+2026-02-17 13:56:59,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},39,80,17500,NOT Homogeneous,0.8,6.60523134842515
+2026-02-17 13:57:04,FPGrowth,{'Educational attainment': 20},{'Sex': 2},64,80,17500,NOT Homogeneous,0.8,4.324782479554415
+2026-02-17 13:57:09,FPGrowth,{'Educational attainment': 21},{'Sex': 1},161,80,17500,NOT Homogeneous,0.8,5.124763449653983
+2026-02-17 13:57:13,FPGrowth,{'Educational attainment': 20},{'Sex': 1},83,80,17500,NOT Homogeneous,0.8,4.303772920742631
+2026-02-17 13:57:17,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},5,80,17500,NOT Homogeneous,0.8,4.14306235127151
+2026-02-17 13:57:23,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},142,80,17500,NOT Homogeneous,0.8,4.8991388492286205
+2026-02-17 13:57:27,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},35,80,17500,NOT Homogeneous,0.8,4.305946001783013
+2026-02-17 13:57:31,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,80,17500,NOT Homogeneous,0.8,3.942294569686055
+2026-02-17 13:57:36,RW,{'Public health coverage': 2},{'With a disability': 2},108,80,17500,NOT Homogeneous,0.8,4.494871536269784
+2026-02-17 13:57:40,RW,{'Public health coverage': 2},{'With a disability': 2},57,80,17500,NOT Homogeneous,0.8,4.42912619933486
+2026-02-17 13:57:44,RW,{'Public health coverage': 2},{'With a disability': 2},60,80,17500,NOT Homogeneous,0.8,4.491910764947534
+2026-02-17 13:57:49,RW,{'Private health insurance coverage': 2},{'With a disability': 2},96,80,17500,NOT Homogeneous,0.8,4.636164907366037
+2026-02-17 13:57:53,RW,{'Private health insurance coverage': 2},{'With a disability': 2},27,80,17500,NOT Homogeneous,0.8,4.122974142432213
+2026-02-17 13:57:58,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,80,17500,NOT Homogeneous,0.8,4.081381605938077
+2026-02-17 13:58:03,RW,{'Educational attainment': 20},{'With a disability': 2},133,80,17500,NOT Homogeneous,0.8,4.752344943583012
+2026-02-17 13:58:10,RW,{'Educational attainment': 20},{'With a disability': 2},487,80,17500,NOT Homogeneous,0.8,7.052024142816663
+2026-02-17 13:58:15,RW,{'Educational attainment': 20},{'With a disability': 2},150,80,17500,NOT Homogeneous,0.8,4.9191122483462095
+2026-02-17 13:58:23,RW,{'Educational attainment': 21},{'With a disability': 2},656,80,17500,NOT Homogeneous,0.8,8.7182720862329
+2026-02-17 13:58:32,RW,{'Educational attainment': 21},{'With a disability': 2},577,80,17500,NOT Homogeneous,0.8,8.135521015152335
+2026-02-17 13:58:41,RW,{'Educational attainment': 21},{'With a disability': 2},620,80,17500,NOT Homogeneous,0.8,9.119477456435561
+2026-02-17 13:58:45,RW,{'Educational attainment': 22},{'With a disability': 2},9,80,17500,NOT Homogeneous,0.8,3.9775190763175488
+2026-02-17 13:58:49,RW,{'Educational attainment': 22},{'With a disability': 2},49,80,17500,NOT Homogeneous,0.8,4.23464441113174
+2026-02-17 13:58:53,RW,{'Educational attainment': 22},{'With a disability': 2},1,80,17500,NOT Homogeneous,0.8,3.933413401246071
+2026-02-17 13:58:56,RW,{'Educational attainment': 20},{'Sex': 2},103,80,17500,NOT Homogeneous,0.8,3.1902481243014336
+2026-02-17 13:58:59,RW,{'Educational attainment': 20},{'Sex': 2},18,80,17500,NOT Homogeneous,0.8,2.6737950518727303
+2026-02-17 13:59:05,RW,{'Educational attainment': 20},{'Sex': 2},558,80,17500,NOT Homogeneous,0.8,6.067621285095811
+2026-02-17 13:59:08,RW,{'Educational attainment': 21},{'Sex': 1},43,80,17500,NOT Homogeneous,0.8,2.6633457206189632
+2026-02-17 13:59:11,RW,{'Educational attainment': 21},{'Sex': 1},206,80,17500,NOT Homogeneous,0.8,3.5225522741675377
+2026-02-17 13:59:14,RW,{'Educational attainment': 21},{'Sex': 1},90,80,17500,NOT Homogeneous,0.8,3.0222604293376207
+2026-02-17 13:59:18,RW,{'Educational attainment': 20},{'Sex': 1},213,80,17500,NOT Homogeneous,0.8,3.684745816513896
+2026-02-17 13:59:21,RW,{'Educational attainment': 20},{'Sex': 1},15,80,17500,NOT Homogeneous,0.8,2.506624434143305
+2026-02-17 13:59:24,RW,{'Educational attainment': 20},{'Sex': 1},80,80,17500,NOT Homogeneous,0.8,2.8981949239969254
+2026-02-17 13:59:27,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},53,80,17500,NOT Homogeneous,0.8,2.861742816865444
+2026-02-17 13:59:29,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},59,80,17500,NOT Homogeneous,0.8,2.895538529381156
+2026-02-17 13:59:32,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},28,80,17500,NOT Homogeneous,0.8,2.7401932552456856
+2026-02-17 13:59:39,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},19,80,17500,NOT Homogeneous,0.8,7.08426964469254
+2026-02-17 13:59:47,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},18,80,17500,NOT Homogeneous,0.8,7.068159595131874
+2026-02-17 13:59:54,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,80,17500,NOT Homogeneous,0.8,6.896421989426017
+2026-02-17 14:00:01,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},54,80,17500,NOT Homogeneous,0.8,6.668346529826522
+2026-02-17 14:00:14,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},605,80,17500,NOT Homogeneous,0.8,12.925073498860002
+2026-02-17 14:00:20,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},21,80,17500,NOT Homogeneous,0.8,6.349680315703154
+2026-02-17 14:00:25,FPGrowth,{'Educational attainment': 20},{'Sex': 2},86,80,17500,NOT Homogeneous,0.8,4.743226176127791
+2026-02-17 14:00:30,FPGrowth,{'Educational attainment': 21},{'Sex': 1},121,80,17500,NOT Homogeneous,0.8,4.574209112673998
+2026-02-17 14:00:35,FPGrowth,{'Educational attainment': 20},{'Sex': 1},176,80,17500,NOT Homogeneous,0.8,5.2101838402450085
+2026-02-17 14:00:40,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},13,80,17500,NOT Homogeneous,0.8,4.3260332476347685
+2026-02-17 14:00:44,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},27,80,17500,NOT Homogeneous,0.8,4.5004678145051
+2026-02-17 14:00:49,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},119,80,17500,NOT Homogeneous,0.8,4.981863310560584
+2026-02-17 14:00:55,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},191,80,17500,NOT Homogeneous,0.8,5.788186211138964
+2026-02-17 14:01:00,RW,{'Public health coverage': 2},{'With a disability': 2},56,80,17500,NOT Homogeneous,0.8,4.582050703465939
+2026-02-17 14:01:08,RW,{'Public health coverage': 2},{'With a disability': 2},501,80,17500,NOT Homogeneous,0.8,8.149321535602212
+2026-02-17 14:01:13,RW,{'Public health coverage': 2},{'With a disability': 2},136,80,17500,NOT Homogeneous,0.8,5.096177475526929
+2026-02-17 14:01:18,RW,{'Private health insurance coverage': 2},{'With a disability': 2},37,80,17500,NOT Homogeneous,0.8,4.298098022118211
+2026-02-17 14:01:22,RW,{'Private health insurance coverage': 2},{'With a disability': 2},34,80,17500,NOT Homogeneous,0.8,4.36979603394866
+2026-02-17 14:01:26,RW,{'Private health insurance coverage': 2},{'With a disability': 2},9,80,17500,NOT Homogeneous,0.8,4.037388984113932
+2026-02-17 14:01:35,RW,{'Educational attainment': 20},{'With a disability': 2},705,80,17500,NOT Homogeneous,0.8,8.303812066093087
+2026-02-17 14:01:42,RW,{'Educational attainment': 20},{'With a disability': 2},465,80,17500,NOT Homogeneous,0.8,7.0485239047557116
+2026-02-17 14:01:53,RW,{'Educational attainment': 20},{'With a disability': 2},1043,80,17500,NOT Homogeneous,0.8,10.983427412807941
+2026-02-17 14:02:00,RW,{'Educational attainment': 21},{'With a disability': 2},441,80,17500,NOT Homogeneous,0.8,6.825980985537171
+2026-02-17 14:02:05,RW,{'Educational attainment': 21},{'With a disability': 2},175,80,17500,NOT Homogeneous,0.8,5.200016498565674
+2026-02-17 14:02:10,RW,{'Educational attainment': 21},{'With a disability': 2},192,80,17500,NOT Homogeneous,0.8,5.218885097652674
+2026-02-17 14:02:14,RW,{'Educational attainment': 22},{'With a disability': 2},20,80,17500,NOT Homogeneous,0.8,3.9982470981776714
+2026-02-17 14:02:18,RW,{'Educational attainment': 22},{'With a disability': 2},25,80,17500,NOT Homogeneous,0.8,4.010230325162411
+2026-02-17 14:02:22,RW,{'Educational attainment': 22},{'With a disability': 2},38,80,17500,NOT Homogeneous,0.8,4.1614736672490835
+2026-02-17 14:02:31,RW,{'Educational attainment': 20},{'Sex': 2},997,80,17500,NOT Homogeneous,0.8,8.577403049916029
+2026-02-17 14:02:40,RW,{'Educational attainment': 20},{'Sex': 2},1044,80,17500,NOT Homogeneous,0.8,9.237676981836557
+2026-02-17 14:02:49,RW,{'Educational attainment': 20},{'Sex': 2},954,80,17500,NOT Homogeneous,0.8,8.350790364667773
+2026-02-17 14:02:51,RW,{'Educational attainment': 21},{'Sex': 1},39,80,17500,NOT Homogeneous,0.8,2.614732740446925
+2026-02-17 14:02:54,RW,{'Educational attainment': 21},{'Sex': 1},131,80,17500,NOT Homogeneous,0.8,3.0868442486971617
+2026-02-17 14:02:57,RW,{'Educational attainment': 21},{'Sex': 1},31,80,17500,NOT Homogeneous,0.8,2.606520986184478
+2026-02-17 14:03:01,RW,{'Educational attainment': 20},{'Sex': 1},230,80,17500,NOT Homogeneous,0.8,3.7109883539378643
+2026-02-17 14:03:05,RW,{'Educational attainment': 20},{'Sex': 1},309,80,17500,NOT Homogeneous,0.8,4.06593213044107
+2026-02-17 14:03:11,RW,{'Educational attainment': 20},{'Sex': 1},797,80,17500,NOT Homogeneous,0.8,6.551283059641719
+2026-02-17 14:03:14,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},27,80,17500,NOT Homogeneous,0.8,2.709735130891204
+2026-02-17 14:03:17,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},26,80,17500,NOT Homogeneous,0.8,2.6978251226246357
+2026-02-17 14:03:20,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},37,80,17500,NOT Homogeneous,0.8,2.827917041257024
+2026-02-17 14:03:27,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,80,17500,NOT Homogeneous,0.8,6.854441374540329
+2026-02-17 14:03:34,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},44,80,17500,NOT Homogeneous,0.8,7.318994892761111
+2026-02-17 14:03:41,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},16,80,17500,NOT Homogeneous,0.8,6.9957672990858555
+2026-02-17 14:03:51,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},272,80,17500,NOT Homogeneous,0.8,8.901124889031053
+2026-02-17 14:03:58,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},127,80,17500,NOT Homogeneous,0.8,7.5609308034181595
+2026-02-17 14:04:05,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},2,80,17500,NOT Homogeneous,0.8,6.096092574298382
+2026-02-17 14:04:15,FPGrowth,{'Educational attainment': 20},{'Sex': 2},746,80,17500,NOT Homogeneous,0.8,10.316258450970054
+2026-02-17 14:04:19,FPGrowth,{'Educational attainment': 21},{'Sex': 1},12,80,17500,NOT Homogeneous,0.8,3.685374826192856
+2026-02-17 14:04:24,FPGrowth,{'Educational attainment': 20},{'Sex': 1},167,80,17500,NOT Homogeneous,0.8,5.266470685601234
+2026-02-17 14:04:29,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},42,80,17500,NOT Homogeneous,0.8,4.744780864566565
+2026-02-17 14:04:34,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},72,90,17500,NOT Homogeneous,0.9,5.104658640921116
+2026-02-17 14:04:39,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},15,90,17500,NOT Homogeneous,0.9,4.522809136658907
+2026-02-17 14:04:43,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.482943918555975
+2026-02-17 14:04:49,RW,{'Public health coverage': 2},{'With a disability': 2},94,90,17500,NOT Homogeneous,0.9,5.3173204977065325
+2026-02-17 14:04:54,RW,{'Public health coverage': 2},{'With a disability': 2},119,90,17500,NOT Homogeneous,0.9,5.354249568656087
+2026-02-17 14:05:00,RW,{'Public health coverage': 2},{'With a disability': 2},154,90,17500,NOT Homogeneous,0.9,5.638028878718615
+2026-02-17 14:05:05,RW,{'Private health insurance coverage': 2},{'With a disability': 2},13,90,17500,NOT Homogeneous,0.9,4.46362978219986
+2026-02-17 14:05:09,RW,{'Private health insurance coverage': 2},{'With a disability': 2},57,90,17500,NOT Homogeneous,0.9,4.800550634041429
+2026-02-17 14:05:14,RW,{'Private health insurance coverage': 2},{'With a disability': 2},80,90,17500,NOT Homogeneous,0.9,5.002315253019333
+2026-02-17 14:05:23,RW,{'Educational attainment': 20},{'With a disability': 2},579,90,17500,NOT Homogeneous,0.9,8.510412810370326
+2026-02-17 14:05:28,RW,{'Educational attainment': 20},{'With a disability': 2},84,90,17500,NOT Homogeneous,0.9,4.86477329954505
+2026-02-17 14:05:34,RW,{'Educational attainment': 20},{'With a disability': 2},252,90,17500,NOT Homogeneous,0.9,6.072850855067372
+2026-02-17 14:05:44,RW,{'Educational attainment': 21},{'With a disability': 2},700,90,17500,NOT Homogeneous,0.9,9.680630221962929
+2026-02-17 14:05:49,RW,{'Educational attainment': 21},{'With a disability': 2},56,90,17500,NOT Homogeneous,0.9,4.651486387476325
+2026-02-17 14:05:57,RW,{'Educational attainment': 21},{'With a disability': 2},604,90,17500,NOT Homogeneous,0.9,8.833522634580731
+2026-02-17 14:06:03,RW,{'Educational attainment': 22},{'With a disability': 2},149,90,17500,NOT Homogeneous,0.9,5.288796624168754
+2026-02-17 14:06:08,RW,{'Educational attainment': 22},{'With a disability': 2},43,90,17500,NOT Homogeneous,0.9,4.682183610275388
+2026-02-17 14:06:12,RW,{'Educational attainment': 22},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.420727701857686
+2026-02-17 14:06:16,RW,{'Educational attainment': 20},{'Sex': 2},82,90,17500,NOT Homogeneous,0.9,3.494091995060444
+2026-02-17 14:06:20,RW,{'Educational attainment': 20},{'Sex': 2},217,90,17500,NOT Homogeneous,0.9,4.189245879650116
+2026-02-17 14:06:24,RW,{'Educational attainment': 20},{'Sex': 2},198,90,17500,NOT Homogeneous,0.9,3.939650844782591
+2026-02-17 14:06:29,RW,{'Educational attainment': 21},{'Sex': 1},372,90,17500,NOT Homogeneous,0.9,5.107210531830788
+2026-02-17 14:06:33,RW,{'Educational attainment': 21},{'Sex': 1},241,90,17500,NOT Homogeneous,0.9,4.132701955735683
+2026-02-17 14:06:39,RW,{'Educational attainment': 21},{'Sex': 1},486,90,17500,NOT Homogeneous,0.9,5.56620061583817
+2026-02-17 14:06:42,RW,{'Educational attainment': 20},{'Sex': 1},39,90,17500,NOT Homogeneous,0.9,2.9143622182309628
+2026-02-17 14:06:46,RW,{'Educational attainment': 20},{'Sex': 1},269,90,17500,NOT Homogeneous,0.9,4.2093112077564
+2026-02-17 14:06:49,RW,{'Educational attainment': 20},{'Sex': 1},61,90,17500,NOT Homogeneous,0.9,3.0261104684323072
+2026-02-17 14:06:52,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},27,90,17500,NOT Homogeneous,0.9,3.045620573684573
+2026-02-17 14:06:55,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},14,90,17500,NOT Homogeneous,0.9,2.862138668075204
+2026-02-17 14:06:58,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},51,90,17500,NOT Homogeneous,0.9,3.0856680665165186
+2026-02-17 14:07:06,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},30,90,17500,NOT Homogeneous,0.9,7.934505602344871
+2026-02-17 14:07:15,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},44,90,17500,NOT Homogeneous,0.9,8.263065246865153
+2026-02-17 14:07:23,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,7.839598147198558
+2026-02-17 14:07:33,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},233,90,17500,NOT Homogeneous,0.9,9.896932201460004
+2026-02-17 14:07:44,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},308,90,17500,NOT Homogeneous,0.9,10.44694004394114
+2026-02-17 14:07:51,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},10,90,17500,NOT Homogeneous,0.9,6.850571068003774
+2026-02-17 14:08:18,FPGrowth,{'Educational attainment': 20},{'Sex': 2},2340,90,17500,NOT Homogeneous,0.9,27.015333347022533
+2026-02-17 14:08:22,FPGrowth,{'Educational attainment': 21},{'Sex': 1},14,90,17500,NOT Homogeneous,0.9,4.06507820636034
+2026-02-17 14:08:27,FPGrowth,{'Educational attainment': 20},{'Sex': 1},116,90,17500,NOT Homogeneous,0.9,5.0259516183286905
+2026-02-17 14:08:32,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,90,17500,NOT Homogeneous,0.9,4.746305225417018
+2026-02-17 14:08:37,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},13,90,17500,NOT Homogeneous,0.9,4.4860919415950775
+2026-02-17 14:08:42,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},18,90,17500,NOT Homogeneous,0.9,4.598181538283825
+2026-02-17 14:08:47,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},107,90,17500,NOT Homogeneous,0.9,5.361212098971009
+2026-02-17 14:08:54,RW,{'Public health coverage': 2},{'With a disability': 2},343,90,17500,NOT Homogeneous,0.9,6.791911466047168
+2026-02-17 14:09:02,RW,{'Public health coverage': 2},{'With a disability': 2},455,90,17500,NOT Homogeneous,0.9,8.394029960036278
+2026-02-17 14:09:07,RW,{'Public health coverage': 2},{'With a disability': 2},92,90,17500,NOT Homogeneous,0.9,5.093697868287563
+2026-02-17 14:09:13,RW,{'Private health insurance coverage': 2},{'With a disability': 2},65,90,17500,NOT Homogeneous,0.9,4.919989848509431
+2026-02-17 14:09:17,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,90,17500,NOT Homogeneous,0.9,4.408070461824536
+2026-02-17 14:09:22,RW,{'Private health insurance coverage': 2},{'With a disability': 2},14,90,17500,NOT Homogeneous,0.9,4.511249611154199
+2026-02-17 14:09:31,RW,{'Educational attainment': 20},{'With a disability': 2},711,90,17500,NOT Homogeneous,0.9,9.481945918872952
+2026-02-17 14:09:38,RW,{'Educational attainment': 20},{'With a disability': 2},287,90,17500,NOT Homogeneous,0.9,6.462238265201449
+2026-02-17 14:09:50,RW,{'Educational attainment': 20},{'With a disability': 2},1047,90,17500,NOT Homogeneous,0.9,12.5411526132375
+2026-02-17 14:09:58,RW,{'Educational attainment': 21},{'With a disability': 2},425,90,17500,NOT Homogeneous,0.9,7.429322324693203
+2026-02-17 14:10:04,RW,{'Educational attainment': 21},{'With a disability': 2},288,90,17500,NOT Homogeneous,0.9,6.439544450491667
+2026-02-17 14:10:10,RW,{'Educational attainment': 21},{'With a disability': 2},196,90,17500,NOT Homogeneous,0.9,5.698693636804819
+2026-02-17 14:10:15,RW,{'Educational attainment': 22},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.424668123945594
+2026-02-17 14:10:19,RW,{'Educational attainment': 22},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.394713992252946
+2026-02-17 14:10:24,RW,{'Educational attainment': 22},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.435150895267725
+2026-02-17 14:10:30,RW,{'Educational attainment': 20},{'Sex': 2},519,90,17500,NOT Homogeneous,0.9,5.998632363975048
+2026-02-17 14:10:35,RW,{'Educational attainment': 20},{'Sex': 2},411,90,17500,NOT Homogeneous,0.9,5.373975329101086
+2026-02-17 14:10:42,RW,{'Educational attainment': 20},{'Sex': 2},672,90,17500,NOT Homogeneous,0.9,7.012503817677498
+2026-02-17 14:10:46,RW,{'Educational attainment': 21},{'Sex': 1},273,90,17500,NOT Homogeneous,0.9,4.1449015866965055
+2026-02-17 14:10:52,RW,{'Educational attainment': 21},{'Sex': 1},436,90,17500,NOT Homogeneous,0.9,5.2210150975733995
+2026-02-17 14:10:55,RW,{'Educational attainment': 21},{'Sex': 1},184,90,17500,NOT Homogeneous,0.9,3.7101508788764477
+2026-02-17 14:11:00,RW,{'Educational attainment': 20},{'Sex': 1},278,90,17500,NOT Homogeneous,0.9,4.3159266747534275
+2026-02-17 14:11:05,RW,{'Educational attainment': 20},{'Sex': 1},534,90,17500,NOT Homogeneous,0.9,5.740023551508784
+2026-02-17 14:11:09,RW,{'Educational attainment': 20},{'Sex': 1},209,90,17500,NOT Homogeneous,0.9,4.017815480008721
+2026-02-17 14:11:13,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},43,90,17500,NOT Homogeneous,0.9,3.0838373005390167
+2026-02-17 14:11:15,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,90,17500,NOT Homogeneous,0.9,2.7848002333194017
+2026-02-17 14:11:18,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},15,90,17500,NOT Homogeneous,0.9,2.9309118147939444
+2026-02-17 14:11:27,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},10,90,17500,NOT Homogeneous,0.9,8.252788200974464
+2026-02-17 14:11:35,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},43,90,17500,NOT Homogeneous,0.9,8.201073987409472
+2026-02-17 14:11:43,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},4,90,17500,NOT Homogeneous,0.9,7.622069479897618
+2026-02-17 14:11:59,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},716,90,17500,NOT Homogeneous,0.9,15.673954799771309
+2026-02-17 14:12:06,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},37,90,17500,NOT Homogeneous,0.9,7.226044576615095
+2026-02-17 14:12:14,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},17,90,17500,NOT Homogeneous,0.9,7.043211502954364
+2026-02-17 14:12:19,FPGrowth,{'Educational attainment': 20},{'Sex': 2},92,90,17500,NOT Homogeneous,0.9,5.132535140961409
+2026-02-17 14:12:23,FPGrowth,{'Educational attainment': 21},{'Sex': 1},4,90,17500,NOT Homogeneous,0.9,4.047056220471859
+2026-02-17 14:12:27,FPGrowth,{'Educational attainment': 20},{'Sex': 1},10,90,17500,NOT Homogeneous,0.9,4.093628568574786
+2026-02-17 14:12:32,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},10,90,17500,NOT Homogeneous,0.9,4.683791248127818
+2026-02-17 14:12:37,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},39,90,17500,NOT Homogeneous,0.9,4.760093219578266
+2026-02-17 14:12:42,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},27,90,17500,NOT Homogeneous,0.9,4.5460685938596725
+2026-02-17 14:12:46,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,90,17500,NOT Homogeneous,0.9,4.53614710830152
+2026-02-17 14:12:52,RW,{'Public health coverage': 2},{'With a disability': 2},86,90,17500,NOT Homogeneous,0.9,4.975098572671413
+2026-02-17 14:12:58,RW,{'Public health coverage': 2},{'With a disability': 2},214,90,17500,NOT Homogeneous,0.9,6.012038415297866
+2026-02-17 14:13:02,RW,{'Public health coverage': 2},{'With a disability': 2},22,90,17500,NOT Homogeneous,0.9,4.724264374002814
+2026-02-17 14:13:07,RW,{'Private health insurance coverage': 2},{'With a disability': 2},39,90,17500,NOT Homogeneous,0.9,4.560952739790082
+2026-02-17 14:13:11,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,90,17500,NOT Homogeneous,0.9,4.362285183742642
+2026-02-17 14:13:16,RW,{'Private health insurance coverage': 2},{'With a disability': 2},47,90,17500,NOT Homogeneous,0.9,4.655400471761823
+2026-02-17 14:13:29,RW,{'Educational attainment': 20},{'With a disability': 2},1175,90,17500,NOT Homogeneous,0.9,12.787396159023046
+2026-02-17 14:13:35,RW,{'Educational attainment': 20},{'With a disability': 2},264,90,17500,NOT Homogeneous,0.9,6.1503937896341085
+2026-02-17 14:13:46,RW,{'Educational attainment': 20},{'With a disability': 2},923,90,17500,NOT Homogeneous,0.9,10.58651264384389
+2026-02-17 14:13:58,RW,{'Educational attainment': 21},{'With a disability': 2},927,90,17500,NOT Homogeneous,0.9,11.610919268801808
+2026-02-17 14:14:03,RW,{'Educational attainment': 21},{'With a disability': 2},88,90,17500,NOT Homogeneous,0.9,4.919357314705849
+2026-02-17 14:14:13,RW,{'Educational attainment': 21},{'With a disability': 2},839,90,17500,NOT Homogeneous,0.9,10.27823648788035
+2026-02-17 14:14:18,RW,{'Educational attainment': 22},{'With a disability': 2},37,90,17500,NOT Homogeneous,0.9,4.504361465573311
+2026-02-17 14:14:22,RW,{'Educational attainment': 22},{'With a disability': 2},16,90,17500,NOT Homogeneous,0.9,4.383526552468538
+2026-02-17 14:14:26,RW,{'Educational attainment': 22},{'With a disability': 2},1,90,17500,NOT Homogeneous,0.9,4.34689749032259
+2026-02-17 14:14:33,RW,{'Educational attainment': 20},{'Sex': 2},541,90,17500,NOT Homogeneous,0.9,6.028042934834957
+2026-02-17 14:14:36,RW,{'Educational attainment': 20},{'Sex': 2},109,90,17500,NOT Homogeneous,0.9,3.455894660204649
+2026-02-17 14:14:40,RW,{'Educational attainment': 20},{'Sex': 2},198,90,17500,NOT Homogeneous,0.9,3.9283198453485966
+2026-02-17 14:14:43,RW,{'Educational attainment': 21},{'Sex': 1},101,90,17500,NOT Homogeneous,0.9,3.231874817982316
+2026-02-17 14:14:46,RW,{'Educational attainment': 21},{'Sex': 1},32,90,17500,NOT Homogeneous,0.9,2.8450100645422935
+2026-02-17 14:14:49,RW,{'Educational attainment': 21},{'Sex': 1},93,90,17500,NOT Homogeneous,0.9,3.1530277840793133
+2026-02-17 14:14:52,RW,{'Educational attainment': 20},{'Sex': 1},15,90,17500,NOT Homogeneous,0.9,2.7558705620467663
+2026-02-17 14:14:57,RW,{'Educational attainment': 20},{'Sex': 1},470,90,17500,NOT Homogeneous,0.9,5.296018591150641
+2026-02-17 14:15:00,RW,{'Educational attainment': 20},{'Sex': 1},54,90,17500,NOT Homogeneous,0.9,2.980186026543379
+2026-02-17 14:15:03,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,90,17500,NOT Homogeneous,0.9,2.7786379028111696
+2026-02-17 14:15:06,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},24,90,17500,NOT Homogeneous,0.9,3.080516891553998
+2026-02-17 14:15:09,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,90,17500,NOT Homogeneous,0.9,2.906369812786579
+2026-02-17 14:15:17,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},4,90,17500,NOT Homogeneous,0.9,7.786383111029863
+2026-02-17 14:15:26,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},29,90,17500,NOT Homogeneous,0.9,7.962245486676693
+2026-02-17 14:15:34,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},28,90,17500,NOT Homogeneous,0.9,7.965635612607002
+2026-02-17 14:15:41,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},59,90,17500,NOT Homogeneous,0.9,7.478059740737081
+2026-02-17 14:15:53,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},390,90,17500,NOT Homogeneous,0.9,11.434702005237341
+2026-02-17 14:16:00,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},14,90,17500,NOT Homogeneous,0.9,6.960860464721918
+2026-02-17 14:16:11,FPGrowth,{'Educational attainment': 20},{'Sex': 2},619,90,17500,NOT Homogeneous,0.9,10.195029569789767
+2026-02-17 14:16:15,FPGrowth,{'Educational attainment': 21},{'Sex': 1},54,90,17500,NOT Homogeneous,0.9,4.435915106907487
+2026-02-17 14:16:20,FPGrowth,{'Educational attainment': 20},{'Sex': 1},14,90,17500,NOT Homogeneous,0.9,4.316158689558506
+2026-02-17 14:16:24,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},10,90,17500,NOT Homogeneous,0.9,4.666656348854303
+2026-02-17 14:16:30,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},64,100,17500,NOT Homogeneous,1.0,5.315268503502011
+2026-02-17 14:16:35,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},15,100,17500,NOT Homogeneous,1.0,4.980607524514198
+2026-02-17 14:16:43,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},312,100,17500,NOT Homogeneous,1.0,7.732544329017401
+2026-02-17 14:16:48,RW,{'Public health coverage': 2},{'With a disability': 2},17,100,17500,NOT Homogeneous,1.0,5.0154511742293835
+2026-02-17 14:16:53,RW,{'Public health coverage': 2},{'With a disability': 2},73,100,17500,NOT Homogeneous,1.0,5.487225521355867
+2026-02-17 14:17:02,RW,{'Public health coverage': 2},{'With a disability': 2},473,100,17500,NOT Homogeneous,1.0,9.15730376727879
+2026-02-17 14:17:08,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,4.867462135851383
+2026-02-17 14:17:12,RW,{'Private health insurance coverage': 2},{'With a disability': 2},14,100,17500,NOT Homogeneous,1.0,4.85114105977118
+2026-02-17 14:17:17,RW,{'Private health insurance coverage': 2},{'With a disability': 2},34,100,17500,NOT Homogeneous,1.0,5.006170202046633
+2026-02-17 14:17:31,RW,{'Educational attainment': 20},{'With a disability': 2},1130,100,17500,NOT Homogeneous,1.0,13.166993502527475
+2026-02-17 14:17:43,RW,{'Educational attainment': 20},{'With a disability': 2},852,100,17500,NOT Homogeneous,1.0,11.737759433686733
+2026-02-17 14:17:48,RW,{'Educational attainment': 20},{'With a disability': 2},46,100,17500,NOT Homogeneous,1.0,5.22605811432004
+2026-02-17 14:17:53,RW,{'Educational attainment': 21},{'With a disability': 2},41,100,17500,NOT Homogeneous,1.0,5.19094742834568
+2026-02-17 14:18:01,RW,{'Educational attainment': 21},{'With a disability': 2},426,100,17500,NOT Homogeneous,1.0,7.8040901981294155
+2026-02-17 14:18:06,RW,{'Educational attainment': 21},{'With a disability': 2},88,100,17500,NOT Homogeneous,1.0,5.367777543142438
+2026-02-17 14:18:12,RW,{'Educational attainment': 22},{'With a disability': 2},44,100,17500,NOT Homogeneous,1.0,5.050627622753382
+2026-02-17 14:18:17,RW,{'Educational attainment': 22},{'With a disability': 2},9,100,17500,NOT Homogeneous,1.0,4.803934821859002
+2026-02-17 14:18:22,RW,{'Educational attainment': 22},{'With a disability': 2},54,100,17500,NOT Homogeneous,1.0,5.103701954707503
+2026-02-17 14:18:26,RW,{'Educational attainment': 20},{'Sex': 2},131,100,17500,NOT Homogeneous,1.0,3.796543788164854
+2026-02-17 14:18:30,RW,{'Educational attainment': 20},{'Sex': 2},169,100,17500,NOT Homogeneous,1.0,4.1503558196127415
+2026-02-17 14:18:39,RW,{'Educational attainment': 20},{'Sex': 2},918,100,17500,NOT Homogeneous,1.0,9.035204473882914
+2026-02-17 14:18:43,RW,{'Educational attainment': 21},{'Sex': 1},282,100,17500,NOT Homogeneous,1.0,4.531323989853263
+2026-02-17 14:18:48,RW,{'Educational attainment': 21},{'Sex': 1},259,100,17500,NOT Homogeneous,1.0,4.329383984208107
+2026-02-17 14:18:52,RW,{'Educational attainment': 21},{'Sex': 1},221,100,17500,NOT Homogeneous,1.0,4.475392229855061
+2026-02-17 14:18:56,RW,{'Educational attainment': 20},{'Sex': 1},127,100,17500,NOT Homogeneous,1.0,3.6902365908026695
+2026-02-17 14:19:01,RW,{'Educational attainment': 20},{'Sex': 1},260,100,17500,NOT Homogeneous,1.0,4.5419833194464445
+2026-02-17 14:19:04,RW,{'Educational attainment': 20},{'Sex': 1},42,100,17500,NOT Homogeneous,1.0,3.137387292459607
+2026-02-17 14:19:07,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},67,100,17500,NOT Homogeneous,1.0,3.572670314460993
+2026-02-17 14:19:11,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,100,17500,NOT Homogeneous,1.0,3.2303890995681286
+2026-02-17 14:19:14,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,100,17500,NOT Homogeneous,1.0,3.0980076994746923
+2026-02-17 14:19:23,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,100,17500,NOT Homogeneous,1.0,8.453107168897986
+2026-02-17 14:19:31,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},15,100,17500,NOT Homogeneous,1.0,8.600977543741465
+2026-02-17 14:19:40,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},10,100,17500,NOT Homogeneous,1.0,8.483614556491375
+2026-02-17 14:19:52,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},302,100,17500,NOT Homogeneous,1.0,11.567038400098681
+2026-02-17 14:20:01,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},104,100,17500,NOT Homogeneous,1.0,8.68357253819704
+2026-02-17 14:20:09,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,7.722741955891252
+2026-02-17 14:20:24,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1131,100,17500,NOT Homogeneous,1.0,15.281173966825008
+2026-02-17 14:20:31,FPGrowth,{'Educational attainment': 21},{'Sex': 1},253,100,17500,NOT Homogeneous,1.0,6.8517104126513
+2026-02-17 14:20:37,FPGrowth,{'Educational attainment': 20},{'Sex': 1},100,100,17500,NOT Homogeneous,1.0,5.35674662142992
+2026-02-17 14:20:42,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},2,100,17500,NOT Homogeneous,1.0,5.039049342274666
+2026-02-17 14:20:47,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},38,100,17500,NOT Homogeneous,1.0,5.234050719067454
+2026-02-17 14:20:52,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},14,100,17500,NOT Homogeneous,1.0,4.956730408594012
+2026-02-17 14:20:57,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},51,100,17500,NOT Homogeneous,1.0,5.12614631280303
+2026-02-17 14:21:05,RW,{'Public health coverage': 2},{'With a disability': 2},305,100,17500,NOT Homogeneous,1.0,7.436578242108226
+2026-02-17 14:21:11,RW,{'Public health coverage': 2},{'With a disability': 2},115,100,17500,NOT Homogeneous,1.0,5.641807110980153
+2026-02-17 14:21:16,RW,{'Public health coverage': 2},{'With a disability': 2},25,100,17500,NOT Homogeneous,1.0,5.087049568071961
+2026-02-17 14:21:21,RW,{'Private health insurance coverage': 2},{'With a disability': 2},27,100,17500,NOT Homogeneous,1.0,5.01133431866765
+2026-02-17 14:21:26,RW,{'Private health insurance coverage': 2},{'With a disability': 2},15,100,17500,NOT Homogeneous,1.0,4.855371801182628
+2026-02-17 14:21:31,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,4.85474244132638
+2026-02-17 14:21:37,RW,{'Educational attainment': 20},{'With a disability': 2},131,100,17500,NOT Homogeneous,1.0,5.759377725422382
+2026-02-17 14:21:46,RW,{'Educational attainment': 20},{'With a disability': 2},579,100,17500,NOT Homogeneous,1.0,8.935224626213312
+2026-02-17 14:21:54,RW,{'Educational attainment': 20},{'With a disability': 2},480,100,17500,NOT Homogeneous,1.0,8.31978153064847
+2026-02-17 14:22:02,RW,{'Educational attainment': 21},{'With a disability': 2},410,100,17500,NOT Homogeneous,1.0,8.137239983305335
+2026-02-17 14:22:16,RW,{'Educational attainment': 21},{'With a disability': 2},958,100,17500,NOT Homogeneous,1.0,13.23582868091762
+2026-02-17 14:22:30,RW,{'Educational attainment': 21},{'With a disability': 2},1206,100,17500,NOT Homogeneous,1.0,14.228643534705043
+2026-02-17 14:22:35,RW,{'Educational attainment': 22},{'With a disability': 2},32,100,17500,NOT Homogeneous,1.0,4.874414388090372
+2026-02-17 14:22:40,RW,{'Educational attainment': 22},{'With a disability': 2},38,100,17500,NOT Homogeneous,1.0,5.263548159971833
+2026-02-17 14:22:45,RW,{'Educational attainment': 22},{'With a disability': 2},41,100,17500,NOT Homogeneous,1.0,4.998458219692111
+2026-02-17 14:22:54,RW,{'Educational attainment': 20},{'Sex': 2},893,100,17500,NOT Homogeneous,1.0,8.811076804995537
+2026-02-17 14:22:59,RW,{'Educational attainment': 20},{'Sex': 2},336,100,17500,NOT Homogeneous,1.0,5.125898675993085
+2026-02-17 14:23:03,RW,{'Educational attainment': 20},{'Sex': 2},129,100,17500,NOT Homogeneous,1.0,3.841178424656391
+2026-02-17 14:23:07,RW,{'Educational attainment': 21},{'Sex': 1},38,100,17500,NOT Homogeneous,1.0,3.1254289485514164
+2026-02-17 14:23:10,RW,{'Educational attainment': 21},{'Sex': 1},29,100,17500,NOT Homogeneous,1.0,3.059434447437525
+2026-02-17 14:23:13,RW,{'Educational attainment': 21},{'Sex': 1},153,100,17500,NOT Homogeneous,1.0,3.7808248326182365
+2026-02-17 14:23:18,RW,{'Educational attainment': 20},{'Sex': 1},250,100,17500,NOT Homogeneous,1.0,4.310242837294936
+2026-02-17 14:23:21,RW,{'Educational attainment': 20},{'Sex': 1},37,100,17500,NOT Homogeneous,1.0,3.225747924298048
+2026-02-17 14:23:25,RW,{'Educational attainment': 20},{'Sex': 1},89,100,17500,NOT Homogeneous,1.0,3.4469314347952604
+2026-02-17 14:23:28,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,100,17500,NOT Homogeneous,1.0,3.0874296613037586
+2026-02-17 14:23:31,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},9,100,17500,NOT Homogeneous,1.0,3.0860105827450752
+2026-02-17 14:23:34,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},17,100,17500,NOT Homogeneous,1.0,3.1159662380814552
+2026-02-17 14:23:43,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},2,100,17500,NOT Homogeneous,1.0,8.415716020390391
+2026-02-17 14:23:51,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},5,100,17500,NOT Homogeneous,1.0,8.451427904888988
+2026-02-17 14:24:00,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},24,100,17500,NOT Homogeneous,1.0,8.704835349693894
+2026-02-17 14:24:11,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},216,100,17500,NOT Homogeneous,1.0,10.9772031288594
+2026-02-17 14:24:23,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},256,100,17500,NOT Homogeneous,1.0,11.279118472710252
+2026-02-17 14:24:31,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},8,100,17500,NOT Homogeneous,1.0,7.656940905377269
+2026-02-17 14:24:53,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1760,100,17500,NOT Homogeneous,1.0,21.81189551576972
+2026-02-17 14:25:00,FPGrowth,{'Educational attainment': 21},{'Sex': 1},320,100,17500,NOT Homogeneous,1.0,7.2685636151582
+2026-02-17 14:25:07,FPGrowth,{'Educational attainment': 20},{'Sex': 1},193,100,17500,NOT Homogeneous,1.0,6.169422646984458
+2026-02-17 14:25:12,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},17,100,17500,NOT Homogeneous,1.0,5.167299451306462
+2026-02-17 14:25:17,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},36,100,17500,NOT Homogeneous,1.0,5.313003286719322
+2026-02-17 14:25:22,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},1,100,17500,NOT Homogeneous,1.0,4.9169704634696245
+2026-02-17 14:25:27,RW,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},9,100,17500,NOT Homogeneous,1.0,4.945894710719585
+2026-02-17 14:25:33,RW,{'Public health coverage': 2},{'With a disability': 2},78,100,17500,NOT Homogeneous,1.0,5.325884250923991
+2026-02-17 14:25:40,RW,{'Public health coverage': 2},{'With a disability': 2},208,100,17500,NOT Homogeneous,1.0,7.225392760708928
+2026-02-17 14:25:45,RW,{'Public health coverage': 2},{'With a disability': 2},26,100,17500,NOT Homogeneous,1.0,5.075822092592716
+2026-02-17 14:25:51,RW,{'Private health insurance coverage': 2},{'With a disability': 2},85,100,17500,NOT Homogeneous,1.0,5.427974933758378
+2026-02-17 14:25:56,RW,{'Private health insurance coverage': 2},{'With a disability': 2},80,100,17500,NOT Homogeneous,1.0,5.45562051795423
+2026-02-17 14:26:01,RW,{'Private health insurance coverage': 2},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,4.855246964842081
+2026-02-17 14:26:12,RW,{'Educational attainment': 20},{'With a disability': 2},812,100,17500,NOT Homogeneous,1.0,10.637039104476571
+2026-02-17 14:26:20,RW,{'Educational attainment': 20},{'With a disability': 2},433,100,17500,NOT Homogeneous,1.0,7.861911211162806
+2026-02-17 14:26:27,RW,{'Educational attainment': 20},{'With a disability': 2},346,100,17500,NOT Homogeneous,1.0,7.121534330770373
+2026-02-17 14:26:34,RW,{'Educational attainment': 21},{'With a disability': 2},260,100,17500,NOT Homogeneous,1.0,6.661262763664126
+2026-02-17 14:26:40,RW,{'Educational attainment': 21},{'With a disability': 2},122,100,17500,NOT Homogeneous,1.0,5.621593847870827
+2026-02-17 14:26:46,RW,{'Educational attainment': 21},{'With a disability': 2},296,100,17500,NOT Homogeneous,1.0,6.8990200106054544
+2026-02-17 14:26:52,RW,{'Educational attainment': 22},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,4.90441975928843
+2026-02-17 14:26:57,RW,{'Educational attainment': 22},{'With a disability': 2},61,100,17500,NOT Homogeneous,1.0,5.131820615381002
+2026-02-17 14:27:02,RW,{'Educational attainment': 22},{'With a disability': 2},9,100,17500,NOT Homogeneous,1.0,4.824961150065064
+2026-02-17 14:27:08,RW,{'Educational attainment': 20},{'Sex': 2},384,100,17500,NOT Homogeneous,1.0,5.847375957295299
+2026-02-17 14:27:13,RW,{'Educational attainment': 20},{'Sex': 2},366,100,17500,NOT Homogeneous,1.0,5.247342053800821
+2026-02-17 14:27:18,RW,{'Educational attainment': 20},{'Sex': 2},402,100,17500,NOT Homogeneous,1.0,5.532549429684877
+2026-02-17 14:27:21,RW,{'Educational attainment': 21},{'Sex': 1},19,100,17500,NOT Homogeneous,1.0,2.9455134011805058
+2026-02-17 14:27:26,RW,{'Educational attainment': 21},{'Sex': 1},362,100,17500,NOT Homogeneous,1.0,5.032595593482256
+2026-02-17 14:27:32,RW,{'Educational attainment': 21},{'Sex': 1},400,100,17500,NOT Homogeneous,1.0,5.273755183443427
+2026-02-17 14:27:36,RW,{'Educational attainment': 20},{'Sex': 1},175,100,17500,NOT Homogeneous,1.0,3.916593873873353
+2026-02-17 14:27:39,RW,{'Educational attainment': 20},{'Sex': 1},109,100,17500,NOT Homogeneous,1.0,3.4679776541888714
+2026-02-17 14:27:42,RW,{'Educational attainment': 20},{'Sex': 1},38,100,17500,NOT Homogeneous,1.0,3.140334729105234
+2026-02-17 14:27:46,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},1,100,17500,NOT Homogeneous,1.0,3.038692105561495
+2026-02-17 14:27:49,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},55,100,17500,NOT Homogeneous,1.0,3.489291023463011
+2026-02-17 14:27:52,RW,{'Insurance through a current or former employer or union': 1},{'Sex': 1},48,100,17500,NOT Homogeneous,1.0,3.3831859342753887
+2026-02-17 14:28:01,FPGrowth,{'Insurance through a current or former employer or union': 1},{'With a disability': 2},5,100,17500,NOT Homogeneous,1.0,8.392169963568449
+2026-02-17 14:28:10,FPGrowth,{'Public health coverage': 2},{'With a disability': 2},9,100,17500,NOT Homogeneous,1.0,8.478640722110868
+2026-02-17 14:28:19,FPGrowth,{'Private health insurance coverage': 2},{'With a disability': 2},16,100,17500,NOT Homogeneous,1.0,8.63044379837811
+2026-02-17 14:28:29,FPGrowth,{'Educational attainment': 20},{'With a disability': 2},182,100,17500,NOT Homogeneous,1.0,9.918478958308697
+2026-02-17 14:28:37,FPGrowth,{'Educational attainment': 21},{'With a disability': 2},58,100,17500,NOT Homogeneous,1.0,8.232654243707657
+2026-02-17 14:28:45,FPGrowth,{'Educational attainment': 22},{'With a disability': 2},3,100,17500,NOT Homogeneous,1.0,7.47173997014761
+2026-02-17 14:29:01,FPGrowth,{'Educational attainment': 20},{'Sex': 2},1253,100,17500,NOT Homogeneous,1.0,16.263014866039157
+2026-02-17 14:29:07,FPGrowth,{'Educational attainment': 21},{'Sex': 1},120,100,17500,NOT Homogeneous,1.0,5.497379748150706
+2026-02-17 14:29:12,FPGrowth,{'Educational attainment': 20},{'Sex': 1},101,100,17500,NOT Homogeneous,1.0,5.3374048341065645
+2026-02-17 14:29:18,FPGrowth,{'Insurance through a current or former employer or union': 1},{'Sex': 1},7,100,17500,NOT Homogeneous,1.0,5.049587316811085

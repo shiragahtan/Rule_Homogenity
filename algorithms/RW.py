@@ -14,7 +14,7 @@ CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
 with open(CONFIG_PATH, "r", encoding="utf-8") as fp:
     _CFG = json.load(fp)
 BINARY_TREATMENT: str = _CFG["TREATMENT_COL"]
-sys.path.append(str(Path(__file__).resolve().parent.parent / "yarden_files"))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 from ATE_update import calculate_ate_safe
 
 

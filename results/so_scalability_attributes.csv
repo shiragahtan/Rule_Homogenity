@@ -1,0 +1,361 @@
+date,algorithm,chosen_treatment,chosen_condition,num_subgroups,delta,epsilon,status,num_attributes,run_time_seconds
+2026-02-16 02:46:29,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.023337356746196747
+2026-02-16 02:46:29,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.021806130185723305
+2026-02-16 02:46:29,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.01860521174967289
+2026-02-16 02:46:29,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.018747195601463318
+2026-02-16 02:46:29,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.018444085493683815
+2026-02-16 02:46:29,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.01839871145784855
+2026-02-16 02:46:29,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017748406156897545
+2026-02-16 02:46:29,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.01793566532433033
+2026-02-16 02:46:30,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017918389290571213
+2026-02-16 02:46:30,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.0177227184176445
+2026-02-16 02:46:30,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017878001555800438
+2026-02-16 02:46:30,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017745841294527054
+2026-02-16 02:46:30,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.018143968656659126
+2026-02-16 02:46:30,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.018481845036149025
+2026-02-16 02:46:30,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.018315846100449562
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.01741502806544304
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.017575405538082123
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.017609592527151108
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.018085818737745285
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.018548086285591125
+2026-02-16 02:46:30,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.01841164007782936
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.01741098053753376
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.017628584057092667
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.01765940710902214
+2026-02-16 02:46:30,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.01759064383804798
+2026-02-16 02:46:30,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.018010077998042107
+2026-02-16 02:46:30,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017827467992901802
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.01831681653857231
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.018538422882556915
+2026-02-16 02:46:30,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.018482906743884087
+2026-02-16 02:46:30,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.01809213124215603
+2026-02-16 02:46:30,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.017831386998295784
+2026-02-16 02:46:30,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.01749669387936592
+2026-02-16 02:46:30,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.01744167134165764
+2026-02-16 02:46:30,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,NOT Homogeneous,0,0.01796642877161503
+2026-02-16 02:46:30,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.017170924693346024
+2026-02-16 02:46:30,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.01806044951081276
+2026-02-16 02:46:30,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},,100,520000.0,NOT Homogeneous,0,0.01720423810184002
+2026-02-16 02:46:30,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},,100,520000.0,NOT Homogeneous,0,0.017417242750525475
+2026-02-16 02:46:30,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},,100,520000.0,NOT Homogeneous,0,0.018490079790353775
+2026-02-16 02:46:31,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},52,100,520000.0,Homogeneous,2,0.8771564178168774
+2026-02-16 02:46:32,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},52,100,520000.0,Homogeneous,2,0.8762393351644278
+2026-02-16 02:46:33,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},52,100,520000.0,Homogeneous,2,0.8866170942783356
+2026-02-16 02:46:33,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},17,100,520000.0,Homogeneous,2,0.3377129156142473
+2026-02-16 02:46:34,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},17,100,520000.0,Homogeneous,2,0.336385540664196
+2026-02-16 02:46:34,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},17,100,520000.0,Homogeneous,2,0.3422499056905508
+2026-02-16 02:46:35,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},31,100,520000.0,Homogeneous,2,0.6707331910729408
+2026-02-16 02:46:35,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},31,100,520000.0,Homogeneous,2,0.6610976792871952
+2026-02-16 02:46:36,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},31,100,520000.0,Homogeneous,2,0.6702782940119505
+2026-02-16 02:46:37,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},24,100,520000.0,Homogeneous,2,0.3485480882227421
+2026-02-16 02:46:37,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},24,100,520000.0,Homogeneous,2,0.34411949664354324
+2026-02-16 02:46:37,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},24,100,520000.0,Homogeneous,2,0.3502660021185875
+2026-02-16 02:46:38,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},31,100,520000.0,Homogeneous,2,0.7140925899147987
+2026-02-16 02:46:39,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},31,100,520000.0,Homogeneous,2,0.7297177463769913
+2026-02-16 02:46:39,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},31,100,520000.0,Homogeneous,2,0.7257811259478331
+2026-02-16 02:46:40,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},11,100,520000.0,Homogeneous,2,0.2708228528499603
+2026-02-16 02:46:40,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},11,100,520000.0,Homogeneous,2,0.2684446107596159
+2026-02-16 02:46:40,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},11,100,520000.0,Homogeneous,2,0.2805677466094494
+2026-02-16 02:46:41,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},16,100,520000.0,Homogeneous,2,0.3799501433968544
+2026-02-16 02:46:41,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},16,100,520000.0,Homogeneous,2,0.3740488402545452
+2026-02-16 02:46:41,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},16,100,520000.0,Homogeneous,2,0.37617655470967293
+2026-02-16 02:46:42,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},56,100,520000.0,Homogeneous,2,0.6275661829859018
+2026-02-16 02:46:43,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},56,100,520000.0,Homogeneous,2,0.621924165636301
+2026-02-16 02:46:43,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},57,100,520000.0,Homogeneous,2,0.6272701360285282
+2026-02-16 02:46:45,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},44,100,520000.0,Homogeneous,2,1.3850591834634542
+2026-02-16 02:46:46,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},42,100,520000.0,Homogeneous,2,1.3715436328202486
+2026-02-16 02:46:48,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},42,100,520000.0,Homogeneous,2,1.3707219548523426
+2026-02-16 02:46:48,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},18,100,520000.0,Homogeneous,2,0.4265566486865282
+2026-02-16 02:46:48,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},18,100,520000.0,Homogeneous,2,0.4268909599632025
+2026-02-16 02:46:49,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},18,100,520000.0,Homogeneous,2,0.42680674232542515
+2026-02-16 02:46:49,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},51,100,520000.0,Homogeneous,2,0.4664689972996712
+2026-02-16 02:46:50,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},17,100,520000.0,Homogeneous,2,0.28889633156359196
+2026-02-16 02:46:50,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},18,100,520000.0,Homogeneous,2,0.2978298310190439
+2026-02-16 02:46:50,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},19,100,520000.0,Homogeneous,2,0.2906164787709713
+2026-02-16 02:46:51,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},18,100,520000.0,Homogeneous,2,0.3245426155626774
+2026-02-16 02:46:51,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},11,100,520000.0,Homogeneous,2,0.22794076055288315
+2026-02-16 02:46:51,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},11,100,520000.0,Homogeneous,2,0.26289935410022736
+2026-02-16 02:46:52,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},57,100,520000.0,Homogeneous,2,0.46213431283831596
+2026-02-16 02:46:52,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},48,100,520000.0,Homogeneous,2,0.4295153357088566
+2026-02-16 02:46:53,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},18,100,520000.0,Homogeneous,2,0.2934909239411354
+2026-02-16 02:46:55,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},183,100,520000.0,Homogeneous,4,2.070124866440892
+2026-02-16 02:46:57,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},174,100,520000.0,Homogeneous,4,2.0076391752809286
+2026-02-16 02:46:59,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},164,100,520000.0,Homogeneous,4,1.979487033560872
+2026-02-16 02:47:00,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},92,100,520000.0,Homogeneous,4,1.2052008006721735
+2026-02-16 02:47:01,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},98,100,520000.0,Homogeneous,4,1.2314014825969934
+2026-02-16 02:47:02,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},91,100,520000.0,Homogeneous,4,1.1864887718111277
+2026-02-16 02:47:04,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},214,100,520000.0,Homogeneous,4,1.6490797270089388
+2026-02-16 02:47:06,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},213,100,520000.0,Homogeneous,4,1.6722399685531855
+2026-02-16 02:47:07,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},213,100,520000.0,Homogeneous,4,1.702614065259695
+2026-02-16 02:47:10,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},240,100,520000.0,Homogeneous,4,2.343994550406933
+2026-02-16 02:47:12,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},231,100,520000.0,Homogeneous,4,2.38867199793458
+2026-02-16 02:47:15,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},248,100,520000.0,Homogeneous,4,2.394867992028594
+2026-02-16 02:47:16,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},181,100,520000.0,Homogeneous,4,1.5208878368139267
+2026-02-16 02:47:18,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},181,100,520000.0,Homogeneous,4,1.5160340499132872
+2026-02-16 02:47:19,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},178,100,520000.0,Homogeneous,4,1.5150026623159647
+2026-02-16 02:47:22,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},215,100,520000.0,Homogeneous,4,2.4866743348538876
+2026-02-16 02:47:24,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},206,100,520000.0,Homogeneous,4,2.403673965483904
+2026-02-16 02:47:27,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},223,100,520000.0,Homogeneous,4,2.4811831451952457
+2026-02-16 02:47:29,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},140,100,520000.0,Homogeneous,4,2.3099818471819162
+2026-02-16 02:47:31,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},162,100,520000.0,Homogeneous,4,2.3396008498966694
+2026-02-16 02:47:34,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},146,100,520000.0,Homogeneous,4,2.352208774536848
+2026-02-16 02:47:35,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},92,100,520000.0,Homogeneous,4,1.1461042538285255
+2026-02-16 02:47:36,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},91,100,520000.0,Homogeneous,4,1.1652550920844078
+2026-02-16 02:47:37,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},91,100,520000.0,Homogeneous,4,1.154321126639843
+2026-02-16 02:47:39,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},163,100,520000.0,Homogeneous,4,1.6819419488310814
+2026-02-16 02:47:41,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},171,100,520000.0,Homogeneous,4,1.7221512608230114
+2026-02-16 02:47:42,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},165,100,520000.0,Homogeneous,4,1.7283942140638828
+2026-02-16 02:47:44,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},112,100,520000.0,Homogeneous,4,1.4377014636993408
+2026-02-16 02:47:45,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},118,100,520000.0,Homogeneous,4,1.4574651420116425
+2026-02-16 02:47:47,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},119,100,520000.0,Homogeneous,4,1.4643476270139217
+2026-02-16 02:47:49,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},326,100,520000.0,Homogeneous,4,2.1257655061781406
+2026-02-16 02:47:50,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},105,100,520000.0,Homogeneous,4,0.9904659315943718
+2026-02-16 02:47:51,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},145,100,520000.0,Homogeneous,4,1.3203917909413576
+2026-02-16 02:47:54,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},269,100,520000.0,Homogeneous,4,2.103771682828665
+2026-02-16 02:47:55,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},103,100,520000.0,Homogeneous,4,1.252943467348814
+2026-02-16 02:47:58,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},512,100,520000.0,Homogeneous,4,3.1188640017062426
+2026-02-16 02:47:59,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},177,100,520000.0,Homogeneous,4,1.4712454304099083
+2026-02-16 02:48:01,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},124,100,520000.0,Homogeneous,4,1.0064642634242773
+2026-02-16 02:48:02,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},274,100,520000.0,Homogeneous,4,1.8627687729895115
+2026-02-16 02:48:04,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},178,100,520000.0,Homogeneous,4,1.321350496262312
+2026-02-16 02:48:08,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},448,100,520000.0,Homogeneous,6,4.117157377302647
+2026-02-16 02:48:12,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},452,100,520000.0,Homogeneous,6,4.255218960344791
+2026-02-16 02:48:16,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},448,100,520000.0,Homogeneous,6,4.133942272514105
+2026-02-16 02:48:20,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},498,100,520000.0,Homogeneous,6,4.024479620158672
+2026-02-16 02:48:24,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},453,100,520000.0,Homogeneous,6,3.849376006051898
+2026-02-16 02:48:28,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},447,100,520000.0,Homogeneous,6,3.889536799862981
+2026-02-16 02:48:31,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},456,100,520000.0,Homogeneous,6,2.885368797928095
+2026-02-16 02:48:34,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},454,100,520000.0,Homogeneous,6,2.8844082206487656
+2026-02-16 02:48:37,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},466,100,520000.0,Homogeneous,6,2.9229253251105547
+2026-02-16 02:48:41,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},498,100,520000.0,Homogeneous,6,3.743602691218257
+2026-02-16 02:48:44,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},490,100,520000.0,Homogeneous,6,3.659625606611371
+2026-02-16 02:48:48,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},497,100,520000.0,Homogeneous,6,3.814193604514003
+2026-02-16 02:48:52,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},523,100,520000.0,Homogeneous,6,3.5719047281891108
+2026-02-16 02:48:56,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},549,100,520000.0,Homogeneous,6,3.6922915652394295
+2026-02-16 02:48:59,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},521,100,520000.0,Homogeneous,6,3.5229940991848707
+2026-02-16 02:49:02,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},229,100,520000.0,Homogeneous,6,2.469072226434946
+2026-02-16 02:49:04,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},289,100,520000.0,Homogeneous,6,2.7690064050257206
+2026-02-16 02:49:07,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},271,100,520000.0,Homogeneous,6,2.6998811662197113
+2026-02-16 02:49:11,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},561,100,520000.0,Homogeneous,6,3.7711737398058176
+2026-02-16 02:49:15,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},555,100,520000.0,Homogeneous,6,3.771755427122116
+2026-02-16 02:49:18,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},575,100,520000.0,Homogeneous,6,3.8271609488874674
+2026-02-16 02:49:23,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},414,100,520000.0,Homogeneous,6,4.311516601592302
+2026-02-16 02:49:27,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},386,100,520000.0,Homogeneous,6,4.188189633190632
+2026-02-16 02:49:31,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},385,100,520000.0,Homogeneous,6,4.093301651999354
+2026-02-16 02:49:35,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},393,100,520000.0,Homogeneous,6,3.821689188480377
+2026-02-16 02:49:39,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},409,100,520000.0,Homogeneous,6,3.892639385536313
+2026-02-16 02:49:43,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},409,100,520000.0,Homogeneous,6,3.8817533757537603
+2026-02-16 02:49:47,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},385,100,520000.0,Homogeneous,6,4.539247382432222
+2026-02-16 02:49:52,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},462,100,520000.0,Homogeneous,6,4.873109113425016
+2026-02-16 02:49:57,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},454,100,520000.0,Homogeneous,6,4.852448217570782
+2026-02-16 02:50:08,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1782,100,520000.0,Homogeneous,6,11.0918388646096
+2026-02-16 02:50:19,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1321,100,520000.0,Homogeneous,6,10.855408387258649
+2026-02-16 02:50:26,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},692,100,520000.0,Homogeneous,6,6.4692744836211205
+2026-02-16 02:50:33,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},913,100,520000.0,Homogeneous,6,7.184855492785573
+2026-02-16 02:50:39,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},453,100,520000.0,Homogeneous,6,5.9775284342467785
+2026-02-16 02:50:48,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1483,100,520000.0,Homogeneous,6,9.523303791880608
+2026-02-16 02:50:55,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},713,100,520000.0,Homogeneous,6,6.745130585506558
+2026-02-16 02:51:10,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},2377,100,520000.0,Homogeneous,6,14.612366834655404
+2026-02-16 02:51:23,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},2013,100,520000.0,Homogeneous,6,12.56131917051971
+2026-02-16 02:51:40,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},2836,100,520000.0,Homogeneous,6,17.33309624530375
+2026-02-16 02:51:46,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},586,100,520000.0,Homogeneous,8,5.665628790855408
+2026-02-16 02:51:51,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},604,100,520000.0,Homogeneous,8,5.781429748982191
+2026-02-16 02:51:57,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},624,100,520000.0,Homogeneous,8,5.767845079302788
+2026-02-16 02:52:04,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1042,100,520000.0,Homogeneous,8,6.309489704668522
+2026-02-16 02:52:10,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},996,100,520000.0,Homogeneous,8,6.0764871425926685
+2026-02-16 02:52:16,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1038,100,520000.0,Homogeneous,8,6.358941068872809
+2026-02-16 02:52:21,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},950,100,520000.0,Homogeneous,8,5.142459554597735
+2026-02-16 02:52:26,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},951,100,520000.0,Homogeneous,8,5.171354908496141
+2026-02-16 02:52:32,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},982,100,520000.0,Homogeneous,8,5.444841055199504
+2026-02-16 02:52:36,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},680,100,520000.0,Homogeneous,8,4.404642103239894
+2026-02-16 02:52:41,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},637,100,520000.0,Homogeneous,8,4.194282561540604
+2026-02-16 02:52:45,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},612,100,520000.0,Homogeneous,8,4.138872625306249
+2026-02-16 02:52:49,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},722,100,520000.0,Homogeneous,8,4.011796161532402
+2026-02-16 02:52:53,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},762,100,520000.0,Homogeneous,8,3.9828296042978764
+2026-02-16 02:52:57,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},731,100,520000.0,Homogeneous,8,3.9686582535505295
+2026-02-16 02:53:04,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},752,100,520000.0,Homogeneous,8,7.297742603346705
+2026-02-16 02:53:11,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},735,100,520000.0,Homogeneous,8,7.2038432117551565
+2026-02-16 02:53:19,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},816,100,520000.0,Homogeneous,8,7.54251573048532
+2026-02-16 02:53:25,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},869,100,520000.0,Homogeneous,8,6.044160967692733
+2026-02-16 02:53:31,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},887,100,520000.0,Homogeneous,8,5.926102519035339
+2026-02-16 02:53:37,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},895,100,520000.0,Homogeneous,8,6.078901320695877
+2026-02-16 02:53:43,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},539,100,520000.0,Homogeneous,8,5.640065722167492
+2026-02-16 02:53:48,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},526,100,520000.0,Homogeneous,8,5.551629468798637
+2026-02-16 02:53:54,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},542,100,520000.0,Homogeneous,8,5.581207353621721
+2026-02-16 02:53:59,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},595,100,520000.0,Homogeneous,8,5.542762655764818
+2026-02-16 02:54:05,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},616,100,520000.0,Homogeneous,8,5.7877810169011354
+2026-02-16 02:54:10,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},557,100,520000.0,Homogeneous,8,5.30168660916388
+2026-02-16 02:54:16,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},561,100,520000.0,Homogeneous,8,5.130922801792622
+2026-02-16 02:54:21,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},576,100,520000.0,Homogeneous,8,5.1782713532447815
+2026-02-16 02:54:26,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},622,100,520000.0,Homogeneous,8,5.497627656906843
+2026-02-16 02:55:47,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},12422,100,520000.0,Homogeneous,8,80.36702105589211
+2026-02-16 02:56:37,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},5325,100,520000.0,Homogeneous,8,49.764737887308
+2026-02-16 02:57:11,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},3136,100,520000.0,Homogeneous,8,34.146672865375876
+2026-02-16 02:57:53,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},5257,100,520000.0,Homogeneous,8,41.74089569784701
+2026-02-16 02:58:22,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1546,100,520000.0,Homogeneous,8,29.487284243106842
+2026-02-16 02:59:25,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},9501,100,520000.0,Homogeneous,8,62.66269816271961
+2026-02-16 02:59:59,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2983,100,520000.0,Homogeneous,8,33.662700148299336
+2026-02-16 03:01:07,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},10638,100,520000.0,Homogeneous,8,68.73519536852837
+2026-02-16 03:02:09,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},9438,100,520000.0,Homogeneous,8,61.548800306394696
+2026-02-16 03:03:16,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},10168,100,520000.0,Homogeneous,8,67.2058841586113
+2026-02-16 03:03:24,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},770,100,520000.0,Homogeneous,10,7.6414949633181095
+2026-02-16 03:03:32,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},743,100,520000.0,Homogeneous,10,7.6321732718497515
+2026-02-16 03:03:39,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},744,100,520000.0,Homogeneous,10,7.484235038980842
+2026-02-16 03:03:45,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1056,100,520000.0,Homogeneous,10,6.155368151143193
+2026-02-16 03:03:52,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1068,100,520000.0,Homogeneous,10,6.352249698713422
+2026-02-16 03:03:58,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1077,100,520000.0,Homogeneous,10,6.314333209767938
+2026-02-16 03:04:04,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1093,100,520000.0,Homogeneous,10,5.8378135450184345
+2026-02-16 03:04:10,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1170,100,520000.0,Homogeneous,10,5.931838825345039
+2026-02-16 03:04:16,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1129,100,520000.0,Homogeneous,10,5.8966817781329155
+2026-02-16 03:04:23,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1093,100,520000.0,Homogeneous,10,7.454391967505217
+2026-02-16 03:04:31,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1243,100,520000.0,Homogeneous,10,7.690769754350185
+2026-02-16 03:04:39,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1156,100,520000.0,Homogeneous,10,7.658310405910015
+2026-02-16 03:04:45,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},780,100,520000.0,Homogeneous,10,5.974264906719327
+2026-02-16 03:04:51,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},717,100,520000.0,Homogeneous,10,5.956687459722161
+2026-02-16 03:04:57,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},850,100,520000.0,Homogeneous,10,6.194057885557413
+2026-02-16 03:05:07,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1021,100,520000.0,Homogeneous,10,9.759183157235384
+2026-02-16 03:05:16,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},933,100,520000.0,Homogeneous,10,9.393506772816181
+2026-02-16 03:05:26,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},983,100,520000.0,Homogeneous,10,9.512750148773193
+2026-02-16 03:05:32,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},961,100,520000.0,Homogeneous,10,6.122130431234837
+2026-02-16 03:05:38,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},1012,100,520000.0,Homogeneous,10,6.189172929152846
+2026-02-16 03:05:44,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},967,100,520000.0,Homogeneous,10,6.06748329475522
+2026-02-16 03:05:51,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},836,100,520000.0,Homogeneous,10,7.013481782749295
+2026-02-16 03:05:58,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},773,100,520000.0,Homogeneous,10,6.4974877424538136
+2026-02-16 03:06:04,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},787,100,520000.0,Homogeneous,10,6.605854036286473
+2026-02-16 03:06:13,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},881,100,520000.0,Homogeneous,10,8.939852319657803
+2026-02-16 03:06:23,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},935,100,520000.0,Homogeneous,10,9.197873217985034
+2026-02-16 03:06:31,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},917,100,520000.0,Homogeneous,10,8.893920382484794
+2026-02-16 03:06:39,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},757,100,520000.0,Homogeneous,10,7.5980337001383305
+2026-02-16 03:06:47,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},801,100,520000.0,Homogeneous,10,7.870580026879907
+2026-02-16 03:06:55,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},810,100,520000.0,Homogeneous,10,7.973897939547896
+2026-02-16 03:13:40,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},59285,100,520000.0,Homogeneous,10,405.40061615779996
+2026-02-16 03:17:51,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},25553,100,520000.0,Homogeneous,10,250.78178352490067
+2026-02-16 03:20:24,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},10555,100,520000.0,Homogeneous,10,152.93526596948504
+2026-02-16 03:23:41,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},19011,100,520000.0,Homogeneous,10,196.79915046319366
+2026-02-16 03:25:31,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},2884,100,520000.0,Homogeneous,10,110.06457206979394
+2026-02-16 03:29:54,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},39456,100,520000.0,Homogeneous,10,263.1028486639261
+2026-02-16 03:32:53,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},13712,100,520000.0,Homogeneous,10,178.76631971262395
+2026-02-16 03:37:56,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},45031,100,520000.0,Homogeneous,10,302.5400060787797
+2026-02-16 03:43:04,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},46629,100,520000.0,Homogeneous,10,307.9265158176422
+2026-02-16 03:49:18,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},53703,100,520000.0,Homogeneous,10,373.7654559146613
+2026-02-16 03:49:29,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1123,100,520000.0,Homogeneous,12,11.153643080964684
+2026-02-16 03:49:41,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1196,100,520000.0,Homogeneous,12,11.836381331086159
+2026-02-16 03:49:53,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1177,100,520000.0,Homogeneous,12,11.692207489162683
+2026-02-16 03:49:55,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},509,100,520000.0,NOT Homogeneous,12,2.587973330169916
+2026-02-16 03:50:00,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1009,100,520000.0,NOT Homogeneous,12,4.579216660931706
+2026-02-16 03:50:04,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1017,100,520000.0,NOT Homogeneous,12,4.34795449860394
+2026-02-16 03:50:13,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1508,100,520000.0,Homogeneous,12,8.59796709753573
+2026-02-16 03:50:22,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1658,100,520000.0,Homogeneous,12,8.995340079069138
+2026-02-16 03:50:31,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1515,100,520000.0,Homogeneous,12,8.666860185563564
+2026-02-16 03:50:42,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1867,100,520000.0,Homogeneous,12,11.283112592995167
+2026-02-16 03:50:53,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1907,100,520000.0,Homogeneous,12,11.5088159609586
+2026-02-16 03:51:04,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1767,100,520000.0,Homogeneous,12,10.692621832713485
+2026-02-16 03:51:10,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},960,100,520000.0,Homogeneous,12,5.853135084733367
+2026-02-16 03:51:16,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},914,100,520000.0,Homogeneous,12,5.612626880407333
+2026-02-16 03:51:22,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1034,100,520000.0,Homogeneous,12,5.975758887827396
+2026-02-16 03:51:31,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1090,100,520000.0,Homogeneous,12,9.611070366576314
+2026-02-16 03:51:40,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1000,100,520000.0,Homogeneous,12,9.058086026459932
+2026-02-16 03:51:50,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1110,100,520000.0,Homogeneous,12,9.757722795009613
+2026-02-16 03:52:00,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},1442,100,520000.0,Homogeneous,12,9.395454678684473
+2026-02-16 03:52:09,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},1504,100,520000.0,Homogeneous,12,9.654208878055215
+2026-02-16 03:52:19,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},1497,100,520000.0,Homogeneous,12,9.874242777004838
+2026-02-16 03:52:29,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1059,100,520000.0,Homogeneous,12,9.46307653002441
+2026-02-16 03:52:38,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},940,100,520000.0,Homogeneous,12,8.888922534883022
+2026-02-16 03:52:47,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1016,100,520000.0,Homogeneous,12,9.1720512509346
+2026-02-16 03:52:58,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1077,100,520000.0,Homogeneous,12,11.579362684860826
+2026-02-16 03:53:11,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1280,100,520000.0,Homogeneous,12,13.009324435144663
+2026-02-16 03:53:24,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1124,100,520000.0,Homogeneous,12,12.037303844466805
+2026-02-16 03:53:36,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1145,100,520000.0,Homogeneous,12,11.917785665020347
+2026-02-16 03:53:48,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1302,100,520000.0,Homogeneous,12,12.72642581909895
+2026-02-16 03:54:01,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1298,100,520000.0,Homogeneous,12,12.459397252649069
+2026-02-16 04:20:20,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},197348,100,520000.0,Homogeneous,12,1578.7976945433766
+2026-02-16 04:25:43,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},27695,100,520000.0,NOT Homogeneous,12,323.3233819492161
+2026-02-16 04:34:48,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},28824,100,520000.0,Homogeneous,12,544.7364738751203
+2026-02-16 04:46:05,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},61263,100,520000.0,Homogeneous,12,676.7254182528704
+2026-02-16 04:55:17,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},13748,100,520000.0,Homogeneous,12,552.4965684972703
+2026-02-16 05:15:32,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},168238,100,520000.0,Homogeneous,12,1214.664756219834
+2026-02-16 05:24:55,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},35798,100,520000.0,Homogeneous,12,562.7246845550835
+2026-02-16 05:38:54,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},114273,100,520000.0,NOT Homogeneous,12,838.7337738443166
+2026-02-16 06:00:11,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},181299,100,520000.0,Homogeneous,12,1277.350599238649
+2026-02-16 06:07:09,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},55413,100,520000.0,NOT Homogeneous,12,417.4865486137569
+2026-02-16 06:07:25,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1530,100,520000.0,Homogeneous,14,16.05781241506338
+2026-02-16 06:07:41,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1497,100,520000.0,Homogeneous,14,15.94040915556252
+2026-02-16 06:07:56,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1467,100,520000.0,Homogeneous,14,15.395194159820676
+2026-02-16 06:08:09,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1897,100,520000.0,Homogeneous,14,12.80145838856697
+2026-02-16 06:08:22,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},2015,100,520000.0,Homogeneous,14,13.338025117293
+2026-02-16 06:08:35,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},1935,100,520000.0,Homogeneous,14,13.053907318040729
+2026-02-16 06:08:44,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1445,100,520000.0,Homogeneous,14,8.671899506822228
+2026-02-16 06:08:53,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1606,100,520000.0,Homogeneous,14,9.002786489203572
+2026-02-16 06:09:02,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1415,100,520000.0,Homogeneous,14,8.601433098316193
+2026-02-16 06:09:13,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},1908,100,520000.0,Homogeneous,14,11.134800927713513
+2026-02-16 06:09:25,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},2094,100,520000.0,Homogeneous,14,12.270282581448555
+2026-02-16 06:09:37,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},2132,100,520000.0,Homogeneous,14,11.77832238189876
+2026-02-16 06:09:46,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1398,100,520000.0,Homogeneous,14,9.16828334145248
+2026-02-16 06:09:56,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1425,100,520000.0,Homogeneous,14,9.283830009400845
+2026-02-16 06:10:05,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1356,100,520000.0,Homogeneous,14,9.156870637089014
+2026-02-16 06:10:18,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1481,100,520000.0,Homogeneous,14,13.30290099978447
+2026-02-16 06:10:31,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1460,100,520000.0,Homogeneous,14,12.806913379579782
+2026-02-16 06:10:44,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1427,100,520000.0,Homogeneous,14,12.964957049116492
+2026-02-16 06:10:57,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2039,100,520000.0,Homogeneous,14,13.2333930619061
+2026-02-16 06:11:10,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},1984,100,520000.0,Homogeneous,14,13.116267558187246
+2026-02-16 06:11:24,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2000,100,520000.0,Homogeneous,14,13.29176477715373
+2026-02-16 06:11:37,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1343,100,520000.0,Homogeneous,14,12.98394208215177
+2026-02-16 06:11:50,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1325,100,520000.0,Homogeneous,14,12.9406295157969
+2026-02-16 06:12:03,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1383,100,520000.0,Homogeneous,14,13.245196614414454
+2026-02-16 06:12:06,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},313,100,520000.0,NOT Homogeneous,14,3.0763106420636177
+2026-02-16 06:12:21,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1518,100,520000.0,NOT Homogeneous,14,14.48777206428349
+2026-02-16 06:12:30,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1116,100,520000.0,NOT Homogeneous,14,9.580466989427805
+2026-02-16 06:12:33,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},177,100,520000.0,NOT Homogeneous,14,2.301093405112624
+2026-02-16 06:12:38,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},586,100,520000.0,NOT Homogeneous,14,5.0964921079576015
+2026-02-16 06:12:40,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},236,100,520000.0,NOT Homogeneous,14,2.6756602562963963
+2026-02-16 06:18:00,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},39231,100,520000.0,NOT Homogeneous,14,319.7611671667546
+2026-02-16 06:54:10,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},165989,100,520000.0,Homogeneous,14,2169.1756142433733
+2026-02-16 07:28:02,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},95719,100,520000.0,Homogeneous,14,2032.768856201321
+2026-02-16 08:09:08,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},205282,100,520000.0,Homogeneous,14,2465.7999368682504
+2026-02-16 08:35:15,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},21993,100,520000.0,Homogeneous,14,1566.2499355897307
+2026-02-16 08:46:57,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},86131,100,520000.0,NOT Homogeneous,14,702.1962846443057
+2026-02-16 09:23:48,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},124016,100,520000.0,Homogeneous,14,2210.431650876999
+2026-02-16 09:27:37,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},27891,100,520000.0,NOT Homogeneous,14,228.98098346590996
+2026-02-16 09:28:39,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},5599,100,520000.0,NOT Homogeneous,14,62.48107175715268
+2026-02-16 09:32:29,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},27308,100,520000.0,NOT Homogeneous,14,229.725176660344
+2026-02-16 09:32:49,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1953,100,520000.0,Homogeneous,16,19.436263114213943
+2026-02-16 09:33:04,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1788,100,520000.0,NOT Homogeneous,16,15.660669954493642
+2026-02-16 09:33:23,RW,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1950,100,520000.0,NOT Homogeneous,16,18.681711792945862
+2026-02-16 09:33:38,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},2289,100,520000.0,Homogeneous,16,15.300497733056545
+2026-02-16 09:33:54,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},2394,100,520000.0,Homogeneous,16,15.540926335379481
+2026-02-16 09:34:10,RW,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},2409,100,520000.0,Homogeneous,16,15.877705277875066
+2026-02-16 09:34:22,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},2040,100,520000.0,Homogeneous,16,12.365886013954878
+2026-02-16 09:34:34,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1999,100,520000.0,Homogeneous,16,12.109263008460402
+2026-02-16 09:34:46,RW,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},1811,100,520000.0,Homogeneous,16,11.361950052902102
+2026-02-16 09:35:00,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},2084,100,520000.0,Homogeneous,16,13.956755265593529
+2026-02-16 09:35:15,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},2381,100,520000.0,Homogeneous,16,15.110977252945304
+2026-02-16 09:35:30,RW,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},2405,100,520000.0,Homogeneous,16,15.230419013649225
+2026-02-16 09:35:40,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1113,100,520000.0,Homogeneous,16,9.690135607495904
+2026-02-16 09:35:50,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1174,100,520000.0,Homogeneous,16,9.999505808576941
+2026-02-16 09:36:00,RW,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},1088,100,520000.0,Homogeneous,16,9.710037548094988
+2026-02-16 09:36:16,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1771,100,520000.0,Homogeneous,16,16.6759234033525
+2026-02-16 09:36:35,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1910,100,520000.0,Homogeneous,16,18.159207647666335
+2026-02-16 09:36:51,RW,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},1708,100,520000.0,Homogeneous,16,16.298751993104815
+2026-02-16 09:37:06,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2057,100,520000.0,Homogeneous,16,14.933812132105231
+2026-02-16 09:37:21,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2172,100,520000.0,Homogeneous,16,15.260263612493873
+2026-02-16 09:37:37,RW,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},2263,100,520000.0,Homogeneous,16,15.352385954931378
+2026-02-16 09:37:52,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1430,100,520000.0,Homogeneous,16,15.290884535759687
+2026-02-16 09:38:07,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1373,100,520000.0,Homogeneous,16,15.008463868871331
+2026-02-16 09:38:24,RW,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},1597,100,520000.0,Homogeneous,16,16.65982332266867
+2026-02-16 09:38:44,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},2058,100,520000.0,Homogeneous,16,20.49053447879851
+2026-02-16 09:39:04,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1963,100,520000.0,Homogeneous,16,19.88357088342309
+2026-02-16 09:39:24,RW,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},2069,100,520000.0,Homogeneous,16,19.989050867035985
+2026-02-16 09:39:42,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1648,100,520000.0,Homogeneous,16,17.85754031315446
+2026-02-16 09:40:00,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1699,100,520000.0,Homogeneous,16,18.25200497172773
+2026-02-16 09:40:18,RW,{'DevType': 'Back-end developer'},{'Gender': 'Male'},1656,100,520000.0,Homogeneous,16,18.023012183606625
+2026-02-16 09:45:46,FPGrowth,"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},30486,100,520000.0,NOT Homogeneous,16,327.76256776601076
+2026-02-16 10:45:47,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,TIMEOUT,16,3600.245063683018
+2026-02-16 10:54:43,FPGrowth,{'DevType': 'Data scientist or machine learning specialist'},{'Student': 'No'},18313,100,520000.0,NOT Homogeneous,16,535.7537335753441
+2026-02-16 11:08:24,FPGrowth,{'UndergradMajor': 'Mathematics or statistics'},{'Student': 'No'},53821,100,520000.0,NOT Homogeneous,16,821.7549509163946
+2026-02-16 12:08:25,FPGrowth,"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",{'SexualOrientation': 'Straight or heterosexual'},,100,520000.0,TIMEOUT,16,3600.2434902749956
+2026-02-16 12:12:39,FPGrowth,"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",{'RaceEthnicity': 'White or of European descent'},24167,100,520000.0,NOT Homogeneous,16,254.3216185308993
+2026-02-16 13:12:40,FPGrowth,"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",{'Gender': 'Male'},,100,520000.0,TIMEOUT,16,3600.245821258053
+2026-02-16 13:16:31,FPGrowth,{'DevType': 'Back-end developer'},{'RaceEthnicity': 'White or of European descent'},21742,100,520000.0,NOT Homogeneous,16,231.09687146358192
+2026-02-16 13:17:57,FPGrowth,"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",{'Student': 'No'},1827,100,520000.0,NOT Homogeneous,16,86.2621180023998
+2026-02-16 13:21:25,FPGrowth,{'DevType': 'Back-end developer'},{'Gender': 'Male'},16750,100,520000.0,NOT Homogeneous,16,208.168677020818

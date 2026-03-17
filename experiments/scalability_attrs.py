@@ -7,8 +7,7 @@ import sys
 import random
 import time
 
-# Import your existing module
-import all_subgroups_loop as main_script
+from algorithms import main as main_script
 
 # --- Configuration ---
 SCALABILITY_ALGORITHMS = ["RW", "FPGrowth"]

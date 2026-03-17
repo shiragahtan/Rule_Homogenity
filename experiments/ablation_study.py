@@ -14,12 +14,12 @@ from plotly.subplots import make_subplots
 
 # Add project root to sys.path for module resolution
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from ATE_update import calculate_ate_safe
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
-from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
+from algorithms.brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
+from algorithms.RW import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 
 # --- Configuration (paths relative to repo root so clone-and-run works) ---
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -31,7 +31,7 @@ CHOSEN_DS = config["CHOSEN_DATASET"]
 ds_config = config['DATASETS'][CHOSEN_DS]
 
 FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
-RULES_FILE = str((Path(__file__).resolve().parent / ds_config['RULES_FILE']).resolve())
+RULES_FILE = str((_REPO_ROOT / ds_config['RULES_FILE']).resolve())
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 TREATMENT_COL = config['TREATMENT_COL']
@@ -66,7 +66,7 @@ print("🔬 ABLATION STUDY - FPGrowth vs RW_Direct")
 print("="*70)
 print(f"Dataset: {CHOSEN_DS}")
 print(f"Path: {FULL_DATASET_PATH}")
-print(f"Rules: {Path(__file__).resolve().parent / RULES_FILE}")
+print(f"Rules: {RULES_FILE}")
 print("="*70)
 
 
@@ -227,8 +227,8 @@ def run_ablation_study():
     dataset_size = len(full_df)
     print(f"Dataset size: {dataset_size} rows")
     
-    # Load rules - use path relative to this script's location
-    rules_path = Path(__file__).resolve().parent / RULES_FILE
+    # Load rules (RULES_FILE already resolved to an absolute path string)
+    rules_path = Path(RULES_FILE)
     print(f"Loading rules from {rules_path}...")
     with open(rules_path, "r") as f:
         rules_list = [json.loads(line) for line in f]

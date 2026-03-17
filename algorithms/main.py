@@ -13,15 +13,15 @@ import numpy as np
 
 # Add project root to sys.path for module resolution
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from ATE_update import calculate_ate_safe
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from apriori_algorithm import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
-from rw_unlearning import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
-from greedy_algorithm import calc_utility_for_subgroups as greedy_calc_utility_for_subgroups
-from random_algorithm import calc_utility_for_subgroups as random_calc_utility_for_subgroups
-from causalForest_algorithm import calc_utility_for_subgroups as causalForest_calc_utility_for_subgroups
+from bruteForce import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
+from RW import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
+from greedy import calc_utility_for_subgroups as greedy_calc_utility_for_subgroups
+from random_algo import calc_utility_for_subgroups as random_calc_utility_for_subgroups
+from causalForest import calc_utility_for_subgroups as causalForest_calc_utility_for_subgroups
 from algorithms.code.code.main import run_wte_homogeneity_baseline
 
 # --- Configuration ---
@@ -43,15 +43,13 @@ if CHOSEN_DS not in config['DATASETS']:
 ds_config = config['DATASETS'][CHOSEN_DS]
 # Resolve paths securely to the repo root
 FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
-RULES_FILE = str((Path(__file__).resolve().parent / ds_config['RULES_FILE']).resolve())
+RULES_FILE = str((_REPO_ROOT / ds_config['RULES_FILE']).resolve())
 DELTAS = ds_config['DELTAS']
 EPSILONS = ds_config['EPSILONS']
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 
-# ALGORITHM_NAMES = ["RW", "FPGrowth"]
-ALGORITHM_NAMES = ["FPGrowth"]
-# ALGORITHM_NAMES = ["FPGrowth", "RW"]
+ALGORITHM_NAMES = ["RW"]
 RUN_RANDOM_BASELINE = True
 NUM_RW_RUNS = 3
 TREATMENT_COL = config['TREATMENT_COL']
@@ -208,7 +206,6 @@ def run_single_execution(target_func, target_kwargs, algorithm_name, chosen_mode
                                      chosen_mode, metric_value)
         return "TIMEOUT", 0
 
-    # --- RESTORED TUPLE UNPACKING BLOCK ---
     raw_result = res
     num_checked = None
     enum_time = None
@@ -225,7 +222,7 @@ def run_single_execution(target_func, target_kwargs, algorithm_name, chosen_mode
         elif len(res) == 5:
             raw_result, num_checked, enum_time, iter_time, _ = res
 
-    # --- LOGIC FIX: Handle bool vs list correctly ---
+    # --- Handle bool vs list correctly ---
     if isinstance(raw_result, bool):
         is_homogeneous = raw_result
     elif isinstance(raw_result, list):

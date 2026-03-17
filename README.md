@@ -21,15 +21,22 @@ brew install libomp
 Then run the main script from the repo root:
 
 ```bash
-python algorithms/all_subgroups_loop.py
+python algorithms/main.py
+```
+
+If you want the main script to append to the result csv files and not override the ones from previous runs add the flag '-d':
+```bash
+python algorithms/main.py -d
 ```
 
 ## Layout
-
-- **configs/** – dataset and run configuration (paths are inside the repo)
-- **yarden_files/** – ATE and linear model utilities
-- **algorithms/** – main loop, FPGrowth/RW, scalability and ablation scripts
-- **problem_2_3_algorithms/** – benchmarks for largest δ and smallest ε
-- **article_figures/** – notebook to generate figures from result CSVs
-- **ablation_results/** – ablation result CSVs and reports
-- **acs/** – sample ACS dataset (included); other datasets go under **data/** (see config)
+- **ablation_results/** – ablation result CSVs and reports.
+- **algorithms/** – main runner script and BruteForce, RW, greedy, random, CasualForest and WTE algorithms.
+- **article_figures/** – notebook to generate figures from result CSVs.
+- **configs/** – dataset and run configuration, and the rules we check for (paths are inside the repo).
+- **datasets/** – datasets used by experiments (see `configs/config.json`).
+- **experiments/** – experiment scripts, in particular ablation study and scalability test.
+- **graphs/** - scripts that create graphs based on the csv files created from the main algorithm/from the experiments like calculating accuracy/average runtimes on main script or the scalability graphs.
+- **problem_2_3_algorithms/** – benchmarks for largest δ and smallest ε.
+- **results/** - CSV files used to generate the scripts in  `article_figures/generate_figures.ipynb`.
+- **utils/** – ATE calculation algorithm.

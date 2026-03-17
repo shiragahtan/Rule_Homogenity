@@ -8,7 +8,7 @@ import pandas as pd
 import random
 import time
 from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parent.parent / 'yarden_files'))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 from ATE_update import calculate_ate_safe
 from typing import Dict, List, Tuple, Any, Callable, Optional, Union
 from numpy.linalg import LinAlgError

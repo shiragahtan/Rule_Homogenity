@@ -19,7 +19,7 @@ with open(CONFIG_PATH, "r", encoding="utf-8") as fp:
 BINARY_TREATMENT: str = _CFG["TREATMENT_COL"]
 
 # Import ATE calculation helper
-sys.path.append(str(Path(__file__).resolve().parent.parent / "yarden_files"))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 from ATE_update import calculate_ate_safe
 
 

@@ -6,7 +6,7 @@ This folder contains results from the ablation study comparing FPGrowth and RW_D
 
 ```bash
 cd algorithms
-python ablation_study.py
+python experiments/ablation_study.py
 ```
 
 This single script will automatically:
