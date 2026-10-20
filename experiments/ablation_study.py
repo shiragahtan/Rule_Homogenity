@@ -17,6 +17,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from ATE_update import calculate_ate_safe
+from preprocessing import clean_dataset
 from mlxtend.frequent_patterns import fpgrowth, apriori
 from algorithms.brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
 from algorithms.RW import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
@@ -172,7 +173,6 @@ def process_rule(rule, full_df, tgtO, delta, epsilon, algo_name, delta_pct_origi
     if CHOSEN_DS != "acs":
         sub_df_encoded = encode_dataframe_local(sub_df)
         sub_df_encoded = sub_df_encoded.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
-        sub_df_encoded[tgtO] = pd.to_numeric(sub_df_encoded[tgtO], errors='coerce')
     else:
         sub_df_encoded = sub_df.copy()
         sub_df_encoded = sub_df_encoded.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
@@ -220,9 +220,7 @@ def run_ablation_study():
     """Run the complete ablation study."""
     # Load data
     print(f"Loading dataset from {FULL_DATASET_PATH}...")
-    full_df = pd.read_csv(FULL_DATASET_PATH)
-    full_df = full_df.loc[:, ~full_df.columns.str.startswith('Unnamed')]
-    full_df = full_df[~full_df.isin(["UNKNOWN"]).any(axis=1)].reset_index(drop=True)
+    full_df = clean_dataset(pd.read_csv(FULL_DATASET_PATH), outcome_col=TARGET_COLUMN_NAME)
     
     dataset_size = len(full_df)
     print(f"Dataset size: {dataset_size} rows")

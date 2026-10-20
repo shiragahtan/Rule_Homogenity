@@ -8,6 +8,7 @@ import random
 import time
 
 from algorithms import main as main_script
+from preprocessing import clean_dataset  # on sys.path via algorithms.main
 
 # --- Configuration ---
 SCALABILITY_ALGORITHMS = ["RW", "FPGrowth"]
@@ -40,9 +41,7 @@ def run_attr_scalability():
     
     # 2. Load Full Dataset
     print(f"{Colors.BLUE}📂 Loading full dataset...{Colors.ENDC}")
-    full_df = pd.read_csv(main_script.FULL_DATASET_PATH)
-    full_df = full_df.loc[:, ~full_df.columns.str.startswith('Unnamed')]
-    full_df = full_df[~full_df.isin(["UNKNOWN"]).any(axis=1)].reset_index(drop=True)
+    full_df = clean_dataset(pd.read_csv(main_script.FULL_DATASET_PATH), outcome_col=target_col)
 
     all_columns = [c for c in full_df.columns if c != target_col]
     max_features_to_add = max(0, max_attributes - 3)

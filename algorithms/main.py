@@ -16,6 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from ATE_update import calculate_ate_safe
+from preprocessing import clean_dataset
 from mlxtend.frequent_patterns import fpgrowth, apriori
 from bruteForce import calc_utility_for_subgroups as apriori_calc_utility_for_subgroups
 from RW import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
@@ -337,7 +338,6 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
     if CHOSEN_DS != "acs":
         sub_df_encoded = encode_dataframe_local(sub_df)
         sub_df_encoded = sub_df_encoded.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
-        sub_df_encoded[tgtO] = pd.to_numeric(sub_df_encoded[tgtO], errors='coerce')
     else:
         sub_df_encoded = sub_df.copy()
         sub_df_encoded = sub_df_encoded.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
@@ -411,9 +411,7 @@ def main():
     tgtO = TARGET_COLUMN_NAME
     with open(RULES_FILE, "r") as f:
         rules_list = [json.loads(line) for line in f]
-    full_df = pd.read_csv(FULL_DATASET_PATH)
-    full_df = full_df.loc[:, ~full_df.columns.str.startswith('Unnamed')]
-    full_df = full_df[~full_df.isin(["UNKNOWN"]).any(axis=1)].reset_index(drop=True)
+    full_df = clean_dataset(pd.read_csv(FULL_DATASET_PATH), outcome_col=tgtO)
     try:
         chosen_mode = int(input(f"Choose mode {list(enumerate(MODES))}: \n"))
     except:

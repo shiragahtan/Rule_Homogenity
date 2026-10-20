@@ -8,6 +8,7 @@ import random
 import time
 
 from algorithms import main as main_script
+from preprocessing import clean_dataset  # on sys.path via algorithms.main
 
 # --- Configuration ---
 SCALABILITY_ALGORITHMS = ["RW", "FPGrowth"]
@@ -44,11 +45,8 @@ def run_scalability_rows():
 
     # 2. Load Full Dataset & Clean (Parity with mode 0)
     print(f"{Colors.BLUE}📂 Loading full dataset: {main_script.FULL_DATASET_PATH}{Colors.ENDC}")
-    full_df = pd.read_csv(main_script.FULL_DATASET_PATH)
-    
-    # --- CRITICAL CLEANING STEP ---
-    full_df = full_df.loc[:, ~full_df.columns.str.startswith('Unnamed')]
-    full_df = full_df[~full_df.isin(["UNKNOWN"]).any(axis=1)].reset_index(drop=True)
+    # --- CRITICAL CLEANING STEP (once, before any sampling) ---
+    full_df = clean_dataset(pd.read_csv(main_script.FULL_DATASET_PATH), outcome_col=target_col)
     # ------------------------------
 
     # ==========================================
