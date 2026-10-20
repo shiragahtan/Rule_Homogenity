@@ -4,7 +4,7 @@ import pandas as pd
 from scipy import stats
 from linear_model_unlearning import CertifiableUnlearningLogisticRegression, BaseLinearRegression
 from sklearn.linear_model import LogisticRegression
-from numpy.linalg import LinAlgError
+from dowhy import CausalModel
 
 # ---------------------------------------------------------
 # 1. LOAD CONFIG & IMMUTABLE ATTRIBUTES
@@ -33,97 +33,67 @@ except Exception as e:
 
 
 # ---------------------------------------------------------
-# 2. ROBUST CATE FUNCTION
+# 2. CATE FUNCTION (DoWhy backdoor.linear_regression)
 # ---------------------------------------------------------
-def calculate_ate_safe(df, treatment_col, outcome_col, delta=None, ret_obj=False):
+class EstimationError(Exception):
+    """The effect could not be estimated for this data (e.g. a missing treatment arm)."""
+
+
+def get_adjustment_columns(df, treatment_col, outcome_col):
     """
-    Robust ATE Calculation with Adaptive Complexity.
-    
-    1. Outlier Cleaning (5-95%) -> Fixes 1M+ explosions in StackOverflow.
-    2. Adaptive Feature Selection -> Prevents dropping small subgroups.
-    3. Robust Outlier Cap -> Uses Max(Mean, Median) to handle ACS poverty skew.
+    The single place that decides which columns the regression adjusts for.
+    PENDING confirmation from the instructor; for now: every column except treatment and outcome.
+    The same rule is applied to the overall rule population and to every subgroup.
+    """
+    return [c for c in df.columns if c not in (treatment_col, TREATMENT_COL, outcome_col)]
+
+
+def estimate_cate(df, treatment_col, outcome_col):
+    """
+    CATE of treatment_col (0/1) on outcome_col for the given rows, using DoWhy
+    CausalModel.estimate_effect with method "backdoor.linear_regression".
+
+    Uses every row it is given: no trimming, no effect caps, no minimum arm sizes, no dropping of
+    rows. The input is assumed to be null-free (see preprocessing.clean_dataset).
+    Raises EstimationError when the effect cannot be estimated.
+    """
+    if df[treatment_col].nunique() < 2:
+        raise EstimationError(f"'{treatment_col}' has a single value in {len(df)} rows; "
+                              f"both a treated and a control group are required")
+    try:
+        model = CausalModel(
+            data=df,
+            treatment=treatment_col,
+            outcome=outcome_col,
+            common_causes=get_adjustment_columns(df, treatment_col, outcome_col),
+        )
+        estimand = model.identify_effect(proceed_when_unidentifiable=True)
+        estimate = model.estimate_effect(
+            estimand,
+            method_name="backdoor.linear_regression",
+            control_value=0,
+            treatment_value=1,
+            target_units="ate",
+        )
+        value = float(estimate.value)
+    except Exception as e:
+        raise EstimationError(f"DoWhy failed on {len(df)} rows: {e}") from e
+    if not np.isfinite(value):
+        raise EstimationError(f"DoWhy returned a non-finite estimate ({value}) on {len(df)} rows")
+    return value
+
+
+def calculate_ate_safe(df, treatment_col, outcome_col, delta=None):
+    """
+    Backwards-compatible wrapper used by all algorithms: returns the CATE, or NaN when it cannot
+    be estimated (the failure is printed, not silent). `delta` is accepted for compatibility and
+    ignored: the minimum subgroup size is enforced by the algorithms, not by the estimator.
+    TODO: callers still treat NaN as "skip"; the final policy is pending the instructor's answer.
     """
     try:
-        # A. BASELINE SIZE CHECK (The "Floor")
-        counts = df[treatment_col].value_counts()
-        
-        # Permissive floor: Delta / 20. (Allows down to ~50 samples for StackOverflow)
-        if delta and delta > 0:
-            min_samples_abs = max(10, delta / 20.0)
-        else:
-            min_samples_abs = 10
-
-        if len(counts) < 2 or counts.min() < min_samples_abs:
-            return np.nan
-
-        # B. OUTLIER CLEANING (Crucial for Salary Data)
-        # Clip top/bottom 5% to remove billionaires/errors. Stabilizes the Mean/Median.
-        q_low = df[outcome_col].quantile(0.05)
-        q_high = df[outcome_col].quantile(0.95)
-        
-        # Create copy to avoid SettingWithCopy warnings
-        df_clean = df[(df[outcome_col] >= q_low) & (df[outcome_col] <= q_high)].copy()
-        
-        # Re-check size after cleaning
-        counts_clean = df_clean[treatment_col].value_counts()
-        if len(counts_clean) < 2 or counts_clean.min() < min_samples_abs:
-            return np.nan
-
-        # C. ADAPTIVE FEATURE SELECTION (The "Don't Drop" Logic)
-        exclude_cols = [treatment_col, TREATMENT_COL, outcome_col]
-        all_features = [c for c in df_clean.columns if c not in exclude_cols]
-        all_features = [c for c in all_features if df_clean[c].nunique() > 1] # Drop constants
-        
-        n_minority = counts_clean.min()
-        final_features = []
-
-        # Tier 1: Full Regression (Ideal) - Requires 5 samples per feature
-        if n_minority >= (len(all_features) * 5):
-            final_features = all_features
-            
-        # Tier 2: Immutable Only (Robust) - Control only for Age, Gender, etc.
-        else:
-            immutable_feats = [c for c in all_features if c in IMMUTABLE_ATTRS]
-            if n_minority >= (len(immutable_feats) * 5) and len(immutable_feats) > 0:
-                final_features = immutable_feats
-                
-            # Tier 3: Unadjusted Mean Difference (Fallback) - Drop all features
-            # This ensures we get a result instead of NaN for small groups.
-            else:
-                final_features = []
-
-        # D. CALCULATION
-        try:
-            ate_obj = ATEUpdateLinear(
-                df_clean[final_features],
-                df_clean[treatment_col],
-                df_clean[outcome_col]
-            )
-            cate_value = ate_obj.get_original_ate()
-
-            if not np.isfinite(cate_value): return np.nan
-
-            # E. ROBUST SANITY CAP (Fixes ACS & StackOverflow)
-            # Use GREATER of Mean or Median to avoid ACS "Poverty Trap"
-            baseline = max(
-                abs(df_clean[outcome_col].median()), 
-                abs(df_clean[outcome_col].mean())
-            )
-            
-            # Safety for Binary targets (baseline might be < 1)
-            if baseline < 1.0: 
-                baseline = 1.0
-
-            # Cap effect at 5x the baseline (Conservative but fair)
-            if abs(cate_value) > (5.0 * baseline):
-                return np.nan
-
-            return cate_value if not ret_obj else ate_obj
-
-        except LinAlgError:
-            return np.nan if not ret_obj else None
-
-    except Exception:
+        return estimate_cate(df, treatment_col, outcome_col)
+    except EstimationError as e:
+        print(f"⚠️ CATE not estimated: {e}")
         return np.nan
 
 
