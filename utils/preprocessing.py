@@ -29,5 +29,5 @@ def clean_dataset(df, outcome_col=None):
     n_null = n_before_null - len(df)
 
     print(f"🧹 clean_dataset: {n_start:,} rows in -> {len(df):,} rows out "
-          f"({n_unknown:,} removed for 'UNKNOWN', {n_null:,} removed for null/non-numeric outcome)")
+          f"({n_unknown:,} removed for 'UNKNOWN', {n_null:,} removed for a null in any column, incl. an unparsable outcome)")
     return df
