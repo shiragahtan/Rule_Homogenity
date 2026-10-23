@@ -29,6 +29,20 @@
         "duration",
         "amount"
       ],
+      "CONFOUNDERS": [
+        "age",
+        "gender",
+        "personal_status",
+        "foreign_worker",
+        "credit_history",
+        "employment_duration",
+        "property",
+        "installment_rate",
+        "purpose",
+        "people_liable",
+        "duration",
+        "amount"
+      ],
       "MUTABLE_ATTRIBUTES": [
         "status",
         "savings",
@@ -88,6 +102,18 @@
         "GDP",
         "Student"
       ],
+      "CONFOUNDERS": [
+        "Gender",
+        "SexualOrientation",
+        "EducationParents",
+        "RaceEthnicity",
+        "Age",
+        "YearsCoding",
+        "Dependents",
+        "Country",
+        "GDP",
+        "Student"
+      ],
       "MUTABLE_ATTRIBUTES": [
         "Exercise",
         "HoursComputer",
@@ -133,6 +159,11 @@
       "USE_ENCODING": false,
       "MAX_SCALABILITY_ATTRIBUTES": 8,
       "IMMUTABLE_ATTRIBUTES": [
+        "Sex",
+        "Age",
+        "With a disability"
+      ],
+      "CONFOUNDERS": [
         "Sex",
         "Age",
         "With a disability"

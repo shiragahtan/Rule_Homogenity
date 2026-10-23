@@ -1,4 +1,7 @@
 import json
+import re
+from collections import Counter
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -7,65 +10,86 @@ from sklearn.linear_model import LogisticRegression
 from dowhy import CausalModel
 
 # ---------------------------------------------------------
-# 1. LOAD CONFIG & IMMUTABLE ATTRIBUTES
+# 1. LOAD CONFIG (treatment column + the dataset's confounders)
 # ---------------------------------------------------------
-try:
-    with open('../configs/config.json', 'r') as f:
-        config = json.load(f)
-    
-    TREATMENT_COL = config.get('TREATMENT_COL', 'TempTreatment')
-    
-    # Dynamically load Immutable Attributes based on the chosen dataset
-    # Defaults to 'stackoverflow' if CHOSEN_DATASET is missing
-    CHOSEN_DS = config.get('CHOSEN_DATASET', 'stackoverflow') 
-    
-    if CHOSEN_DS in config['DATASETS']:
-        IMMUTABLE_ATTRS = set(config['DATASETS'][CHOSEN_DS].get('IMMUTABLE_ATTRIBUTES', []))
-        print(f"🔹 Loaded {len(IMMUTABLE_ATTRS)} immutable attributes for {CHOSEN_DS}")
-    else:
-        IMMUTABLE_ATTRS = set()
-        print(f"⚠️ Warning: Dataset '{CHOSEN_DS}' not found in config. Immutable attributes empty.")
+_CONFIG_PATH = Path(__file__).resolve().parent.parent / 'configs' / 'config.json'
 
-except Exception as e:
-    print(f"⚠️ Config Load Error: {e}. Using defaults.")
-    TREATMENT_COL = 'TempTreatment'
-    IMMUTABLE_ATTRS = set()
+
+def sanitize_column_name(name):
+    """Same renaming the runners apply to the dataframe columns."""
+    return re.sub(r'[,:\[\]\{\}"]', '_', name)
+
+
+with open(_CONFIG_PATH, 'r') as f:
+    config = json.load(f)
+
+TREATMENT_COL = config.get('TREATMENT_COL', 'TempTreatment')
+CHOSEN_DS = config['CHOSEN_DATASET']
+_ds_config = config['DATASETS'][CHOSEN_DS]
+
+# Confounders are a fixed parameter of the algorithm (set per dataset in the config).
+# Until a dedicated CONFOUNDERS list is agreed, they default to the dataset's immutable attributes.
+CONFOUNDERS = [sanitize_column_name(c) for c in
+               _ds_config.get('CONFOUNDERS', _ds_config.get('IMMUTABLE_ATTRIBUTES', []))]
+print(f"🔹 Confounders for {CHOSEN_DS}: {CONFOUNDERS}")
 
 
 # ---------------------------------------------------------
 # 2. CATE FUNCTION (DoWhy backdoor.linear_regression)
 # ---------------------------------------------------------
 class EstimationError(Exception):
-    """The effect could not be estimated for this data (e.g. a missing treatment arm)."""
+    """The effect cannot be computed for this data. `reason` is a short category for the skip summary."""
+
+    def __init__(self, reason, message):
+        super().__init__(message)
+        self.reason = reason
 
 
-def get_adjustment_columns(df, treatment_col, outcome_col):
+def get_adjustment_columns(df, treatment_col, outcome_col, confounders=None):
     """
-    The single place that decides which columns the regression adjusts for.
-    PENDING confirmation from the instructor; for now: every column except treatment and outcome.
+    The single place that decides which columns the regression adjusts for: the configured
+    confounders that are present in this data (a rule's condition/treatment columns are removed
+    from it) and not constant inside it (a constant column carries no information).
     The same rule is applied to the overall rule population and to every subgroup.
     """
-    return [c for c in df.columns if c not in (treatment_col, TREATMENT_COL, outcome_col)]
+    confounders = CONFOUNDERS if confounders is None else confounders
+    return [c for c in confounders
+            if c in df.columns and c not in (treatment_col, outcome_col) and df[c].nunique() > 1]
 
 
-def estimate_cate(df, treatment_col, outcome_col):
+def _check_estimable(df, treatment_col, outcome_col, adjustment):
+    """Raise EstimationError when the treatment effect is not identifiable from this data."""
+    n = len(df)
+    if df[treatment_col].nunique() < 2:
+        raise EstimationError("single_arm", f"only one treatment arm among {n} rows")
+    covariates = np.column_stack([np.ones(n)] + [df[c].to_numpy(dtype=float) for c in adjustment])
+    rank_without_t = np.linalg.matrix_rank(covariates)
+    rank_with_t = np.linalg.matrix_rank(np.column_stack([covariates, df[treatment_col].to_numpy(dtype=float)]))
+    if rank_with_t == rank_without_t:
+        raise EstimationError("treatment_not_identifiable",
+                              f"treatment is a linear combination of the adjustment columns in {n} rows")
+    if n <= rank_with_t:
+        raise EstimationError("too_few_rows", f"{n} rows for {rank_with_t} regression terms")
+
+
+def estimate_cate(df, treatment_col, outcome_col, confounders=None):
     """
     CATE of treatment_col (0/1) on outcome_col for the given rows, using DoWhy
-    CausalModel.estimate_effect with method "backdoor.linear_regression".
+    CausalModel.estimate_effect with method "backdoor.linear_regression", adjusting for the
+    configured confounders.
 
     Uses every row it is given: no trimming, no effect caps, no minimum arm sizes, no dropping of
     rows. The input is assumed to be null-free (see preprocessing.clean_dataset).
-    Raises EstimationError when the effect cannot be estimated.
+    Raises EstimationError when the effect cannot be computed.
     """
-    if df[treatment_col].nunique() < 2:
-        raise EstimationError(f"'{treatment_col}' has a single value in {len(df)} rows; "
-                              f"both a treated and a control group are required")
+    adjustment = get_adjustment_columns(df, treatment_col, outcome_col, confounders)
+    _check_estimable(df, treatment_col, outcome_col, adjustment)
     try:
         model = CausalModel(
             data=df,
             treatment=treatment_col,
             outcome=outcome_col,
-            common_causes=get_adjustment_columns(df, treatment_col, outcome_col),
+            common_causes=adjustment or None,
         )
         # "maximal-adjustment" = adjust for all the columns given as common causes. DoWhy's default
         # search enumerates candidate adjustment sets (~9 s per call on 18 columns, 0.02 s here);
@@ -80,23 +104,34 @@ def estimate_cate(df, treatment_col, outcome_col):
         )
         value = float(estimate.value)
     except Exception as e:
-        raise EstimationError(f"DoWhy failed on {len(df)} rows: {e}") from e
+        raise EstimationError("dowhy_error", f"DoWhy failed on {len(df)} rows: {e}") from e
     if not np.isfinite(value):
-        raise EstimationError(f"DoWhy returned a non-finite estimate ({value}) on {len(df)} rows")
+        raise EstimationError("non_finite", f"DoWhy returned a non-finite estimate ({value}) on {len(df)} rows")
     return value
+
+
+_skip_counts = Counter()
+
+
+def get_skip_summary():
+    """{reason: number of effect computations skipped so far}."""
+    return dict(_skip_counts)
 
 
 def calculate_ate_safe(df, treatment_col, outcome_col, delta=None):
     """
-    Backwards-compatible wrapper used by all algorithms: returns the CATE, or NaN when it cannot
-    be estimated (the failure is printed, not silent). `delta` is accepted for compatibility and
-    ignored: the minimum subgroup size is enforced by the algorithms, not by the estimator.
-    TODO: callers still treat NaN as "skip"; the final policy is pending the instructor's answer.
+    Used by all algorithms: returns the CATE, or NaN when it cannot be computed. Per the
+    instructor, such a subgroup is ignored: it is not a counterexample to homogeneity. Every skip
+    is counted (see get_skip_summary) and the first one of each reason is printed.
+    `delta` is accepted for compatibility and ignored: the minimum subgroup size is enforced by
+    the algorithms, not by the estimator.
     """
     try:
         return estimate_cate(df, treatment_col, outcome_col)
     except EstimationError as e:
-        print(f"⚠️ CATE not estimated: {e}")
+        if _skip_counts[e.reason] == 0:
+            print(f"⚠️ CATE skipped ({e.reason}): {e}  [further '{e.reason}' skips are counted, not printed]")
+        _skip_counts[e.reason] += 1
         return np.nan
 
 
