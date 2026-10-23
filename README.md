@@ -39,4 +39,11 @@ python algorithms/main.py -d
 - **graphs/** - scripts that create graphs based on the csv files created from the main algorithm/from the experiments like calculating accuracy/average runtimes on main script or the scalability graphs.
 - **problem_2_3_algorithms/** – benchmarks for largest δ and smallest ε.
 - **results/** - CSV files used to generate the scripts in  `article_figures/generate_figures.ipynb`.
-- **utils/** – ATE calculation algorithm.
+- **utils/** – CATE estimation (`ATE_update.py`, DoWhy `backdoor.linear_regression`) and the one-time dataset cleaning (`preprocessing.py`).
+- **tests/** – synthetic-data checks for the estimator and the preprocessing (`python tests/test_cate_estimator.py`).
+
+## Effect estimation and data cleaning
+- **CATE** (overall rule population and every subgroup) is computed with DoWhy `CausalModel.estimate_effect(method_name="backdoor.linear_regression")` on exactly the rows of the group: no outlier trimming, no effect caps, no minimum arm sizes.
+- **Confounders** are a fixed parameter: the `CONFOUNDERS` list of each dataset in `configs/config.json` (currently equal to its `IMMUTABLE_ATTRIBUTES`). Columns of the list that are not in a rule's data (the rule's condition/treatment columns are removed) or are constant inside a subgroup are not used.
+- **Subgroups whose effect cannot be computed** (no treated or no control rows, fewer rows than regression terms, DoWhy error) are ignored; they are not counterexamples to homogeneity. Skips are counted (`ATE_update.get_skip_summary()`). If the overall rule population cannot be computed, the rule is reported as not evaluable.
+- **Missing values** are removed once, when the dataset is loaded (`utils/preprocessing.py::clean_dataset`). The algorithms do not clean data while running.
