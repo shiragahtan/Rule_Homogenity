@@ -31,7 +31,10 @@ _ds_config = config['DATASETS'][CHOSEN_DS]
 # Until a dedicated CONFOUNDERS list is agreed, they default to the dataset's immutable attributes.
 CONFOUNDERS = [sanitize_column_name(c) for c in
                _ds_config.get('CONFOUNDERS', _ds_config.get('IMMUTABLE_ATTRIBUTES', []))]
-print(f"🔹 Confounders for {CHOSEN_DS}: {CONFOUNDERS}")
+# Minimum number of treated AND of control rows a group needs for its effect to be computed (a
+# parameter of the algorithm, like delta). 0 = no requirement beyond both arms being present.
+MIN_ARM_SIZE = config.get('MIN_ARM_SIZE', 0)
+print(f"🔹 Confounders for {CHOSEN_DS}: {CONFOUNDERS} | min rows per treatment arm: {MIN_ARM_SIZE}")
 
 
 # ---------------------------------------------------------
@@ -62,6 +65,9 @@ def _check_estimable(df, treatment_col, outcome_col, adjustment):
     n = len(df)
     if df[treatment_col].nunique() < 2:
         raise EstimationError("single_arm", f"only one treatment arm among {n} rows")
+    arm_sizes = df[treatment_col].value_counts()
+    if arm_sizes.min() < MIN_ARM_SIZE:
+        raise EstimationError("too_few_in_arm", f"smallest treatment arm has {arm_sizes.min()} rows (< {MIN_ARM_SIZE}) among {n} rows")
     covariates = np.column_stack([np.ones(n)] + [df[c].to_numpy(dtype=float) for c in adjustment])
     rank_without_t = np.linalg.matrix_rank(covariates)
     rank_with_t = np.linalg.matrix_rank(np.column_stack([covariates, df[treatment_col].to_numpy(dtype=float)]))

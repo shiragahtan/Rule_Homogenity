@@ -61,6 +61,25 @@ def test_single_treatment_arm_raises():
     assert get_skip_summary()["single_arm"] == before + 1  # and the skip is counted, not silent
 
 
+def test_min_arm_size_parameter():
+    import ATE_update
+    df = make_df(n=300)
+    df["TempTreatment"] = 0
+    df.loc[df.index[:3], "TempTreatment"] = 1  # exactly 3 treated rows
+    old = ATE_update.MIN_ARM_SIZE
+    try:
+        ATE_update.MIN_ARM_SIZE = 10
+        try:
+            estimate_cate(df, "TempTreatment", "y", CONF)
+            assert False, "expected EstimationError"
+        except EstimationError as e:
+            assert e.reason == "too_few_in_arm"
+        ATE_update.MIN_ARM_SIZE = 3
+        assert np.isfinite(estimate_cate(df, "TempTreatment", "y", CONF))
+    finally:
+        ATE_update.MIN_ARM_SIZE = old
+
+
 def test_too_few_rows_is_skipped_not_garbage():
     df = make_df(n=300).iloc[:3].copy()  # 3 rows for intercept + treatment + 2 confounders
     df["TempTreatment"] = [0, 1, 0]

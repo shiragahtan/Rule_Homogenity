@@ -192,6 +192,7 @@
     "AllSubgroups"
   ],
   "TREATMENT_COL": "TempTreatment",
+  "MIN_ARM_SIZE": 0,
   "OPTIMIZATION_MODES": [
     "direct",
     "hybrid"
