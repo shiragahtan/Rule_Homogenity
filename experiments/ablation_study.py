@@ -19,7 +19,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 from ATE_update import calculate_ate_safe
 from preprocessing import clean_dataset
 from mlxtend.frequent_patterns import fpgrowth, apriori
-from algorithms.brute_force_algorithm import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
+from algorithms.bruteForce import calc_utility_for_subgroups as brute_force_calc_utility_for_subgroups
 from algorithms.RW import calc_utility_for_subgroups as rw_unlearning_calc_utility_for_subgroups
 
 # --- Configuration (paths relative to repo root so clone-and-run works) ---

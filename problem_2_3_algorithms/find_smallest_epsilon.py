@@ -23,7 +23,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'algorithms'))
 
 from ATE_update import calculate_ate_safe
 from preprocessing import clean_dataset
-from brute_force_algorithm import calc_utility_for_subgroups as brute_force_oracle
+from bruteForce import calc_utility_for_subgroups as brute_force_oracle
 
 # Load config
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
