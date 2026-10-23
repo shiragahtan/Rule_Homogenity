@@ -1,0 +1,31 @@
+dataset,rule,condition,treatment,n,no_confounders,configured_confounders,all_other_columns
+german,1,{'foreign_worker': 'yes'},{'status': 'no checking account'},961,0.3102995746221381,0.2703254633068086,0.26372817197271503
+german,2,{'foreign_worker': 'yes'},{'present_residence': 4},961,0.004824924179763435,0.009220282754978992,0.04881610344673326
+german,3,{'people_liable': 1},{'status': 'no checking account'},843,0.3070713746223569,0.27499656220345137,0.27051096406886666
+german,4,{'people_liable': 1},{'present_residence': 4},843,0.019381875327396436,0.015776074646829952,0.05142517116347023
+german,5,{'foreign_worker': 'yes'},{'job': 'skilled employee/official'},961,0.01885433715220952,-0.0007288877085996903,-0.005910456108151663
+german,6,{'amount': 0},{'present_residence': 4},753,0.012202463987313505,0.0001563697167995537,0.03336270810143971
+german,7,{'amount': 0},{'status': 'no checking account'},753,0.2897469746974696,0.261948395170595,0.25382449587475986
+german,8,{'foreign_worker': 'yes'},{'savings': 'unknown/no savings account'},961,0.15302071973827613,0.15018719388571167,0.10590922898381572
+german,9,{'foreign_worker': 'yes'},{'number_credits': 1},961,-0.04355990010436839,-0.010913240295724158,0.003943324735229736
+german,10,{'people_liable': 1},{'savings': 'unknown/no savings account'},843,0.13772895189834344,0.13229608973066032,0.09528417208464046
+so,1,{'SexualOrientation': 'Straight or heterosexual'},"{'FormalEducation': 'Bachelor’s degree (BA, BS, B.Eng., etc.)'}",35296,5722.861780039719,4838.07844837138,1023.0604100776545
+so,2,{'SexualOrientation': 'Straight or heterosexual'},{'UndergradMajor': 'Mathematics or statistics'},35296,8736.255173161742,3277.828781273158,5782.567316499379
+so,3,{'Student': 'No'},{'DevType': 'Data scientist or machine learning specialist'},31715,6057.054502581232,2776.118003043259,1042.8499917726149
+so,4,{'Student': 'No'},{'UndergradMajor': 'Mathematics or statistics'},31715,6641.578489645384,577.4375937286095,3787.398716483018
+so,5,{'SexualOrientation': 'Straight or heterosexual'},"{'DevType': 'C-suite executive (CEO, CTO, etc.)'}",35296,39493.9864713564,37905.59404597311,38360.48817608949
+so,6,{'RaceEthnicity': 'White or of European descent'},"{'FormalEducation': 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'}",29496,720.8708594949567,3791.926482638446,10129.24873673635
+so,7,{'Gender': 'Male'},"{'FormalEducation': 'Other doctoral degree (Ph.D, Ed.D., etc.)'}",35112,29019.646147366613,13434.575901869466,17162.794340379187
+so,8,{'RaceEthnicity': 'White or of European descent'},{'DevType': 'Back-end developer'},29496,6173.995982452165,4130.57432256265,5997.003230090078
+so,9,{'Student': 'No'},"{'UndergradMajor': 'Computer science, computer engineering, or software engineering'}",31715,-3397.644983613325,-1653.4174849850097,-1596.23457895116
+so,10,{'Gender': 'Male'},{'DevType': 'Back-end developer'},35112,5249.5274594949005,3838.580199099437,5480.414765867608
+acs,1,{'With a disability': 2},{'Insurance through a current or former employer or union': 1},998698,35110.242913046066,35668.51373661393,21460.426675040864
+acs,2,{'With a disability': 2},{'Public health coverage': 2},998698,34205.914751503944,42176.36547076741,9222.54744598909
+acs,3,{'With a disability': 2},{'Private health insurance coverage': 2},998698,-32665.91688221388,-32915.42317077132,1954.525937143735
+acs,4,{'With a disability': 2},{'Educational attainment': 20},998698,-2016.8420604533821,-1119.2429432117933,-5131.508794549794
+acs,5,{'With a disability': 2},{'Educational attainment': 21},998698,23558.437685144178,23877.522695728065,17041.249586259546
+acs,6,{'With a disability': 2},{'Educational attainment': 22},998698,34916.60816858313,35894.06691065835,27927.089446536913
+acs,7,{'Sex': 2},{'Educational attainment': 20},612432,1615.253246753,1072.085469023219,-1623.8854120034666
+acs,8,{'Sex': 1},{'Educational attainment': 21},575876,31704.15258202394,28997.512020424234,21851.437350624037
+acs,9,{'Sex': 1},{'Educational attainment': 20},575876,-1343.8959391215467,-2257.842844042243,-6779.412591171305
+acs,10,{'Sex': 1},{'Insurance through a current or former employer or union': 1},575876,43102.87992788125,40366.06875139051,24326.88845358045
