@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 from typing import Tuple, Optional, Dict
 
+import numpy as np
 import pandas as pd
 from mlxtend.frequent_patterns import fpgrowth
 
@@ -21,6 +22,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'algorithms'))
 
 from ATE_update import calculate_ate_safe
+from preprocessing import clean_dataset
 from brute_force_algorithm import calc_utility_for_subgroups as brute_force_oracle
 
 # Load config
@@ -137,6 +139,8 @@ def find_smallest_epsilon_achieving_homogeneity(
     
     # Calculate overall ATE once
     utility_all = calculate_ate_safe(df, treatment_col, outcome_col, delta)
+    if not np.isfinite(utility_all):
+        raise ValueError("Overall rule population: CATE could not be computed; rule is not evaluable")
     
     total_oracle_calls = 0
     last_violation_info = None  # Track the most recent violation
@@ -296,7 +300,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Load dataset
-    df = pd.read_csv(args.dataset)
+    df = clean_dataset(pd.read_csv(args.dataset), outcome_col=args.outcome)
     print(f"Loaded dataset: {len(df)} rows, {len(df.columns)} columns")
     
     # Run algorithm

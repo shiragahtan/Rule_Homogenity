@@ -266,6 +266,11 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
         utility_all = calculate_ate_safe(df, TREATMENT_COL, tgtO, delta)
     utility_time = utility_timer()
 
+    if chosen_mode in [0, 1] and not np.isfinite(utility_all):
+        # Without the overall effect nothing can be compared; do NOT report the rule as homogeneous.
+        print(f"   ❌ Overall CATE could not be computed for this rule population; rule is NOT EVALUABLE. Skipping.")
+        return []
+
     if (chosen_mode in [2, 3]) and (not np.isfinite(utility_all)):
         print(f"   ⚠️ [Scalability] Global ATE is NaN/Inf. Forcing to 0.0 to allow runtime test.")
         utility_all = 0.0
