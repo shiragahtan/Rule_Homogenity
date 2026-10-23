@@ -18,6 +18,7 @@ from functools import partial
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 # Import benchmark modules
 from benchmark_find_delta import run_benchmark as run_delta_benchmark
@@ -25,6 +26,7 @@ from benchmark_find_delta import generate_summary_statistics, create_visualizati
 from benchmark_find_epsilon import run_benchmark as run_epsilon_benchmark
 from benchmark_find_epsilon import generate_summary_statistics as gen_epsilon_summary
 from benchmark_find_epsilon import create_visualizations as create_epsilon_viz
+from preprocessing import clean_dataset
 
 import pandas as pd
 import base64
@@ -104,9 +106,7 @@ def _process_single_rule_delta(args_tuple):
     # ── Prepare dataset ──
     if base_dataset_path:
         # On-the-fly preparation (ACS / generic path)
-        base_df = pd.read_csv(base_dataset_path)
-        # Remove Unnamed columns (same as ablation study - line 220)
-        base_df = base_df.loc[:, ~base_df.columns.str.startswith('Unnamed')]
+        base_df = clean_dataset(pd.read_csv(base_dataset_path), outcome_col=outcome_col)  # cleaned once, here
         cond_attr, cond_val = list(condition.items())[0]
         treat_attr, treat_val = list(treatment.items())[0]
         
@@ -123,7 +123,6 @@ def _process_single_rule_delta(args_tuple):
             return []
         sub_df = sub_df.rename(columns=lambda x: _re.sub(r'[,:\[\]\{\}"]', '_', x))
         actual_outcome_col = _re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
-        sub_df[actual_outcome_col] = pd.to_numeric(sub_df[actual_outcome_col], errors='coerce')
         df = sub_df
     else:
         # Pre-computed per-rule CSVs (SO path)
@@ -131,7 +130,7 @@ def _process_single_rule_delta(args_tuple):
         if not dataset_path.exists():
             print(f"\n⚠️  Warning: Dataset for rule {rule_idx} not found. Skipping.")
             return []
-        df = pd.read_csv(dataset_path)
+        df = clean_dataset(pd.read_csv(dataset_path), outcome_col=outcome_col)
         actual_outcome_col = outcome_col
     
     # ── Per-rule delta bounds ──
@@ -242,9 +241,7 @@ def _process_single_rule_epsilon(args_tuple):
     
     # ── Prepare dataset ──
     if base_dataset_path:
-        base_df = pd.read_csv(base_dataset_path)
-        # Remove Unnamed columns (same as ablation study - line 220)
-        base_df = base_df.loc[:, ~base_df.columns.str.startswith('Unnamed')]
+        base_df = clean_dataset(pd.read_csv(base_dataset_path), outcome_col=outcome_col)  # cleaned once, here
         cond_attr, cond_val = list(condition.items())[0]
         treat_attr, treat_val = list(treatment.items())[0]
         
@@ -261,14 +258,13 @@ def _process_single_rule_epsilon(args_tuple):
             return []
         sub_df = sub_df.rename(columns=lambda x: _re.sub(r'[,:\[\]\{\}"]', '_', x))
         actual_outcome_col = _re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
-        sub_df[actual_outcome_col] = pd.to_numeric(sub_df[actual_outcome_col], errors='coerce')
         df = sub_df
     else:
         dataset_path = Path(__file__).parent / f'../stackoverflow/processed_db/so_countries_treatment_{rule_idx}_encoded.csv'
         if not dataset_path.exists():
             print(f"\n⚠️  Warning: Dataset for rule {rule_idx} not found. Skipping.")
             return []
-        df = pd.read_csv(dataset_path)
+        df = clean_dataset(pd.read_csv(dataset_path), outcome_col=outcome_col)
         actual_outcome_col = outcome_col
     
     # ── Resolve delta values for this rule ──

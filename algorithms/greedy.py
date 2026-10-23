@@ -36,8 +36,8 @@ def _onehot_lookup(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, str], List
     lookup: Dict[str, str] = {}
 
     for col in df.columns:
-        # Create dummies, treat NAs as a distinct category
-        dummies = pd.get_dummies(df[col].fillna("⧫NA⧫").astype(str), prefix=col, dtype=bool)
+        # Create dummies (the data is null-free; it is cleaned once at load time)
+        dummies = pd.get_dummies(df[col].astype(str), prefix=col, dtype=bool)
         parts.append(dummies)
 
         # Map specific column "Age_18" back to attribute "Age"

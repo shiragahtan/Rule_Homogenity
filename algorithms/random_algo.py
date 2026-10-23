@@ -33,7 +33,7 @@ def _onehot_lookup(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, Tuple[str,
     parts: List[pd.DataFrame] = []
     lookup: Dict[str, Tuple[str, str]] = {}
     for col in df.columns:
-        dummies = pd.get_dummies(df[col].fillna("⧫NA⧫").astype(str), prefix=col, dtype=bool)
+        dummies = pd.get_dummies(df[col].astype(str), prefix=col, dtype=bool)
         parts.append(dummies)
         lookup.update({c: (col, c.split("_", 1)[1]) for c in dummies.columns})
     return pd.concat(parts, axis=1), lookup

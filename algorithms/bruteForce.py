@@ -48,7 +48,7 @@ def mine_subgroups(
 
     for col in mining_df.columns:
         # Use the safe separator
-        d = pd.get_dummies(mining_df[col].fillna('⧫NA⧫'), prefix=col, prefix_sep=sep, dtype=bool)
+        d = pd.get_dummies(mining_df[col], prefix=col, prefix_sep=sep, dtype=bool)
         onehot_parts.append(d)
 
         # Build lookup table using the safe split

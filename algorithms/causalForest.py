@@ -76,8 +76,7 @@ def _fit_causal_forest(
     T = df[treatment_col].values
     Y = df[outcome_col].values
 
-    # Handle missing values
-    X = X.fillna(X.mean())
+    # No missing-value handling here: the data is cleaned once at load time
 
     # Initialize and fit CausalForest
     with warnings.catch_warnings():

@@ -30,6 +30,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from find_largest_delta import find_largest_delta_breaking_homogeneity
+from preprocessing import clean_dataset
 
 # Load config
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
@@ -89,8 +90,6 @@ def _prepare_rule_df(base_df, rule, outcome_col):
     sub_df = sub_df.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
     actual_outcome_col = re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
 
-    # Ensure outcome is numeric
-    sub_df[actual_outcome_col] = pd.to_numeric(sub_df[actual_outcome_col], errors='coerce')
 
     return sub_df, actual_outcome_col
 
@@ -155,9 +154,7 @@ def run_benchmark(
     base_df = None
     if base_dataset_path is not None:
         print(f"\nLoading base dataset: {base_dataset_path}")
-        base_df = pd.read_csv(base_dataset_path)
-        # Remove Unnamed columns (same as ablation study - line 220)
-        base_df = base_df.loc[:, ~base_df.columns.str.startswith('Unnamed')]
+        base_df = clean_dataset(pd.read_csv(base_dataset_path), outcome_col=outcome_col)  # cleaned once, here
         print(f"  → {len(base_df)} rows, {len(base_df.columns)} columns")
     
     # Results storage
@@ -185,7 +182,7 @@ def run_benchmark(
             if not dataset_path.exists():
                 print(f"\n⚠️  Warning: Dataset for rule {rule_idx} not found. Skipping.")
                 continue
-            df = pd.read_csv(dataset_path)
+            df = clean_dataset(pd.read_csv(dataset_path), outcome_col=outcome_col)
             actual_outcome_col = outcome_col
         
         # ── Per-rule delta bounds ──
