@@ -206,7 +206,7 @@ def calc_utility_for_subgroups(
         outcome_col: Optional[str] = None,
         tgtO: Optional[str] = None,
         utility_all: Optional[float] = None,
-        k_walks: int = 1500,  # CHANGED: Propagate increased k_walks
+        k_walks: int = 2000,  # article default (Parameter Rationale, section 6.1)
         size_stop: float = 0.8,
         rng: Optional[random.Random] = None,
         attribute_weights: Optional[Dict[str, float]] = None,
