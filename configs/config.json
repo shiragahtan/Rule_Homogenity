@@ -8,7 +8,7 @@
         50
       ],
       "EPSILONS": [
-        0.4
+        0.5
       ],
       "TARGET_COLUMN": "credit_risk",
       "OUTCOME_COL": "credit_risk",
@@ -80,10 +80,10 @@
       "FULL_DATASET_PATH": "datasets/stackoverflow_not_encoded.csv",
       "RULES_FILE": "configs/Chosen10Treatments.json",
       "DELTAS": [
-        1000
+        100
       ],
       "EPSILONS": [
-        12000
+        520000.0
       ],
       "TARGET_COLUMN": "ConvertedSalary",
       "OUTCOME_COL": "ConvertedSalary",
@@ -148,10 +148,10 @@
       "FULL_DATASET_PATH": "datasets/acs_encoded.csv",
       "RULES_FILE": "configs/ACSChosen10Treatments.json",
       "DELTAS": [
-        1000
+        100
       ],
       "EPSILONS": [
-        12000
+        17500
       ],
       "TARGET_COLUMN": "Wages or salary income past 12 months",
       "OUTCOME_COL": "Wages or salary income past 12 months",
