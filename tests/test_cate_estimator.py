@@ -61,23 +61,53 @@ def test_single_treatment_arm_raises():
     assert get_skip_summary()["single_arm"] == before + 1  # and the skip is counted, not silent
 
 
-def test_min_arm_size_parameter():
+def test_min_arm_is_delta_over_ten():
     import ATE_update
     df = make_df(n=300)
     df["TempTreatment"] = 0
     df.loc[df.index[:3], "TempTreatment"] = 1  # exactly 3 treated rows
-    old = ATE_update.MIN_ARM_SIZE
+    # delta=100 -> each arm needs at least 10 rows: the 3 treated rows are too few
+    before = ATE_update.get_skip_summary().get("too_few_in_arm", 0)
+    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y", delta=100))
+    assert ATE_update.get_skip_summary()["too_few_in_arm"] == before + 1
+    # delta=30 -> 3 rows are enough (the p-value filter is switched off to isolate the arm rule)
+    old = ATE_update.P_VALUE_THRESHOLD
     try:
-        ATE_update.MIN_ARM_SIZE = 10
-        try:
-            estimate_cate(df, "TempTreatment", "y", CONF)
-            assert False, "expected EstimationError"
-        except EstimationError as e:
-            assert e.reason == "too_few_in_arm"
-        ATE_update.MIN_ARM_SIZE = 3
-        assert np.isfinite(estimate_cate(df, "TempTreatment", "y", CONF))
+        ATE_update.P_VALUE_THRESHOLD = None
+        assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=30))
     finally:
-        ATE_update.MIN_ARM_SIZE = old
+        ATE_update.P_VALUE_THRESHOLD = old
+
+
+def test_p_value_filter():
+    import ATE_update
+    rng = np.random.default_rng(0)
+    n = 200
+    df = pd.DataFrame({"a": rng.normal(size=n), "b": rng.normal(size=n),
+                       "TempTreatment": rng.integers(0, 2, n)})
+    df["y"] = 5.0 * df["TempTreatment"] + df["a"] + rng.normal(size=n)  # strong effect
+    value, p = ATE_update.estimate_cate_with_p(df, "TempTreatment", "y", ["a", "b"])
+    assert abs(value - 5.0) < 1.0 and p < 1e-6
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y"))  # significant -> kept
+    df["y"] = df["a"] + rng.normal(size=n)  # no effect at all -> p is large
+    value, p = ATE_update.estimate_cate_with_p(df, "TempTreatment", "y", ["a", "b"])
+    assert p >= 0.05
+    before = ATE_update.get_skip_summary().get("not_significant", 0)
+    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # insignificant -> ignored
+    assert ATE_update.get_skip_summary()["not_significant"] == before + 1
+    try:
+        estimate_cate(df, "TempTreatment", "y", ["a", "b"], p_threshold=0.05)
+        assert False, "expected EstimationError"
+    except EstimationError as e:
+        assert e.reason == "not_significant"
+
+
+def test_confounder_list_passed_unchanged_except_missing_columns():
+    from ATE_update import get_adjustment_columns
+    df = make_df(n=100)
+    df["constant_col"] = 1
+    cols = get_adjustment_columns(df, "TempTreatment", "y", CONF + ["constant_col", "not_a_column"])
+    assert cols == CONF + ["constant_col"]  # constants are kept (DoWhy copes), missing names are removed
 
 
 def test_too_few_rows_is_skipped_not_garbage():
@@ -98,12 +128,13 @@ def test_only_configured_confounders_are_used():
     assert get_adjustment_columns(df, "TempTreatment", "y", ["age", "missing_col"]) == ["age"]
 
 
-def test_constant_confounder_inside_subgroup_is_dropped():
+def test_constant_confounder_inside_subgroup_is_passed_to_dowhy():
     from ATE_update import get_adjustment_columns
     df = make_df()
-    df["edu"] = 2  # constant within this subgroup
-    assert get_adjustment_columns(df, "TempTreatment", "y", CONF) == ["age"]
-    assert np.isfinite(estimate_cate(df, "TempTreatment", "y", CONF))
+    without = estimate_cate(df, "TempTreatment", "y", ["age"])
+    df["edu"] = 2  # constant within this subgroup: kept in the list, DoWhy copes with it
+    assert get_adjustment_columns(df, "TempTreatment", "y", CONF) == CONF
+    assert abs(estimate_cate(df, "TempTreatment", "y", CONF) - without) < 1e-6
 
 
 def test_no_confounders_is_a_plain_difference_in_means():

@@ -192,7 +192,8 @@
     "AllSubgroups"
   ],
   "TREATMENT_COL": "TempTreatment",
-  "MIN_ARM_SIZE": 0,
+  "MIN_ARM_DELTA_DIVISOR": 10,
+  "P_VALUE_THRESHOLD": 0.05,
   "OPTIMIZATION_MODES": [
     "direct",
     "hybrid"

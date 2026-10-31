@@ -7,8 +7,9 @@ current CATE estimator, and report for each rule
 
 A rule is homogeneous for (delta, epsilon) exactly when that maximum is <= epsilon, so unlike the
 randomized search (experiments/rw_min_epsilon.py, a lower bound) this gives the definitive answer.
-Every subgroup's effect is saved, so any larger delta' (filter on `size`) or any epsilon can be
-answered afterwards without recomputing (see summarize_exact below).
+Every subgroup's effect, p-value and treated / control counts are saved UNFILTERED, so any larger
+delta' (filter on `size`), minimum arm size, p-value cut-off or epsilon can be applied afterwards
+without recomputing (see experiments/analyze_exact.py).
 
     python experiments/exact_min_epsilon.py --dataset german --rules 7
     python experiments/exact_min_epsilon.py --dataset so --workers 8
@@ -65,9 +66,9 @@ def mine(df, delta, exclude):
 
 
 def _init(dataset, treat, outcome, delta, df, confounders):
-    from ATE_update import estimate_cate, EstimationError
+    from ATE_update import estimate_cate_with_p, EstimationError
     _G.update(df=df, treat=treat, outcome=outcome, delta=delta, confounders=confounders,
-              estimate_cate=estimate_cate, EstimationError=EstimationError,
+              estimate_cate_with_p=estimate_cate_with_p, EstimationError=EstimationError,
               old=load_old_estimator(dataset))
 
 
@@ -80,11 +81,12 @@ def _estimate(masks_items):
             mask &= (df[c] == v).to_numpy()
         sub = df[mask]
         try:
-            new = _G["estimate_cate"](sub, treat, outcome, _G["confounders"])
+            new, p_value = _G["estimate_cate_with_p"](sub, treat, outcome, _G["confounders"])
         except _G["EstimationError"]:
-            new = np.nan
+            new, p_value = np.nan, np.nan
         old = _G["old"].calculate_ate_safe(sub, treat, outcome, _G["delta"])
-        res.append((" & ".join(f"{c}={v}" for c, v in preds), int(len(sub)), old, new))
+        treated = int(sub[treat].sum())
+        res.append((" & ".join(f"{c}={v}" for c, v in preds), int(len(sub)), old, new, p_value, treated, len(sub) - treated))
     return res
 
 
@@ -124,12 +126,12 @@ def main():
             rows = [x for part in pool.imap_unordered(_estimate, chunks) for x in part]
         _init(args.dataset, treat, outcome, delta, df, confounders)
         all_old = _G["old"].calculate_ate_safe(df, treat, outcome, delta)
-        all_new = _G["estimate_cate"](df, treat, outcome, confounders)
-        out = pd.DataFrame(rows, columns=["subgroup", "size", "cate_old", "cate_new"])
+        all_new, p_all = _G["estimate_cate_with_p"](df, treat, outcome, confounders)
+        out = pd.DataFrame(rows, columns=["subgroup", "size", "cate_old", "cate_new", "p_new", "treated", "control"])
         out["dev_old"] = (out.cate_old - all_old).abs()
         out["dev_new"] = (out.cate_new - all_new).abs()
         out.insert(0, "rule", r)
-        out["all_old"], out["all_new"] = all_old, all_new
+        out["all_old"], out["all_new"], out["p_all"] = all_old, all_new, p_all
         path = Path(args.out) / "exact" / f"{args.dataset}_rule{r}_delta{delta}.csv"
         path.parent.mkdir(exist_ok=True)
         out.to_csv(path, index=False)

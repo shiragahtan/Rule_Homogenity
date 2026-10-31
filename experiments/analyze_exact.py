@@ -1,88 +1,87 @@
 """
 Summaries of the exact per-subgroup effects written by experiments/exact_min_epsilon.py.
 
-For every rule it reports, under the previous and the current estimator, the exact smallest epsilon
-at the article's delta, the verdict at the article's epsilon, and how the verdict and the smallest
-epsilon change when
-  * delta is raised (a subgroup counts only if size >= delta'), and
-  * a minimum number of treated AND control rows is required for an effect to count (MIN_ARM_SIZE).
-The treated / control row counts of every subgroup are recomputed here (cheap, no regression).
+For every rule it reports, under the previous estimator and under the current one with its
+reliability filters, the exact smallest epsilon at the configured delta and the resulting verdict.
+The filters of the current estimator (utils/ATE_update.py) are applied here to the unfiltered
+per-subgroup results:
+  * both treatment arms need at least delta / MIN_ARM_DELTA_DIVISOR rows, and
+  * DoWhy's p-value must be below P_VALUE_THRESHOLD.
+It also reports how many subgroups each filter removes and how many violations of homogeneity
+(deviation > epsilon) the p-value filter hides, and how the smallest epsilon moves when delta is
+raised (the arm rule is then delta' / MIN_ARM_DELTA_DIVISOR).
 
-    python experiments/analyze_exact.py --exact-dir <dir with exact/*.csv> --out calibration_results/exact_summary.csv
+    python experiments/analyze_exact.py --exact-dir <dir with exact/*.csv> --dataset german --out calibration_results/exact_summary_german.csv
 """
 import argparse
 import json
-import re
-import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.append(str(REPO / "utils"))
-from preprocessing import clean_dataset, prepare_rule_df  # noqa: E402
-
-ARMS = [0, 10, 30, 100]
-DELTA_GRID = {"german": [50, 75, 100, 150, 200, 300], "so": [1000, 2000, 3000, 5000, 8000, 12000],
-              "acs": [1000, 2000, 5000, 10000, 20000, 50000]}
+DELTA_GRID = {"german": [50, 75, 100, 150, 200, 300], "so": [100, 200, 500, 1000, 2000, 5000],
+              "acs": [100, 200, 500, 1000, 2000, 5000, 10000]}
 
 
-def arm_sizes(df, subgroups, treat, sep="="):
-    """(treated, control) rows of each subgroup string 'col=value & col=value'."""
-    cols = {c: df[c].astype(str).to_numpy() for c in df.columns}
-    # values may themselves contain " & ", so split only in front of "<column>="
-    splitter = re.compile(" & (?=(?:" + "|".join(re.escape(c) for c in df.columns) + ")" + re.escape(sep) + ")")
-    t = df[treat].to_numpy() == 1
-    out = []
-    for s in subgroups:
-        mask = np.ones(len(df), dtype=bool)
-        for pred in splitter.split(s):
-            c, v = pred.split(sep, 1)
-            mask &= cols[c] == v
-        out.append((int(t[mask].sum()), int((~t[mask]).sum())))
-    return out
+def apply_filters(f, delta, divisor, p_threshold, use_arm=True, use_p=True):
+    """Subgroups of f (unfiltered exact results) that the current estimator would keep at `delta`."""
+    keep = f["size"] >= delta
+    keep &= f["cate_new"].notna()
+    if use_arm:
+        keep &= (f[["treated", "control"]].min(axis=1) >= delta / divisor)
+    if use_p and p_threshold is not None:
+        keep &= f["p_new"] < p_threshold
+    return f[keep]
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--exact-dir", required=True)
-    ap.add_argument("--out", default=str(REPO / "calibration_results" / "exact_summary.csv"))
+    ap.add_argument("--dataset", required=True, choices=["so", "acs", "german"])
+    ap.add_argument("--delta", type=int, default=None, help="default: configured delta")
+    ap.add_argument("--out", default=None)
     args = ap.parse_args()
     config = json.load(open(REPO / "configs" / "config.json"))
-    treat = config["TREATMENT_COL"]
+    ds = config["DATASETS"][args.dataset]
+    delta0 = args.delta or ds["DELTAS"][0]
+    eps = ds["EPSILONS"][0]
+    divisor = config.get("MIN_ARM_DELTA_DIVISOR", 10)
+    p_thr = config.get("P_VALUE_THRESHOLD", 0.05)
     rows = []
-    for name, ds in config["DATASETS"].items():
-        delta0, eps = ds["DELTAS"][0], ds["EPSILONS"][0]
-        rules = [json.loads(l) for l in open(REPO / ds["RULES_FILE"])]
-        full = clean_dataset(pd.read_csv(REPO / ds["FULL_DATASET_PATH"]), outcome_col=ds["TARGET_COLUMN"])
-        for r in range(1, len(rules) + 1):
-            f = pd.read_csv(Path(args.exact_dir) / f"{name}_rule{r}_delta{delta0}.csv")
-            df = prepare_rule_df(full, rules[r - 1], treat, encode=(name != "acs"))
-            # the German files were written by an earlier version of exact_min_epsilon.py that joined "column|value"
-            sep = "=" if "=" in f["subgroup"][0] else "|"
-            arms = arm_sizes(df, f["subgroup"], treat, sep)
-            f["treated"], f["control"] = zip(*arms)
-            f["min_arm"] = f[["treated", "control"]].min(axis=1)
-            row = dict(dataset=name, rule=r, delta=delta0, epsilon=eps, subgroups=len(f),
-                       effect_old=f.all_old[0], effect_new=f.all_new[0],
-                       min_eps_old=f.dev_old.max(), min_eps_new=f.dev_new.max(),
-                       not_estimable_new=int(f.cate_new.isna().sum()))
-            for k in ARMS[1:]:
-                s = f[f.min_arm >= k]
-                row[f"min_eps_new_arm{k}"] = s.dev_new.max()
-                row[f"subgroups_arm{k}"] = len(s)
-            for g in DELTA_GRID[name]:
-                s = f[f["size"] >= g]
-                row[f"min_eps_old_delta{g}"] = s.dev_old.max()
-                row[f"min_eps_new_delta{g}"] = s.dev_new.max()
-            top = f.loc[f.dev_new.idxmax()]
-            row.update(argmax_new=top.subgroup, argmax_size=top["size"], argmax_treated=top.treated,
-                       argmax_control=top.control, argmax_effect=top.cate_new)
-            rows.append(row)
-            print(name, r, "done", flush=True)
-    pd.DataFrame(rows).to_csv(args.out, index=False)
-    print("->", args.out)
+    for r in range(1, 11):
+        f = pd.read_csv(Path(args.exact_dir) / f"{args.dataset}_rule{r}_delta{delta0}.csv")
+        all_old, all_new, p_all = f.all_old[0], f.all_new[0], f.p_all[0]
+        f["dev_old"] = (f.cate_old - all_old).abs()
+        f["dev_new"] = (f.cate_new - all_new).abs()
+        at_delta = f[f["size"] >= delta0]
+        raw = at_delta[at_delta.cate_new.notna()]
+        arm = apply_filters(f, delta0, divisor, p_thr, use_p=False)
+        final = apply_filters(f, delta0, divisor, p_thr)
+        hidden = arm[~arm.index.isin(final.index)]
+        top = final.loc[final.dev_new.idxmax()] if len(final) else None
+        row = dict(dataset=args.dataset, rule=r, delta=delta0, epsilon=eps, subgroups=len(f),
+                   effect_old=all_old, effect_new=all_new, p_value_overall=p_all,
+                   min_eps_old=f.dev_old.max(), min_eps_new_unfiltered=raw.dev_new.max(),
+                   min_eps_new_arm_filter=arm.dev_new.max(), min_eps_new_final=final.dev_new.max() if len(final) else np.nan,
+                   not_estimable=int(f.cate_new.isna().sum()), removed_by_arm=len(raw) - len(arm),
+                   removed_by_p=len(hidden), kept=len(final),
+                   violations_before_p_filter=int((arm.dev_new > eps).sum()),
+                   violations_hidden_by_p_filter=int((hidden.dev_new > eps).sum()),
+                   violations_after_p_filter=int((final.dev_new > eps).sum()))
+        if top is not None:
+            row.update(argmax_subgroup=top.subgroup, argmax_size=top["size"], argmax_treated=top.treated,
+                       argmax_control=top.control, argmax_effect=top.cate_new, argmax_p=top.p_new)
+        for g in DELTA_GRID[args.dataset]:
+            sub = apply_filters(f, g, divisor, p_thr)
+            row[f"min_eps_old_delta{g}"] = f[f["size"] >= g].dev_old.max()
+            row[f"min_eps_new_final_delta{g}"] = sub.dev_new.max() if len(sub) else np.nan
+        rows.append(row)
+        print(args.dataset, r, "done", flush=True)
+    out = args.out or str(REPO / "calibration_results" / f"exact_summary_{args.dataset}.csv")
+    pd.DataFrame(rows).to_csv(out, index=False)
+    print("->", out)
 
 
 if __name__ == "__main__":
