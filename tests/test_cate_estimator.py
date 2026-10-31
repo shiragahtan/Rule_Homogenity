@@ -102,6 +102,15 @@ def test_p_value_filter():
         assert e.reason == "not_significant"
 
 
+def test_p_value_filter_is_for_subgroups_not_the_overall_effect():
+    rng = np.random.default_rng(1)
+    n = 200
+    df = pd.DataFrame({"a": rng.normal(size=n), "b": rng.normal(size=n), "TempTreatment": rng.integers(0, 2, n)})
+    df["y"] = df["a"] + rng.normal(size=n)  # no effect: p is large
+    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # as a subgroup: ignored
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", subgroup=False))  # overall effect: kept
+
+
 def test_confounder_list_passed_unchanged_except_missing_columns():
     from ATE_update import get_adjustment_columns
     df = make_df(n=100)

@@ -263,7 +263,7 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
     epsilons = override_epsilons if override_epsilons is not None else (EPSILONS if chosen_mode == 0 else [EPSILONS[0]])
     print(f"\033[94mrunning for condition: {condition} treatment: {treatment}\033[0m")
     with timer() as utility_timer:
-        utility_all = calculate_ate_safe(df, TREATMENT_COL, tgtO, delta)
+        utility_all = calculate_ate_safe(df, TREATMENT_COL, tgtO, delta, subgroup=False)
     utility_time = utility_timer()
 
     if chosen_mode in [0, 1] and not np.isfinite(utility_all):

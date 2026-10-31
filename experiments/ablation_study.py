@@ -188,7 +188,7 @@ def process_rule(rule, full_df, tgtO, delta, epsilon, algo_name, delta_pct_origi
         return None
     
     # Calculate utility
-    utility_all = calculate_ate_safe(sub_df_encoded, TREATMENT_COL, tgtO, delta)
+    utility_all = calculate_ate_safe(sub_df_encoded, TREATMENT_COL, tgtO, delta, subgroup=False)
     if not np.isfinite(utility_all):
         print("   ❌ Overall CATE could not be computed; rule is NOT EVALUABLE. Skipping.")
         return None

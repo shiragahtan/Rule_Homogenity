@@ -137,19 +137,21 @@ def get_skip_summary():
     return dict(_skip_counts)
 
 
-def calculate_ate_safe(df, treatment_col, outcome_col, delta=None):
+def calculate_ate_safe(df, treatment_col, outcome_col, delta=None, subgroup=True):
     """
     Used by all algorithms: returns the CATE, or NaN when it cannot be computed or is unreliable. Per
     the instructor, such a subgroup is ignored: it is not a counterexample to homogeneity. It is
     ignored when
       * a treatment arm is missing or the effect is not identifiable,
       * the treated or the control rows number fewer than delta / MIN_ARM_DELTA_DIVISOR,
-      * DoWhy's p-value is >= P_VALUE_THRESHOLD (extreme / unreliable effects).
+      * DoWhy's p-value is >= P_VALUE_THRESHOLD (extreme / unreliable effects). Per the instructor this
+        filter is for subgroups only: pass subgroup=False for the overall effect of a rule population.
     Every skip is counted (see get_skip_summary) and the first one of each reason is printed.
     """
     min_arm = delta / MIN_ARM_DELTA_DIVISOR if delta else 0
     try:
-        return estimate_cate(df, treatment_col, outcome_col, min_arm=min_arm, p_threshold=P_VALUE_THRESHOLD)
+        return estimate_cate(df, treatment_col, outcome_col, min_arm=min_arm,
+                             p_threshold=P_VALUE_THRESHOLD if subgroup else None)
     except EstimationError as e:
         if _skip_counts[e.reason] == 0:
             print(f"⚠️ CATE skipped ({e.reason}): {e}  [further '{e.reason}' skips are counted, not printed]")

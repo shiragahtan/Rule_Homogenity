@@ -138,7 +138,7 @@ def find_smallest_epsilon_achieving_homogeneity(
         print("="*70)
     
     # Calculate overall ATE once
-    utility_all = calculate_ate_safe(df, treatment_col, outcome_col, delta)
+    utility_all = calculate_ate_safe(df, treatment_col, outcome_col, delta, subgroup=False)
     if not np.isfinite(utility_all):
         raise ValueError("Overall rule population: CATE could not be computed; rule is not evaluable")
     
