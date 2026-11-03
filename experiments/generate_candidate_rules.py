@@ -86,6 +86,8 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--min-arm", type=int, default=10, help="rows needed in each treatment arm of a rule's population")
     ap.add_argument("--no-old", action="store_true", help="skip the previous estimator (faster, no validation)")
+    ap.add_argument("--coverage-threshold", type=float, default=None,
+                    help="coverage (percent) a condition must exceed; default: the dataset's COVERAGE_THRESHOLD")
     ap.add_argument("--replace-negative", action="store_true")
     ap.add_argument("--min-treated-share", type=float, default=0.1)
     ap.add_argument("--write-rules", action="store_true", help="overwrite the dataset's rules file with the proposal")
@@ -95,7 +97,7 @@ def main():
     config = json.load(open(REPO / "configs" / "config.json"))
     ds = config["DATASETS"][args.dataset]
     treat, outcome = config["TREATMENT_COL"], ds["TARGET_COLUMN"]
-    threshold = ds.get("COVERAGE_THRESHOLD", 10)
+    threshold = args.coverage_threshold if args.coverage_threshold is not None else ds.get("COVERAGE_THRESHOLD", 10)
     from ATE_update import sanitize_column_name
     confounders = [sanitize_column_name(c) for c in ds["CONFOUNDERS"]]
     full_df = clean_dataset(pd.read_csv(REPO / ds["FULL_DATASET_PATH"]), outcome_col=outcome)
@@ -127,7 +129,8 @@ def main():
                             zip(cand.condition_attr, cand.condition_val, cand.treatment_attr, cand.treatment_val)]
     cand = cand.sort_values("utility_new", ascending=False)
     Path(args.out).mkdir(parents=True, exist_ok=True)
-    path = Path(args.out) / f"{args.dataset}_candidate_rules.csv"
+    suffix = f"_cov{args.coverage_threshold:g}" if args.coverage_threshold is not None else ""
+    path = Path(args.out) / f"{args.dataset}_candidate_rules{suffix}.csv"
     cand.to_csv(path, index=False)
     pos = cand[cand.utility_new > 0]
     print(f"{len(pos)} of {len(cand)} candidates have a positive effect ({time.time() - t0:.0f}s) -> {path}", flush=True)
@@ -156,7 +159,7 @@ def main():
             proposal.append({"condition": {pick.condition_attr: _py(pick.condition_val)},
                              "treatment": {pick.treatment_attr: _py(pick.treatment_val)},
                              "utility": float(pick.utility_new), "coverage": float(pick.coverage_pct)})
-        out_rules = Path(args.out) / f"{args.dataset}_proposed_rules.json"
+        out_rules = Path(args.out) / f"{args.dataset}_proposed_rules{suffix}.json"
         out_rules.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in proposal) + "\n", encoding="utf-8")
         print(f"proposal -> {out_rules}")
         if args.write_rules:
