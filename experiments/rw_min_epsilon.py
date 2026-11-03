@@ -47,7 +47,7 @@ def min_epsilon_for_rule(job):
     df = prepare_rule_df(full_df, rule, treat, encode=(dataset != "acs"))
     t0 = time.time()
     # the group-size filter is for subgroups only; the previous estimator has no such argument
-    overall_kw = {"subgroup": False} if hasattr(ATE_update, "MIN_ARM_FRACTION") else {}
+    overall_kw = {"subgroup": False} if hasattr(ATE_update, "MIN_ARM_DELTA_DIVISOR") else {}
     utility_all = calculate_ate_safe(df, treat, outcome, delta, **overall_kw)
     row = dict(dataset=dataset, label=label, rule=ridx, utility_all=utility_all, delta=delta)
     if utility_all != utility_all:

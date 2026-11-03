@@ -61,20 +61,22 @@ def test_single_treatment_arm_raises():
     assert get_skip_summary()["single_arm"] == before + 1  # and the skip is counted, not silent
 
 
-def test_each_arm_must_be_at_least_a_fraction_of_the_subgroup():
+def test_each_arm_must_have_at_least_delta_over_ten_rows():
     import ATE_update
     df = make_df(n=300)
     df["TempTreatment"] = 0
-    df.loc[df.index[:20], "TempTreatment"] = 1  # 20 treated of 300 = 6.7%
+    df.loc[df.index[:3], "TempTreatment"] = 1  # exactly 3 treated rows
     before = ATE_update.get_skip_summary().get("too_few_in_arm", 0)
-    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # a subgroup: 6.7% < 10% -> ignored
+    # delta=100 -> each arm needs at least 10 rows: 3 treated rows are too few for a subgroup
+    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y", delta=100))
     assert ATE_update.get_skip_summary()["too_few_in_arm"] == before + 1
+    # delta=30 -> 3 rows are enough
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=30))
     # the overall effect of a rule population is not filtered by arm size
-    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", subgroup=False))
-    df.loc[df.index[:30], "TempTreatment"] = 1  # exactly 10% treated: allowed
-    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y"))
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=100, subgroup=False))
+    # a share of the subgroup is NOT required: 3 of 300 rows pass when delta is small enough
     try:
-        estimate_cate(df, "TempTreatment", "y", CONF, min_arm_fraction=0.2)
+        estimate_cate(df, "TempTreatment", "y", CONF, min_arm=10)
         assert False, "expected EstimationError"
     except EstimationError as e:
         assert e.reason == "too_few_in_arm"

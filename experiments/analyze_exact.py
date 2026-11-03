@@ -4,7 +4,7 @@ Summaries of the exact per-subgroup effects written by experiments/exact_min_eps
 For every rule it reports, under the previous estimator and under the current one with its
 reliability filter, the exact smallest epsilon at the configured delta and the resulting verdict.
 The filter of the current estimator (utils/ATE_update.py) is applied here to the unfiltered
-per-subgroup results: both treatment arms need at least MIN_ARM_FRACTION of the subgroup's rows.
+per-subgroup results: both treatment arms need at least delta / MIN_ARM_DELTA_DIVISOR rows.
 It also reports how many subgroups the filter removes (a rule whose subgroups are all removed is
 "vacuously" homogeneous and is flagged), and how the smallest epsilon moves when delta is raised.
 
@@ -22,10 +22,10 @@ DELTA_GRID = {"german": [50, 75, 100, 150, 200, 300], "so": [100, 200, 500, 1000
               "acs": [100, 200, 500, 1000, 2000, 5000, 10000]}
 
 
-def apply_filters(f, delta, fraction):
+def apply_filters(f, delta, divisor):
     """Subgroups of f (unfiltered exact results) that the current estimator would keep at `delta`."""
     keep = (f["size"] >= delta) & f["cate_new"].notna()
-    keep &= f[["treated", "control"]].min(axis=1) >= fraction * f["size"]
+    keep &= f[["treated", "control"]].min(axis=1) >= delta / divisor
     return f[keep]
 
 
@@ -40,7 +40,7 @@ def main():
     ds = config["DATASETS"][args.dataset]
     delta0 = args.delta or ds["DELTAS"][0]
     eps = ds["EPSILONS"][0]
-    fraction = config.get("MIN_ARM_FRACTION", 0.1)
+    divisor = config.get("MIN_ARM_DELTA_DIVISOR", 10)
     rows = []
     for r in range(1, 11):
         f = pd.read_csv(Path(args.exact_dir) / f"{args.dataset}_rule{r}_delta{delta0}.csv")
@@ -49,7 +49,7 @@ def main():
         f["dev_new"] = (f.cate_new - all_new).abs()
         at_delta = f[f["size"] >= delta0]
         raw = at_delta[at_delta.cate_new.notna()]
-        final = apply_filters(f, delta0, fraction)
+        final = apply_filters(f, delta0, divisor)
         top = final.loc[final.dev_new.idxmax()] if len(final) else None
         row = dict(dataset=args.dataset, rule=r, delta=delta0, epsilon=eps, subgroups=len(f),
                    effect_old=all_old, effect_new=all_new, p_value_overall=p_all,
@@ -62,7 +62,7 @@ def main():
             row.update(argmax_subgroup=top.subgroup, argmax_size=top["size"], argmax_treated=top.treated,
                        argmax_control=top.control, argmax_effect=top.cate_new)
         for g in DELTA_GRID[args.dataset]:
-            sub = apply_filters(f, g, fraction)
+            sub = apply_filters(f, g, divisor)
             row[f"min_eps_old_delta{g}"] = f[f["size"] >= g].dev_old.max()
             row[f"min_eps_new_final_delta{g}"] = sub.dev_new.max() if len(sub) else np.nan
         rows.append(row)
