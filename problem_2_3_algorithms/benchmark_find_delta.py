@@ -30,7 +30,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 
 from find_largest_delta import find_largest_delta_breaking_homogeneity
-from preprocessing import clean_dataset
+from preprocessing import clean_dataset, prepare_rule_df
 
 # Load config
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
@@ -54,44 +54,15 @@ def load_treatments(treatment_file: str = None) -> List[Dict]:
 
 
 def _prepare_rule_df(base_df, rule, outcome_col):
-    """Prepare a filtered DataFrame for one rule on-the-fly (no pre-computed CSV).
-
-    Used when a base encoded dataset exists (e.g. ACS) instead of pre-computed
-    per-rule CSVs (SO path).
-
-    Returns
-    -------
-    (df, actual_outcome_col)  or  (None, outcome_col) if the rule is empty.
-    """
-    condition = rule['condition']
-    treatment_dict = rule['treatment']
-
-    cond_attr, cond_val = list(condition.items())[0]
-    treat_attr, treat_val = list(treatment_dict.items())[0]
-
-    sub_df = base_df[base_df[cond_attr] == cond_val].copy()
-    if sub_df.empty:
+    """Prepare the population of one rule from the (already cleaned) base dataset, exactly as
+    algorithms/main.py does (utils/preprocessing.py::prepare_rule_df): rows matching the rule's
+    condition, binary treatment column, string columns integer-coded, special characters removed
+    from the column names. Returns (df, outcome column name) or (None, outcome_col) if the rule
+    matches nothing or nobody is treated."""
+    sub_df = prepare_rule_df(base_df, rule, TREATMENT_COL, encode=True)
+    if sub_df is None:
         return None, outcome_col
-
-    # Drop condition column (invariant after filtering)
-    sub_df = sub_df.drop(columns=[cond_attr])
-
-    # Create binary treatment column
-    sub_df[TREATMENT_COL] = (sub_df[treat_attr] == treat_val).astype(int)
-
-    # Drop treatment source column
-    if treat_attr in sub_df.columns:
-        sub_df = sub_df.drop(columns=[treat_attr])
-
-    if sub_df[TREATMENT_COL].sum() == 0:
-        return None, outcome_col
-
-    # Clean column names (special chars like commas cause FPGrowth issues)
-    sub_df = sub_df.rename(columns=lambda x: re.sub(r'[,:\[\]\{\}"]', '_', x))
-    actual_outcome_col = re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
-
-
-    return sub_df, actual_outcome_col
+    return sub_df, re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
 
 
 def run_benchmark(
@@ -700,13 +671,14 @@ def main():
     epsilon_values = [float(x.strip()) for x in args.epsilons.split(',')]
     
     # ── Dataset-specific configuration ──
-    ds_kwargs = {}
+    # Stack Overflow is prepared on the fly from the dataset (the old pre-computed per-rule CSVs are not in this repository)
+    ds_kwargs = dict(base_dataset_path=str(Path(__file__).resolve().parent.parent / "datasets" / "stackoverflow_not_encoded.csv"))
     if args.dataset == 'acs':
         proj_root = Path(__file__).resolve().parent.parent
         ds_kwargs = dict(
             treatment_file=str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             outcome_col="Wages or salary income past 12 months",
-            base_dataset_path=str(proj_root / "acs" / "acs_encoded.csv"),
+            base_dataset_path=str(proj_root / "datasets" / "acs_encoded.csv"),
             delta_min_pct=5.0,
             delta_max_pct=20.0,
         )

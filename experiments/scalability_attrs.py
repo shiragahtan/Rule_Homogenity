@@ -7,6 +7,9 @@ import sys
 import random
 import time
 
+_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_ROOT))                # repo root, so `algorithms` is importable
+sys.path.insert(0, str(_ROOT / "algorithms"))  # algorithms/main.py imports its sibling modules directly
 from algorithms import main as main_script
 from preprocessing import clean_dataset  # on sys.path via algorithms.main
 

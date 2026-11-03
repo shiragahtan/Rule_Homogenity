@@ -26,7 +26,7 @@ from benchmark_find_delta import generate_summary_statistics, create_visualizati
 from benchmark_find_epsilon import run_benchmark as run_epsilon_benchmark
 from benchmark_find_epsilon import generate_summary_statistics as gen_epsilon_summary
 from benchmark_find_epsilon import create_visualizations as create_epsilon_viz
-from preprocessing import clean_dataset
+from preprocessing import clean_dataset, prepare_rule_df
 
 import pandas as pd
 import base64
@@ -107,23 +107,11 @@ def _process_single_rule_delta(args_tuple):
     if base_dataset_path:
         # On-the-fly preparation (ACS / generic path)
         base_df = clean_dataset(pd.read_csv(base_dataset_path), outcome_col=outcome_col)  # cleaned once, here
-        cond_attr, cond_val = list(condition.items())[0]
-        treat_attr, treat_val = list(treatment.items())[0]
-        
-        sub_df = base_df[base_df[cond_attr] == cond_val].copy()
-        if sub_df.empty:
-            print(f"\n⚠️  Warning: Rule {rule_idx} produced empty dataset. Skipping.")
+        df = prepare_rule_df(base_df, treatment_data, TREATMENT_COL, encode=True)
+        if df is None:
+            print(f"\n⚠️  Warning: Rule {rule_idx} produced an empty population or has no treated units. Skipping.")
             return []
-        sub_df = sub_df.drop(columns=[cond_attr])
-        sub_df[TREATMENT_COL] = (sub_df[treat_attr] == treat_val).astype(int)
-        if treat_attr in sub_df.columns:
-            sub_df = sub_df.drop(columns=[treat_attr])
-        if sub_df[TREATMENT_COL].sum() == 0:
-            print(f"\n⚠️  Warning: Rule {rule_idx} has no treated units. Skipping.")
-            return []
-        sub_df = sub_df.rename(columns=lambda x: _re.sub(r'[,:\[\]\{\}"]', '_', x))
         actual_outcome_col = _re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
-        df = sub_df
     else:
         # Pre-computed per-rule CSVs (SO path)
         dataset_path = Path(__file__).parent / f'../stackoverflow/processed_db/so_countries_treatment_{rule_idx}_encoded.csv'
@@ -242,23 +230,11 @@ def _process_single_rule_epsilon(args_tuple):
     # ── Prepare dataset ──
     if base_dataset_path:
         base_df = clean_dataset(pd.read_csv(base_dataset_path), outcome_col=outcome_col)  # cleaned once, here
-        cond_attr, cond_val = list(condition.items())[0]
-        treat_attr, treat_val = list(treatment.items())[0]
-        
-        sub_df = base_df[base_df[cond_attr] == cond_val].copy()
-        if sub_df.empty:
-            print(f"\n⚠️  Warning: Rule {rule_idx} produced empty dataset. Skipping.")
+        df = prepare_rule_df(base_df, treatment_data, TREATMENT_COL, encode=True)
+        if df is None:
+            print(f"\n⚠️  Warning: Rule {rule_idx} produced an empty population or has no treated units. Skipping.")
             return []
-        sub_df = sub_df.drop(columns=[cond_attr])
-        sub_df[TREATMENT_COL] = (sub_df[treat_attr] == treat_val).astype(int)
-        if treat_attr in sub_df.columns:
-            sub_df = sub_df.drop(columns=[treat_attr])
-        if sub_df[TREATMENT_COL].sum() == 0:
-            print(f"\n⚠️  Warning: Rule {rule_idx} has no treated units. Skipping.")
-            return []
-        sub_df = sub_df.rename(columns=lambda x: _re.sub(r'[,:\[\]\{\}"]', '_', x))
         actual_outcome_col = _re.sub(r'[,:\[\]\{\}"]', '_', outcome_col)
-        df = sub_df
     else:
         dataset_path = Path(__file__).parent / f'../stackoverflow/processed_db/so_countries_treatment_{rule_idx}_encoded.csv'
         if not dataset_path.exists():
@@ -848,13 +824,15 @@ def main():
     
     # ── Dataset-specific configuration ──
     proj_root = Path(__file__).resolve().parent.parent
-    ds_cfg = {}  # default: empty → SO behavior
+    # Stack Overflow: prepared on the fly from the dataset (the pre-computed per-rule CSVs of the old
+    # project folder are not part of this repository); rules: problem_2_3_algorithms/Chosen10Treatments.json
+    ds_cfg = {'base_dataset_path': str(proj_root / "datasets" / "stackoverflow_not_encoded.csv")}
     
     if args.dataset == 'acs':
         ds_cfg = {
             'treatment_file': str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             'outcome_col': "Wages or salary income past 12 months",
-            'base_dataset_path': str(proj_root / "acs" / "acs_encoded.csv"),
+            'base_dataset_path': str(proj_root / "datasets" / "acs_encoded.csv"),
             'delta_min_pct': 5.0,  # Same as ablation study: DELTA_PERCENTAGES = [0.05, 0.10, 0.15, 0.20] = 5%, 10%, 15%, 20%
             'delta_max_pct': 20.0,  # Same as ablation study
             'delta_percentages': [5, 10, 15, 20],  # Same as ablation study
