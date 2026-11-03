@@ -30,15 +30,13 @@ from preprocessing import clean_dataset, prepare_rule_df  # noqa: E402  (always 
 
 
 def min_epsilon_for_rule(job):
-    dataset, label, repo, ridx, delta, eps0, tol, seed, k_walks, no_p_filter = job
+    dataset, label, repo, ridx, delta, eps0, tol, seed, k_walks = job
     repo = Path(repo)
     os.chdir(repo / "algorithms")  # the old estimator reads ../configs/config.json
     sys.path[:0] = [str(repo / "utils"), str(repo / "algorithms")]
     from mlxtend.frequent_patterns import apriori
     import ATE_update
     from ATE_update import calculate_ate_safe
-    if no_p_filter and hasattr(ATE_update, 'P_VALUE_THRESHOLD'):
-        ATE_update.P_VALUE_THRESHOLD = None  # not present in the previous estimator
     from RW import calc_utility_for_subgroups as rw
 
     config = json.load(open(HERE / "configs" / "config.json"))
@@ -48,8 +46,8 @@ def min_epsilon_for_rule(job):
     full_df = clean_dataset(pd.read_csv(HERE / ds["FULL_DATASET_PATH"]), outcome_col=outcome)
     df = prepare_rule_df(full_df, rule, treat, encode=(dataset != "acs"))
     t0 = time.time()
-    # the p-value filter is for subgroups only; the previous estimator has no such argument
-    overall_kw = {"subgroup": False} if hasattr(ATE_update, "P_VALUE_THRESHOLD") else {}
+    # the group-size filter is for subgroups only; the previous estimator has no such argument
+    overall_kw = {"subgroup": False} if hasattr(ATE_update, "MIN_ARM_FRACTION") else {}
     utility_all = calculate_ate_safe(df, treat, outcome, delta, **overall_kw)
     row = dict(dataset=dataset, label=label, rule=ridx, utility_all=utility_all, delta=delta)
     if utility_all != utility_all:
@@ -88,7 +86,6 @@ def main():
     parser.add_argument("--repo", default=str(HERE), help="code tree providing utils/ and algorithms/")
     parser.add_argument("--rules", default="all", help="comma separated rule numbers (1-based) or all")
     parser.add_argument("--delta", type=int, default=None, help="minimum subgroup size (default: configured delta)")
-    parser.add_argument("--no-p-filter", action="store_true", help="do not ignore effects with p >= P_VALUE_THRESHOLD (current estimator only)")
     parser.add_argument("--eps0", type=float, default=None, help="first epsilon tried (default: configured epsilon / 8)")
     parser.add_argument("--tol", type=float, default=0.05, help="relative precision of the bisection")
     parser.add_argument("--k-walks", type=int, default=1500)
@@ -103,11 +100,11 @@ def main():
     rules = range(1, n_rules + 1) if args.rules == "all" else [int(x) for x in args.rules.split(",")]
     eps0 = args.eps0 or ds["EPSILONS"][0] / 8
     delta = args.delta or ds["DELTAS"][0]
-    jobs = [(args.dataset, args.label, args.repo, r, delta, eps0, args.tol, args.seed, args.k_walks, args.no_p_filter) for r in rules]
+    jobs = [(args.dataset, args.label, args.repo, r, delta, eps0, args.tol, args.seed, args.k_walks) for r in rules]
     with Pool(args.workers) as pool:
         results = pool.map(min_epsilon_for_rule, jobs, chunksize=1)
     Path(args.out).mkdir(parents=True, exist_ok=True)
-    suffix = (f"_delta{delta}" if args.delta else "") + ("_nopfilter" if args.no_p_filter else "")
+    suffix = (f"_delta{delta}" if args.delta else "") + ""
     path = Path(args.out) / f"{args.dataset}_rw_min_epsilon_{args.label}{suffix}.csv"
     pd.DataFrame(results).to_csv(path, index=False)
     print(f"-> {path}")

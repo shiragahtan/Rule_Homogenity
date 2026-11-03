@@ -31,13 +31,12 @@ _ds_config = config['DATASETS'][CHOSEN_DS]
 # DoWhy as `common_causes` in every call (instructor). CONFOUNDERS may override them in the config.
 CONFOUNDERS = [sanitize_column_name(c) for c in
                _ds_config.get('CONFOUNDERS', _ds_config.get('IMMUTABLE_ATTRIBUTES', []))]
-# A group's effect is computed only if its treated rows AND its control rows are each at least
-# delta / MIN_ARM_DELTA_DIVISOR (instructor: delta / 10), so that tiny arms (outliers) are ignored.
-MIN_ARM_DELTA_DIVISOR = config.get('MIN_ARM_DELTA_DIVISOR', 10)
-# DoWhy's p-value of the treatment coefficient (estimate_effect(..., test_significance=True)); an
-# effect with p >= P_VALUE_THRESHOLD is treated as unreliable and ignored. None disables the filter.
-P_VALUE_THRESHOLD = config.get('P_VALUE_THRESHOLD', 0.05)
-print(f"🔹 Confounders for {CHOSEN_DS}: {CONFOUNDERS} | min rows per treatment arm: delta/{MIN_ARM_DELTA_DIVISOR} | p-value threshold: {P_VALUE_THRESHOLD}")
+# A subgroup's effect is computed only if its treated rows AND its control rows are each at least
+# MIN_ARM_FRACTION of the subgroup's own rows (instructor: at least 10% with t=0 and 10% with t=1),
+# so that subgroups with a tiny treatment arm (outliers) are ignored. Applies to subgroups, not to
+# the overall effect of a rule's population (the reference value). 0 = no requirement.
+MIN_ARM_FRACTION = config.get('MIN_ARM_FRACTION', 0.1)
+print(f"🔹 Confounders for {CHOSEN_DS}: {CONFOUNDERS} | each treatment arm >= {MIN_ARM_FRACTION:.0%} of a subgroup")
 
 
 # ---------------------------------------------------------
@@ -63,14 +62,14 @@ def get_adjustment_columns(df, treatment_col, outcome_col, confounders=None):
     return [c for c in confounders if c in df.columns and c not in (treatment_col, outcome_col)]
 
 
-def _check_estimable(df, treatment_col, outcome_col, adjustment, min_arm=0):
+def _check_estimable(df, treatment_col, outcome_col, adjustment, min_arm_fraction=0.0):
     """Raise EstimationError when the treatment effect is not identifiable from this data."""
     n = len(df)
     if df[treatment_col].nunique() < 2:
         raise EstimationError("single_arm", f"only one treatment arm among {n} rows")
     arm_sizes = df[treatment_col].value_counts()
-    if arm_sizes.min() < min_arm:
-        raise EstimationError("too_few_in_arm", f"smallest treatment arm has {arm_sizes.min()} rows (< {min_arm:g}) among {n} rows")
+    if arm_sizes.min() < min_arm_fraction * n:
+        raise EstimationError("too_few_in_arm", f"smallest treatment arm has {arm_sizes.min()} of {n} rows (< {min_arm_fraction:.0%})")
     covariates = np.column_stack([np.ones(n)] + [df[c].to_numpy(dtype=float) for c in adjustment])
     rank_without_t = np.linalg.matrix_rank(covariates)
     rank_with_t = np.linalg.matrix_rank(np.column_stack([covariates, df[treatment_col].to_numpy(dtype=float)]))
@@ -81,19 +80,9 @@ def _check_estimable(df, treatment_col, outcome_col, adjustment, min_arm=0):
         raise EstimationError("too_few_rows", f"{n} rows for {rank_with_t} regression terms")
 
 
-def estimate_cate_with_p(df, treatment_col, outcome_col, confounders=None, min_arm=0, p_threshold=None):
-    """
-    (CATE, p-value) of treatment_col (0/1) on outcome_col for the given rows, using DoWhy
-    CausalModel.estimate_effect with method "backdoor.linear_regression" and test_significance=True,
-    adjusting for the configured confounders (`common_causes`; no effect modifiers).
-
-    Uses every row it is given: no trimming, no effect caps, no dropping of rows. The input is
-    assumed to be null-free (see preprocessing.clean_dataset). Raises EstimationError when the effect
-    cannot be computed, when a treatment arm has fewer than `min_arm` rows, or when the p-value is
-    >= p_threshold (if given).
-    """
+def _run_dowhy(df, treatment_col, outcome_col, confounders, min_arm_fraction, want_p):
     adjustment = get_adjustment_columns(df, treatment_col, outcome_col, confounders)
-    _check_estimable(df, treatment_col, outcome_col, adjustment, min_arm)
+    _check_estimable(df, treatment_col, outcome_col, adjustment, min_arm_fraction)
     try:
         model = CausalModel(
             data=df,
@@ -111,22 +100,34 @@ def estimate_cate_with_p(df, treatment_col, outcome_col, confounders=None, min_a
             control_value=0,
             treatment_value=1,
             target_units="ate",
-            test_significance=True,
+            test_significance=want_p,
         )
         value = float(estimate.value)
-        p_value = float(np.ravel(estimate.test_stat_significance()["p_value"])[0])
+        p_value = float(np.ravel(estimate.test_stat_significance()["p_value"])[0]) if want_p else None
     except Exception as e:
         raise EstimationError("dowhy_error", f"DoWhy failed on {len(df)} rows: {e}") from e
-    if not np.isfinite(value) or not np.isfinite(p_value):
+    if not np.isfinite(value) or (want_p and not np.isfinite(p_value)):
         raise EstimationError("non_finite", f"DoWhy returned a non-finite estimate ({value}) or p-value ({p_value}) on {len(df)} rows")
-    if p_threshold is not None and p_value >= p_threshold:
-        raise EstimationError("not_significant", f"p-value {p_value:.3g} >= {p_threshold} on {len(df)} rows (effect {value:.4g})")
     return value, p_value
 
 
-def estimate_cate(df, treatment_col, outcome_col, confounders=None, min_arm=0, p_threshold=None):
-    """The CATE of estimate_cate_with_p (same arguments and errors), without the p-value."""
-    return estimate_cate_with_p(df, treatment_col, outcome_col, confounders, min_arm, p_threshold)[0]
+def estimate_cate(df, treatment_col, outcome_col, confounders=None, min_arm_fraction=0.0):
+    """
+    CATE of treatment_col (0/1) on outcome_col for the given rows, using DoWhy
+    CausalModel.estimate_effect with method "backdoor.linear_regression", adjusting for the
+    configured confounders (`common_causes`; no effect modifiers).
+
+    Uses every row it is given: no trimming, no effect caps, no dropping of rows. The input is
+    assumed to be null-free (see preprocessing.clean_dataset). Raises EstimationError when the effect
+    cannot be computed or when a treatment arm has fewer than `min_arm_fraction` of the rows.
+    """
+    return _run_dowhy(df, treatment_col, outcome_col, confounders, min_arm_fraction, want_p=False)[0]
+
+
+def estimate_cate_with_p(df, treatment_col, outcome_col, confounders=None, min_arm_fraction=0.0):
+    """(CATE, DoWhy p-value of the effect) - same as estimate_cate; the p-value is for analysis only
+    (the instructor decided against filtering subgroups by it)."""
+    return _run_dowhy(df, treatment_col, outcome_col, confounders, min_arm_fraction, want_p=True)
 
 
 _skip_counts = Counter()
@@ -139,19 +140,20 @@ def get_skip_summary():
 
 def calculate_ate_safe(df, treatment_col, outcome_col, delta=None, subgroup=True):
     """
-    Used by all algorithms: returns the CATE, or NaN when it cannot be computed or is unreliable. Per
-    the instructor, such a subgroup is ignored: it is not a counterexample to homogeneity. It is
+    Used by all algorithms: returns the CATE, or NaN when it cannot be computed or is unreliable.
+    Per the instructor, such a subgroup is ignored: it is not a counterexample to homogeneity. It is
     ignored when
-      * a treatment arm is missing or the effect is not identifiable,
-      * the treated or the control rows number fewer than delta / MIN_ARM_DELTA_DIVISOR,
-      * DoWhy's p-value is >= P_VALUE_THRESHOLD (extreme / unreliable effects). Per the instructor this
-        filter is for subgroups only: pass subgroup=False for the overall effect of a rule population.
+      * a treatment arm is missing or the effect is not identifiable, or DoWhy fails, or
+      * (subgroups only, subgroup=True) the treated or the control rows are fewer than
+        MIN_ARM_FRACTION of the subgroup's rows. Pass subgroup=False for the overall effect of a
+        rule's population, which is the reference value and is not filtered by size.
     Every skip is counted (see get_skip_summary) and the first one of each reason is printed.
+    `delta` is accepted for compatibility and not used: the minimum subgroup size is enforced by the
+    algorithms.
     """
-    min_arm = delta / MIN_ARM_DELTA_DIVISOR if delta else 0
     try:
-        return estimate_cate(df, treatment_col, outcome_col, min_arm=min_arm,
-                             p_threshold=P_VALUE_THRESHOLD if subgroup else None)
+        return estimate_cate(df, treatment_col, outcome_col,
+                             min_arm_fraction=MIN_ARM_FRACTION if subgroup else 0.0)
     except EstimationError as e:
         if _skip_counts[e.reason] == 0:
             print(f"⚠️ CATE skipped ({e.reason}): {e}  [further '{e.reason}' skips are counted, not printed]")

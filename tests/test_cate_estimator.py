@@ -61,25 +61,26 @@ def test_single_treatment_arm_raises():
     assert get_skip_summary()["single_arm"] == before + 1  # and the skip is counted, not silent
 
 
-def test_min_arm_is_delta_over_ten():
+def test_each_arm_must_be_at_least_a_fraction_of_the_subgroup():
     import ATE_update
     df = make_df(n=300)
     df["TempTreatment"] = 0
-    df.loc[df.index[:3], "TempTreatment"] = 1  # exactly 3 treated rows
-    # delta=100 -> each arm needs at least 10 rows: the 3 treated rows are too few
+    df.loc[df.index[:20], "TempTreatment"] = 1  # 20 treated of 300 = 6.7%
     before = ATE_update.get_skip_summary().get("too_few_in_arm", 0)
-    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y", delta=100))
+    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # a subgroup: 6.7% < 10% -> ignored
     assert ATE_update.get_skip_summary()["too_few_in_arm"] == before + 1
-    # delta=30 -> 3 rows are enough (the p-value filter is switched off to isolate the arm rule)
-    old = ATE_update.P_VALUE_THRESHOLD
+    # the overall effect of a rule population is not filtered by arm size
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", subgroup=False))
+    df.loc[df.index[:30], "TempTreatment"] = 1  # exactly 10% treated: allowed
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y"))
     try:
-        ATE_update.P_VALUE_THRESHOLD = None
-        assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=30))
-    finally:
-        ATE_update.P_VALUE_THRESHOLD = old
+        estimate_cate(df, "TempTreatment", "y", CONF, min_arm_fraction=0.2)
+        assert False, "expected EstimationError"
+    except EstimationError as e:
+        assert e.reason == "too_few_in_arm"
 
 
-def test_p_value_filter():
+def test_p_value_is_available_for_analysis_but_does_not_filter():
     import ATE_update
     rng = np.random.default_rng(0)
     n = 200
@@ -88,27 +89,10 @@ def test_p_value_filter():
     df["y"] = 5.0 * df["TempTreatment"] + df["a"] + rng.normal(size=n)  # strong effect
     value, p = ATE_update.estimate_cate_with_p(df, "TempTreatment", "y", ["a", "b"])
     assert abs(value - 5.0) < 1.0 and p < 1e-6
-    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y"))  # significant -> kept
     df["y"] = df["a"] + rng.normal(size=n)  # no effect at all -> p is large
     value, p = ATE_update.estimate_cate_with_p(df, "TempTreatment", "y", ["a", "b"])
     assert p >= 0.05
-    before = ATE_update.get_skip_summary().get("not_significant", 0)
-    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # insignificant -> ignored
-    assert ATE_update.get_skip_summary()["not_significant"] == before + 1
-    try:
-        estimate_cate(df, "TempTreatment", "y", ["a", "b"], p_threshold=0.05)
-        assert False, "expected EstimationError"
-    except EstimationError as e:
-        assert e.reason == "not_significant"
-
-
-def test_p_value_filter_is_for_subgroups_not_the_overall_effect():
-    rng = np.random.default_rng(1)
-    n = 200
-    df = pd.DataFrame({"a": rng.normal(size=n), "b": rng.normal(size=n), "TempTreatment": rng.integers(0, 2, n)})
-    df["y"] = df["a"] + rng.normal(size=n)  # no effect: p is large
-    assert np.isnan(calculate_ate_safe(df, "TempTreatment", "y"))  # as a subgroup: ignored
-    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", subgroup=False))  # overall effect: kept
+    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y"))  # a near-zero effect is NOT dropped
 
 
 def test_confounder_list_passed_unchanged_except_missing_columns():

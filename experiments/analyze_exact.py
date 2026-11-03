@@ -2,14 +2,11 @@
 Summaries of the exact per-subgroup effects written by experiments/exact_min_epsilon.py.
 
 For every rule it reports, under the previous estimator and under the current one with its
-reliability filters, the exact smallest epsilon at the configured delta and the resulting verdict.
-The filters of the current estimator (utils/ATE_update.py) are applied here to the unfiltered
-per-subgroup results:
-  * both treatment arms need at least delta / MIN_ARM_DELTA_DIVISOR rows, and
-  * DoWhy's p-value must be below P_VALUE_THRESHOLD.
-It also reports how many subgroups each filter removes and how many violations of homogeneity
-(deviation > epsilon) the p-value filter hides, and how the smallest epsilon moves when delta is
-raised (the arm rule is then delta' / MIN_ARM_DELTA_DIVISOR).
+reliability filter, the exact smallest epsilon at the configured delta and the resulting verdict.
+The filter of the current estimator (utils/ATE_update.py) is applied here to the unfiltered
+per-subgroup results: both treatment arms need at least MIN_ARM_FRACTION of the subgroup's rows.
+It also reports how many subgroups the filter removes (a rule whose subgroups are all removed is
+"vacuously" homogeneous and is flagged), and how the smallest epsilon moves when delta is raised.
 
     python experiments/analyze_exact.py --exact-dir <dir with exact/*.csv> --dataset german --out calibration_results/exact_summary_german.csv
 """
@@ -25,14 +22,10 @@ DELTA_GRID = {"german": [50, 75, 100, 150, 200, 300], "so": [100, 200, 500, 1000
               "acs": [100, 200, 500, 1000, 2000, 5000, 10000]}
 
 
-def apply_filters(f, delta, divisor, p_threshold, use_arm=True, use_p=True):
+def apply_filters(f, delta, fraction):
     """Subgroups of f (unfiltered exact results) that the current estimator would keep at `delta`."""
-    keep = f["size"] >= delta
-    keep &= f["cate_new"].notna()
-    if use_arm:
-        keep &= (f[["treated", "control"]].min(axis=1) >= delta / divisor)
-    if use_p and p_threshold is not None:
-        keep &= f["p_new"] < p_threshold
+    keep = (f["size"] >= delta) & f["cate_new"].notna()
+    keep &= f[["treated", "control"]].min(axis=1) >= fraction * f["size"]
     return f[keep]
 
 
@@ -47,8 +40,7 @@ def main():
     ds = config["DATASETS"][args.dataset]
     delta0 = args.delta or ds["DELTAS"][0]
     eps = ds["EPSILONS"][0]
-    divisor = config.get("MIN_ARM_DELTA_DIVISOR", 10)
-    p_thr = config.get("P_VALUE_THRESHOLD", 0.05)
+    fraction = config.get("MIN_ARM_FRACTION", 0.1)
     rows = []
     for r in range(1, 11):
         f = pd.read_csv(Path(args.exact_dir) / f"{args.dataset}_rule{r}_delta{delta0}.csv")
@@ -57,24 +49,20 @@ def main():
         f["dev_new"] = (f.cate_new - all_new).abs()
         at_delta = f[f["size"] >= delta0]
         raw = at_delta[at_delta.cate_new.notna()]
-        arm = apply_filters(f, delta0, divisor, p_thr, use_p=False)
-        final = apply_filters(f, delta0, divisor, p_thr)
-        hidden = arm[~arm.index.isin(final.index)]
+        final = apply_filters(f, delta0, fraction)
         top = final.loc[final.dev_new.idxmax()] if len(final) else None
         row = dict(dataset=args.dataset, rule=r, delta=delta0, epsilon=eps, subgroups=len(f),
                    effect_old=all_old, effect_new=all_new, p_value_overall=p_all,
                    min_eps_old=f.dev_old.max(), min_eps_new_unfiltered=raw.dev_new.max(),
-                   min_eps_new_arm_filter=arm.dev_new.max(), min_eps_new_final=final.dev_new.max() if len(final) else np.nan,
-                   not_estimable=int(f.cate_new.isna().sum()), removed_by_arm=len(raw) - len(arm),
-                   removed_by_p=len(hidden), kept=len(final),
-                   violations_before_p_filter=int((arm.dev_new > eps).sum()),
-                   violations_hidden_by_p_filter=int((hidden.dev_new > eps).sum()),
-                   violations_after_p_filter=int((final.dev_new > eps).sum()))
+                   min_eps_new_final=final.dev_new.max() if len(final) else np.nan,
+                   not_estimable=int(f.cate_new.isna().sum()), removed_by_arm=len(raw) - len(final), kept=len(final),
+                   vacuous=len(final) == 0,
+                   violations_before_filter=int((raw.dev_new > eps).sum()), violations_after_filter=int((final.dev_new > eps).sum()))
         if top is not None:
             row.update(argmax_subgroup=top.subgroup, argmax_size=top["size"], argmax_treated=top.treated,
-                       argmax_control=top.control, argmax_effect=top.cate_new, argmax_p=top.p_new)
+                       argmax_control=top.control, argmax_effect=top.cate_new)
         for g in DELTA_GRID[args.dataset]:
-            sub = apply_filters(f, g, divisor, p_thr)
+            sub = apply_filters(f, g, fraction)
             row[f"min_eps_old_delta{g}"] = f[f["size"] >= g].dev_old.max()
             row[f"min_eps_new_final_delta{g}"] = sub.dev_new.max() if len(sub) else np.nan
         rows.append(row)
