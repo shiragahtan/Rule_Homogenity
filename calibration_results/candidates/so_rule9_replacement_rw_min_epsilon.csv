@@ -1,0 +1,2 @@
+dataset,label,rule,utility_all,delta,min_epsilon,rw_calls,seconds,note
+so,newrules,9,14628.148764917103,100,308750.0,9,86.52418398857117,
