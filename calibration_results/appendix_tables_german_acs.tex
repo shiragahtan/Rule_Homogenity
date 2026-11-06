@@ -1,0 +1,26 @@
+% Table 10: Rules for GERMAN dataset (current rules, effects with the DoWhy CATE; delta=50, epsilon=0.5)
+% Rule & Condition & Treatment & Coverage & Utility & Prevalence \\
+1 & foreign\_worker = yes & status $\rightarrow$ no checking account & 96.30\% & 0.2703 & 0.00\% \\
+2 & foreign\_worker = yes & present\_residence $\rightarrow$ 4 & 96.30\% & 0.0092 & 0.03\% \\
+3 & people\_liable = 1 & status $\rightarrow$ no checking account & 84.50\% & 0.2750 & 0.00\% \\
+4 & people\_liable = 1 & present\_residence $\rightarrow$ 4 & 84.50\% & 0.0158 & 0.00\% \\
+5 & amount = 0 & savings $\rightarrow$ unknown/no savings account & 75.45\% & 0.1184 & 0.06\% \\   % REPLACED (negative effect with the new CATE)
+6 & amount = 0 & present\_residence $\rightarrow$ 4 & 75.40\% & 0.0002 & 0.01\% \\
+7 & amount = 0 & status $\rightarrow$ no checking account & 75.40\% & 0.2619 & 0.00\% \\
+8 & foreign\_worker = yes & savings $\rightarrow$ unknown/no savings account & 96.30\% & 0.1502 & 0.09\% \\
+9 & amount = 0 & housing $\rightarrow$ 1 & 75.45\% & 0.1110 & 0.08\% \\   % REPLACED (negative effect with the new CATE)
+10 & people\_liable = 1 & savings $\rightarrow$ unknown/no savings account & 84.50\% & 0.1323 & 0.02\% \\
+
+% Table 12: Rules for ACS dataset (current rules, effects with the DoWhy CATE; delta=100, epsilon=17500)
+% Rule & Condition & Treatment & Coverage & Utility & Prevalence \\
+1 & With a disability = 2 & Insurance through a current or former employer or union $\rightarrow$ 1 & 84.04\% & 35668.5137 & 63.27\% \\
+2 & With a disability = 2 & Public health coverage $\rightarrow$ 2 & 84.04\% & 42176.3655 & 84.10\% \\
+3 & Sex = 1 & Medicare, for people 65 and older, or people with certain disabilities $\rightarrow$ 2 & 48.46\% & 63051.7951 & 91.25\% \\   % REPLACED (negative effect with the new CATE)
+4 & With a disability = 2 & Medicare, for people 65 and older, or people with certain disabilities $\rightarrow$ 2 & 84.04\% & 57542.8142 & 91.55\% \\   % REPLACED (negative effect with the new CATE)
+5 & With a disability = 2 & Educational attainment $\rightarrow$ 21 & 84.04\% & 23877.5227 & 47.70\% \\
+6 & With a disability = 2 & Educational attainment $\rightarrow$ 22 & 84.04\% & 35894.0669 & 68.75\% \\
+7 & Sex = 2 & Educational attainment $\rightarrow$ 20 & 51.54\% & 1072.0855 & 1.24\% \\
+8 & Sex = 1 & Educational attainment $\rightarrow$ 21 & 48.46\% & 28997.5120 & 62.21\% \\
+9 & Sex = 1 & Public health coverage $\rightarrow$ 2 & 48.46\% & 49446.4022 & 86.49\% \\   % REPLACED (negative effect with the new CATE)
+10 & Sex = 1 & Insurance through a current or former employer or union $\rightarrow$ 1 & 48.46\% & 40366.0688 & 67.67\% \\
+
