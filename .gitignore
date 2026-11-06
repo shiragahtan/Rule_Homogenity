@@ -20,3 +20,4 @@ venv/
 .DS_Store
 logs/
 graphs_backup_*/
+calibration_results/exact_so/

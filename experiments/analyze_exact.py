@@ -34,6 +34,8 @@ def main():
     ap.add_argument("--exact-dir", required=True)
     ap.add_argument("--dataset", required=True, choices=["so", "acs", "german"])
     ap.add_argument("--delta", type=int, default=None, help="default: configured delta")
+    ap.add_argument("--tag", default="", help="the --tag given to exact_min_epsilon.py")
+    ap.add_argument("--rules-file", default=None, help="only to read the rule count; default: the dataset's RULES_FILE")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
     config = json.load(open(REPO / "configs" / "config.json"))
@@ -43,7 +45,7 @@ def main():
     divisor = config.get("MIN_ARM_DELTA_DIVISOR", 10)
     rows = []
     for r in range(1, 11):
-        f = pd.read_csv(Path(args.exact_dir) / f"{args.dataset}_rule{r}_delta{delta0}.csv")
+        f = pd.read_csv(Path(args.exact_dir) / f"{args.dataset}{args.tag}_rule{r}_delta{delta0}.csv")
         all_old, all_new, p_all = f.all_old[0], f.all_new[0], f.p_all[0]
         f["dev_old"] = (f.cate_old - all_old).abs()
         f["dev_new"] = (f.cate_new - all_new).abs()
@@ -67,7 +69,7 @@ def main():
             row[f"min_eps_new_final_delta{g}"] = sub.dev_new.max() if len(sub) else np.nan
         rows.append(row)
         print(args.dataset, r, "done", flush=True)
-    out = args.out or str(REPO / "calibration_results" / f"exact_summary_{args.dataset}.csv")
+    out = args.out or str(REPO / "calibration_results" / f"exact_summary_{args.dataset}{args.tag}.csv")
     pd.DataFrame(rows).to_csv(out, index=False)
     print("->", out)
 
