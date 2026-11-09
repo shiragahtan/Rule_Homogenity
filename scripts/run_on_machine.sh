@@ -9,6 +9,7 @@
 #   scripts/run_on_machine.sh benchmarks <so|acs>       largest delta / smallest epsilon (Problems 2 and 3)
 #   scripts/run_on_machine.sh exact_so [workers]        exact verdicts for Stack Overflow (heavy: ~4M subgroups per rule; resumable;
 #                                                       RULES_FILE=... TAG=... selects another rule set)
+#   scripts/run_on_machine.sh candidates so [workers]   homogeneity of the candidate rules (stops at 5 homogeneous + 5 not; resumable)
 #   scripts/run_on_machine.sh collect <german|so|acs>   copy graphs/* outputs to results/ (what the figure notebook reads)
 #
 # DRY_RUN=1 prints the commands instead of running them. Output of every step goes to logs/<step>.log.
@@ -67,6 +68,8 @@ case "$step" in
                 [ -n "${TAG:-}" ] && extra+=(--tag "$TAG") && an+=(--tag "$TAG")
                 run "exact_so${TAG:-}" "$PY" experiments/exact_min_epsilon.py --dataset so --workers "$w" --skip-existing --out calibration_results/exact_so ${extra[@]+"${extra[@]}"}
                 run "analyze_so${TAG:-}" "$PY" experiments/analyze_exact.py --exact-dir calibration_results/exact_so/exact --dataset so ${an[@]+"${an[@]}"} ;;
+  candidates)   w="${3:-6}"
+                run "candidates_${ds}" "$PY" experiments/candidate_homogeneity.py --dataset "$ds" --workers "$w" --each 5 --out calibration_results/candidates ;;
   collect)      echo ">> copying graphs/${ds}_* to results/"
                 [ "${DRY_RUN:-0}" = "1" ] || cp -v graphs/${ds}_homogeneity_results.xlsx graphs/${ds}_scalability_rows.csv graphs/${ds}_scalability_attributes.csv graphs/${ds}_algorithms_time.csv results/ 2>/dev/null || true
                 echo "Then regenerate the figures:  jupyter nbconvert --to notebook --execute article_figures/generate_figures.ipynb --inplace" ;;
