@@ -35,13 +35,14 @@ def main():
     ap.add_argument("--dataset", required=True, choices=["so", "acs", "german"])
     ap.add_argument("--delta", type=int, default=None, help="default: configured delta")
     ap.add_argument("--tag", default="", help="the --tag given to exact_min_epsilon.py")
+    ap.add_argument("--epsilon", type=float, default=None, help="epsilon for the verdicts and violation counts (default: the configured epsilon)")
     ap.add_argument("--rules-file", default=None, help="only to read the rule count; default: the dataset's RULES_FILE")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
     config = json.load(open(REPO / "configs" / "config.json"))
     ds = config["DATASETS"][args.dataset]
     delta0 = args.delta or ds["DELTAS"][0]
-    eps = ds["EPSILONS"][0]
+    eps = args.epsilon if args.epsilon is not None else ds["EPSILONS"][0]
     divisor = config.get("MIN_ARM_DELTA_DIVISOR", 10)
     rows = []
     for r in range(1, 11):

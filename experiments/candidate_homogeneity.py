@@ -102,6 +102,7 @@ def main():
     ap.add_argument("--exact", action="store_true", help="no early exit: the exact smallest epsilon of every candidate (slower; results go to *_candidate_min_epsilon.csv)")
     ap.add_argument("--all", action="store_true", help="evaluate every candidate instead of stopping at --each of both kinds")
     ap.add_argument("--min-treated-share", type=float, default=0.10)
+    ap.add_argument("--min-coverage", type=float, default=None, help="only candidates whose condition covers at least this percent of the data")
     ap.add_argument("--candidates", default=None, help="candidate CSV (default: calibration_results/candidates/<dataset>_candidate_rules.csv)")
     ap.add_argument("--out", default=str(REPO / "calibration_results" / "candidates"))
     args = ap.parse_args()
@@ -114,7 +115,10 @@ def main():
     confounders = [sanitize_column_name(c) for c in ds["CONFOUNDERS"]]
     full_df = clean_dataset(pd.read_csv(REPO / ds["FULL_DATASET_PATH"]), outcome_col=outcome)
     cand = pd.read_csv(args.candidates or REPO / "calibration_results" / "candidates" / f"{args.dataset}_candidate_rules.csv")
-    cand = cand[(cand.utility_new > 0) & (cand.treated_share >= args.min_treated_share)].sort_values("utility_new", ascending=False)
+    cand = cand[(cand.utility_new > 0) & (cand.treated_share >= args.min_treated_share)]
+    if args.min_coverage is not None:
+        cand = cand[cand.coverage_pct >= args.min_coverage]
+    cand = cand.sort_values("utility_new", ascending=False)
     out_path = Path(args.out) / f"{args.dataset}_candidate_{'min_epsilon' if args.exact else 'homogeneity'}.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     done = pd.read_csv(out_path) if out_path.exists() else pd.DataFrame()
@@ -136,7 +140,9 @@ def main():
         homo, dev, checked, secs = check_rule(full_df, rule,
                                               treat, outcome, confounders, args.dataset != "acs", delta, eps, args.workers,
                                               early_exit=not args.exact)
-        row = dict(rule=name, coverage_pct=r.coverage_pct, treated_share=r.treated_share, effect=r.utility_new,
+        row = dict(rule=name, condition_attr=r.condition_attr, condition_val=rule["condition"][r.condition_attr],
+                   treatment_attr=r.treatment_attr, treatment_val=rule["treatment"][r.treatment_attr],
+                   coverage_pct=r.coverage_pct, treated_share=r.treated_share, effect=r.utility_new,
                    homogeneous=homo, max_deviation_seen=dev, subgroups_checked=checked, seconds=round(secs))
         if args.exact:
             row["min_epsilon"] = dev

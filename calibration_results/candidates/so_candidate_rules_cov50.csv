@@ -1,0 +1,313 @@
+condition_attr,condition_val,treatment_attr,treatment_val,coverage_pct,rows,treated,treated_share,utility_new,utility_old,current_rule
+Age,25 - 34 years old,FormalEducation,I never completed any formal education,52.14484972893311,19814,51,0.002573937619864742,71923.16731036078,,0
+Dependents,No,DevType,Engineering manager,69.7615663982315,26508,176,0.006639505055077713,48438.368048183285,,0
+RaceEthnicity,White or of European descent,DevType,Engineering manager,77.62513816516659,29496,292,0.009899647409818281,46898.7148584766,,0
+Gender,Male,DevType,Engineering manager,92.4048634138639,35112,344,0.009797220323536113,46309.2433051726,,0
+SexualOrientation,Straight or heterosexual,DevType,Engineering manager,92.8890994262856,35296,349,0.00988780598368087,45964.09525008619,,0
+Age,25 - 34 years old,DevType,Engineering manager,52.14484972893311,19814,184,0.009286363177551226,45418.67426516177,,0
+Student,No,DevType,Engineering manager,83.46491920627402,31715,344,0.010846602553996531,45289.73851449214,,0
+RaceEthnicity,White or of European descent,DevType,"C-suite executive (CEO, CTO, etc.)",77.62513816516659,29496,284,0.00962842419311093,43359.52551119134,,0
+Dependents,No,DevType,"C-suite executive (CEO, CTO, etc.)",69.7615663982315,26508,200,0.007544892108042855,38876.79225672502,,0
+Gender,Male,DevType,"C-suite executive (CEO, CTO, etc.)",92.4048634138639,35112,359,0.010224424698108909,38639.66712920884,,0
+SexualOrientation,Straight or heterosexual,DevType,"C-suite executive (CEO, CTO, etc.)",92.8890994262856,35296,355,0.010057796917497733,37905.594045973194,,5
+Gender,Male,FormalEducation,I never completed any formal education,92.4048634138639,35112,123,0.003503075871496924,35483.181156131934,,0
+RaceEthnicity,White or of European descent,FormalEducation,I never completed any formal education,77.62513816516659,29496,102,0.0034580960130187145,33960.39448306023,,0
+Student,No,DevType,"C-suite executive (CEO, CTO, etc.)",83.46491920627402,31715,321,0.010121393662304903,33430.99192987905,,0
+Age,25 - 34 years old,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",52.14484972893311,19814,461,0.023266377308973452,24083.866461852827,,0
+Dependents,No,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",69.7615663982315,26508,600,0.022634676324128564,20668.632051145818,,0
+Gender,Male,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",92.4048634138639,35112,779,0.022186147186147188,20044.34386733557,,0
+Age,25 - 34 years old,DevType,Database administrator,52.14484972893311,19814,224,0.01130513778136671,19036.76112064175,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,I never completed any formal education,92.8890994262856,35296,120,0.003399818676337262,18342.285491553892,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",77.62513816516659,29496,860,0.02915649579604014,17981.995713191587,,0
+Dependents,No,Exercise,3 - 4 times per week,69.7615663982315,26508,5763,0.21740606609325486,17816.23233180218,,0
+Age,25 - 34 years old,Exercise,3 - 4 times per week,52.14484972893311,19814,4196,0.21176945594024427,16609.33371817977,,0
+Gender,Male,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",92.4048634138639,35112,676,0.01925267714741399,15729.294579732377,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",92.8890994262856,35296,984,0.02787851314596555,15603.420510163865,,0
+Student,No,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",83.46491920627402,31715,981,0.030931735771716852,15190.890805622505,,0
+Student,No,FormalEducation,I never completed any formal education,83.46491920627402,31715,111,0.003499921172946555,14810.886179543668,,0
+Student,No,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",83.46491920627402,31715,752,0.023711177676178464,14781.16245794839,,0
+RaceEthnicity,White or of European descent,Exercise,3 - 4 times per week,77.62513816516659,29496,6226,0.21107946840249525,14628.14876491722,,9
+Dependents,No,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",69.7615663982315,26508,569,0.021465218047381922,14583.91806762344,,0
+Dependents,No,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",69.7615663982315,26508,434,0.016372415874452994,14368.450044904821,,0
+RaceEthnicity,White or of European descent,DevType,System administrator,77.62513816516659,29496,86,0.0029156495796040143,14052.496102830584,,0
+Age,25 - 34 years old,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",52.14484972893311,19814,876,0.0442111638235591,14024.829601089994,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",92.8890994262856,35296,735,0.020823889392565728,13576.466294325524,,0
+Student,No,Exercise,3 - 4 times per week,83.46491920627402,31715,6702,0.211319564874665,13519.434460789198,,0
+Gender,Male,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",92.4048634138639,35112,966,0.02751196172248804,13434.575901869655,,7
+Student,No,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",83.46491920627402,31715,885,0.02790477691943875,13153.286738798532,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,I never declared a major,92.8890994262856,35296,317,0.008981187669990934,13151.294600600086,,0
+Dependents,No,DevType,DevOps specialist,69.7615663982315,26508,441,0.016636487098234495,13061.490835289907,,0
+Gender,Male,Exercise,3 - 4 times per week,92.4048634138639,35112,7282,0.20739348370927319,12949.570210902413,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",92.8890994262856,35296,869,0.02462035358114234,12806.481454545632,,0
+SexualOrientation,Straight or heterosexual,Exercise,3 - 4 times per week,92.8890994262856,35296,7364,0.20863553943789664,12652.443862614644,,0
+RaceEthnicity,White or of European descent,UndergradMajor,I never declared a major,77.62513816516659,29496,302,0.010238676430702469,12615.661502920411,,0
+Age,25 - 34 years old,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",52.14484972893311,19814,361,0.018219440799434744,12601.182458088326,,0
+Gender,Male,UndergradMajor,I never declared a major,92.4048634138639,35112,318,0.009056732740943266,11997.13207432194,,0
+Age,25 - 34 years old,HoursComputer,5 - 8 hours,52.14484972893311,19814,5580,0.28161905723226,11471.891500196332,,0
+Dependents,No,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",69.7615663982315,26508,13027,0.49143654745737136,10620.22239493129,,0
+Dependents,No,FormalEducation,Associate degree,69.7615663982315,26508,863,0.032556209446204916,10591.04881709347,,0
+Student,No,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",83.46491920627402,31715,100,0.0031530821377896896,10421.950559247445,,0
+RaceEthnicity,White or of European descent,FormalEducation,"Other doctoral degree (Ph.D, Ed.D., etc.)",77.62513816516659,29496,896,0.030377000271223215,10140.247515408759,,0
+Student,No,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",83.46491920627402,31715,1522,0.04798991013715907,9314.537882989418,,0
+Age,25 - 34 years old,DevType,DevOps specialist,52.14484972893311,19814,346,0.017462400323003936,9231.367403854121,,0
+Gender,Male,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",92.4048634138639,35112,591,0.01683185235816815,8823.095106638852,,0
+Student,No,UndergradMajor,I never declared a major,83.46491920627402,31715,306,0.009648431341636449,8605.645879503485,,0
+SexualOrientation,Straight or heterosexual,DevType,DevOps specialist,92.8890994262856,35296,613,0.017367407071622848,8319.847187592532,,0
+RaceEthnicity,White or of European descent,Exercise,Daily or almost every day,77.62513816516659,29496,3925,0.13306889069704367,8219.548799678625,,0
+Student,No,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",83.46491920627402,31715,659,0.020778811288034053,7928.912817489108,,0
+Age,25 - 34 years old,DevType,"C-suite executive (CEO, CTO, etc.)",52.14484972893311,19814,152,0.007671343494498839,7837.913173701847,,0
+Gender,Male,DevType,Database administrator,92.4048634138639,35112,448,0.012759170653907496,7827.358934541495,,0
+Student,No,DevType,DevOps specialist,83.46491920627402,31715,584,0.018413999684691786,7793.992914276358,,0
+Age,25 - 34 years old,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",52.14484972893311,19814,484,0.024427172706167358,7793.516149899908,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",77.62513816516659,29496,619,0.02098589639273122,7790.367418661801,,0
+Dependents,No,DevType,Front-end developer,69.7615663982315,26508,1718,0.06481062320808813,7506.524380494971,,0
+RaceEthnicity,White or of European descent,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",77.62513816516659,29496,13716,0.4650122050447518,7370.480836644434,,0
+Dependents,No,UndergradMajor,"Information systems, information technology, or system administration",69.7615663982315,26508,1932,0.07288365776369397,7283.811107256741,,0
+Age,25 - 34 years old,Exercise,1 - 2 times per week,52.14484972893311,19814,5870,0.2962551731099223,7165.599095799378,,0
+Age,25 - 34 years old,DevType,Back-end developer,52.14484972893311,19814,11862,0.5986676087614817,6854.344391967301,,0
+Gender,Male,DevType,DevOps specialist,92.4048634138639,35112,612,0.017429938482570063,6765.433917947375,,0
+Dependents,No,FormalEducation,I never completed any formal education,69.7615663982315,26508,92,0.003470650369699713,6598.256607054325,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,Associate degree,92.8890994262856,35296,1169,0.0331199002719855,6575.893172233293,,0
+RaceEthnicity,White or of European descent,DevType,DevOps specialist,77.62513816516659,29496,549,0.018612693246541905,6365.119460370697,,0
+Gender,Male,Exercise,Daily or almost every day,92.4048634138639,35112,4777,0.1360503531556163,6276.64273053722,,0
+Age,25 - 34 years old,UndergradMajor,"Computer science, computer engineering, or software engineering",52.14484972893311,19814,12419,0.6267790451196124,6246.382792111108,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"A social science (ex. anthropology, psychology, political science)",77.62513816516659,29496,700,0.02373203146189314,6200.033299803414,,0
+Gender,Male,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",92.4048634138639,35112,1558,0.044372294372294376,6070.059788311482,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",92.8890994262856,35296,1608,0.04555757026291931,5883.766440998064,,0
+RaceEthnicity,White or of European descent,HoursComputer,5 - 8 hours,77.62513816516659,29496,8951,0.3034648765934364,5780.910020270167,,0
+Student,No,HoursComputer,5 - 8 hours,83.46491920627402,31715,9514,0.29998423458931106,5700.416089399005,,0
+SexualOrientation,Straight or heterosexual,Exercise,Daily or almost every day,92.8890994262856,35296,4815,0.13641772438803265,5587.4412693726335,,0
+Gender,Male,UndergradMajor,Mathematics or statistics,92.4048634138639,35112,1388,0.03953064479380269,5538.482865497412,,0
+SexualOrientation,Straight or heterosexual,DevType,Database administrator,92.8890994262856,35296,459,0.013004306436990028,5307.91048157771,,0
+Age,25 - 34 years old,DevType,Data or business analyst,52.14484972893311,19814,621,0.03134147572423539,5202.402771153313,,0
+Student,No,DevType,Database administrator,83.46491920627402,31715,399,0.01258079772978086,5175.175048726043,,0
+Dependents,No,UndergradMajor,I never declared a major,69.7615663982315,26508,218,0.008223932397766712,5100.663389482885,,0
+Dependents,No,HoursComputer,5 - 8 hours,69.7615663982315,26508,7556,0.28504602384185906,5075.34569297322,,0
+Gender,Male,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",92.4048634138639,35112,16905,0.48145933014354064,5034.299711401414,,0
+SexualOrientation,Straight or heterosexual,DevType,Back-end developer,92.8890994262856,35296,21345,0.6047427470534905,5033.298445616732,,0
+Dependents,No,Hobby,No,69.7615663982315,26508,4631,0.1747019767617323,4872.378571344292,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",92.8890994262856,35296,17131,0.485352447869447,4838.078448371234,,1
+SexualOrientation,Straight or heterosexual,UndergradMajor,"Fine arts or performing arts (ex. graphic design, music, studio art)",92.8890994262856,35296,634,0.017962375339981868,4707.490213264828,,0
+Dependents,No,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",69.7615663982315,26508,79,0.0029802323826769277,4706.434019383218,,0
+SexualOrientation,Straight or heterosexual,DevType,System administrator,92.8890994262856,35296,98,0.002776518585675431,4525.206090977459,,0
+Dependents,No,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",69.7615663982315,26508,1182,0.04459031235853327,4319.973075698639,,0
+Student,No,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",83.46491920627402,31715,15877,0.500614851016869,4272.548397610983,,0
+Student,No,DevType,Back-end developer,83.46491920627402,31715,19437,0.612864575122182,4185.838665889489,,0
+RaceEthnicity,White or of European descent,DevType,Back-end developer,77.62513816516659,29496,17900,0.6068619473826959,4130.574322562694,,8
+RaceEthnicity,White or of European descent,UndergradMajor,"A natural science (ex. biology, chemistry, physics)",77.62513816516659,29496,1507,0.051091673447247084,4090.496469636477,,0
+Dependents,No,DevType,Data or business analyst,69.7615663982315,26508,815,0.030745435340274633,4061.502016034181,,0
+SexualOrientation,Straight or heterosexual,HoursComputer,5 - 8 hours,92.8890994262856,35296,10705,0.3032921577515866,3988.5405322674924,,0
+Gender,Male,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",92.4048634138639,35112,8425,0.2399464570517202,3855.4550975423917,,0
+Student,No,Exercise,Daily or almost every day,83.46491920627402,31715,4306,0.13577171685322403,3847.445760017348,,0
+Gender,Male,DevType,Back-end developer,92.4048634138639,35112,21517,0.6128104351788562,3838.5801990994805,,10
+RaceEthnicity,White or of European descent,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",77.62513816516659,29496,7080,0.24003254678600489,3791.926482638344,,6
+Age,25 - 34 years old,FormalEducation,"Bachelor’s degree (BA, BS, B.Eng., etc.)",52.14484972893311,19814,10108,0.5101443423841728,3728.0952986105403,,0
+Gender,Male,Hobby,No,92.4048634138639,35112,6091,0.17347345636819322,3472.611207267735,,0
+Student,No,Hobby,No,83.46491920627402,31715,6057,0.1909821850859215,3406.4941340126243,,0
+Dependents,No,UndergradMajor,Mathematics or statistics,69.7615663982315,26508,1047,0.039497510185604344,3353.362604188631,,0
+Dependents,No,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",69.7615663982315,26508,673,0.025388561943564206,3323.6470207174425,,0
+Dependents,No,DevType,Embedded applications or devices developer,69.7615663982315,26508,433,0.01633469141391278,3291.515920360209,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,Mathematics or statistics,92.8890994262856,35296,1393,0.03946622846781505,3277.828781273158,,2
+Student,No,Exercise,1 - 2 times per week,83.46491920627402,31715,9201,0.29011508749802933,3254.325808680005,,0
+Age,25 - 34 years old,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",52.14484972893311,19814,632,0.031896638740284644,3246.0323463483655,,0
+Dependents,No,DevType,Full-stack developer,69.7615663982315,26508,2340,0.0882752376641014,3076.8627507354977,,0
+Dependents,No,DevType,Back-end developer,69.7615663982315,26508,15694,0.5920476837181229,3064.4365346804843,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",77.62513816516659,29496,750,0.025427176566314078,3052.166423515766,,0
+RaceEthnicity,White or of European descent,Hobby,No,77.62513816516659,29496,5225,0.17714266341198806,2855.0277429171983,,0
+Student,No,DevType,Data scientist or machine learning specialist,83.46491920627402,31715,689,0.02172473592937096,2776.1180030432006,,3
+Gender,Male,HoursComputer,5 - 8 hours,92.4048634138639,35112,10522,0.29966962861699703,2727.1111638930015,,0
+Dependents,No,Exercise,1 - 2 times per week,69.7615663982315,26508,7702,0.29055379508073037,2624.046841232135,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",92.8890994262856,35296,8627,0.24441863100634634,2600.364258714966,,0
+Dependents,No,DevType,System administrator,69.7615663982315,26508,67,0.0025275388561943565,2492.121032728741,,0
+Age,25 - 34 years old,DevType,Full-stack developer,52.14484972893311,19814,1787,0.09018875542545675,2458.598754546285,,0
+SexualOrientation,Straight or heterosexual,Hobby,No,92.8890994262856,35296,6454,0.18285358114233907,2383.877080682374,,0
+SexualOrientation,Straight or heterosexual,Exercise,1 - 2 times per week,92.8890994262856,35296,10297,0.2917327742520399,2214.742776026542,,0
+Gender,Male,Exercise,1 - 2 times per week,92.4048634138639,35112,10150,0.2890749601275917,2190.174723863529,,0
+Dependents,No,Exercise,Daily or almost every day,69.7615663982315,26508,3679,0.13878829032744833,1958.4595211637788,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",92.8890994262856,35296,101,0.002861514052583862,1874.824794503511,,0
+Student,No,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",83.46491920627402,31715,799,0.02519312628093962,1809.910127606563,,0
+Gender,Male,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",92.4048634138639,35112,102,0.00290498974709501,1746.9479788153403,,0
+RaceEthnicity,White or of European descent,DevType,Data scientist or machine learning specialist,77.62513816516659,29496,769,0.026071331705994034,1724.862785687219,,0
+Gender,Male,DevType,System administrator,92.4048634138639,35112,100,0.0028480291638186377,1583.9499986137962,,0
+Gender,Male,FormalEducation,Associate degree,92.4048634138639,35112,1181,0.03363522442469811,1578.5185468259297,,0
+Gender,Male,DevType,Front-end developer,92.4048634138639,35112,1965,0.05596377306903623,1523.9358721439057,,0
+RaceEthnicity,White or of European descent,UndergradMajor,Mathematics or statistics,77.62513816516659,29496,1311,0.04444670463791701,1455.2607748028968,,0
+Student,No,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",83.46491920627402,31715,8000,0.25224657102317516,1391.4568419835123,,0
+Age,25 - 34 years old,Hobby,No,52.14484972893311,19814,3572,0.18027657212072273,1099.1458353465132,,0
+RaceEthnicity,White or of European descent,Exercise,1 - 2 times per week,77.62513816516659,29496,8760,0.2969894222945484,1094.8278355165821,,0
+Gender,Male,HoursComputer,9 - 12 hours,92.4048634138639,35112,19631,0.5590966051492368,784.5837434311688,,0
+SexualOrientation,Straight or heterosexual,DevType,Embedded applications or devices developer,92.8890994262856,35296,561,0.0158941523118767,721.3112554784166,,0
+Age,25 - 34 years old,Exercise,Daily or almost every day,52.14484972893311,19814,2588,0.13061471686686182,622.0521701873804,,0
+Student,No,UndergradMajor,Mathematics or statistics,83.46491920627402,31715,1313,0.04139996846917862,577.437593728624,,4
+Gender,Male,DevType,Full-stack developer,92.4048634138639,35112,3025,0.08615288220551379,358.4710126033606,,0
+Dependents,No,HoursComputer,9 - 12 hours,69.7615663982315,26508,14813,0.558812433982194,230.47199482367432,,0
+Age,25 - 34 years old,UndergradMajor,I never declared a major,52.14484972893311,19814,134,0.006762894922781871,56.148514467233326,,0
+SexualOrientation,Straight or heterosexual,DevType,Full-stack developer,92.8890994262856,35296,3086,0.08743200362647326,6.006297528889263,,0
+RaceEthnicity,White or of European descent,FormalEducation,Associate degree,77.62513816516659,29496,1093,0.037055871982641715,-10.321237569049117,,0
+Age,25 - 34 years old,HoursComputer,1 - 4 hours,52.14484972893311,19814,168,0.008478853336025032,-109.20005789860443,,0
+RaceEthnicity,White or of European descent,DevType,Front-end developer,77.62513816516659,29496,1684,0.057092487116897205,-153.04497825678845,,0
+Age,25 - 34 years old,DevType,Front-end developer,52.14484972893311,19814,1384,0.06984960129201574,-243.84314041597827,,0
+Gender,Male,DevType,Data or business analyst,92.4048634138639,35112,1023,0.02913533834586466,-413.252965359512,,0
+RaceEthnicity,White or of European descent,DevType,Embedded applications or devices developer,77.62513816516659,29496,486,0.01647681041497152,-433.9464455351699,,0
+SexualOrientation,Straight or heterosexual,DevType,Front-end developer,92.8890994262856,35296,2119,0.060035131459655486,-464.5873733405024,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"Information systems, information technology, or system administration",92.8890994262856,35296,2672,0.0757026291931097,-590.4021420964127,,0
+Gender,Male,UndergradMajor,"Information systems, information technology, or system administration",92.4048634138639,35112,2682,0.07638414217361586,-771.4117671106942,,0
+Gender,Male,DevType,Embedded applications or devices developer,92.4048634138639,35112,569,0.01620528594212805,-799.8394370896858,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"Computer science, computer engineering, or software engineering",92.8890994262856,35296,22173,0.6282014959202176,-824.0998135945119,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,"Professional degree (JD, MD, etc.)",92.8890994262856,35296,420,0.011899365367180417,-883.4846461867419,,0
+Student,No,DevType,Embedded applications or devices developer,83.46491920627402,31715,504,0.015891533974460036,-903.6846529622271,,0
+SexualOrientation,Straight or heterosexual,HoursComputer,9 - 12 hours,92.8890994262856,35296,19738,0.559213508612874,-972.2037912854139,,0
+Age,25 - 34 years old,Hobby,Yes,52.14484972893311,19814,16242,0.8197234278792773,-1099.1458353466587,,0
+RaceEthnicity,White or of European descent,DevType,Database administrator,77.62513816516659,29496,410,0.013900189856251695,-1120.521710944944,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"Information systems, information technology, or system administration",77.62513816516659,29496,2167,0.07346758882560347,-1226.440551133608,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"Computer science, computer engineering, or software engineering",77.62513816516659,29496,18141,0.6150325467860048,-1241.3232176666352,,0
+Gender,Male,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",92.4048634138639,35112,844,0.0240373661426293,-1298.176756926303,,0
+Dependents,No,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",69.7615663982315,26508,6026,0.22732759921533122,-1639.1222081970045,,0
+Student,No,UndergradMajor,"Computer science, computer engineering, or software engineering",83.46491920627402,31715,19448,0.6132114141573388,-1653.417484985097,,0
+RaceEthnicity,White or of European descent,HoursComputer,9 - 12 hours,77.62513816516659,29496,16618,0.5633984269053431,-1695.0881263567862,,0
+Age,25 - 34 years old,UndergradMajor,Mathematics or statistics,52.14484972893311,19814,790,0.03987079842535581,-1712.3371856802987,,0
+Student,No,HoursComputer,9 - 12 hours,83.46491920627402,31715,17957,0.5661989594828946,-1757.0870898014691,,0
+Gender,Male,UndergradMajor,"Computer science, computer engineering, or software engineering",92.4048634138639,35112,22256,0.633857370699476,-1948.3942733619187,,0
+Student,No,FormalEducation,Associate degree,83.46491920627402,31715,1029,0.032445215197855905,-1991.0191980870004,,0
+Age,25 - 34 years old,FormalEducation,Primary/elementary school,52.14484972893311,19814,91,0.004592712223680226,-2093.0505707136763,,0
+Age,25 - 34 years old,DevType,System administrator,52.14484972893311,19814,50,0.002523468254769355,-2166.9847122045903,,0
+SexualOrientation,Straight or heterosexual,Hobby,Yes,92.8890994262856,35296,28842,0.8171464188576609,-2383.877080682505,,0
+Student,No,DevType,Front-end developer,83.46491920627402,31715,1987,0.06265174207788113,-2386.219270701622,,0
+RaceEthnicity,White or of European descent,DevType,Full-stack developer,77.62513816516659,29496,2576,0.08733387577976674,-2470.4034375833726,,0
+SexualOrientation,Straight or heterosexual,DevType,Data or business analyst,92.8890994262856,35296,1059,0.03000339981867634,-2539.1974432474817,,0
+Student,No,DevType,Data or business analyst,83.46491920627402,31715,901,0.028409270061485102,-2597.979748631449,,0
+Student,No,FormalEducation,Some college/university study without earning a degree,83.46491920627402,31715,3638,0.1147091281727889,-2622.4632913313108,,0
+Age,25 - 34 years old,FormalEducation,"Master’s degree (MA, MS, M.Eng., MBA, etc.)",52.14484972893311,19814,5600,0.28262844453416774,-2629.9899331658526,,0
+Dependents,No,UndergradMajor,"Computer science, computer engineering, or software engineering",69.7615663982315,26508,16890,0.6371661385242191,-2672.3071957671345,,0
+RaceEthnicity,White or of European descent,DevType,Data or business analyst,77.62513816516659,29496,924,0.03132628152969894,-2727.2895174854784,,0
+RaceEthnicity,White or of European descent,Hobby,Yes,77.62513816516659,29496,24271,0.822857336588012,-2855.0277429173,,0
+Dependents,No,DevType,Data scientist or machine learning specialist,69.7615663982315,26508,756,0.028519692168401993,-3093.7497668140422,,0
+SexualOrientation,Straight or heterosexual,HoursComputer,Over 12 hours,92.8890994262856,35296,4311,0.12213848594741614,-3274.5021183144563,,0
+Dependents,No,FormalEducation,Some college/university study without earning a degree,69.7615663982315,26508,3416,0.12886675720537197,-3304.337166486177,,0
+Student,No,Hobby,Yes,83.46491920627402,31715,25658,0.8090178149140785,-3406.4941340127552,,0
+Gender,Male,Hobby,Yes,92.4048634138639,35112,29021,0.8265265436318068,-3472.611207267648,,0
+Student,No,UndergradMajor,"Information systems, information technology, or system administration",83.46491920627402,31715,2361,0.07444426927321457,-3546.578909330812,,0
+Student,No,DevType,Full-stack developer,83.46491920627402,31715,2867,0.09039886489043039,-3599.190912067017,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",77.62513816516659,29496,2273,0.07706129644697586,-3771.6467777767684,,0
+Dependents,No,HoursComputer,Over 12 hours,69.7615663982315,26508,3697,0.13946733061717217,-3919.9194946643984,,0
+Gender,Male,HoursComputer,Over 12 hours,92.4048634138639,35112,4420,0.1258828890407838,-3952.1140731601045,,0
+Age,25 - 34 years old,DevType,Data scientist or machine learning specialist,52.14484972893311,19814,554,0.027960028262844452,-4076.0782914001175,,0
+Student,No,DevType,Designer,83.46491920627402,31715,695,0.021913920857638342,-4152.5686291569145,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",92.8890994262856,35296,862,0.024422030825022666,-4156.008656653488,,0
+Gender,Male,FormalEducation,Some college/university study without earning a degree,92.4048634138639,35112,4526,0.12890179995443155,-4254.835593378593,,0
+Student,No,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",83.46491920627402,31715,2765,0.08718272110988491,-4395.212477579189,,0
+RaceEthnicity,White or of European descent,HoursComputer,Over 12 hours,77.62513816516659,29496,3520,0.11933821535123407,-4570.358346859153,,0
+Dependents,No,Hobby,Yes,69.7615663982315,26508,21877,0.8252980232382677,-4872.378571344219,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",92.8890994262856,35296,3044,0.08624206708975521,-4902.437755862644,,0
+Age,25 - 34 years old,DevType,Game or graphics developer,52.14484972893311,19814,57,0.002876753810437065,-4959.505342935809,,0
+Dependents,No,DevType,Database administrator,69.7615663982315,26508,347,0.013090387807454354,-5059.20476251503,,0
+Age,25 - 34 years old,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",52.14484972893311,19814,482,0.024326233975976583,-5100.279106478978,,0
+Age,25 - 34 years old,HoursComputer,9 - 12 hours,52.14484972893311,19814,11423,0.5765115574846068,-5194.808961024712,,0
+Age,25 - 34 years old,UndergradMajor,"Information systems, information technology, or system administration",52.14484972893311,19814,1528,0.07711718986575149,-5284.731751295141,,0
+Gender,Male,FormalEducation,"Professional degree (JD, MD, etc.)",92.4048634138639,35112,421,0.011990202779676464,-5289.082129159273,,0
+RaceEthnicity,White or of European descent,FormalEducation,Some college/university study without earning a degree,77.62513816516659,29496,4006,0.13581502576620558,-5350.75953873957,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,Some college/university study without earning a degree,92.8890994262856,35296,4399,0.12463168631006347,-5778.995047103119,,0
+Student,No,HoursComputer,Over 12 hours,83.46491920627402,31715,3859,0.12167743969730412,-5876.293967848411,,0
+Gender,Male,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",92.4048634138639,35112,3043,0.08666552745500114,-5884.421202557729,,0
+Gender,Male,DevType,Data scientist or machine learning specialist,92.4048634138639,35112,893,0.025432900432900432,-6118.05428204927,,0
+Dependents,No,UndergradMajor,"A business discipline (ex. accounting, finance, marketing)",69.7615663982315,26508,609,0.022974196468990495,-6334.94305747826,,0
+Age,25 - 34 years old,FormalEducation,Some college/university study without earning a degree,52.14484972893311,19814,2021,0.10199858685777732,-6380.71480114435,,0
+Student,No,DevType,System administrator,83.46491920627402,31715,91,0.002869304745388617,-7238.136126625555,,0
+Dependents,No,FormalEducation,"Professional degree (JD, MD, etc.)",69.7615663982315,26508,302,0.011392787083144711,-7256.23396019201,,0
+RaceEthnicity,White or of European descent,DevType,Mobile developer,77.62513816516659,29496,965,0.032716300515324113,-7357.26578354869,,0
+Gender,Male,DevType,Mobile developer,92.4048634138639,35112,1323,0.037679425837320576,-7597.537688826924,,0
+Dependents,No,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",69.7615663982315,26508,2134,0.08050399879281726,-7744.956469925091,,0
+Age,25 - 34 years old,FormalEducation,Associate degree,52.14484972893311,19814,612,0.030887251438376905,-8259.13046432905,,0
+Age,25 - 34 years old,HoursComputer,Over 12 hours,52.14484972893311,19814,2628,0.1326334914706773,-8722.538279550747,,0
+SexualOrientation,Straight or heterosexual,DevType,Data scientist or machine learning specialist,92.8890994262856,35296,917,0.025980281051677243,-8787.821005111779,,0
+Age,25 - 34 years old,DevType,Embedded applications or devices developer,52.14484972893311,19814,295,0.014888462703139194,-8943.738753607933,,0
+Age,25 - 34 years old,UndergradMajor,"A humanities discipline (ex. literature, history, philosophy)",52.14484972893311,19814,511,0.025789845563742808,-9040.938767963627,,0
+Gender,Male,DevType,Desktop or enterprise applications developer,92.4048634138639,35112,1264,0.03599908863066758,-9088.8545655364,,0
+Dependents,No,DevType,Mobile developer,69.7615663982315,26508,1056,0.039837030330466275,-9188.910368718469,,0
+SexualOrientation,Straight or heterosexual,DevType,Desktop or enterprise applications developer,92.8890994262856,35296,1258,0.03564143245693563,-9197.196268845131,,0
+RaceEthnicity,White or of European descent,HoursComputer,Less than 1 hour,77.62513816516659,29496,30,0.0010170870626525631,-9465.294477921096,,0
+Age,25 - 34 years old,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",52.14484972893311,19814,55,0.0027758150802462906,-9610.274656362468,,0
+SexualOrientation,Straight or heterosexual,DevType,Mobile developer,92.8890994262856,35296,1362,0.038587941976427925,-9623.311778556905,,0
+RaceEthnicity,White or of European descent,DevType,Designer,77.62513816516659,29496,666,0.022579332790886898,-9901.176088796143,,0
+Student,No,HoursComputer,1 - 4 hours,83.46491920627402,31715,351,0.01106731830364181,-9980.039554374758,,0
+RaceEthnicity,White or of European descent,UndergradMajor,"A health science (ex. nursing, pharmacy, radiology)",77.62513816516659,29496,88,0.0029834553837808516,-10759.349241003409,,0
+Dependents,No,UndergradMajor,Web development or web design,69.7615663982315,26508,710,0.026784366983552136,-11426.350482925307,,0
+Age,25 - 34 years old,UndergradMajor,Web development or web design,52.14484972893311,19814,531,0.02679923286565055,-11889.581360284443,,0
+Student,No,DevType,Desktop or enterprise applications developer,83.46491920627402,31715,1139,0.03591360554942456,-12093.753479250183,,0
+Student,No,DevType,Mobile developer,83.46491920627402,31715,1206,0.03802617058174365,-12249.359978311288,,0
+Student,No,DevType,Game or graphics developer,83.46491920627402,31715,109,0.0034368595301907615,-12328.052679062748,,0
+RaceEthnicity,White or of European descent,DevType,Desktop or enterprise applications developer,77.62513816516659,29496,1135,0.0384797938703553,-12493.471280276863,,0
+Dependents,No,DevType,Desktop or enterprise applications developer,69.7615663982315,26508,944,0.03561189074996227,-12559.90996987115,,0
+Age,25 - 34 years old,DevType,Designer,52.14484972893311,19814,403,0.020339154133441003,-12571.786411309004,,0
+SexualOrientation,Straight or heterosexual,Exercise,I don't typically exercise,92.8890994262856,35296,12820,0.3632139619220308,-13894.94793317745,,0
+Gender,Male,Exercise,I don't typically exercise,92.4048634138639,35112,12903,0.3674812030075188,-14292.477969216197,,0
+Student,No,DevType,Educator or academic researcher,83.46491920627402,31715,103,0.00324767460192338,-14326.780070273671,,0
+Student,No,Exercise,I don't typically exercise,83.46491920627402,31715,11506,0.36279363077408167,-14648.496975274422,,0
+SexualOrientation,Straight or heterosexual,DevType,Designer,92.8890994262856,35296,767,0.021730507706255665,-15585.447894480443,,0
+RaceEthnicity,White or of European descent,Exercise,I don't typically exercise,77.62513816516659,29496,10585,0.35886221860591266,-15738.656007432975,,0
+RaceEthnicity,White or of European descent,DevType,Educator or academic researcher,77.62513816516659,29496,156,0.0052888527257933275,-15817.164637539725,,0
+RaceEthnicity,White or of European descent,DevType,Game or graphics developer,77.62513816516659,29496,119,0.004034445348521833,-15993.041598528303,,0
+SexualOrientation,Straight or heterosexual,HoursComputer,1 - 4 hours,92.8890994262856,35296,502,0.014222574796010879,-16179.899122920659,,0
+RaceEthnicity,White or of European descent,FormalEducation,"Professional degree (JD, MD, etc.)",77.62513816516659,29496,347,0.011764307024681312,-16393.977375856353,,0
+Dependents,No,DevType,Designer,69.7615663982315,26508,647,0.024407725969518637,-16616.792120197395,,0
+Dependents,No,Exercise,I don't typically exercise,69.7615663982315,26508,9364,0.35325184849856645,-16699.914811053924,,0
+Dependents,No,HoursComputer,Less than 1 hour,69.7615663982315,26508,28,0.0010562848951259998,-16732.649832492636,,0
+Dependents,No,DevType,QA or test developer,69.7615663982315,26508,193,0.0072808208842613555,-17194.633193884933,,0
+Gender,Male,DevType,Designer,92.4048634138639,35112,756,0.0215311004784689,-17242.09825629888,,0
+Age,25 - 34 years old,UndergradMajor,"Another engineering discipline (ex. civil, electrical, mechanical)",52.14484972893311,19814,1643,0.082921166851721,-17411.87207372728,,0
+SexualOrientation,Straight or heterosexual,UndergradMajor,Web development or web design,92.8890994262856,35296,888,0.02515865820489574,-18323.780057350727,,0
+SexualOrientation,Straight or heterosexual,DevType,Game or graphics developer,92.8890994262856,35296,137,0.0038814596554850407,-18589.084271990432,,0
+Gender,Male,UndergradMajor,Web development or web design,92.4048634138639,35112,875,0.02492025518341308,-18841.69750881738,,0
+Age,25 - 34 years old,Exercise,I don't typically exercise,52.14484972893311,19814,7160,0.36136065408297163,-18861.812334190792,,0
+Gender,Male,HoursComputer,Less than 1 hour,92.4048634138639,35112,37,0.0010537707906128958,-19294.67268862363,,0
+Dependents,No,DevType,Educator or academic researcher,69.7615663982315,26508,149,0.005620944620491927,-19351.546590595317,,0
+Age,25 - 34 years old,DevType,Desktop or enterprise applications developer,52.14484972893311,19814,652,0.032906026042192386,-19380.655968986088,,0
+Student,No,UndergradMajor,Web development or web design,83.46491920627402,31715,805,0.025382311209207,-19441.029267856793,,0
+Gender,Male,DevType,Educator or academic researcher,92.4048634138639,35112,162,0.004613807245386192,-19668.53168276482,,0
+Student,No,FormalEducation,"Professional degree (JD, MD, etc.)",83.46491920627402,31715,384,0.012107835409112408,-19976.395244717554,,0
+SexualOrientation,Straight or heterosexual,HoursComputer,Less than 1 hour,92.8890994262856,35296,40,0.0011332728921124207,-20393.284633737043,,0
+Dependents,No,DevType,Game or graphics developer,69.7615663982315,26508,130,0.004904179870227856,-20438.06309884957,,0
+RaceEthnicity,White or of European descent,DevType,QA or test developer,77.62513816516659,29496,189,0.006407648494711147,-21429.344331362285,,0
+Gender,Male,HoursComputer,1 - 4 hours,92.4048634138639,35112,502,0.01429710640236956,-22113.77339876561,,0
+Student,No,HoursComputer,Less than 1 hour,83.46491920627402,31715,34,0.0010720479268484945,-22770.270938766364,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,Primary/elementary school,92.8890994262856,35296,274,0.007762919310970081,-22812.35830297979,,0
+Student,No,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",83.46491920627402,31715,1441,0.045435913605549424,-23138.512193715418,,0
+RaceEthnicity,White or of European descent,UndergradMajor,Web development or web design,77.62513816516659,29496,778,0.0263764578247898,-23232.801477567875,,0
+SexualOrientation,Straight or heterosexual,DevType,Educator or academic researcher,92.8890994262856,35296,166,0.004703082502266546,-23432.4489350183,,0
+SexualOrientation,Straight or heterosexual,DevType,QA or test developer,92.8890994262856,35296,243,0.006884632819582955,-23516.44241894121,,0
+RaceEthnicity,White or of European descent,FormalEducation,Primary/elementary school,77.62513816516659,29496,246,0.008340113913751017,-23873.04038621942,,0
+Gender,Male,DevType,Game or graphics developer,92.4048634138639,35112,138,0.00393028024606972,-23890.52253214788,,0
+Age,25 - 34 years old,DevType,Educator or academic researcher,52.14484972893311,19814,102,0.005147875239729484,-24201.401079858406,,0
+RaceEthnicity,White or of European descent,HoursComputer,1 - 4 hours,77.62513816516659,29496,377,0.012781394087333876,-24542.354638679273,,0
+Gender,Male,FormalEducation,Primary/elementary school,92.4048634138639,35112,287,0.00817384370015949,-25009.617916927586,,0
+Age,25 - 34 years old,DevType,Mobile developer,52.14484972893311,19814,900,0.04542242858584839,-26499.524110563783,,0
+SexualOrientation,Straight or heterosexual,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",92.8890994262856,35296,2172,0.06153671804170444,-27112.448950625272,,0
+Age,25 - 34 years old,DevType,Student,52.14484972893311,19814,87,0.0043908347632986774,-27321.003382405586,,0
+Gender,Male,DevType,QA or test developer,92.4048634138639,35112,223,0.006351105035315561,-27994.027781800585,,0
+Gender,Male,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",92.4048634138639,35112,2278,0.06487810435178856,-28816.670211973877,,0
+Student,No,FormalEducation,Primary/elementary school,83.46491920627402,31715,254,0.008008828629985811,-29485.12178709633,,0
+RaceEthnicity,White or of European descent,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",77.62513816516659,29496,2010,0.06814483319772173,-30050.254774766567,,0
+Age,25 - 34 years old,FormalEducation,"Professional degree (JD, MD, etc.)",52.14484972893311,19814,238,0.01201170889270213,-31120.171651250625,,0
+SexualOrientation,Straight or heterosexual,DevType,Product manager,92.8890994262856,35296,16,0.00045330915684496827,-31419.130003146012,,0
+Dependents,No,DevType,Product manager,69.7615663982315,26508,12,0.0004526935264825713,-31529.311492457986,,0
+Gender,Male,DevType,Product manager,92.4048634138639,35112,16,0.000455684666210982,-32153.75966942105,,0
+Gender,Male,DevType,Marketing or sales professional,92.4048634138639,35112,12,0.0003417634996582365,-32416.120019413676,,0
+Dependents,No,FormalEducation,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",69.7615663982315,26508,1966,0.07416628942206127,-32578.00282918554,,0
+Student,No,DevType,QA or test developer,83.46491920627402,31715,208,0.006558410846602554,-32585.63774818754,,0
+Dependents,No,FormalEducation,Primary/elementary school,69.7615663982315,26508,247,0.009317941753432925,-35113.46751332218,,0
+Age,25 - 34 years old,DevType,QA or test developer,52.14484972893311,19814,133,0.006712425557686484,-36338.84168391363,,0
+Student,No,DevType,Marketing or sales professional,83.46491920627402,31715,11,0.00034683903515686585,-39617.47908633364,,0
+SexualOrientation,Straight or heterosexual,DevType,Marketing or sales professional,92.8890994262856,35296,12,0.0003399818676337262,-39631.25000623356,,0
+Dependents,No,HoursComputer,1 - 4 hours,69.7615663982315,26508,414,0.01561792666364871,-39763.42756704199,,0
+RaceEthnicity,White or of European descent,DevType,Product manager,77.62513816516659,29496,12,0.0004068348250610252,-40750.38802128783,,0
+Student,No,DevType,Product manager,83.46491920627402,31715,13,0.00040990067791265964,-44538.28532974936,,0
+Dependents,No,DevType,Student,69.7615663982315,26508,378,0.014259846084200997,-53293.92794504744,,0
+RaceEthnicity,White or of European descent,DevType,Student,77.62513816516659,29496,286,0.009696229997287769,-54264.9942857822,,0
+SexualOrientation,Straight or heterosexual,DevType,Student,92.8890994262856,35296,374,0.010596101541251133,-54760.65299944253,,0
+Gender,Male,DevType,Student,92.4048634138639,35112,363,0.010338345864661654,-55838.03684248462,,0
+Age,25 - 34 years old,DevType,Product manager,52.14484972893311,19814,11,0.0005551630160492581,-58781.835486355936,,0
+Age,25 - 34 years old,HoursComputer,Less than 1 hour,52.14484972893311,19814,15,0.0007570404764308065,-60774.51121946481,,0
+Dependents,No,DevType,Marketing or sales professional,69.7615663982315,26508,12,0.0004526935264825713,-61400.36196632915,,0
+Age,25 - 34 years old,DevType,Marketing or sales professional,52.14484972893311,19814,10,0.000504693650953871,-64638.96957642179,,0
+Student,No,DevType,Student,83.46491920627402,31715,107,0.0033737978874349675,-73679.0621832717,,0
+RaceEthnicity,White or of European descent,DevType,Marketing or sales professional,77.62513816516659,29496,8,0.00027122321670735016,,,0
