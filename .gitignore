@@ -21,3 +21,5 @@ venv/
 logs/
 graphs_backup_*/
 calibration_results/exact_so/
+calibration_results/exact_selected/
+datasets/raw/

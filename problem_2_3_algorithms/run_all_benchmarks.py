@@ -826,13 +826,13 @@ def main():
     proj_root = Path(__file__).resolve().parent.parent
     # Stack Overflow: prepared on the fly from the dataset (the pre-computed per-rule CSVs of the old
     # project folder are not part of this repository); rules: problem_2_3_algorithms/Chosen10Treatments.json
-    ds_cfg = {'base_dataset_path': str(proj_root / "datasets" / "stackoverflow_not_encoded.csv")}
+    ds_cfg = {'base_dataset_path': str(proj_root / "datasets" / "stackoverflow.csv")}
     
     if args.dataset == 'acs':
         ds_cfg = {
             'treatment_file': str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             'outcome_col': "Wages or salary income past 12 months",
-            'base_dataset_path': str(proj_root / "datasets" / "acs_encoded.csv"),
+            'base_dataset_path': str(proj_root / "datasets" / "acs.csv"),
             'delta_min_pct': 5.0,  # Same as ablation study: DELTA_PERCENTAGES = [0.05, 0.10, 0.15, 0.20] = 5%, 10%, 15%, 20%
             'delta_max_pct': 20.0,  # Same as ablation study
             'delta_percentages': [5, 10, 15, 20],  # Same as ablation study

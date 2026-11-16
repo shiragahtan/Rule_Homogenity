@@ -918,13 +918,13 @@ Algorithm:
     
     # ── Dataset-specific configuration ──
     # Stack Overflow is prepared on the fly from the dataset (the old pre-computed per-rule CSVs are not in this repository)
-    ds_kwargs = dict(base_dataset_path=str(Path(__file__).resolve().parent.parent / "datasets" / "stackoverflow_not_encoded.csv"))
+    ds_kwargs = dict(base_dataset_path=str(Path(__file__).resolve().parent.parent / "datasets" / "stackoverflow.csv"))
     if args.dataset == 'acs':
         proj_root = Path(__file__).resolve().parent.parent
         ds_kwargs = dict(
             treatment_file=str(proj_root / "configs" / "ACSChosen10Treatments.json"),
             outcome_col="Wages or salary income past 12 months",
-            base_dataset_path=str(proj_root / "datasets" / "acs_encoded.csv"),
+            base_dataset_path=str(proj_root / "datasets" / "acs.csv"),
             delta_percentages=[5, 10, 15, 20],
         )
     

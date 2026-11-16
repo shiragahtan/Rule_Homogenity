@@ -20,6 +20,11 @@ all subgroups. Datasets: German Credit, Stack Overflow (SO), ACS.
 ## Parameters: use Table 3 of the article (the text of the article differs; Table 3 is what `configs/config.json` uses)
 German δ=50, ε=0.5 | SO δ=100, ε=520,000 | ACS δ=100, ε=17,500. RW default k=2000 walks.
 
+## Datasets
+`datasets/german.csv`, `datasets/stackoverflow.csv`, `datasets/acs.csv`: the only datasets, already filtered by
+`scripts/prepare_datasets.py` (no missing values; 10 equal-frequency bins for numeric attributes). Details in
+`datasets/README.md`. Filtering is done only there, not in the CATE code.
+
 ## Estimator and code map
 - `utils/ATE_update.py`: the estimator (`calculate_ate_safe`, `estimate_cate`, `estimate_cate_with_p`).
 - `utils/preprocessing.py`: `clean_dataset`, `prepare_rule_df` (binary treatment = attribute equals the prescribed
@@ -36,7 +41,9 @@ German δ=50, ε=0.5 | SO δ=100, ε=520,000 | ACS δ=100, ε=17,500. RW default
 ## Current state (see `summary_for_brit_rule_selection.html` in the parent folder for the numbers)
 - Exact verdicts with the current rule lists: German 3 homogeneous / 7 not, ACS 0 / 10, SO 7 / 3.
 - Candidate search at coverage ≥ 50%: German gives 5 + 5 at ε=0.5; ACS needs ε≈88,000 (Table 3 gives 0
-  homogeneous); SO needs ε between about 325,000 and 495,000 (at 520,000 only 4 non-homogeneous exist).
+  homogeneous); SO needs ε between about 321,000 and 495,000 (at 520,000 only 4 non-homogeneous exist).
+- All results above were computed on the earlier (unfiltered, coarser-binned) files. With the new German
+  bins, 4 of the 10 current German rules (`amount = 0`) no longer exist; rule lists must be rebuilt.
 - The rule lists are NOT changed yet. Waiting for the instructor to decide: coverage threshold, per-dataset ε
   vs fewer than 5 homogeneous rules, and approval of the selection procedure.
 - After the decision: recompute utilities (`utils/recompute_rule_utilities.py --update-rules`), update the
