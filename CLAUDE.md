@@ -12,7 +12,8 @@ all subgroups. Datasets: German Credit, Stack Overflow (SO), ACS.
 ## Requirements from the instructor (Brit)
 - Effect = DoWhy CATE (linear regression), `common_causes = IMMUTABLE_ATTRIBUTES` (config `CONFOUNDERS`).
 - Size filter: in every subgroup, each treatment side needs at least δ/10 rows (`MIN_ARM_DELTA_DIVISOR = 10`).
-  It applies to subgroups only, not to the rule's overall effect. No p-value filter.
+  It applies to subgroups AND to the rule's overall effect (changed at Sean's request; a rule failing it is not
+  evaluable). No p-value filter.
 - Negative-effect rules are replaced. At least 10% of a rule's population must be treated.
 - Each dataset's list of 10 rules: **5 homogeneous and 5 non-homogeneous**, chosen by a procedure we can explain
   (coverage at least X%, highest effect).

@@ -75,7 +75,7 @@ def check_rule(full_df, rule, treat, outcome, confounders, encode, delta, eps, w
     from ATE_update import estimate_cate
     t0 = time.time()
     df = prepare_rule_df(full_df, rule, treat, encode=encode)
-    overall = estimate_cate(df, treat, outcome, confounders)
+    overall = estimate_cate(df, treat, outcome, confounders, min_arm=delta / 10)  # size filter on the rule too
     groups = mine(df, delta, exclude=[treat, outcome])
     chunks = [groups[i:i + 200] for i in range(0, len(groups), 200)]
     max_dev, checked, violated = 0.0, 0, False

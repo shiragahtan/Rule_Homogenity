@@ -72,8 +72,9 @@ def test_each_arm_must_have_at_least_delta_over_ten_rows():
     assert ATE_update.get_skip_summary()["too_few_in_arm"] == before + 1
     # delta=30 -> 3 rows are enough
     assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=30))
-    # the overall effect of a rule population is not filtered by arm size
-    assert np.isfinite(calculate_ate_safe(df, "TempTreatment", "y", delta=100, subgroup=False))
+    # the same filter applies to the overall effect of a rule population (no way to switch it off)
+    import inspect
+    assert "subgroup" not in inspect.signature(calculate_ate_safe).parameters
     # a share of the subgroup is NOT required: 3 of 300 rows pass when delta is small enough
     try:
         estimate_cate(df, "TempTreatment", "y", CONF, min_arm=10)

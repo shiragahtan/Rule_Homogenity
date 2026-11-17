@@ -59,7 +59,7 @@ case "$step" in
                   acs) out=benchmark_acs_full ;;
                   *)   echo "benchmarks: so or acs"; exit 1 ;;
                 esac
-                run "benchmarks_${ds}" "$PY" problem_2_3_algorithms/run_all_benchmarks.py --dataset "$ds" --output "$out" ;;
+                HOMOGENEITY_DATASET="$ds" run "benchmarks_${ds}" "$PY" problem_2_3_algorithms/run_all_benchmarks.py --dataset "$ds" --output "$out" ;;
   exact_so)     # RULES_FILE / TAG select another rule set, e.g.
                 #   RULES_FILE=problem_2_3_algorithms/Chosen10Treatments.json TAG=_table11 scripts/run_on_machine.sh exact_so 32
                 # already finished rules are skipped, so the step can simply be started again after an interruption

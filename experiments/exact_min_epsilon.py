@@ -134,7 +134,7 @@ def main():
             rows = [x for part in pool.imap_unordered(_estimate, chunks) for x in part]
         _init(args.dataset, treat, outcome, delta, df, confounders)
         all_old = _G["old"].calculate_ate_safe(df, treat, outcome, delta)
-        all_new, p_all = _G["estimate_cate_with_p"](df, treat, outcome, confounders)
+        all_new, p_all = _G["estimate_cate_with_p"](df, treat, outcome, confounders, min_arm=delta / 10)  # size filter on the rule too
         out = pd.DataFrame(rows, columns=["subgroup", "size", "cate_old", "cate_new", "p_new", "treated", "control"])
         out["dev_old"] = (out.cate_old - all_old).abs()
         out["dev_new"] = (out.cate_new - all_new).abs()

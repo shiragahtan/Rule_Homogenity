@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -24,7 +25,9 @@ with open(_CONFIG_PATH, 'r') as f:
     config = json.load(f)
 
 TREATMENT_COL = config.get('TREATMENT_COL', 'TempTreatment')
-CHOSEN_DS = config['CHOSEN_DATASET']
+# A script that is given the dataset on its command line sets HOMOGENEITY_DATASET before importing this
+# module, so the confounders always belong to the dataset actually analysed (not to CHOSEN_DATASET).
+CHOSEN_DS = os.environ.get('HOMOGENEITY_DATASET') or config['CHOSEN_DATASET']
 _ds_config = config['DATASETS'][CHOSEN_DS]
 
 # Confounders are a fixed parameter of the algorithm: the dataset's IMMUTABLE_ATTRIBUTES are passed to
@@ -139,18 +142,18 @@ def get_skip_summary():
     return dict(_skip_counts)
 
 
-def calculate_ate_safe(df, treatment_col, outcome_col, delta=None, subgroup=True):
+def calculate_ate_safe(df, treatment_col, outcome_col, delta=None):
     """
     Used by all algorithms: returns the CATE, or NaN when it cannot be computed or is unreliable.
     Per the instructor, such a subgroup is ignored: it is not a counterexample to homogeneity. It is
     ignored when
       * a treatment arm is missing or the effect is not identifiable, or DoWhy fails, or
-      * (subgroups only, subgroup=True) the treated or the control rows are fewer than
-        delta / MIN_ARM_DELTA_DIVISOR. Pass subgroup=False for the overall effect of a rule's
-        population, which is the reference value and is not filtered by size.
+      * the treated or the control rows are fewer than delta / MIN_ARM_DELTA_DIVISOR. This applies
+        to subgroups AND to the overall effect of a rule's population: a rule whose own population
+        fails it cannot be evaluated (the callers skip it, never report it as homogeneous).
     Every skip is counted (see get_skip_summary) and the first one of each reason is printed.
     """
-    min_arm = delta / MIN_ARM_DELTA_DIVISOR if (subgroup and delta and MIN_ARM_DELTA_DIVISOR) else 0
+    min_arm = delta / MIN_ARM_DELTA_DIVISOR if (delta and MIN_ARM_DELTA_DIVISOR) else 0
     try:
         return estimate_cate(df, treatment_col, outcome_col, min_arm=min_arm)
     except EstimationError as e:

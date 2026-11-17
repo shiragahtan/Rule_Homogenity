@@ -46,9 +46,7 @@ def min_epsilon_for_rule(job):
     full_df = clean_dataset(pd.read_csv(HERE / ds["FULL_DATASET_PATH"]), outcome_col=outcome)
     df = prepare_rule_df(full_df, rule, treat, encode=(dataset != "acs"))
     t0 = time.time()
-    # the group-size filter is for subgroups only; the previous estimator has no such argument
-    overall_kw = {"subgroup": False} if hasattr(ATE_update, "MIN_ARM_DELTA_DIVISOR") else {}
-    utility_all = calculate_ate_safe(df, treat, outcome, delta, **overall_kw)
+    utility_all = calculate_ate_safe(df, treat, outcome, delta)  # size filter applies to the rule too
     row = dict(dataset=dataset, label=label, rule=ridx, utility_all=utility_all, delta=delta)
     if utility_all != utility_all:
         return dict(row, min_epsilon=float("nan"), rw_calls=0, seconds=0.0, note="overall effect not computable")
@@ -93,6 +91,7 @@ def main():
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--out", default=str(HERE / "calibration_results"))
     args = parser.parse_args()
+    os.environ["HOMOGENEITY_DATASET"] = args.dataset  # confounders of this dataset in every worker
 
     config = json.load(open(HERE / "configs" / "config.json"))
     ds = config["DATASETS"][args.dataset]
