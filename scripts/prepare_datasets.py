@@ -4,10 +4,11 @@ the CATE code (utils/ATE_update.py) and the algorithms read the clean files as t
 
 Rules (from the instructor):
   1. Every row with a missing value (empty cell or the sentinel "UNKNOWN") is removed.
-  2. Every numeric (non-categorical) attribute is cut into 10 equal-frequency bins (quantiles).
-     When many rows share one value (e.g. German duration = 12 months) the quantile edges coincide
-     and the column gets fewer than 10 bins; the script prints the bins it made.
-     Outcome columns are not binned. Categorical attributes are kept as they are.
+  2. Every continuous attribute is cut into 10 equal-width bins: the range min..max is split into 10
+     intervals of the same length (pandas.cut). Bins can hold very different numbers of rows, and a
+     bin can be empty. Continuous attributes: German age and duration, ACS Age.
+     German amount is kept binary as before (0 = below 4,000 DM, 1 = 4,000 DM or more), as the
+     instructor asked. Outcome columns are not binned. Categorical attributes are kept as they are.
 
 Outputs (the only dataset CSVs of the repository):
   datasets/german.csv          outcome credit_risk
@@ -30,6 +31,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 REPO = Path(__file__).resolve().parent.parent
@@ -38,6 +40,7 @@ RAW = OUT / "raw"
 RAW_COMMIT = "2c18c55"  # last commit that has the earlier (unfiltered) dataset files
 UCI_GERMAN = "https://archive.ics.uci.edu/static/public/144/statlog+german+credit+data.zip"
 N_BINS = 10
+AMOUNT_SPLIT = 4000  # German amount stays binary: the earlier file's split (0 = up to 3,990 DM, 1 = 4,006 DM and above)
 MISSING = ["UNKNOWN"]
 
 
@@ -71,13 +74,17 @@ def drop_missing(df, name):
     return df[~bad].reset_index(drop=True)
 
 
-def equal_frequency_bins(values, as_codes=False):
-    """10 quantile bins. Labels 'min-max' of the values in the bin, or bin numbers 1..k (as_codes)."""
-    bins = pd.qcut(values, N_BINS, labels=False, duplicates="drop")
-    ranges = values.groupby(bins).agg(["min", "max", "size"])
-    labels = {b: (b + 1 if as_codes else f"{lo:g}-{hi:g}") for b, (lo, hi, _) in ranges.iterrows()}
-    print(f"   {values.name}: {len(ranges)} bins  " +
-          "  ".join(f"[{lo:g}-{hi:g}]:{n}" + (f"(={b + 1})" if as_codes else "") for b, (lo, hi, n) in ranges.iterrows()))
+def equal_width_bins(values, as_codes=False):
+    """10 bins of equal width over min..max of an integer attribute. Bin k holds the integers in
+    (edge_k, edge_k+1] (the first bin also holds the minimum). Labels are the integer range of the bin,
+    e.g. '19-24', or the bin numbers 1..10 (as_codes)."""
+    bins, edges = pd.cut(values, N_BINS, labels=False, retbins=True)
+    lo = [int(values.min())] + [int(np.floor(e)) + 1 for e in edges[1:-1]]
+    hi = [int(np.floor(e)) for e in edges[1:-1]] + [int(values.max())]
+    labels = {k: (k + 1 if as_codes else f"{lo[k]}-{hi[k]}") for k in range(N_BINS)}
+    counts = bins.value_counts().reindex(range(N_BINS), fill_value=0)
+    print(f"   {values.name}: " + "  ".join(f"[{lo[k]}-{hi[k]}]:{counts[k]}" + (f"(={k + 1})" if as_codes else "")
+                                         for k in range(N_BINS)))
     return bins.map(labels)
 
 
@@ -89,8 +96,10 @@ def german():
     for c in ["duration", "amount", "age"]:  # real numbers replace the earlier coarse bins
         df[c] = nums[c]
     df = drop_missing(df, "german")
-    for c in ["duration", "amount", "age"]:
-        df[c] = equal_frequency_bins(df[c])
+    for c in ["duration", "age"]:
+        df[c] = equal_width_bins(df[c])
+    df["amount"] = (df["amount"] >= AMOUNT_SPLIT).astype(int)  # binary, same split as the earlier file
+    print(f"   amount: binary, 0 = below {AMOUNT_SPLIT:,} DM: {(df.amount == 0).sum()}, 1 = {AMOUNT_SPLIT:,} DM or more: {(df.amount == 1).sum()}")
     return df
 
 
@@ -104,7 +113,7 @@ def acs():
     # All attributes are census codes (categories) except Age, which is binned. ACS stays numeric,
     # so the Age bins are numbered 1..10 in age order (ranges printed below and in datasets/README.md).
     df = drop_missing(pd.read_csv(raw_file("acs_encoded.csv")), "acs")
-    df["Age"] = equal_frequency_bins(df["Age"], as_codes=True)
+    df["Age"] = equal_width_bins(df["Age"], as_codes=True)
     return df
 
 

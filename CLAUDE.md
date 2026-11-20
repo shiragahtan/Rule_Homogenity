@@ -19,11 +19,12 @@ all subgroups. Datasets: German Credit, Stack Overflow (SO), ACS.
   (coverage at least X%, highest effect).
 
 ## Parameters: use Table 3 of the article (the text of the article differs; Table 3 is what `configs/config.json` uses)
-German δ=50, ε=0.5 | SO δ=100, ε=520,000 | ACS δ=100, ε=17,500. RW default k=2000 walks.
+German δ=50, ε=0.5 | SO δ=100, ε=520,000 | ACS δ=100, ε=17,500. RW default k=2000 walks; walk extension "weighted8" (8 predicates drawn by weight, then largest deviation; was "top8").
 
 ## Datasets
 `datasets/german.csv`, `datasets/stackoverflow.csv`, `datasets/acs.csv`: the only datasets, already filtered by
-`scripts/prepare_datasets.py` (no missing values; 10 equal-frequency bins for numeric attributes). Details in
+`scripts/prepare_datasets.py` (no missing values; 10 equal-width bins for continuous attributes; German amount
+stays binary at 4,000 DM). Details in
 `datasets/README.md`. Filtering is done only there, not in the CATE code.
 
 ## Estimator and code map

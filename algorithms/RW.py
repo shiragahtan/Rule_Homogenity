@@ -14,6 +14,13 @@ CONFIG_PATH = Path(__file__).resolve().parent.parent / "configs" / "config.json"
 with open(CONFIG_PATH, "r", encoding="utf-8") as fp:
     _CFG = json.load(fp)
 BINARY_TREATMENT: str = _CFG["TREATMENT_COL"]
+# How a walk is extended (see _homog_rw_direct). Default "weighted8" (instructor's decision): the original
+# "top8" gave low-weight attributes probability 0, so violations that need them were never found.
+#   "top8"            the 8 candidate predicates with the highest weights, greedy pick (original code)
+#   "weighted8"       8 candidates drawn at random with probability proportional to their weight
+#                     (every predicate has a chance > 0), then the same greedy pick
+#   "weighted_single" one candidate drawn with probability proportional to its weight and added (article text)
+RW_EXTENSION: str = _CFG.get("RW_EXTENSION", "weighted8")
 sys.path.append(str(Path(__file__).resolve().parent.parent / "utils"))
 from ATE_update import calculate_ate_safe
 
@@ -41,11 +48,15 @@ def _homog_rw_direct(
         size_stop: float = 0.8,          # ← accepted, intentionally unused
         rng: Optional[random.Random] = None,
         attribute_weights: Optional[Dict[str, float]] = None,
+        extension: Optional[str] = None,
         **_: object,                     # ← swallow future params safely
 ) -> Tuple[bool, int]:
 
 
     rng = rng or random.Random()
+    extension = extension or RW_EXTENSION
+    if extension not in ("top8", "weighted8", "weighted_single"):
+        raise ValueError(f"unknown RW extension {extension!r}")
 
     # ------------------ SETUP ------------------
     excl = {treatment_col, BINARY_TREATMENT, outcome_col}
@@ -154,12 +165,20 @@ def _homog_rw_direct(
             if not candidates:
                 break
 
-            # evaluate top-K only (huge speedup)
-            candidates = sorted(
-                candidates,
-                key=lambda i: col_weights[i],
-                reverse=True
-            )[:8]
+            if extension == "top8":
+                # evaluate top-K only (huge speedup)
+                candidates = sorted(
+                    candidates,
+                    key=lambda i: col_weights[i],
+                    reverse=True
+                )[:8]
+            else:
+                # weighted sampling without replacement (Efraimidis-Spirakis keys u^(1/w)):
+                # every candidate with a positive weight can be drawn
+                n_draw = 1 if extension == "weighted_single" else 8
+                pos = [i for i in candidates if col_weights[i] > 0]
+                candidates = sorted(pos, key=lambda i: rng.random() ** (1.0 / col_weights[i]),
+                                    reverse=True)[:n_draw]
 
             best_gain = 0.0
             best_i = None
@@ -226,6 +245,7 @@ def calc_utility_for_subgroups(
             k_walks=k_walks,
             size_stop=size_stop,
             rng=rng,
-            attribute_weights=attribute_weights
+            attribute_weights=attribute_weights,
+            extension=kwargs.get("extension"),
         )
     return [], 0

@@ -80,6 +80,11 @@ def main():
     eps0 = ds["EPSILONS"][0]
     path = Path(args.candidates) if args.candidates else REPO / "calibration_results" / "candidates_cov50" / f"{args.dataset}_candidate_min_epsilon.csv"
     cand = pd.read_csv(path)
+    if "min_epsilon" not in cand.columns:
+        # early-exit run (experiments/candidate_homogeneity.py without --exact): the classification holds only at the
+        # epsilon of that run; max_deviation_seen is exact for homogeneous rules and above epsilon for the others
+        print("note: no exact smallest epsilon in this file; the selection is valid only for the epsilon the run used")
+        cand["min_epsilon"] = cand["max_deviation_seen"]
     pool = cand[cand.coverage_pct >= args.min_coverage].copy()
     eps = args.epsilon if args.epsilon is not None else eps0
     print(f"{args.dataset}: {len(pool)} eligible candidates (coverage >= {args.min_coverage:g}%, positive effect, >= 10% treated); delta={ds['DELTAS'][0]}")
