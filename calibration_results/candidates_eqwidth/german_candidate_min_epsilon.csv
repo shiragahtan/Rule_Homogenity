@@ -1,0 +1,58 @@
+rule,condition_attr,condition_val,treatment_attr,treatment_val,coverage_pct,treated_share,effect,homogeneous,max_deviation_seen,subgroups_checked,seconds,min_epsilon
+credit_history=existing credits paid back duly till now | status=no checking account,credit_history,existing credits paid back duly till now,status,no checking account,53.0,0.3528301886792452,0.2787104118484897,False,0.5164054536991821,15996,15,0.5164054536991821
+foreign_worker=yes | status=no checking account,foreign_worker,yes,status,no checking account,96.3,0.3956386292834891,0.2683897761524179,True,0.47406388336664734,33669,32,0.47406388336664734
+people_liable=1 | status=no checking account,people_liable,1,status,no checking account,84.5,0.3917159763313609,0.2682582353399972,True,0.41348145116200585,29352,28,0.41348145116200585
+gender=male | status=no checking account,gender,male,status,no checking account,69.0,0.4028985507246377,0.2665580227313248,True,0.4666397716664421,20564,20,0.4666397716664421
+amount=0 | status=no checking account,amount,0,status,no checking account,75.4,0.4018567639257294,0.2642757242858771,False,0.5157913681505443,26499,26,0.5157913681505443
+personal_status=single | status=no checking account,personal_status,single,status,no checking account,54.8,0.4233576642335766,0.2552140404368636,True,0.4359790770121241,14403,14,0.4359790770121241
+personal_status=single | savings=unknown/no savings account,personal_status,single,savings,unknown/no savings account,54.8,0.2116788321167883,0.1917539430941124,True,0.44436049477263284,13803,14,0.44436049477263284
+gender=male | savings=unknown/no savings account,gender,male,savings,unknown/no savings account,69.0,0.1942028985507246,0.1795419635921803,False,0.5045874484829709,19452,19,0.5045874484829709
+foreign_worker=yes | savings=unknown/no savings account,foreign_worker,yes,savings,unknown/no savings account,96.3,0.1827622014537902,0.1515950034640162,False,0.6353323079242355,30913,29,0.6353323079242355
+credit_history=existing credits paid back duly till now | savings=unknown/no savings account,credit_history,existing credits paid back duly till now,savings,unknown/no savings account,53.0,0.1867924528301886,0.1279565497361209,False,0.5014763393301136,13972,14,0.5014763393301136
+people_liable=1 | savings=unknown/no savings account,people_liable,1,savings,unknown/no savings account,84.5,0.1775147928994082,0.1227871846355663,False,0.577332831114832,26884,27,0.577332831114832
+amount=0 | savings=unknown/no savings account,amount,0,savings,unknown/no savings account,75.4,0.1644562334217506,0.1227180386231809,False,0.6114834770165858,24206,24,0.6114834770165858
+amount=0 | housing=1,amount,0,housing,1,75.4,0.7347480106100795,0.1198981468365594,False,0.5506505209459022,20036,19,0.5506505209459022
+amount=0 | other_installment_plans=none,amount,0,other_installment_plans,none,75.4,0.8236074270557029,0.0990150130763251,False,0.6659482621214486,18365,19,0.6659482621214486
+foreign_worker=yes | housing=1,foreign_worker,yes,housing,1,96.3,0.711318795430945,0.0982878167787838,False,0.5795297068667314,25529,25,0.5795297068667314
+personal_status=single | housing=1,personal_status,single,housing,1,54.8,0.7445255474452555,0.0982874356206595,True,0.4984262108512337,10385,12,0.4984262108512337
+people_liable=1 | other_installment_plans=none,people_liable,1,other_installment_plans,none,84.5,0.8260355029585799,0.0982448996002618,False,0.7501847424125799,20218,21,0.7501847424125799
+gender=male | housing=1,gender,male,housing,1,69.0,0.7492753623188406,0.0932538367208867,False,0.6227032104119836,14995,15,0.6227032104119836
+personal_status=single | other_debtors=none,personal_status,single,other_debtors,none,54.8,0.9032846715328468,0.0847316160572283,False,0.7625149720441808,6565,10,0.7625149720441808
+personal_status=single | other_installment_plans=none,personal_status,single,other_installment_plans,none,54.8,0.7901459854014599,0.0760649799054679,False,0.7499427068242382,10577,11,0.7499427068242382
+gender=male | other_installment_plans=none,gender,male,other_installment_plans,none,69.0,0.8028985507246377,0.0750081720970319,False,0.7589685351484874,14819,15,0.7589685351484874
+credit_history=existing credits paid back duly till now | number_credits=1,credit_history,existing credits paid back duly till now,number_credits,1,53.0,0.9018867924528302,0.0743027589383025,False,0.7824666402768885,7786,11,0.7824666402768885
+people_liable=1 | other_debtors=none,people_liable,1,other_debtors,none,84.5,0.9076923076923076,0.0714339554914734,False,0.822356481448599,14362,19,0.822356481448599
+foreign_worker=yes | other_installment_plans=none,foreign_worker,yes,other_installment_plans,none,96.3,0.8120456905503635,0.0658643159523235,False,0.8456340123440217,23755,24,0.8456340123440217
+credit_history=existing credits paid back duly till now | job=management/self-employed/highly qualified employee/officer,credit_history,existing credits paid back duly till now,job,management/self-employed/highly qualified employee/officer,53.0,0.1396226415094339,0.0654340745414518,False,0.5512625754908164,10889,13,0.5512625754908164
+people_liable=1 | housing=1,people_liable,1,housing,1,84.5,0.7183431952662722,0.0625062528302898,False,0.5972509103433811,22136,21,0.5972509103433811
+gender=male | savings=100 <= ... < 500 DM,gender,male,savings,100 <= ... < 500 DM,69.0,0.1028985507246376,0.0534716904459837,False,0.6479332775021834,13596,19,0.6479332775021834
+foreign_worker=yes | present_residence=1,foreign_worker,yes,present_residence,1,96.3,0.1308411214953271,0.0534692663664267,False,0.7096555084593503,29233,33,0.7096555084593503
+credit_history=existing credits paid back duly till now | other_installment_plans=none,credit_history,existing credits paid back duly till now,other_installment_plans,none,53.0,0.8528301886792453,0.0532782137872033,False,0.7657593895158665,10423,11,0.7657593895158665
+credit_history=existing credits paid back duly till now | housing=1,credit_history,existing credits paid back duly till now,housing,1,53.0,0.6943396226415094,0.0485586904385869,False,0.5140631497442475,12013,13,0.5140631497442475
+people_liable=1 | present_residence=1,people_liable,1,present_residence,1,84.5,0.136094674556213,0.0449977613825659,False,0.7255864943263728,25996,28,0.7255864943263728
+credit_history=existing credits paid back duly till now | present_residence=1,credit_history,existing credits paid back duly till now,present_residence,1,53.0,0.1547169811320754,0.0425049731152817,False,0.6305767628558501,14989,16,0.6305767628558501
+personal_status=single | job=management/self-employed/highly qualified employee/officer,personal_status,single,job,management/self-employed/highly qualified employee/officer,54.8,0.1715328467153284,0.0399901923641368,False,0.547519833960134,11187,13,0.547519833960134
+gender=male | other_debtors=none,gender,male,other_debtors,none,69.0,0.9043478260869564,0.0393144191313334,False,0.8133434641671098,9744,13,0.8133434641671098
+amount=0 | number_credits=2,amount,0,number_credits,2,75.4,0.3076923076923077,0.0378645655527175,False,0.6545444140403127,20085,21,0.6545444140403127
+people_liable=1 | number_credits=2,people_liable,1,number_credits,2,84.5,0.3230769230769231,0.0336178067416517,False,0.7230272932997176,22327,23,0.7230272932997176
+foreign_worker=yes | other_debtors=none,foreign_worker,yes,other_debtors,none,96.3,0.9138110072689511,0.0323785119118852,False,0.7995684951066914,15994,21,0.7995684951066914
+foreign_worker=yes | job=management/self-employed/highly qualified employee/officer,foreign_worker,yes,job,management/self-employed/highly qualified employee/officer,96.3,0.1516095534787123,0.0285726921653793,False,0.8955787115848938,23831,27,0.8955787115848938
+gender=male | job=management/self-employed/highly qualified employee/officer,gender,male,job,management/self-employed/highly qualified employee/officer,69.0,0.1608695652173913,0.021055774237128,False,0.7384375318797848,15283,19,0.7384375318797848
+credit_history=existing credits paid back duly till now | present_residence=4,credit_history,existing credits paid back duly till now,present_residence,4,53.0,0.3886792452830189,0.0196678420547919,False,0.6221631964806322,15775,15,0.6221631964806322
+amount=0 | job=skilled employee/official,amount,0,job,skilled employee/official,75.4,0.6538461538461539,0.019068869519442,True,0.4735561099412994,22178,21,0.4735561099412994
+amount=0 | present_residence=1,amount,0,present_residence,1,75.4,0.1419098143236074,0.0165699461971902,False,0.6406440384725592,23787,27,0.6406440384725592
+people_liable=1 | savings=100 <= ... < 500 DM,people_liable,1,savings,100 <= ... < 500 DM,84.5,0.1029585798816568,0.0161633208526322,False,0.7801355075251142,20496,26,0.7801355075251142
+personal_status=single | number_credits=1,personal_status,single,number_credits,1,54.8,0.583941605839416,0.0142782515918825,True,0.487961127004665,12383,13,0.487961127004665
+foreign_worker=yes | number_credits=2,foreign_worker,yes,number_credits,2,96.3,0.3333333333333333,0.0119233368148123,False,0.7794512749418918,25897,27,0.7794512749418918
+people_liable=1 | present_residence=4,people_liable,1,present_residence,4,84.5,0.4094674556213017,0.0117820965735222,False,0.6357802282540382,29355,28,0.6357802282540382
+foreign_worker=yes | present_residence=4,foreign_worker,yes,present_residence,4,96.3,0.4195223260643821,0.0116799291060289,False,0.7161422671883997,33654,33,0.7161422671883997
+amount=0 | present_residence=4,amount,0,present_residence,4,75.4,0.4005305039787798,0.0115641563240682,False,0.5679880715190618,26761,26,0.5679880715190618
+credit_history=existing credits paid back duly till now | other_debtors=none,credit_history,existing credits paid back duly till now,other_debtors,none,53.0,0.8905660377358491,0.0108274911985948,False,0.7121372155388,8492,11,0.7121372155388
+personal_status=single | job=skilled employee/official,personal_status,single,job,skilled employee/official,54.8,0.6204379562043796,0.0105384542279231,False,0.5451400998802923,12383,13,0.5451400998802923
+people_liable=1 | job=management/self-employed/highly qualified employee/officer,people_liable,1,job,management/self-employed/highly qualified employee/officer,84.5,0.1502958579881657,0.0058468798749374,False,0.6819152693613707,20410,24,0.6819152693613707
+gender=male | present_residence=2,gender,male,present_residence,2,69.0,0.3260869565217391,0.0051926817884849,False,0.5210716071598284,20721,19,0.5210716071598284
+credit_history=existing credits paid back duly till now | job=skilled employee/official,credit_history,existing credits paid back duly till now,job,skilled employee/official,53.0,0.6377358490566037,0.0037416578555595,True,0.48689177776316733,13160,13,0.48689177776316733
+credit_history=existing credits paid back duly till now | present_residence=3,credit_history,existing credits paid back duly till now,present_residence,3,53.0,0.1377358490566037,0.0027224599876652,False,0.787537978151035,14347,15,0.787537978151035
+gender=male | present_residence=4,gender,male,present_residence,4,69.0,0.3927536231884058,0.0009921730535857,False,0.5529272633879928,20696,20,0.5529272633879928
+foreign_worker=yes | savings=100 <= ... < 500 DM,foreign_worker,yes,savings,100 <= ... < 500 DM,96.3,0.102803738317757,0.0007141225612267,False,0.776318994540928,23472,31,0.776318994540928
+personal_status=single | present_residence=4,personal_status,single,present_residence,4,54.8,0.4270072992700729,0.0006306750760192,True,0.46075694981307547,14491,14,0.46075694981307547

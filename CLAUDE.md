@@ -40,18 +40,19 @@ stays binary at 4,000 DM). Details in
   scalability, benchmarks, exact_so, candidates, collect). `scripts/preflight.py` checks the setup.
 - `configs/config.json` and the rule files `configs/*Chosen10Treatments.json` (one JSON rule per line).
 
-## Current state (see `summary_for_brit_rule_selection.html` in the parent folder for the numbers)
-- Exact verdicts with the current rule lists: German 3 homogeneous / 7 not, ACS 0 / 10, SO 7 / 3.
-- Candidate search at coverage ≥ 50%: German gives 5 + 5 at ε=0.5; ACS needs ε≈88,000 (Table 3 gives 0
-  homogeneous); SO needs ε between about 321,000 and 495,000 (at 520,000 only 4 non-homogeneous exist).
-- All results above were computed on the earlier (unfiltered, coarser-binned) files. With the new German
-  bins, 4 of the 10 current German rules (`amount = 0`) no longer exist; rule lists must be rebuilt.
-- The rule lists are NOT changed yet. Waiting for the instructor to decide: coverage threshold, per-dataset ε
-  vs fewer than 5 homogeneous rules, and approval of the selection procedure.
-- After the decision: recompute utilities (`utils/recompute_rule_utilities.py --update-rules`), update the
-  configs, rerun all experiments on the machine (runtimes: RW vs brute force), update tables and figures.
-- Open question about the paper: the RW attribute weights are fixed numbers in the config; the article says
-  "based on correlation with the outcome" but gives no formula and the repo has no code that computes them.
+## Current state (Nov 2026; the meeting summary is `project_summary.html` in the parent folder)
+- Rule lists rebuilt on the new data (skill `select-rules`), with ε as close to Table 3 as gives about half
+  homogeneous: German ε 0.5 (5 H / 5 N), ACS ε 66,000 (4 / 6), SO ε 473,000 (6 / 4; same 10 rules as before).
+  Candidates: `calibration_results/candidates_eqwidth/`; exact verdicts: `calibration_results/exact_summary_<ds>.csv`.
+- RW comparison (`calibration_results/rw_accuracy_<ds>.csv`): top8 vs weighted8 correct German 100/100%,
+  ACS 80/100%, SO 60/60%. On SO, RW misses the 4 non-homogeneous rules: their violating subgroups have 4-12
+  predicates and almost all exactly δ/10 = 10 treated rows. With ≥ 15 treated rows per arm, 9 of the 10 SO rules
+  would be homogeneous, so these violations are mostly small-sample noise.
+- Fixes under test (`experiments/rw_fix_variants.py`, options in `algorithms/RW.py`, all off by default):
+  longer walks (`max_depth`), `revisit`, `arm_prefilter`, and Sean's `learned_weights` (start 1/n, grow with
+  the effect change). To be discussed with the instructor.
+- Full experiments on the new data run on the lab machine (skill `full-experiments`).
+- Open: how to compute the RW attribute weights (the config values come from an outside source).
 
 ## Working rules
 - Run heavy experiments (exact SO, runtimes) on the lab machine in a tmux session, not locally.

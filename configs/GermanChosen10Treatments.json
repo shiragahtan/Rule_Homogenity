@@ -1,10 +1,10 @@
-{"condition": {"foreign_worker": "yes"}, "treatment": {"status": "no checking account"}, "utility": 0.27032546330680884, "coverage": 96.3, "utility_previous": 0.1609434666797203}
-{"condition": {"foreign_worker": "yes"}, "treatment": {"present_residence": 4}, "utility": 0.009220282754978992, "coverage": 96.3, "utility_previous": 0.0606400396288997}
-{"condition": {"people_liable": 1}, "treatment": {"status": "no checking account"}, "utility": 0.27499656220345103, "coverage": 84.5, "utility_previous": 0.1456534231777806}
-{"condition": {"people_liable": 1}, "treatment": {"present_residence": 4}, "utility": 0.015776074646830174, "coverage": 84.5, "utility_previous": 0.0792691930701009}
-{"condition": {"amount": 0}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.11840627849566876, "coverage": 75.45090180360722, "utility_previous": 0.11840627849566843}
-{"condition": {"amount": 0}, "treatment": {"present_residence": 4}, "utility": 0.00015636971679922063, "coverage": 75.4, "utility_previous": 0.0583449383353281}
-{"condition": {"amount": 0}, "treatment": {"status": "no checking account"}, "utility": 0.261948395170595, "coverage": 75.4, "utility_previous": 0.2666168488147544}
-{"condition": {"foreign_worker": "yes"}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.15018719388571122, "coverage": 96.3, "utility_previous": 0.136413199822179}
-{"condition": {"amount": 0}, "treatment": {"housing": 1}, "utility": 0.110950603373417, "coverage": 75.45090180360722, "utility_previous": 0.11095060337341767}
-{"condition": {"people_liable": 1}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.1322960897306601, "coverage": 84.5, "utility_previous": 0.1299251808028739}
+{"condition": {"foreign_worker": "yes"}, "treatment": {"status": "no checking account"}, "utility": 0.2683897761524179, "coverage": 96.3}
+{"condition": {"people_liable": 1}, "treatment": {"status": "no checking account"}, "utility": 0.2682582353399972, "coverage": 84.5}
+{"condition": {"gender": "male"}, "treatment": {"status": "no checking account"}, "utility": 0.2665580227313248, "coverage": 69.0}
+{"condition": {"personal_status": "single"}, "treatment": {"status": "no checking account"}, "utility": 0.2552140404368636, "coverage": 54.8}
+{"condition": {"personal_status": "single"}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.1917539430941124, "coverage": 54.8}
+{"condition": {"credit_history": "existing credits paid back duly till now"}, "treatment": {"status": "no checking account"}, "utility": 0.2787104118484897, "coverage": 53.0}
+{"condition": {"amount": 0}, "treatment": {"status": "no checking account"}, "utility": 0.2642757242858771, "coverage": 75.4}
+{"condition": {"gender": "male"}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.1795419635921803, "coverage": 69.0}
+{"condition": {"foreign_worker": "yes"}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.1515950034640162, "coverage": 96.3}
+{"condition": {"credit_history": "existing credits paid back duly till now"}, "treatment": {"savings": "unknown/no savings account"}, "utility": 0.1279565497361209, "coverage": 53.0}

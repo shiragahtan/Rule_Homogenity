@@ -83,7 +83,7 @@
         100
       ],
       "EPSILONS": [
-        520000.0
+        473000.0
       ],
       "TARGET_COLUMN": "ConvertedSalary",
       "OUTCOME_COL": "ConvertedSalary",
@@ -151,7 +151,7 @@
         100
       ],
       "EPSILONS": [
-        17500
+        66000
       ],
       "TARGET_COLUMN": "Wages or salary income past 12 months",
       "OUTCOME_COL": "Wages or salary income past 12 months",

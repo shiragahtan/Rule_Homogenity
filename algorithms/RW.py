@@ -49,8 +49,24 @@ def _homog_rw_direct(
         rng: Optional[random.Random] = None,
         attribute_weights: Optional[Dict[str, float]] = None,
         extension: Optional[str] = None,
+        revisit: bool = False,
+        arm_prefilter: bool = False,
+        learned_weights: bool = False,
         **_: object,                     # ← swallow future params safely
 ) -> Tuple[bool, int]:
+    # Options tested for the Stack Overflow misses (all off by default = the behavior used in the paper so far):
+    #   revisit        a walk may pass through a subgroup an earlier walk already checked (its effect is taken
+    #                  from the cache and not counted again); without it, every checked subgroup blocks all
+    #                  later walks, so deep regions below a common prefix are reached at most once.
+    #   arm_prefilter  candidate predicates must keep both treatment arms >= delta/MIN_ARM_DELTA_DIVISOR rows
+    #                  (the size filter of the estimator) before they are drawn; without it the 8 drawn
+    #                  candidates can all fail the size filter and the walk ends early.
+    #   max_depth      the number of predicates a walk may add after its first one (default 5).
+    #   learned_weights  weights learned during the check instead of the config's ATTRIBUTE_WEIGHTS (proposal
+    #                  of Sean and the instructor): every predicate starts at 1/n (n = number of predicates);
+    #                  each time a predicate is added to a walk, its weight becomes 1/n + the mean, over the
+    #                  times it was added, of |change of the subgroup's effect| / epsilon. Predicates that
+    #                  move the effect more are drawn more often (roots too). Independent of the other options.
 
 
     rng = rng or random.Random()
@@ -65,6 +81,15 @@ def _homog_rw_direct(
     onehot, lookup = _onehot_lookup(mining_df)
     X = onehot.values
     Y = df[outcome_col].values
+    T = df[treatment_col].values.astype(bool)
+    _div = _CFG.get("MIN_ARM_DELTA_DIVISOR")
+    min_arm = delta / _div if (arm_prefilter and delta and _div) else 0
+
+    def arms_ok(m):
+        if not min_arm:
+            return True
+        nt = int((m & T).sum())
+        return nt >= min_arm and int(m.sum()) - nt >= min_arm
     col_names = list(onehot.columns)
     n_features = len(col_names)
 
@@ -73,14 +98,19 @@ def _homog_rw_direct(
     col_weights = np.array([
         attr_w.get(lookup[c][0], 1.0) for c in col_names
     ], dtype=float)
+    if learned_weights:
+        col_weights = np.full(n_features, 1.0 / max(n_features, 1))
+        change_sum = np.zeros(n_features)
+        change_cnt = np.zeros(n_features)
 
     # ------------------ ROOT SCORING (RISK-BASED) ------------------
     root_scores = []
     root_indices = []
+    root_diffs = []
 
     for i in range(n_features):
         mask = X[:, i]
-        if mask.sum() < delta:
+        if mask.sum() < delta or not arms_ok(mask):
             continue
 
         try:
@@ -100,6 +130,7 @@ def _homog_rw_direct(
 
         root_scores.append(score)
         root_indices.append(i)
+        root_diffs.append(diff)
 
     if not root_indices:
         return True, 0  # nothing valid to explore
@@ -116,7 +147,7 @@ def _homog_rw_direct(
         nonlocal checked
         key = frozenset(idxs)
         if key in visited:
-            return None
+            return cate_cache.get(key) if revisit else None
         visited.add(key)
         checked += 1
 
@@ -132,14 +163,19 @@ def _homog_rw_direct(
 
     # ------------------ WALKS ------------------
     chosen_roots = rng.choices(range(len(root_indices)), weights=root_probs, k=k_walks)
+    root_diffs = np.array(root_diffs, dtype=float)
 
     for r in chosen_roots:
+        if learned_weights:  # the root is drawn with the weights learned so far
+            r = rng.choices(range(len(root_indices)),
+                            weights=col_weights[root_indices] * (1.0 + root_diffs * 10.0))[0]
         start_idx = root_indices[r]
         mask = X[:, start_idx]
         idxs = {start_idx}
         attrs_used = {lookup[col_names[start_idx]][0]}
 
         cate = eval_subset(mask, idxs)
+        cur_cate = cate if cate is not None else cate_cache.get(frozenset(idxs))
         if cate is not None and abs(cate - ate_all) > epsilon:
             print(f"Breaking Subgroup: "
                   f"{ {lookup[col_names[i]][0]: lookup[col_names[i]][1] for i in idxs} }")
@@ -157,7 +193,7 @@ def _homog_rw_direct(
                     continue
 
                 new_mask = mask & X[:, i]
-                if new_mask.sum() < delta:
+                if new_mask.sum() < delta or not arms_ok(new_mask):
                     continue
 
                 candidates.append(i)
@@ -177,12 +213,14 @@ def _homog_rw_direct(
                 # every candidate with a positive weight can be drawn
                 n_draw = 1 if extension == "weighted_single" else 8
                 pos = [i for i in candidates if col_weights[i] > 0]
-                candidates = sorted(pos, key=lambda i: rng.random() ** (1.0 / col_weights[i]),
+                # log form of the key u^(1/w) (same order, no underflow for small learned weights)
+                candidates = sorted(pos, key=lambda i: np.log(rng.random() or 1e-300) / col_weights[i],
                                     reverse=True)[:n_draw]
 
             best_gain = 0.0
             best_i = None
             best_mask = None
+            best_cate = None
 
             for i in candidates:
                 new_mask = mask & X[:, i]
@@ -195,11 +233,17 @@ def _homog_rw_direct(
                     best_gain = gain
                     best_i = i
                     best_mask = new_mask
+                    best_cate = cate_new
 
             if best_i is None:
                 break
 
             # commit step
+            if learned_weights and cur_cate is not None and np.isfinite(cur_cate) and epsilon:
+                change_sum[best_i] += abs(best_cate - cur_cate) / epsilon
+                change_cnt[best_i] += 1
+                col_weights[best_i] = 1.0 / n_features + change_sum[best_i] / change_cnt[best_i]
+            cur_cate = best_cate
             mask = best_mask
             idxs.add(best_i)
             attrs_used.add(lookup[col_names[best_i]][0])
@@ -247,5 +291,9 @@ def calc_utility_for_subgroups(
             rng=rng,
             attribute_weights=attribute_weights,
             extension=kwargs.get("extension"),
+            revisit=bool(kwargs.get("revisit", False)),
+            arm_prefilter=bool(kwargs.get("arm_prefilter", False)),
+            learned_weights=bool(kwargs.get("learned_weights", False)),
+            **({"max_depth": int(kwargs["max_depth"])} if kwargs.get("max_depth") else {}),
         )
     return [], 0
