@@ -13,6 +13,7 @@ Variants (see the options at the top of algorithms/RW.py; all use the weighted8 
   pre+rev+d10  prefilter + revisit + depth10
   learned      Sean's proposal: weights learned during the check (start 1/n, grow with the effect change)
   learned+fix  learned + prefilter + revisit + depth10
+  learned+pre  learned + prefilter
 
     python experiments/rw_fix_variants.py --dataset so --seeds 3 --workers 12
     python experiments/rw_fix_variants.py --dataset german --variants baseline,pre+rev+d10
@@ -45,6 +46,7 @@ VARIANTS = {
     # Sean's proposal, tested on its own and with the fixes above
     "learned":     dict(learned_weights=True),
     "learned+fix": dict(learned_weights=True, arm_prefilter=True, revisit=True, max_depth=10),
+    "learned+pre": dict(learned_weights=True, arm_prefilter=True),
 }
 
 
