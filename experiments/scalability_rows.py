@@ -77,9 +77,6 @@ def run_scalability_rows():
 
                 # --- SIMULATE MAIN LOOP (ALL RULES) ---
                 for i, rule in enumerate(rules_list):
-                    if i not in [7,8,9] or algo_name != "FPGrowth":
-                        print(f"{Colors.YELLOW} skipping rule {i+1}...{Colors.ENDC}")
-                        continue
                     # Progress Indicator
                     print(f"      [Rule {i + 1}/{len(rules_list)}] Processing...", end="\r")
 

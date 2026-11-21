@@ -56,10 +56,10 @@ _ABLATION_PARAMS = {
 _ds_ablation = _ABLATION_PARAMS.get(CHOSEN_DS, {"EPSILON_VALUES": [250000.0, 300000.0, 350000.0, 400000.0, 450000.0], "FIXED_EPSILON": 350000.0})
 EPSILON_VALUES = _ds_ablation["EPSILON_VALUES"]
 FIXED_EPSILON = _ds_ablation["FIXED_EPSILON"]
-# Delta percentages - use smaller values for ACS to show RW advantage
-# For ACS (~600k rows): 0.01% = 60, 0.02% = 120, 0.05% = 300, 0.1% = 600
-DELTA_PERCENTAGES = [0.01, 0.02, 0.05, 0.10]  # 0.01%, 0.02%, 0.05%, 0.10% (smaller = more subgroups)
-FIXED_DELTA_PERCENTAGE = 0.05  # 0.05% (was 10%)
+# Delta as a FRACTION of each rule's rows: 0.01 = 1%, 0.05 = 5% (smaller = more subgroups).
+# E.g. German (~550-960 rows per rule): 1% = 5-9 rows, 5% = 27-48 rows.
+DELTA_PERCENTAGES = [0.01, 0.02, 0.05, 0.10]  # 1%, 2%, 5%, 10%
+FIXED_DELTA_PERCENTAGE = 0.05  # 5%
 NUM_RW_RUNS = 3
 
 print("\n" + "="*70)
@@ -247,6 +247,20 @@ def run_ablation_study():
     
     results = []
     start_time = perf_counter()
+
+    # Resume: each finished (experiment, value, rule) is appended to a partial CSV, so an interrupted run
+    # continues where it stopped. Delete the file to start from scratch.
+    partial_path = _REPO_ROOT / "ablation_results" / f"{CHOSEN_DS}_ablation_partial.csv"
+    partial_path.parent.mkdir(exist_ok=True)
+    done = set()
+    if partial_path.exists():
+        prev = pd.read_csv(partial_path)
+        results = prev.to_dict("records")
+        done = set(zip(prev["experiment"], prev["param_value"], prev["rule_idx"]))
+        print(f"Resuming: {len(done)} (experiment, value, rule) already done in {partial_path}")
+
+    def save_rule(rule_results):
+        pd.DataFrame(rule_results).to_csv(partial_path, mode="a", header=not partial_path.exists(), index=False)
     
     # Experiment 1: Varying Epsilon (Fixed Delta)
     print("\n" + "="*70)
@@ -254,8 +268,13 @@ def run_ablation_study():
     print("="*70)
     
     for eps_idx, epsilon in enumerate(EPSILON_VALUES):
-        print(f"\n🔍 Testing Epsilon = {epsilon:,.0f} ({eps_idx + 1}/{len(EPSILON_VALUES)})")
+        print(f"\n🔍 Testing Epsilon = {epsilon:,g} ({eps_idx + 1}/{len(EPSILON_VALUES)})")
         for rule_idx, rule in enumerate(rules_list):
+            exp_name, param = 'varying_epsilon', epsilon
+            if (exp_name, float(param), rule_idx + 1) in done:
+                completed_runs += 2
+                continue
+            rule_results = []
             # Calculate progress
             progress = (completed_runs / total_runs) * 100
             elapsed = perf_counter() - start_time
@@ -271,7 +290,7 @@ def run_ablation_study():
             fp_runtime = result['runtime_seconds'] if result else 0
             if result:
                 result['experiment'] = 'varying_epsilon'
-                results.append(result)
+                rule_results.append(result)
                 print(f" | FPGrowth: {'✓' if result['is_homogeneous'] else '✗'} ({fp_runtime:.2f}s)", end="")
             completed_runs += 1
             
@@ -283,23 +302,33 @@ def run_ablation_study():
                     rw_runtimes.append(result['runtime_seconds'])
                     result['experiment'] = 'varying_epsilon'
                     result['run_number'] = run + 1
-                    results.append(result)
+                    rule_results.append(result)
                     if run == 0:
                         rw_avg = sum(rw_runtimes) / len(rw_runtimes) if rw_runtimes else 0
                         speedup = fp_runtime / rw_avg if rw_avg > 0 else 0
                         print(f" | RW: {'✓' if result['is_homogeneous'] else '✗'} ({rw_avg:.2f}s, {speedup:.2f}x)", end="")
             completed_runs += 1
             print()
+            for r in rule_results:
+                r['param_value'] = float(param)
+                r['rule_idx'] = rule_idx + 1
+            results.extend(rule_results)
+            save_rule(rule_results)
     
     # Experiment 2: Varying Delta (Fixed Epsilon)
     print("\n" + "="*70)
-    print(f"EXPERIMENT 2: Varying Delta (Fixed Epsilon = {FIXED_EPSILON:,.0f})")
+    print(f"EXPERIMENT 2: Varying Delta (Fixed Epsilon = {FIXED_EPSILON:,g})")
     print("="*70)
     
     for delta_idx, delta_pct in enumerate(DELTA_PERCENTAGES):
         print(f"\n🔍 Testing Delta = {delta_pct*100:.0f}% of each rule's subset ({delta_idx + 1}/{len(DELTA_PERCENTAGES)})")
         
         for rule_idx, rule in enumerate(rules_list):
+            exp_name, param = 'varying_delta', delta_pct
+            if (exp_name, float(param), rule_idx + 1) in done:
+                completed_runs += 2
+                continue
+            rule_results = []
             # Calculate progress
             progress = (completed_runs / total_runs) * 100
             elapsed = perf_counter() - start_time
@@ -315,7 +344,7 @@ def run_ablation_study():
             fp_runtime = result['runtime_seconds'] if result else 0
             if result:
                 result['experiment'] = 'varying_delta'
-                results.append(result)
+                rule_results.append(result)
                 print(f" | FPGrowth: {'✓' if result['is_homogeneous'] else '✗'} ({fp_runtime:.2f}s)", end="")
             completed_runs += 1
             
@@ -327,13 +356,18 @@ def run_ablation_study():
                     rw_runtimes.append(result['runtime_seconds'])
                     result['experiment'] = 'varying_delta'
                     result['run_number'] = run + 1
-                    results.append(result)
+                    rule_results.append(result)
                     if run == 0:
                         rw_avg = sum(rw_runtimes) / len(rw_runtimes) if rw_runtimes else 0
                         speedup = fp_runtime / rw_avg if rw_avg > 0 else 0
                         print(f" | RW: {'✓' if result['is_homogeneous'] else '✗'} ({rw_avg:.2f}s, {speedup:.2f}x)", end="")
             completed_runs += 1
             print()
+            for r in rule_results:
+                r['param_value'] = float(param)
+                r['rule_idx'] = rule_idx + 1
+            results.extend(rule_results)
+            save_rule(rule_results)
     
     # Save raw results
     results_df = pd.DataFrame(results)
@@ -345,6 +379,7 @@ def run_ablation_study():
     
     excel_path = results_dir / f"{CHOSEN_DS}_ablation_raw_results.xlsx"
     results_df.to_excel(excel_path, index=False)
+    partial_path.unlink(missing_ok=True)  # complete: the next run starts from scratch
     
     print(f"\n" + "="*70)
     print(f"✅ ALL EXPERIMENTS COMPLETE!")

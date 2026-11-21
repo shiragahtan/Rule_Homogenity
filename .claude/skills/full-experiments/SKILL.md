@@ -29,7 +29,12 @@ for d in so acs; do scripts/run_on_machine.sh benchmarks $d; done   # German has
   copies each dataset's outputs to `results/` (what the figure notebook reads). That is why collect runs after
   every step.
 - Progress: `cat ~/Rule_Homogenity/logs/full_progress.txt`; errors: `grep -l Traceback logs/*.log`.
-- The whole queue takes many hours (SO and ACS are the slow ones).
+- The whole queue takes many hours. German's ablation alone takes about a day: brute force at δ = 1% of a
+  rule's rows (≈ 5–9 rows) needs about 1 hour per rule. That is expected, not a bug: do not stop it.
+- Ablation δ values are fractions of each rule's rows (0.01 = 1%), not percents.
+- `ablation_study.py` saves each finished rule to `ablation_results/<ds>_ablation_partial.csv` and resumes from
+  it if restarted; the file is deleted when the run completes.
+- Scalability scripts append to `graphs/<ds>_scalability_*.csv`: move the old file away before a rerun.
 
 ## After
 1. Copy `results/`, `ablation_results/` and the benchmark folders back to the laptop.
