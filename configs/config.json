@@ -198,7 +198,6 @@
     "hybrid"
   ],
   "ALGORITHM_NAMES": [
-    "Apriori",
     "FPGrowth",
     "Random",
     "Greedy",

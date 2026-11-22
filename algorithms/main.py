@@ -50,7 +50,8 @@ EPSILONS = ds_config['EPSILONS']
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 
-ALGORITHM_NAMES = ["RW"]
+# Algorithms of the main experiment come from the config (it was hard-coded to ["RW"], so the other algorithms never ran)
+ALGORITHM_NAMES = config.get('ALGORITHM_NAMES', ["RW"])
 RUN_RANDOM_BASELINE = True
 NUM_RW_RUNS = 3
 TREATMENT_COL = config['TREATMENT_COL']
