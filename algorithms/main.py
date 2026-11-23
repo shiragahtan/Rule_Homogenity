@@ -37,7 +37,9 @@ if not _config_path.exists():
 with open(_config_path, 'r') as f:
     config = json.load(f)
 
-CHOSEN_DS = config["CHOSEN_DATASET"]
+# HOMOGENEITY_DATASET (set by experiments/parallel_runner.py) overrides CHOSEN_DATASET, so several datasets can
+# run at the same time from one checkout
+CHOSEN_DS = os.environ.get("HOMOGENEITY_DATASET") or config["CHOSEN_DATASET"]
 if CHOSEN_DS not in config['DATASETS']:
     raise ValueError(f"Dataset '{CHOSEN_DS}' not found in config.json")
 
@@ -55,6 +57,8 @@ ALGORITHM_NAMES = config.get('ALGORITHM_NAMES', ["RW"])
 RUN_RANDOM_BASELINE = True
 NUM_RW_RUNS = 3
 TREATMENT_COL = config['TREATMENT_COL']
+# Result files go to graphs/, or to HOMOGENEITY_OUT_DIR when set (one folder per parallel job)
+OUT_DIR = Path(os.environ["HOMOGENEITY_OUT_DIR"]) if os.environ.get("HOMOGENEITY_OUT_DIR") else _REPO_ROOT / "graphs"
 OPTIMIZATION_MODES = config.get('OPTIMIZATION_MODES', ['direct'])
 MODES = config['MODES']
 
@@ -106,7 +110,7 @@ def _append_dict_to_excel(excel_path: Path, new_row_dict: dict):
 
 
 def append_timing_results(algorithm_name, condition, treatment, num_subgroups, delta, runtime_seconds):
-    results_dir = _REPO_ROOT / "graphs"
+    results_dir = OUT_DIR
     results_dir.mkdir(exist_ok=True)
     csv_path = results_dir / f"{CHOSEN_DS}_algorithms_time.csv"
     _append_dict_to_csv(csv_path, {
@@ -124,7 +128,7 @@ def append_timing_results(algorithm_name, condition, treatment, num_subgroups, d
 
 def append_homogeneity_results(algorithm_name, treatment, condition, delta, epsilon, status, runtime,
                                num_subgroups=None, enumeration_time=None, iteration_time=None):
-    results_dir = _REPO_ROOT / "graphs"
+    results_dir = OUT_DIR
     results_dir.mkdir(exist_ok=True)
     xlsx_path = results_dir / f"{CHOSEN_DS}_homogeneity_results.xlsx"
     current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -148,7 +152,7 @@ def append_homogeneity_results(algorithm_name, treatment, condition, delta, epsi
 
 def save_scalability_results(algorithm_name, condition, treatment, num_subgroups, delta, epsilon, status,
                              runtime_seconds, mode, metric_value):
-    results_dir = _REPO_ROOT / "graphs"
+    results_dir = OUT_DIR
     results_dir.mkdir(exist_ok=True)
     if mode == 2:
         csv_path = results_dir / f"{CHOSEN_DS}_scalability_rows.csv"
@@ -192,6 +196,8 @@ def run_single_execution(target_func, target_kwargs, algorithm_name, chosen_mode
             try:
                 status, res_obj = result_queue.get_nowait()
                 res = res_obj if status == "success" else None
+                if status != "success":
+                    print(f"\u274c [{algorithm_name}] ERROR in the algorithm: {res_obj}")
             except:
                 res = None
 
@@ -374,7 +380,8 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
                                             treat_dict, i, attr_pass, metric_value=metric_value)
                 rw_all_runs_data.append(run_stats)
 
-            if RUN_RANDOM_BASELINE and "Random" in ALGORITHM_NAMES:
+            # The Random baseline belongs to the main experiment only; scalability (modes 2, 3) compares RW with FPGrowth
+            if RUN_RANDOM_BASELINE and "Random" in ALGORITHM_NAMES and chosen_mode in (0, 1):
                 print(f"\n\033[95m>>> Starting Random Baseline Sequence <<<\033[0m")
                 for run_idx, run_results in enumerate(rw_all_runs_data):
                     print(f"--- Matching Random Run #{run_idx} ---")
@@ -392,7 +399,7 @@ def process_dataset_dynamic(i, rule, full_df, chosen_mode, chosen_algorithm_name
 
 
 def clean_results_files(mode):
-    results_dir_graphs = _REPO_ROOT / "graphs"
+    results_dir_graphs = OUT_DIR
     results_dir_graphs.mkdir(exist_ok=True)
 
     # Define file mapping for all modes

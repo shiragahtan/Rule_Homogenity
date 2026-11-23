@@ -1,3 +1,4 @@
+import os
 import re
 import sys
 import json
@@ -28,7 +29,7 @@ _config_path = _REPO_ROOT / 'configs' / 'config.json'
 with open(_config_path, 'r') as f:
     config = json.load(f)
 
-CHOSEN_DS = config["CHOSEN_DATASET"]
+CHOSEN_DS = os.environ.get("HOMOGENEITY_DATASET") or config["CHOSEN_DATASET"]  # env var: used by parallel_runner.py
 ds_config = config['DATASETS'][CHOSEN_DS]
 
 FULL_DATASET_PATH = str((_REPO_ROOT / ds_config['FULL_DATASET_PATH']).resolve())
@@ -38,15 +39,18 @@ ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 TREATMENT_COL = config['TREATMENT_COL']
 OPTIMIZATION_MODES = config.get('OPTIMIZATION_MODES', ['direct'])
 
-# Ablation parameters (per-dataset)
+# Ablation parameters (per-dataset). The epsilon values span each dataset's chosen epsilon (configs/config.json),
+# from about no rule homogeneous to all homogeneous; the delta experiment uses the chosen epsilon.
+# (Nov 2026: the old values, ACS 50-1,000 and SO 250,000-450,000, were below every ACS rule's smallest epsilon,
+# so the ACS plots showed 0% homogeneous everywhere.)
 _ABLATION_PARAMS = {
     "so": {
-        "EPSILON_VALUES": [250000.0, 300000.0, 350000.0, 400000.0, 450000.0],
-        "FIXED_EPSILON": 350000.0,
+        "EPSILON_VALUES": [300000.0, 400000.0, 473000.0, 550000.0, 650000.0],
+        "FIXED_EPSILON": 473000.0,
     },
     "acs": {
-        "EPSILON_VALUES": [50.0, 100.0, 200.0, 500.0, 1000.0],  # Very small epsilon = many subgroups to check = strong RW advantage
-        "FIXED_EPSILON": 500.0,  # Fixed epsilon for delta experiment (smaller = more subgroups)
+        "EPSILON_VALUES": [20000.0, 40000.0, 66000.0, 90000.0, 120000.0],
+        "FIXED_EPSILON": 66000.0,
     },
     "german": {
         "EPSILON_VALUES": [0.1, 0.3, 0.5, 0.7, 0.9],

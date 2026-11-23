@@ -48,10 +48,15 @@ stays binary at 4,000 DM). Details in
   ACS 80/100%, SO 60/60%. On SO, RW misses the 4 non-homogeneous rules: their violating subgroups have 4-12
   predicates and almost all exactly δ/10 = 10 treated rows. With ≥ 15 treated rows per arm, 9 of the 10 SO rules
   would be homogeneous, so these violations are mostly small-sample noise.
-- Fixes under test (`experiments/rw_fix_variants.py`, options in `algorithms/RW.py`, all off by default):
-  longer walks (`max_depth`), `revisit`, `arm_prefilter`, and Sean's `learned_weights` (start 1/n, grow with
-  the effect change). To be discussed with the instructor.
-- Full experiments on the new data run on the lab machine (skill `full-experiments`).
+- RW fixes (`experiments/rw_fix_variants.py`, options in `algorithms/RW.py`, all off by default): longer walks
+  (`max_depth`), `revisit`, `arm_prefilter`, Sean's `learned_weights` (start 1/n, grow with the effect change).
+  Suggested to the instructor: learned weights + arm prefilter (SO: finds 8 of 12 misses instead of 1; German and
+  ACS stay 100% correct). Not the default until she approves; results in `calibration_results/rw_fix_*.csv`,
+  `rw_learned*_*.csv`.
+- Full experiments on the new data run on the lab machine in parallel (`experiments/parallel_runner.py`, skill
+  `full-experiments`), because brute force now takes up to its 1-hour timeout per rule. `algorithms/main.py` ran
+  only RW until Nov 2026 (hard-coded list); it now runs `ALGORITHM_NAMES` from the config.
+- Ablation ε values changed (Nov 2026, user-approved) to span the chosen ε: ACS 20k-120k, SO 300k-650k.
 - Open: how to compute the RW attribute weights (the config values come from an outside source).
 
 ## Working rules

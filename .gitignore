@@ -23,3 +23,7 @@ graphs_backup_*/
 calibration_results/exact_so/
 calibration_results/exact_selected/
 datasets/raw/
+
+# parallel runner jobs and logs (experiments/parallel_runner.py)
+par_runs/
+graphs_backup_par_*/
