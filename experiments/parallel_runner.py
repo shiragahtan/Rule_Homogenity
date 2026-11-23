@@ -22,6 +22,7 @@ Usage
   python experiments/parallel_runner.py status
   python experiments/parallel_runner.py merge --datasets acs --steps rows,attrs
 
+Order: main results first, then runtimes, RW single-draw, ablation, benchmarks, and scalability (largest first).
 Jobs live in par_runs/jobs/<job id>/ (job.json, outputs, log.txt, DONE or FAILED). `run` skips jobs with DONE.
 --keep-existing-rows keeps the rows already in graphs/<ds>_scalability_rows.csv (from an interrupted sequential
 run) and plans only the missing (data size, repeat, algorithm, rule) runs.
@@ -107,8 +108,9 @@ def plan(datasets, steps, keep_rows):
             if step in ("main", "alltimes"):
                 for ai, a in enumerate(algos):
                     for i in range(n):
+                        base = 120 if step == "main" else 110  # main results first, then the runtimes
                         jobs.append(dict(id=f"{ds}-{step}-{ai}{a}-r{i:02d}", algo=a, rule=i, order=[ai, i],
-                                         slots=1, prio=85 if a in HEAVY else 25))
+                                         slots=1, prio=base if a in HEAVY else base - 5))
             elif step == "rows":
                 done = {}
                 meta = {"base": None}
@@ -137,7 +139,7 @@ def plan(datasets, steps, keep_rows):
                                     continue  # already in the kept rows
                                 jobs.append(dict(id=f"{ds}-rows-p{int(round(p * 100)):03d}-r{r}-{a}-r{i:02d}", algo=a,
                                                  rule=i, p=p, r=r, order=[p, r, ai, i], slots=1,
-                                                 prio=(80 + 10 * p) if a in HEAVY else 20))
+                                                 prio=(60 + 10 * p) if a in HEAVY else 20))
             elif step == "attrs":
                 max_attr = CONFIG["DATASETS"][ds].get("MAX_SCALABILITY_ATTRIBUTES", 10)
                 for nf in range(0, max(0, max_attr - 3) + 1, 2):
@@ -146,7 +148,7 @@ def plan(datasets, steps, keep_rows):
                             for i in range(n):
                                 jobs.append(dict(id=f"{ds}-attrs-n{nf:02d}-r{r}-{a}-r{i:02d}", algo=a, rule=i, nf=nf,
                                                  r=r, order=[nf, r, ai, i], slots=1,
-                                                 prio=(70 + nf) if a in HEAVY else 20))
+                                                 prio=(50 + nf) if a in HEAVY else 20))
             elif step == "ablation":
                 prm = A._ABLATION_PARAMS[ds]
                 for ei, (exp, values) in enumerate([("varying_epsilon", prm["EPSILON_VALUES"]),
@@ -154,12 +156,12 @@ def plan(datasets, steps, keep_rows):
                     for vi, v in enumerate(values):
                         for i in range(n):
                             jobs.append(dict(id=f"{ds}-ablation-{ei}{vi}-r{i:02d}", experiment=exp, value=v, rule=i,
-                                             order=[ei, vi, i], slots=1, prio=100))
+                                             order=[ei, vi, i], slots=1, prio=90))
             elif step == "benchmarks":
                 if ds in BENCH_OUT:
-                    jobs.append(dict(id=f"{ds}-benchmarks", order=[0], slots=5, prio=95))
+                    jobs.append(dict(id=f"{ds}-benchmarks", order=[0], slots=5, prio=85))
             elif step == "rwsingle":
-                jobs.append(dict(id=f"{ds}-rwsingle", order=[0], slots=6, prio=50))
+                jobs.append(dict(id=f"{ds}-rwsingle", order=[0], slots=6, prio=100))
             else:
                 raise SystemExit(f"unknown step {step}")
             for j in jobs:
@@ -384,13 +386,30 @@ def merge(datasets, steps, allow_partial):
             subprocess.run(cmd, cwd=REPO, env=env, check=False)
 
 
+def _running_ids():
+    """Ids of the jobs that have a live process now (read from `ps`, so jobs of a stopped run count as waiting)."""
+    out = subprocess.run(["ps", "-eo", "args"], capture_output=True, text=True).stdout
+    ids = set()
+    for line in out.splitlines():
+        if " worker " in line and str(JOBS) in line:
+            ids.add(Path(line.split(" worker ", 1)[1].strip()).name)
+        for ds in BENCH_OUT:
+            if "run_all_benchmarks.py" in line and f"--dataset {ds} " in line + " ":
+                ids.add(f"{ds}-benchmarks")
+        for ds in CONFIG["DATASETS"]:
+            if "rw_accuracy.py" in line and f"--dataset {ds} " in line and "weighted_single" in line:
+                ids.add(f"{ds}-rwsingle")
+    return ids
+
+
 def status():
     from collections import Counter
     c = Counter()
+    running = _running_ids()
     for j in load_jobs():
         d = JOBS / j["id"]
         state = "done" if (d / "DONE").exists() else "failed" if (d / "FAILED").exists() else \
-            "running" if (d / "log.txt").exists() else "waiting"
+            "running" if j["id"] in running else "waiting"
         c[(j["dataset"], j["step"], state)] += 1
     keys = sorted({(ds, st) for ds, st, _ in c})
     print(f"{'dataset':8s} {'step':10s} {'done':>6s} {'running':>8s} {'waiting':>8s} {'failed':>7s}")
