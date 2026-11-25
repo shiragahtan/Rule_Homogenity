@@ -1,0 +1,111 @@
+{
+ "dataset": "acs",
+ "weights": {
+  "Educational attainment": 0.3167688810000392,
+  "Age": 0.17388302875059564,
+  "Insurance through a current or former employer or union": 0.109681991270025,
+  "Sex": 0.10713957445330151,
+  "Public health coverage": 0.08230965594423978,
+  "Private health insurance coverage": 0.07840801759983741,
+  "With a disability": 0.06850416489114451,
+  "Medicare_ for people 65 and older_ or people with certain disabilities": 0.06330468609081673
+ },
+ "sum": 0.9999999999999998,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 24
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 6
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 17
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 9
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 7
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 2
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 15
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Private health insurance coverage": 2
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 3
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 3
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 1,
+ "delta": 100,
+ "epsilon": 66000,
+ "times_added": {
+  "Educational attainment": 491,
+  "Age": 4826,
+  "Insurance through a current or former employer or union": 3803,
+  "Sex": 1767,
+  "Public health coverage": 4605,
+  "Private health insurance coverage": 3947,
+  "With a disability": 2709,
+  "Medicare_ for people 65 and older_ or people with certain disabilities": 4725
+ }
+}

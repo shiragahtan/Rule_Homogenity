@@ -1,0 +1,111 @@
+{
+ "dataset": "acs",
+ "weights": {
+  "Educational attainment": 0.22446851084407415,
+  "Age": 0.20053712626718506,
+  "Insurance through a current or former employer or union": 0.12489577269304715,
+  "Public health coverage": 0.10957410251638228,
+  "Sex": 0.09934140442111847,
+  "Private health insurance coverage": 0.09172259783649046,
+  "With a disability": 0.0790025502782944,
+  "Medicare_ for people 65 and older_ or people with certain disabilities": 0.07045793514340787
+ },
+ "sum": 0.9999999999999998,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 3
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 19
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 4
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Insurance through a current or former employer or union": 2
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Private health insurance coverage": 2
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 20
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 22
+   }
+  },
+  {
+   "condition": {
+    "With a disability": 2
+   },
+   "treatment": {
+    "Educational attainment": 6
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Educational attainment": 23
+   }
+  },
+  {
+   "condition": {
+    "Sex": 2
+   },
+   "treatment": {
+    "Medicare, for people 65 and older, or people with certain disabilities": 1
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 0,
+ "delta": 100,
+ "epsilon": 66000,
+ "times_added": {
+  "Educational attainment": 1496,
+  "Age": 4644,
+  "Insurance through a current or former employer or union": 3678,
+  "Public health coverage": 4412,
+  "Sex": 1909,
+  "Private health insurance coverage": 3641,
+  "With a disability": 2308,
+  "Medicare_ for people 65 and older_ or people with certain disabilities": 4328
+ }
+}

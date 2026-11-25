@@ -1,0 +1,135 @@
+{
+ "dataset": "german",
+ "weights": {
+  "present_residence": 0.08247081103802796,
+  "purpose": 0.08190366590950103,
+  "age": 0.0792524636768916,
+  "duration": 0.07892538355442405,
+  "status": 0.07210214285838168,
+  "credit_history": 0.0701120287322899,
+  "installment_rate": 0.06840584946877708,
+  "employment_duration": 0.06120864727644642,
+  "property": 0.060771309126018434,
+  "housing": 0.050484338304534665,
+  "job": 0.04127134208876277,
+  "people_liable": 0.03799415713784703,
+  "number_credits": 0.03586112336523953,
+  "savings": 0.032017145394208954,
+  "amount": 0.0293246317896161,
+  "gender": 0.027544017285861106,
+  "other_installment_plans": 0.026916848451253226,
+  "personal_status": 0.026751435724538787,
+  "other_debtors": 0.025902318330526034,
+  "foreign_worker": 0.010780340486853578
+ },
+ "sum": 0.9999999999999999,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "people_liable": 1
+   },
+   "treatment": {
+    "number_credits": 2
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "present_residence": 1
+   }
+  },
+  {
+   "condition": {
+    "credit_history": "existing credits paid back duly till now"
+   },
+   "treatment": {
+    "other_installment_plans": "bank"
+   }
+  },
+  {
+   "condition": {
+    "personal_status": "single"
+   },
+   "treatment": {
+    "savings": "... < 100 DM"
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "status": "... < 100 DM"
+   }
+  },
+  {
+   "condition": {
+    "foreign_worker": "yes"
+   },
+   "treatment": {
+    "present_residence": 1
+   }
+  },
+  {
+   "condition": {
+    "foreign_worker": "yes"
+   },
+   "treatment": {
+    "savings": "... >= 1000 DM"
+   }
+  },
+  {
+   "condition": {
+    "people_liable": 1
+   },
+   "treatment": {
+    "housing": 0
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "other_debtors": "guarantor"
+   }
+  },
+  {
+   "condition": {
+    "people_liable": 1
+   },
+   "treatment": {
+    "number_credits": 3
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 0,
+ "delta": 50,
+ "epsilon": 0.5,
+ "times_added": {
+  "present_residence": 463,
+  "purpose": 909,
+  "age": 689,
+  "duration": 601,
+  "status": 473,
+  "credit_history": 842,
+  "installment_rate": 962,
+  "employment_duration": 579,
+  "property": 880,
+  "housing": 972,
+  "job": 968,
+  "people_liable": 1087,
+  "number_credits": 454,
+  "savings": 656,
+  "amount": 1276,
+  "gender": 1260,
+  "other_installment_plans": 1365,
+  "personal_status": 898,
+  "other_debtors": 2501,
+  "foreign_worker": 3517
+ }
+}

@@ -14,6 +14,10 @@ Variants (see the options at the top of algorithms/RW.py; all use the weighted8 
   learned      Sean's proposal: weights learned during the check (start 1/n, grow with the effect change)
   learned+fix  learned + prefilter + revisit + depth10
   learned+pre  learned + prefilter
+  frozen       instructor's version (Nov 24): weights learned once per dataset on other rules, normalized, the
+               same in every walk (configs/rw_learned_weights_<ds>.json, experiments/learn_rw_weights.py)
+               + prefilter + revisit + depth10
+  frozen+adapt the frozen weights as the START, still adapted inside each check (not learned from scratch)
 
     python experiments/rw_fix_variants.py --dataset so --seeds 3 --workers 12
     python experiments/rw_fix_variants.py --dataset german --variants baseline,pre+rev+d10
@@ -47,6 +51,9 @@ VARIANTS = {
     "learned":     dict(learned_weights=True),
     "learned+fix": dict(learned_weights=True, arm_prefilter=True, revisit=True, max_depth=10),
     "learned+pre": dict(learned_weights=True, arm_prefilter=True),
+    "frozen":      dict(frozen_weights=True, arm_prefilter=True, revisit=True, max_depth=10),
+    "frozen+adapt": dict(frozen_weights=True, learned_weights=True, warm_start=True, arm_prefilter=True,
+                         revisit=True, max_depth=10),
 }
 
 
@@ -66,10 +73,13 @@ def run_one(job):
     overall = calculate_ate_safe(df, treat, outcome, delta)
     opts = dict(VARIANTS[variant])
     k = opts.pop("k_walks", 2000)
+    weights = ds.get("ATTRIBUTE_WEIGHTS", {})
+    if opts.pop("frozen_weights", False):
+        weights = json.load(open(REPO / "configs" / f"rw_learned_weights_{dataset}.json"))["weights"]
     t0 = time.time()
     homogeneous, checked = rw(mode=0, algorithm=apriori, df=df, treatment_col=treat, tgtO=outcome, delta=delta,
                               epsilon=eps, utility_all=overall, k_walks=k, size_stop=0.8,
-                              rng=random.Random(seed), attribute_weights=ds.get("ATTRIBUTE_WEIGHTS", {}),
+                              rng=random.Random(seed), attribute_weights=weights,
                               extension="weighted8", **opts)
     return dict(dataset=dataset, variant=variant, rule=rule_idx, seed=seed,
                 rw_homogeneous=bool(homogeneous), subgroups_checked=checked, seconds=time.time() - t0)

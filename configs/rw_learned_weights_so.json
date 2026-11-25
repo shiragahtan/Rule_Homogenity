@@ -1,0 +1,133 @@
+{
+ "dataset": "so",
+ "weights": {
+  "Exercise": 0.08241510577541782,
+  "HoursComputer": 0.07941584861650434,
+  "YearsCoding": 0.07465044693263011,
+  "Age": 0.07066144529745602,
+  "DevType": 0.0685905090182076,
+  "UndergradMajor": 0.06730797635988348,
+  "FormalEducation": 0.06349964771434127,
+  "EducationParents": 0.06343711930794779,
+  "Country": 0.05937076558881521,
+  "Dependents": 0.051012934670927025,
+  "RaceEthnicity": 0.04145093200108538,
+  "Student": 0.04073747009908787,
+  "GDP": 0.040401765698583024,
+  "Hobby": 0.03816499139831223,
+  "SexualOrientation": 0.03450862696808916,
+  "Continent": 0.034464684176989,
+  "Gender": 0.0321112695583714,
+  "GINI": 0.029370402491953686,
+  "HDI": 0.02842805832539762
+ },
+ "sum": 1.0000000000000002,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "RaceEthnicity": "White or of European descent"
+   },
+   "treatment": {
+    "UndergradMajor": "A business discipline (ex. accounting, finance, marketing)"
+   }
+  },
+  {
+   "condition": {
+    "RaceEthnicity": "White or of European descent"
+   },
+   "treatment": {
+    "UndergradMajor": "Web development or web design"
+   }
+  },
+  {
+   "condition": {
+    "Gender": "Male"
+   },
+   "treatment": {
+    "UndergradMajor": "Information systems, information technology, or system administration"
+   }
+  },
+  {
+   "condition": {
+    "Age": "25 - 34 years old"
+   },
+   "treatment": {
+    "UndergradMajor": "Web development or web design"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "Hobby": "Yes"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "HoursComputer": "9 - 12 hours"
+   }
+  },
+  {
+   "condition": {
+    "Student": "No"
+   },
+   "treatment": {
+    "DevType": "QA or test developer"
+   }
+  },
+  {
+   "condition": {
+    "Gender": "Male"
+   },
+   "treatment": {
+    "Hobby": "No"
+   }
+  },
+  {
+   "condition": {
+    "Age": "25 - 34 years old"
+   },
+   "treatment": {
+    "UndergradMajor": "Another engineering discipline (ex. civil, electrical, mechanical)"
+   }
+  },
+  {
+   "condition": {
+    "Student": "No"
+   },
+   "treatment": {
+    "DevType": "Student"
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 0,
+ "delta": 100,
+ "epsilon": 473000.0,
+ "times_added": {
+  "Exercise": 1114,
+  "HoursComputer": 878,
+  "YearsCoding": 1349,
+  "Age": 771,
+  "DevType": 1056,
+  "UndergradMajor": 963,
+  "FormalEducation": 995,
+  "EducationParents": 817,
+  "Country": 1709,
+  "Dependents": 1366,
+  "RaceEthnicity": 1070,
+  "Student": 1898,
+  "GDP": 2099,
+  "Hobby": 1276,
+  "SexualOrientation": 2930,
+  "Continent": 2035,
+  "Gender": 2152,
+  "GINI": 2172,
+  "HDI": 2985
+ }
+}

@@ -52,6 +52,8 @@ def _homog_rw_direct(
         revisit: bool = False,
         arm_prefilter: bool = False,
         learned_weights: bool = False,
+        learn_stats: Optional[Dict[str, List[float]]] = None,
+        warm_start: bool = False,
         **_: object,                     # ← swallow future params safely
 ) -> Tuple[bool, int]:
     # Options tested for the Stack Overflow misses (all off by default = the behavior used in the paper so far):
@@ -67,6 +69,13 @@ def _homog_rw_direct(
     #                  each time a predicate is added to a walk, its weight becomes 1/n + the mean, over the
     #                  times it was added, of |change of the subgroup's effect| / epsilon. Predicates that
     #                  move the effect more are drawn more often (roots too). Independent of the other options.
+    #   learn_stats    LEARNING MODE (used by experiments/learn_rw_weights.py, never in a check): a dict that
+    #                  collects, per attribute, [sum, count] of |change of the effect| / epsilon each time a
+    #                  predicate of that attribute is added to a walk (the root: change from the overall effect).
+    #                  The walks do not stop at a violation. weights_from_stats() turns the dict into the frozen,
+    #                  normalized per-dataset weights that a check then gets as attribute_weights.
+    #   warm_start     with learned_weights: start from attribute_weights (e.g. the frozen per-dataset weights)
+    #                  instead of 1/n, and keep adapting during the check (base weight + mean change).
 
 
     rng = rng or random.Random()
@@ -99,7 +108,10 @@ def _homog_rw_direct(
         attr_w.get(lookup[c][0], 1.0) for c in col_names
     ], dtype=float)
     if learned_weights:
-        col_weights = np.full(n_features, 1.0 / max(n_features, 1))
+        # same scale as the uniform start (sums to 1 over the predicates)
+        base_weights = col_weights / col_weights.sum() if warm_start and col_weights.sum() > 0 \
+            else np.full(n_features, 1.0 / max(n_features, 1))
+        col_weights = base_weights.copy()
         change_sum = np.zeros(n_features)
         change_cnt = np.zeros(n_features)
 
@@ -107,6 +119,12 @@ def _homog_rw_direct(
     root_scores = []
     root_indices = []
     root_diffs = []
+
+    def learn(i, change):
+        if learn_stats is not None and change is not None and np.isfinite(change) and epsilon:
+            st = learn_stats.setdefault(lookup[col_names[i]][0], [0.0, 0])
+            st[0] += abs(change) / epsilon
+            st[1] += 1
 
     for i in range(n_features):
         mask = X[:, i]
@@ -176,7 +194,9 @@ def _homog_rw_direct(
 
         cate = eval_subset(mask, idxs)
         cur_cate = cate if cate is not None else cate_cache.get(frozenset(idxs))
-        if cate is not None and abs(cate - ate_all) > epsilon:
+        if cur_cate is not None:
+            learn(start_idx, cur_cate - ate_all)
+        if learn_stats is None and cate is not None and abs(cate - ate_all) > epsilon:
             print(f"Breaking Subgroup: "
                   f"{ {lookup[col_names[i]][0]: lookup[col_names[i]][1] for i in idxs} }")
             return False, checked
@@ -242,19 +262,31 @@ def _homog_rw_direct(
             if learned_weights and cur_cate is not None and np.isfinite(cur_cate) and epsilon:
                 change_sum[best_i] += abs(best_cate - cur_cate) / epsilon
                 change_cnt[best_i] += 1
-                col_weights[best_i] = 1.0 / n_features + change_sum[best_i] / change_cnt[best_i]
+                col_weights[best_i] = base_weights[best_i] + change_sum[best_i] / change_cnt[best_i]
+            if cur_cate is not None:
+                learn(best_i, best_cate - cur_cate)
             cur_cate = best_cate
             mask = best_mask
             idxs.add(best_i)
             attrs_used.add(lookup[col_names[best_i]][0])
 
-            if best_gain > epsilon:
+            if learn_stats is None and best_gain > epsilon:
                 print(f"Breaking Subgroup: "
                       f"{ {lookup[col_names[i]][0]: lookup[col_names[i]][1] for i in idxs} }")
                 return False, checked
 
     print(f"Total checked: {checked}")
     return True, checked
+
+
+def weights_from_stats(stats: Dict[str, List[float]], attributes: List[str]) -> Dict[str, float]:
+    """Frozen per-dataset attribute weights from the learning walks: weight = 1/n + mean(|effect change| / epsilon)
+    over the times the attribute was added (0 if never added), normalized to sum to 1. The 1/n floor keeps every
+    attribute drawable."""
+    n = len(attributes)
+    raw = {a: 1.0 / n + (stats[a][0] / stats[a][1] if a in stats and stats[a][1] else 0.0) for a in attributes}
+    total = sum(raw.values())
+    return {a: w / total for a, w in sorted(raw.items(), key=lambda kv: -kv[1])}
 
 
 
@@ -294,6 +326,8 @@ def calc_utility_for_subgroups(
             revisit=bool(kwargs.get("revisit", False)),
             arm_prefilter=bool(kwargs.get("arm_prefilter", False)),
             learned_weights=bool(kwargs.get("learned_weights", False)),
+            learn_stats=kwargs.get("learn_stats"),
+            warm_start=bool(kwargs.get("warm_start", False)),
             **({"max_depth": int(kwargs["max_depth"])} if kwargs.get("max_depth") else {}),
         )
     return [], 0

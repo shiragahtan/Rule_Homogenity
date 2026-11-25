@@ -1,0 +1,133 @@
+{
+ "dataset": "so",
+ "weights": {
+  "Age": 0.08418642953213525,
+  "Exercise": 0.0784487257086045,
+  "DevType": 0.07807512621745431,
+  "HoursComputer": 0.07623945842684024,
+  "EducationParents": 0.07614458919118051,
+  "Dependents": 0.07233746228421302,
+  "YearsCoding": 0.06998315018300245,
+  "UndergradMajor": 0.06076798715656646,
+  "FormalEducation": 0.058364352296728025,
+  "RaceEthnicity": 0.057915517476367286,
+  "Hobby": 0.03928828840975619,
+  "Country": 0.03831521262087711,
+  "GDP": 0.033607079900287495,
+  "Continent": 0.03317291679941379,
+  "Gender": 0.03172334385120423,
+  "Student": 0.028965827974445756,
+  "SexualOrientation": 0.028815846414854074,
+  "HDI": 0.028467490690867087,
+  "GINI": 0.025181194865202223
+ },
+ "sum": 0.9999999999999999,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "DevType": "Database administrator"
+   }
+  },
+  {
+   "condition": {
+    "Age": "25 - 34 years old"
+   },
+   "treatment": {
+    "UndergradMajor": "Web development or web design"
+   }
+  },
+  {
+   "condition": {
+    "Student": "No"
+   },
+   "treatment": {
+    "UndergradMajor": "A social science (ex. anthropology, psychology, political science)"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "UndergradMajor": "I never declared a major"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "DevType": "Mobile developer"
+   }
+  },
+  {
+   "condition": {
+    "Age": "25 - 34 years old"
+   },
+   "treatment": {
+    "DevType": "Full-stack developer"
+   }
+  },
+  {
+   "condition": {
+    "Age": "25 - 34 years old"
+   },
+   "treatment": {
+    "DevType": "Educator or academic researcher"
+   }
+  },
+  {
+   "condition": {
+    "Student": "No"
+   },
+   "treatment": {
+    "Hobby": "No"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "DevType": "Designer"
+   }
+  },
+  {
+   "condition": {
+    "Dependents": "No"
+   },
+   "treatment": {
+    "UndergradMajor": "A business discipline (ex. accounting, finance, marketing)"
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 1,
+ "delta": 100,
+ "epsilon": 473000.0,
+ "times_added": {
+  "Age": 739,
+  "Exercise": 948,
+  "DevType": 789,
+  "HoursComputer": 1022,
+  "EducationParents": 1180,
+  "Dependents": 835,
+  "YearsCoding": 1071,
+  "UndergradMajor": 775,
+  "FormalEducation": 1067,
+  "RaceEthnicity": 2173,
+  "Hobby": 1918,
+  "Country": 1648,
+  "GDP": 1839,
+  "Continent": 2124,
+  "Gender": 2156,
+  "Student": 1271,
+  "SexualOrientation": 2366,
+  "HDI": 3047,
+  "GINI": 2021
+ }
+}

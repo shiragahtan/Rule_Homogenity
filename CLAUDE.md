@@ -56,8 +56,15 @@ stays binary at 4,000 DM). Details in
 - Full experiments on the new data run on the lab machine in parallel (`experiments/parallel_runner.py`, skill
   `full-experiments`), because brute force now takes up to its 1-hour timeout per rule. `algorithms/main.py` ran
   only RW until Nov 2026 (hard-coded list); it now runs `ALGORITHM_NAMES` from the config.
-- Ablation ε values changed (Nov 2026, user-approved) to span the chosen ε: ACS 20k-120k, SO 300k-650k.
-- Open: how to compute the RW attribute weights (the config values come from an outside source).
+- Ablation ε values changed (Nov 2026, user-approved) to span the rules' smallest ε: ACS 20k-120k (fixed 66k),
+  SO 20k-75k (fixed 150k, see the comment in `experiments/ablation_study.py`).
+- Meeting 24 Nov 2026: Brit approved the new RW = learned weights + prefilter + revisit + longer walks, with
+  weights normalized (sum 1), one set per dataset, learned once and shared by all rules and walks. Implemented:
+  `experiments/learn_rw_weights.py` (10 candidate rules not among the test rules, 500 walks each) ->
+  `configs/rw_learned_weights_<ds>.json`; test variant `frozen` in `rw_fix_variants.py`, results
+  `calibration_results/rw_frozen_<ds>.csv`: German 100%, ACS 100%, SO 80% (6 of 12 non-H runs found; per-check
+  learning finds 9 of 12). Not the default yet: the learning details are being confirmed with Brit.
+- Size filter stays δ/10; AllSubgroups runtimes dropped from the paper; ACS ε stays 66,000.
 
 ## Working rules
 - Run heavy experiments (exact SO, runtimes) on the lab machine in a tmux session, not locally.

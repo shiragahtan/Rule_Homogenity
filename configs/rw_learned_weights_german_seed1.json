@@ -1,0 +1,135 @@
+{
+ "dataset": "german",
+ "weights": {
+  "property": 0.08969966557176738,
+  "employment_duration": 0.07333962486373409,
+  "duration": 0.0719561277471894,
+  "purpose": 0.07092240480361894,
+  "age": 0.069509184361334,
+  "status": 0.06939589644061904,
+  "installment_rate": 0.06826985712764122,
+  "amount": 0.06095718861728721,
+  "job": 0.05711168412961787,
+  "credit_history": 0.05677785898780264,
+  "present_residence": 0.0547706785905518,
+  "housing": 0.04614525598862169,
+  "savings": 0.04294808412178002,
+  "personal_status": 0.041837066049243,
+  "people_liable": 0.03440818334169334,
+  "other_installment_plans": 0.025459720627590755,
+  "number_credits": 0.024943088668957107,
+  "other_debtors": 0.019089894260591943,
+  "gender": 0.011256589978453618,
+  "foreign_worker": 0.011201945721904985
+ },
+ "sum": 1.0,
+ "how": "1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
+ "train_rules": [
+  {
+   "condition": {
+    "foreign_worker": "yes"
+   },
+   "treatment": {
+    "other_debtors": "none"
+   }
+  },
+  {
+   "condition": {
+    "credit_history": "existing credits paid back duly till now"
+   },
+   "treatment": {
+    "job": "unemployed/unskilled - non-resident"
+   }
+  },
+  {
+   "condition": {
+    "foreign_worker": "yes"
+   },
+   "treatment": {
+    "present_residence": 3
+   }
+  },
+  {
+   "condition": {
+    "credit_history": "existing credits paid back duly till now"
+   },
+   "treatment": {
+    "other_installment_plans": "stores"
+   }
+  },
+  {
+   "condition": {
+    "credit_history": "existing credits paid back duly till now"
+   },
+   "treatment": {
+    "present_residence": 4
+   }
+  },
+  {
+   "condition": {
+    "personal_status": "single"
+   },
+   "treatment": {
+    "status": "0 <= ... < 200 DM"
+   }
+  },
+  {
+   "condition": {
+    "personal_status": "single"
+   },
+   "treatment": {
+    "housing": 1
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "housing": 0
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "savings": "... < 100 DM"
+   }
+  },
+  {
+   "condition": {
+    "gender": "male"
+   },
+   "treatment": {
+    "savings": "... >= 1000 DM"
+   }
+  }
+ ],
+ "walks_per_rule": 500,
+ "seed": 1,
+ "delta": 50,
+ "epsilon": 0.5,
+ "times_added": {
+  "property": 981,
+  "employment_duration": 714,
+  "duration": 678,
+  "purpose": 536,
+  "age": 285,
+  "status": 840,
+  "installment_rate": 855,
+  "amount": 1662,
+  "job": 631,
+  "credit_history": 541,
+  "present_residence": 547,
+  "housing": 982,
+  "savings": 572,
+  "personal_status": 765,
+  "people_liable": 1783,
+  "other_installment_plans": 1172,
+  "number_credits": 1637,
+  "other_debtors": 2614,
+  "gender": 1505,
+  "foreign_worker": 3134
+ }
+}
