@@ -205,6 +205,15 @@ def run_single_execution(target_func, target_kwargs, algorithm_name, chosen_mode
     print(
         f"⏱️  [{algorithm_name}] Finished. Total Time: {total_time:.4f}s (Algo: {elapsed():.4f}s + Overhead: {utility_time + attr_vals_time:.4f}s)")
 
+    if res is None:  # the algorithm raised an error: record it as ERROR, not as "NOT Homogeneous"
+        print(f"\033[93mResult: ERROR\033[0m")
+        if chosen_mode == 0:
+            append_homogeneity_results(algorithm_name, treatment, condition, delta, epsilon, "ERROR", total_time)
+        elif chosen_mode in [2, 3]:
+            save_scalability_results(algorithm_name, condition, treatment, None, delta, epsilon, "ERROR", total_time,
+                                     chosen_mode, metric_value)
+        return "ERROR", 0
+
     if res == "TIMEOUT":
         print(f"\033[93mResult: TIMED OUT\033[0m")
         if chosen_mode == 0:

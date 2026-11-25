@@ -62,6 +62,8 @@ def mine_subgroups(
                 # Fallback safety (should not happen)
                 lookup[c] = (col, c)
 
+    if not onehot_parts:  # no attribute left to mine (e.g. scalability with 0 extra attributes): no subgroups
+        return []
     onehot = pd.concat(onehot_parts, axis=1)
 
     # Apriori algorithm for frequent itemsets

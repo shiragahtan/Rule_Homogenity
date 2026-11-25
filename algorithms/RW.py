@@ -32,6 +32,8 @@ def _onehot_lookup(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, Tuple[str,
         dummies = pd.get_dummies(df[col].astype(str), prefix=col, dtype=bool)
         parts.append(dummies)
         lookup.update({c: (col, c.split("_", 1)[1]) for c in dummies.columns})
+    if not parts:  # no attribute left to mine: no predicates, so no subgroups
+        return pd.DataFrame(index=df.index), lookup
     return pd.concat(parts, axis=1), lookup
 
 
