@@ -204,22 +204,38 @@ def _start(job):
     return subprocess.Popen(_command(job), cwd=REPO, env=env, stdout=logf, stderr=subprocess.STDOUT)
 
 
-def run(slots):
-    jobs = load_jobs()
-    pending = sorted([j for j in jobs if not is_done(j)], key=lambda j: -j["prio"])
-    log(f"RUN start: {len(pending)} of {len(jobs)} jobs to run, {slots} slots")
-    running, used, finished, failed = [], 0, 0, 0
-    while pending or running:
-        i = 0
-        while i < len(pending):
-            j = pending[i]
-            if used + j["slots"] <= slots:
-                running.append((_start(j), j, time.time()))
-                used += j["slots"]
-                pending.pop(i)
-            else:
-                i += 1
+def run(slots, adopt=False, only=None):
+    """Start jobs in priority order. Strict order: when the next job needs more free slots than there are (a
+    multi-core job), nothing else starts until it fits, so multi-core jobs are not starved by one-core jobs.
+    adopt=True: jobs whose worker process is still alive (from a stopped runner) are watched, not restarted;
+    they are DONE when their log ends with "JOB OK"."""
+    jobs = [j for j in load_jobs() if not only or j["id"].startswith(only)]
+    live = _running_ids() if adopt else set()
+    adopted = {j["id"]: j for j in jobs if j["id"] in live and not is_done(j)}
+    pending = sorted([j for j in jobs if not is_done(j) and j["id"] not in adopted], key=lambda j: -j["prio"])
+    log(f"RUN start: {len(pending)} of {len(jobs)} jobs to run, {len(adopted)} adopted, {slots} slots")
+    running, finished, failed = [], 0, 0
+    used = sum(j["slots"] for j in adopted.values())
+    last_ps = 0.0
+    while pending or running or adopted:
+        while pending and used + pending[0]["slots"] <= slots:
+            j = pending.pop(0)
+            running.append((_start(j), j, time.time()))
+            used += j["slots"]
         time.sleep(5)
+        if adopted and time.time() - last_ps > 30:
+            last_ps = time.time()
+            live = _running_ids()
+            for jid in [k for k in adopted if k not in live]:
+                j = adopted.pop(jid)
+                used -= j["slots"]
+                d = JOBS / jid
+                ok = (d / "log.txt").exists() and "JOB OK" in (d / "log.txt").read_text(errors="ignore")[-3000:]
+                (d / ("DONE" if ok else "FAILED")).write_text("adopted\n")
+                finished += ok
+                failed += not ok
+                if not ok:
+                    log(f"FAILED {jid} (adopted, no JOB OK in its log)")
         for item in list(running):
             proc, j, t0 = item
             rc = proc.poll()
@@ -427,6 +443,8 @@ def main():
     p.add_argument("--keep-existing-rows", default="", help="datasets whose finished row-scalability runs are kept")
     r = sub.add_parser("run")
     r.add_argument("--slots", type=int, default=36)
+    r.add_argument("--adopt", action="store_true", help="watch, not restart, jobs still running from a stopped runner")
+    r.add_argument("--only", default=None, help="run only the jobs whose id starts with this (e.g. so-ablation)")
     m = sub.add_parser("merge")
     m.add_argument("--datasets", required=True)
     m.add_argument("--steps", required=True)
@@ -442,7 +460,7 @@ def main():
     if a.cmd == "plan":
         plan(a.datasets.split(","), a.steps.split(","), [x for x in a.keep_existing_rows.split(",") if x])
     elif a.cmd == "run":
-        sys.exit(1 if run(a.slots) else 0)
+        sys.exit(1 if run(a.slots, a.adopt, a.only) else 0)
     elif a.cmd == "merge":
         merge(a.datasets.split(","), a.steps.split(","), a.allow_partial)
     elif a.cmd == "merge-one":

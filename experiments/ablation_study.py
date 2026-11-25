@@ -39,14 +39,16 @@ ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 TREATMENT_COL = config['TREATMENT_COL']
 OPTIMIZATION_MODES = config.get('OPTIMIZATION_MODES', ['direct'])
 
-# Ablation parameters (per-dataset). The epsilon values span each dataset's chosen epsilon (configs/config.json),
-# from about no rule homogeneous to all homogeneous; the delta experiment uses the chosen epsilon.
-# (Nov 2026: the old values, ACS 50-1,000 and SO 250,000-450,000, were below every ACS rule's smallest epsilon,
-# so the ACS plots showed 0% homogeneous everywhere.)
+# Ablation parameters (per-dataset), chosen so that the plots go from about no rule homogeneous to all homogeneous
+# (Nov 2026; the old ACS values, 50-1,000, were below every ACS rule's smallest epsilon, so the ACS plots were flat).
+# ACS: the chosen epsilon (66,000) and values around it. SO: from the rules' exact smallest epsilon at the ablation's
+# delta (calibration_results/exact_so): at delta = 5% of the rule's rows they are 26k-73k, so the epsilon values are
+# 20k-75k (0, 1, 4, 8, 10 rules homogeneous); at the chosen 473,000 every rule is homogeneous for every delta >= 1%
+# (the SO violations need delta = 100 rows, about 0.3%), so the delta experiment uses 150,000 (6, 9, 10, 10).
 _ABLATION_PARAMS = {
     "so": {
-        "EPSILON_VALUES": [300000.0, 400000.0, 473000.0, 550000.0, 650000.0],
-        "FIXED_EPSILON": 473000.0,
+        "EPSILON_VALUES": [20000.0, 30000.0, 40000.0, 50000.0, 75000.0],
+        "FIXED_EPSILON": 150000.0,
     },
     "acs": {
         "EPSILON_VALUES": [20000.0, 40000.0, 66000.0, 90000.0, 120000.0],
