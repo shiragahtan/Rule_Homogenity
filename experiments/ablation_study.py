@@ -38,6 +38,8 @@ TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
 TREATMENT_COL = config['TREATMENT_COL']
 OPTIMIZATION_MODES = config.get('OPTIMIZATION_MODES', ['direct'])
+from algorithms.RW import rw_settings  # noqa: E402
+RW_KWARGS = rw_settings(CHOSEN_DS, ds_config, config)  # weights + options of RW (config "RW_OPTIONS")
 
 # Ablation parameters (per-dataset), chosen so that the plots go from about no rule homogeneous to all homogeneous
 # (Nov 2026; the old ACS values, 50-1,000, were below every ACS rule's smallest epsilon, so the ACS plots were flat).
@@ -121,7 +123,7 @@ def run_algorithm(algo_name, df, tgtO, delta, epsilon, utility_all, attr_vals=No
     elif algo_name == "RW_Direct":
         _rw_kw = dict(common, algorithm=apriori, size_stop=0.8,
                       optimization_mode=OPTIMIZATION_MODES[0],
-                      attribute_weights=ATTRIBUTE_WEIGHTS)
+                      **RW_KWARGS)
         with timer() as elapsed:
             result = rw_unlearning_calc_utility_for_subgroups(**_rw_kw)
         runtime = elapsed()

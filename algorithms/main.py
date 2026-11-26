@@ -51,6 +51,8 @@ DELTAS = ds_config['DELTAS']
 EPSILONS = ds_config['EPSILONS']
 TARGET_COLUMN_NAME = ds_config['TARGET_COLUMN']
 ATTRIBUTE_WEIGHTS = ds_config.get('ATTRIBUTE_WEIGHTS', {})
+from RW import rw_settings  # noqa: E402
+RW_KWARGS = rw_settings(CHOSEN_DS, ds_config, config)  # weights + options of RW (config "RW_OPTIONS")
 
 # Algorithms of the main experiment come from the config (it was hard-coded to ["RW"], so the other algorithms never ran)
 ALGORITHM_NAMES = config.get('ALGORITHM_NAMES', ["RW"])
@@ -302,7 +304,7 @@ def run_experiments(chosen_mode, chosen_algorithm_name, delta, df, tgtO, attr_va
             "Apriori": (apriori_calc_utility_for_subgroups, dict(common, algorithm=apriori)),
             "FPGrowth": (apriori_calc_utility_for_subgroups, dict(common, algorithm=fpgrowth)),
             "RW": (rw_unlearning_calc_utility_for_subgroups,
-                   dict(rw_common, algorithm=apriori, size_stop=0.8, attribute_weights=ATTRIBUTE_WEIGHTS)),
+                   dict(rw_common, algorithm=apriori, size_stop=0.8, **RW_KWARGS)),
             "Greedy": (greedy_calc_utility_for_subgroups, common),
             "Random": (random_calc_utility_for_subgroups,
                        dict(common, n_subgroups=force_n_subgroups if force_n_subgroups else 1000)),

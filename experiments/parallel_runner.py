@@ -96,7 +96,7 @@ def _check_script_settings():
     assert re.search(r"^NUM_RW_RUNS = 3$", main, re.M)
 
 
-def plan(datasets, steps, keep_rows):
+def plan(datasets, steps, keep_rows, algos_only=None):
     _check_script_settings()
     import ablation_study as A  # only for its per-dataset values
     algos = [a for a in CONFIG["ALGORITHM_NAMES"] if a != "Random"]  # Random runs inside the RW job
@@ -164,6 +164,11 @@ def plan(datasets, steps, keep_rows):
                 jobs.append(dict(id=f"{ds}-rwsingle", order=[0], slots=6, prio=100))
             else:
                 raise SystemExit(f"unknown step {step}")
+            if algos_only:  # e.g. rerun only RW: drop the other algorithms' jobs, ablation jobs skip FPGrowth
+                jobs = [j for j in jobs if "algo" not in j or j["algo"] in algos_only]
+                for j in jobs:
+                    if step == "ablation":
+                        j["algos"] = list(algos_only)
             for j in jobs:
                 j.update(dataset=ds, step=step)
                 d = JOBS / j["id"]
@@ -308,10 +313,11 @@ def worker(job_dir):
         exp, v, i = job["experiment"], job["value"], job["rule"]
         eps, dpct = (v, A.FIXED_DELTA_PERCENTAGE) if exp == "varying_epsilon" else (A.FIXED_EPSILON, v)
         rows = []
-        res = A.process_rule(rules[i], full_df, A.TARGET_COLUMN_NAME, None, eps, "FPGrowth", dpct)
-        if res:
-            res["experiment"] = exp
-            rows.append(res)
+        if "FPGrowth" in job.get("algos", ["FPGrowth"]):
+            res = A.process_rule(rules[i], full_df, A.TARGET_COLUMN_NAME, None, eps, "FPGrowth", dpct)
+            if res:
+                res["experiment"] = exp
+                rows.append(res)
         for run_number in range(A.NUM_RW_RUNS):
             res = A.process_rule(rules[i], full_df, A.TARGET_COLUMN_NAME, None, eps, "RW_Direct", dpct)
             if res:
@@ -441,6 +447,7 @@ def main():
     p.add_argument("--datasets", required=True)
     p.add_argument("--steps", required=True)
     p.add_argument("--keep-existing-rows", default="", help="datasets whose finished row-scalability runs are kept")
+    p.add_argument("--algos", default="", help="plan only these algorithms (e.g. RW); ablation jobs skip FPGrowth")
     r = sub.add_parser("run")
     r.add_argument("--slots", type=int, default=36)
     r.add_argument("--adopt", action="store_true", help="watch, not restart, jobs still running from a stopped runner")
@@ -458,7 +465,8 @@ def main():
     sub.add_parser("status")
     a = ap.parse_args()
     if a.cmd == "plan":
-        plan(a.datasets.split(","), a.steps.split(","), [x for x in a.keep_existing_rows.split(",") if x])
+        plan(a.datasets.split(","), a.steps.split(","), [x for x in a.keep_existing_rows.split(",") if x],
+             [x for x in a.algos.split(",") if x])
     elif a.cmd == "run":
         sys.exit(1 if run(a.slots, a.adopt, a.only) else 0)
     elif a.cmd == "merge":

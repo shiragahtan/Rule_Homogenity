@@ -281,6 +281,20 @@ def _homog_rw_direct(
     return True, checked
 
 
+def rw_settings(dataset: str, ds_config: dict, cfg: dict) -> Dict[str, object]:
+    """The RW keyword arguments of the experiments. Default: the config's ATTRIBUTE_WEIGHTS and the paper's RW.
+    With "RW_OPTIONS" in the config (e.g. {"weights": "learned", "arm_prefilter": true, "revisit": true,
+    "max_depth": 10}), "weights": "learned" uses the frozen per-dataset weights of
+    configs/rw_learned_weights_<dataset>.json (experiments/learn_rw_weights.py); the other keys go to RW as options."""
+    opts = dict(cfg.get("RW_OPTIONS") or {})
+    weights = ds_config.get("ATTRIBUTE_WEIGHTS", {})
+    if opts.pop("weights", None) == "learned":
+        path = Path(__file__).resolve().parent.parent / "configs" / f"rw_learned_weights_{dataset}.json"
+        with open(path, encoding="utf-8") as f:
+            weights = json.load(f)["weights"]
+    return dict(opts, attribute_weights=weights)
+
+
 def weights_from_stats(stats: Dict[str, List[float]], attributes: List[str]) -> Dict[str, float]:
     """Frozen per-dataset attribute weights from the learning walks: weight = 1/n + mean(|effect change| / epsilon)
     over the times the attribute was added (0 if never added), normalized to sum to 1. The 1/n floor keeps every
