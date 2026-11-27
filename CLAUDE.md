@@ -65,6 +65,10 @@ stays binary at 4,000 DM). Details in
   `calibration_results/rw_frozen_<ds>.csv`: German 100%, ACS 100%, SO 80% (6 of 12 non-H runs found; per-check
   learning finds 9 of 12). Not the default yet: the learning details are being confirmed with Brit.
 - Size filter stays δ/10; AllSubgroups runtimes dropped from the paper; ACS ε stays 66,000.
+- Full rerun with the new RW (26 Nov 2026, `RW_OPTIONS` on, 1,830 RW jobs, `experiments/compare_old_new_rw.py` ->
+  `calibration_results/rw_old_vs_new_full_runs.csv`): never worse than the old RW, 0 false alarms. Main SO 63% -> 87%
+  (8 of 12 non-H found instead of 1), German/ACS 100%; SO ablation 97.8% -> 98.9%; German rows 98.9% -> 99.8%;
+  about 2-4x slower. Awaiting Brit's approval to use it in the paper.
 
 ## Working rules
 - Run heavy experiments (exact SO, runtimes) on the lab machine in a tmux session, not locally.

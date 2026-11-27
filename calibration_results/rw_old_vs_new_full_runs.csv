@@ -1,0 +1,25 @@
+ds,exp,rw,n,correct,pct,nonH,nonH_found,fp_wrong,med_sec
+german,main vs exact,old,30,30,100.0,15,15,0,48.2
+german,main vs exact,new,30,30,100.0,15,15,0,74.9
+german,rows vs FP,old,900,890,98.9,804,794,0,3.7
+german,rows vs FP,new,900,898,99.8,804,802,0,3.8
+german,attrs vs FP,old,0,0,,0,0,0,
+german,attrs vs FP,new,0,0,,0,0,0,
+german,ablation vs FP,old,270,270,100.0,192,192,0,3.4
+german,ablation vs FP,new,270,270,100.0,192,192,0,4.3
+acs,main vs exact,old,30,30,100.0,18,18,0,21.6
+acs,main vs exact,new,30,30,100.0,18,18,0,18.0
+acs,rows vs FP,old,45,45,100.0,0,0,0,39.1
+acs,rows vs FP,new,45,45,100.0,0,0,0,93.0
+acs,attrs vs FP,old,255,255,100.0,9,9,0,9.2
+acs,attrs vs FP,new,255,255,100.0,9,9,0,15.3
+acs,ablation vs FP,old,270,270,100.0,51,51,0,53.4
+acs,ablation vs FP,new,270,270,100.0,51,51,0,204.9
+so,main vs exact,old,30,19,63.3,12,1,0,263.8
+so,main vs exact,new,30,26,86.7,12,8,0,531.3
+so,rows vs FP,old,0,0,,0,0,0,
+so,rows vs FP,new,0,0,,0,0,0,
+so,attrs vs FP,old,450,450,100.0,0,0,0,6.9
+so,attrs vs FP,new,450,450,100.0,0,0,0,9.5
+so,ablation vs FP,old,270,264,97.8,96,90,0,42.5
+so,ablation vs FP,new,270,267,98.9,96,93,0,102.2
