@@ -1,0 +1,5128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ablation Study Report - german</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .graph-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            font-size: 13px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+            margin: 20px 0;
+        }
+        .metric {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>🔬 Ablation Study Report: GERMAN</h1>
+    
+    <div class="info-box">
+        <h2>📋 Study Overview</h2>
+        <div class="metric">
+            <div class="metric-label">Dataset</div>
+            <div class="metric-value">german</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Algorithms Tested</div>
+            <div class="metric-value">2</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Rules Tested</div>
+            <div class="metric-value">2</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Total Runs</div>
+            <div class="metric-value">360</div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3>Experiment Setup:</h3>
+        <ul>
+            <li><strong>Ground Truth:</strong> FPGrowth (100% accurate but slower)</li>
+            <li><strong>Testing:</strong> RW_Direct (faster but need to verify correctness)</li>
+            <li><strong>Experiment 1:</strong> Varying Epsilon [250k, 300k, 350k, 400k, 450k] with Fixed Delta = 10%</li>
+            <li><strong>Experiment 2:</strong> Varying Delta [5%, 10%, 15%, 20%] with Fixed Epsilon = 350k</li>
+            <li><strong>Goal:</strong> Show RW matches FPGrowth results across different parameters</li>
+        </ul>
+    </div>
+
+    <h2>✅ RW Correctness: Does RW Match FPGrowth?</h2>
+    <div class="graph-container">
+        <div id="epsilon_plot"></div>
+        <p><strong>Explanation:</strong> Shows what % of rules RW gives same answer as FPGrowth for each epsilon value. Higher = better.</p>
+    </div>
+
+    <div class="graph-container">
+        <div id="delta_plot"></div>
+        <p><strong>Explanation:</strong> Shows what % of rules RW gives same answer as FPGrowth for each delta value. Higher = better.</p>
+    </div>
+
+    <h2>⏱️ Runtime: RW Speedup vs FPGrowth</h2>
+    <div class="graph-container">
+        <div id="runtime_epsilon_plot"></div>
+        <p><strong>Explanation:</strong> Shows average runtime per algorithm. RW should be faster while maintaining correctness.</p>
+    </div>
+    <div class="graph-container">
+        <div id="runtime_delta_plot"></div>
+    </div>
+
+    <h2>📉 Parameter Impact on Results</h2>
+    <div class="graph-container">
+        <div id="param_impact_plot"></div>
+        <p><strong>Explanation:</strong> Shows how epsilon/delta values affect what % of rules each algorithm finds homogeneous.</p>
+    </div>
+
+    <h2>📈 Aggregated Summary Statistics</h2>
+    
+    <h3>✅ RW Correctness (Agreement with FPGrowth Ground Truth)</h3>
+    <div class="info-box">
+        <table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Experiment</th>
+      <th>Epsilon</th>
+      <th>Delta (%)</th>
+      <th>Agreement Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>0.1</td>
+      <td></td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>0.3</td>
+      <td></td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>0.5</td>
+      <td></td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>0.7</td>
+      <td></td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>0.9</td>
+      <td></td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td></td>
+      <td>1.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td></td>
+      <td>2.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td></td>
+      <td>5.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td></td>
+      <td>10.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    
+    <h3>⚡ Algorithm Performance Metrics</h3>
+    <div class="info-box">
+        <table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Algorithm</th>
+      <th>Experiment</th>
+      <th>Epsilon</th>
+      <th>Delta (%)</th>
+      <th>Homogeneity Rate (%)</th>
+      <th>Avg Subgroups Checked</th>
+      <th>Avg Runtime (s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_epsilon</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.0</td>
+      <td>2.200000</td>
+      <td>186.102617</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_epsilon</td>
+      <td>0.3</td>
+      <td></td>
+      <td>0.0</td>
+      <td>16.800000</td>
+      <td>157.349274</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_epsilon</td>
+      <td>0.5</td>
+      <td></td>
+      <td>20.0</td>
+      <td>8598.400000</td>
+      <td>390.340533</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_epsilon</td>
+      <td>0.7</td>
+      <td></td>
+      <td>60.0</td>
+      <td>29154.600000</td>
+      <td>1012.952478</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_epsilon</td>
+      <td>0.9</td>
+      <td></td>
+      <td>80.0</td>
+      <td>40836.000000</td>
+      <td>1398.034323</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_epsilon</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.0</td>
+      <td>6.066667</td>
+      <td>2.050743</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_epsilon</td>
+      <td>0.3</td>
+      <td></td>
+      <td>0.0</td>
+      <td>23.800000</td>
+      <td>2.203444</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_epsilon</td>
+      <td>0.5</td>
+      <td></td>
+      <td>20.0</td>
+      <td>763.000000</td>
+      <td>18.707623</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_epsilon</td>
+      <td>0.7</td>
+      <td></td>
+      <td>60.0</td>
+      <td>2424.533333</td>
+      <td>67.795647</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_epsilon</td>
+      <td>0.9</td>
+      <td></td>
+      <td>80.0</td>
+      <td>3089.900000</td>
+      <td>79.806574</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>9.300000</td>
+      <td>5503.828946</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>18.600000</td>
+      <td>1241.923996</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>5.0</td>
+      <td>20.0</td>
+      <td>8367.100000</td>
+      <td>437.337864</td>
+    </tr>
+    <tr>
+      <td>FPGrowth</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>10.0</td>
+      <td>80.0</td>
+      <td>8826.900000</td>
+      <td>315.781260</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>16.633333</td>
+      <td>2.173928</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>16.566667</td>
+      <td>2.105007</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>5.0</td>
+      <td>20.0</td>
+      <td>760.800000</td>
+      <td>26.067657</td>
+    </tr>
+    <tr>
+      <td>RW_Direct</td>
+      <td>varying_delta</td>
+      <td></td>
+      <td>10.0</td>
+      <td>80.0</td>
+      <td>1534.500000</td>
+      <td>40.126334</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <h2>📋 Detailed Results by Rule</h2>
+    <div class="info-box">
+        <p><strong>This table shows all individual test results. Use it to trace back which rule/treatment with which parameters produced each result.</strong></p>
+        <div class="table-container">
+        <table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Experiment</th>
+      <th>Algorithm</th>
+      <th>Rule Condition</th>
+      <th>Treatment</th>
+      <th>Epsilon</th>
+      <th>Delta (%)</th>
+      <th>Delta (samples)</th>
+      <th>Homogeneous?</th>
+      <th>Subgroups Checked</th>
+      <th>Runtime (s)</th>
+      <th>Subset Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>218.686118</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.643460</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.596040</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.296839</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>7</td>
+      <td>180.714736</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.535370</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.527868</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.505913</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>3</td>
+      <td>211.624268</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.682120</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.708210</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.612108</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>218.617174</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.215844</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.489603</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.506777</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>176.658092</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.109714</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.350096</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.083706</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>3</td>
+      <td>228.328952</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.271409</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.990963</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.243996</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>1</td>
+      <td>121.796977</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.461465</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.485471</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.385459</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>3</td>
+      <td>199.947742</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.128052</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.085649</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.382601</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>195.513881</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.156815</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.404369</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.146050</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1</td>
+      <td>109.138230</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.125456</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.233148</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.1</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.157722</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>64</td>
+      <td>206.244040</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>65</td>
+      <td>2.743072</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>14</td>
+      <td>1.631636</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>38</td>
+      <td>2.152784</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>1</td>
+      <td>121.744450</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.493063</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.515665</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>False</td>
+      <td>82</td>
+      <td>3.037791</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>2</td>
+      <td>161.246401</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>26</td>
+      <td>2.877838</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>16</td>
+      <td>2.598137</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>61</td>
+      <td>4.141130</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>10</td>
+      <td>130.133415</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.271428</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>32</td>
+      <td>1.966777</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>27</td>
+      <td>1.977153</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>5</td>
+      <td>214.331766</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>15</td>
+      <td>2.852497</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.665736</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>15</td>
+      <td>2.791554</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>18</td>
+      <td>178.016780</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>50</td>
+      <td>2.142650</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.321163</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.339352</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>30</td>
+      <td>201.901910</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>15</td>
+      <td>2.540140</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>14</td>
+      <td>2.630795</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>8</td>
+      <td>2.294312</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>12</td>
+      <td>146.980862</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.653316</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.285497</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.571910</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>17</td>
+      <td>97.158714</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>102</td>
+      <td>3.571801</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.635597</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.674136</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>115.734398</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>17</td>
+      <td>2.174499</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.266536</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.285367</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>36908</td>
+      <td>932.784021</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3443</td>
+      <td>74.235509</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3424</td>
+      <td>82.092950</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3384</td>
+      <td>75.685712</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>43887</td>
+      <td>1305.294252</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3412</td>
+      <td>74.900372</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3312</td>
+      <td>72.974996</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3328</td>
+      <td>76.528132</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>911</td>
+      <td>169.795332</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>296</td>
+      <td>7.664129</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>126</td>
+      <td>3.965067</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>567</td>
+      <td>13.245862</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>83</td>
+      <td>206.238943</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>19</td>
+      <td>2.745132</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>142</td>
+      <td>6.906833</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>82</td>
+      <td>4.736803</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>16</td>
+      <td>195.038555</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>122</td>
+      <td>6.332844</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>58</td>
+      <td>4.224241</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>14</td>
+      <td>2.563506</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>77</td>
+      <td>248.474142</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>108</td>
+      <td>5.285559</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>60</td>
+      <td>3.761912</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>16</td>
+      <td>2.395599</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>3944</td>
+      <td>293.750481</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>32</td>
+      <td>1.936904</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>160</td>
+      <td>4.559410</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>46</td>
+      <td>2.331036</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>30</td>
+      <td>202.249986</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.305526</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.319083</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>59</td>
+      <td>2.488472</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>27</td>
+      <td>128.697404</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>67</td>
+      <td>2.696330</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>170</td>
+      <td>4.861050</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.326933</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>101</td>
+      <td>221.082213</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>215</td>
+      <td>8.354036</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>196</td>
+      <td>7.031582</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>29</td>
+      <td>2.773169</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>36908</td>
+      <td>1510.224632</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3236</td>
+      <td>122.903627</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3354</td>
+      <td>122.880492</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3238</td>
+      <td>114.970064</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>43887</td>
+      <td>1342.918679</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3391</td>
+      <td>120.065978</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3263</td>
+      <td>115.198632</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3569</td>
+      <td>77.306765</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>49297</td>
+      <td>1417.553455</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3615</td>
+      <td>81.693505</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3387</td>
+      <td>76.379844</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3483</td>
+      <td>76.380871</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>59357</td>
+      <td>1893.739478</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3937</td>
+      <td>80.421525</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3842</td>
+      <td>78.573302</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3676</td>
+      <td>75.696711</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>2978</td>
+      <td>302.383866</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>372</td>
+      <td>14.385544</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1164</td>
+      <td>40.156160</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>574</td>
+      <td>20.556861</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>7051</td>
+      <td>496.510929</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>265</td>
+      <td>11.289726</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>228</td>
+      <td>9.763996</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1803</td>
+      <td>64.817937</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>52603</td>
+      <td>1687.585697</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3576</td>
+      <td>76.736849</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3343</td>
+      <td>71.338293</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3235</td>
+      <td>68.591095</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>5534</td>
+      <td>258.912681</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>994</td>
+      <td>22.805038</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>914</td>
+      <td>21.065007</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>2000</td>
+      <td>44.002608</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>33789</td>
+      <td>1001.661671</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3710</td>
+      <td>126.523452</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3423</td>
+      <td>116.085987</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3825</td>
+      <td>134.007254</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>142</td>
+      <td>218.033696</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>111</td>
+      <td>5.963566</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>670</td>
+      <td>24.285191</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.7</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>538</td>
+      <td>19.023520</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>36908</td>
+      <td>951.035744</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3537</td>
+      <td>78.303665</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3399</td>
+      <td>74.106655</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3505</td>
+      <td>76.278760</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>43887</td>
+      <td>1822.143962</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3407</td>
+      <td>115.729433</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3484</td>
+      <td>116.465380</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3314</td>
+      <td>113.404719</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>49297</td>
+      <td>1286.465784</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3649</td>
+      <td>84.277599</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3604</td>
+      <td>81.762676</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3596</td>
+      <td>79.544459</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>59357</td>
+      <td>1684.774928</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3556</td>
+      <td>74.744409</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3911</td>
+      <td>81.703537</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>True</td>
+      <td>3627</td>
+      <td>76.547139</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>13754</td>
+      <td>699.092338</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>192</td>
+      <td>9.539230</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>2832</td>
+      <td>103.139786</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>1001</td>
+      <td>38.157287</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>True</td>
+      <td>72035</td>
+      <td>2483.224017</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>True</td>
+      <td>4444</td>
+      <td>144.044487</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>True</td>
+      <td>4054</td>
+      <td>134.045392</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>True</td>
+      <td>3995</td>
+      <td>133.164312</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>52603</td>
+      <td>1973.849213</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3563</td>
+      <td>75.533041</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3366</td>
+      <td>72.140092</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>True</td>
+      <td>3487</td>
+      <td>74.663572</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>45705</td>
+      <td>1392.712567</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3487</td>
+      <td>81.676127</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3416</td>
+      <td>71.008237</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>True</td>
+      <td>3281</td>
+      <td>66.246340</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>33789</td>
+      <td>1423.310538</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3766</td>
+      <td>125.000191</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3735</td>
+      <td>75.404586</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3403</td>
+      <td>69.508473</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1025</td>
+      <td>263.734138</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>655</td>
+      <td>21.534820</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>311</td>
+      <td>11.733930</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_epsilon</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.9</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>1120</td>
+      <td>34.788882</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>1</td>
+      <td>6520.278519</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.776706</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>59</td>
+      <td>2.579529</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.729928</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>8</td>
+      <td>False</td>
+      <td>6</td>
+      <td>4297.319563</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>8</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.687008</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>8</td>
+      <td>False</td>
+      <td>25</td>
+      <td>1.798896</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>8</td>
+      <td>False</td>
+      <td>49</td>
+      <td>3.897933</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>38</td>
+      <td>5190.159125</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.653694</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>42</td>
+      <td>3.061961</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.500911</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>4</td>
+      <td>6153.785972</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>17</td>
+      <td>2.741666</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.615222</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.366299</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>6</td>
+      <td>5762.149366</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>25</td>
+      <td>2.701388</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>25</td>
+      <td>2.754318</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.331091</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>10</td>
+      <td>5415.462600</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.405469</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>17</td>
+      <td>2.564085</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>91</td>
+      <td>3.168472</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>4</td>
+      <td>6746.485452</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.676476</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.577310</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.573607</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>4</td>
+      <td>6868.474519</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.590598</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.818816</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>6</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.840710</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>1</td>
+      <td>3989.541339</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.708934</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.665845</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.076754</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>19</td>
+      <td>4094.633009</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.376318</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.494288</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.483617</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>59</td>
+      <td>1029.330214</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>41</td>
+      <td>2.351948</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.907449</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>16</td>
+      <td>1.847483</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>16</td>
+      <td>False</td>
+      <td>14</td>
+      <td>1065.825391</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>16</td>
+      <td>False</td>
+      <td>60</td>
+      <td>2.867820</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>16</td>
+      <td>False</td>
+      <td>22</td>
+      <td>1.969785</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>16</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.705747</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>10</td>
+      <td>1617.996795</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>32</td>
+      <td>3.396943</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>28</td>
+      <td>3.255122</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.825581</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1</td>
+      <td>913.477497</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.542175</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.543249</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>28</td>
+      <td>2.130687</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>8</td>
+      <td>1185.846391</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.660119</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>24</td>
+      <td>1.911249</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.488821</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>4</td>
+      <td>1431.865378</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.583778</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>26</td>
+      <td>2.011428</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.593786</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>15</td>
+      <td>False</td>
+      <td>45</td>
+      <td>1340.476803</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>15</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.689171</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>15</td>
+      <td>False</td>
+      <td>25</td>
+      <td>2.847115</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>15</td>
+      <td>False</td>
+      <td>25</td>
+      <td>3.346629</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>26</td>
+      <td>1566.053301</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.647099</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>1</td>
+      <td>2.376315</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>13</td>
+      <td>False</td>
+      <td>9</td>
+      <td>2.632966</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>12</td>
+      <td>1255.346154</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>19</td>
+      <td>1.851780</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>20</td>
+      <td>1.887318</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>19</td>
+      <td>False</td>
+      <td>11</td>
+      <td>1.707646</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>7</td>
+      <td>1013.022033</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>17</td>
+      <td>1.672752</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>9</td>
+      <td>1.529532</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1</td>
+      <td>1.368727</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>36908</td>
+      <td>1063.651888</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3364</td>
+      <td>70.470949</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3387</td>
+      <td>112.362882</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>True</td>
+      <td>3088</td>
+      <td>105.633293</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>43887</td>
+      <td>1703.493359</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3318</td>
+      <td>114.654662</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3647</td>
+      <td>126.430725</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>42</td>
+      <td>True</td>
+      <td>3348</td>
+      <td>114.938937</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>187</td>
+      <td>215.197255</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>566</td>
+      <td>21.697399</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>17</td>
+      <td>2.735727</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>200</td>
+      <td>9.172648</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>290</td>
+      <td>218.731016</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>61</td>
+      <td>4.107703</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>28</td>
+      <td>2.872099</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>5</td>
+      <td>2.144492</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>19</td>
+      <td>175.685237</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>92</td>
+      <td>4.914987</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>25</td>
+      <td>2.996962</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>27</td>
+      <td>False</td>
+      <td>29</td>
+      <td>2.979913</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>112</td>
+      <td>151.326830</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>28</td>
+      <td>2.744742</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>204</td>
+      <td>8.247486</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>55</td>
+      <td>3.483419</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>2095</td>
+      <td>245.094848</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>53</td>
+      <td>3.954216</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>370</td>
+      <td>15.058930</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>37</td>
+      <td>False</td>
+      <td>103</td>
+      <td>5.874650</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>93</td>
+      <td>212.843902</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>170</td>
+      <td>7.438997</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>13</td>
+      <td>2.491792</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>34</td>
+      <td>False</td>
+      <td>74</td>
+      <td>4.584501</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>37</td>
+      <td>164.215500</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>89</td>
+      <td>5.166578</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>22</td>
+      <td>3.030650</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>48</td>
+      <td>False</td>
+      <td>46</td>
+      <td>3.868422</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>43</td>
+      <td>223.138808</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>138</td>
+      <td>5.885528</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>207</td>
+      <td>7.731452</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>26</td>
+      <td>False</td>
+      <td>77</td>
+      <td>4.354967</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>6985</td>
+      <td>230.737688</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1708</td>
+      <td>36.982725</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1716</td>
+      <td>37.250374</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1578</td>
+      <td>34.168465</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>84</td>
+      <td>True</td>
+      <td>8374</td>
+      <td>299.269389</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>84</td>
+      <td>True</td>
+      <td>1677</td>
+      <td>63.378566</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>84</td>
+      <td>True</td>
+      <td>1537</td>
+      <td>57.859508</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>people_liable=1</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>84</td>
+      <td>True</td>
+      <td>1629</td>
+      <td>59.320985</td>
+      <td>845</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>9508</td>
+      <td>374.799244</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1578</td>
+      <td>55.823951</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1530</td>
+      <td>48.282658</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1578</td>
+      <td>34.109835</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>11901</td>
+      <td>448.782871</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>2006</td>
+      <td>68.175595</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>1884</td>
+      <td>62.827326</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>1956</td>
+      <td>64.765903</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>11343</td>
+      <td>344.539509</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>1934</td>
+      <td>41.529326</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>2078</td>
+      <td>44.587822</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>personal_status=single</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>54</td>
+      <td>True</td>
+      <td>1874</td>
+      <td>40.359994</td>
+      <td>548</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>9371</td>
+      <td>372.915587</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>330</td>
+      <td>12.619419</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>190</td>
+      <td>7.852025</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>379</td>
+      <td>14.147076</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>75</td>
+      <td>True</td>
+      <td>9955</td>
+      <td>327.497589</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>75</td>
+      <td>True</td>
+      <td>1775</td>
+      <td>38.914389</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>75</td>
+      <td>True</td>
+      <td>1714</td>
+      <td>37.324508</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>amount=0</td>
+      <td>status=no checking account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>75</td>
+      <td>True</td>
+      <td>1758</td>
+      <td>49.003770</td>
+      <td>754</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>8980</td>
+      <td>292.231736</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1825</td>
+      <td>39.560481</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1832</td>
+      <td>39.648809</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>gender=male</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>69</td>
+      <td>True</td>
+      <td>1789</td>
+      <td>38.133231</td>
+      <td>690</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>6410</td>
+      <td>222.765202</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1635</td>
+      <td>35.376942</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1665</td>
+      <td>36.520835</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>foreign_worker=yes</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>96</td>
+      <td>True</td>
+      <td>1731</td>
+      <td>37.749825</td>
+      <td>963</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>FPGrowth</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>5442</td>
+      <td>244.273787</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>1531</td>
+      <td>33.466485</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>456</td>
+      <td>9.787593</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <td>varying_delta</td>
+      <td>RW_Direct</td>
+      <td>credit_history=existing credits paid back duly till now</td>
+      <td>savings=unknown/no savings account</td>
+      <td>0.5</td>
+      <td>10.0</td>
+      <td>53</td>
+      <td>False</td>
+      <td>1162</td>
+      <td>24.261599</td>
+      <td>530</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+
+    <script>
+        var epsilon_plot = {"data":[{"fill":"tozeroy","line":{"color":"green","width":4},"marker":{"size":12},"mode":"lines+markers","name":"RW Correctness","x":{"dtype":"f8","bdata":"mpmZmZmZuT8zMzMzMzPTPwAAAAAAAOA\u002fZmZmZmZm5j\u002fNzMzMzMzsPw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAWUAAAAAAAABZQAAAAAAAAFlAAAAAAAAAWUAAAAAAAABZQA=="},"type":"scatter"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"yaxis":{"title":{"text":"Agreement with FPGrowth (%)"},"range":[0,105]},"font":{"size":14},"title":{"text":"RW Correctness vs Epsilon (FPGrowth = Ground Truth)\u003cbr\u003e\u003csub\u003eFixed Delta = 10%\u003c\u002fsub\u003e"},"xaxis":{"title":{"text":"Epsilon"}},"height":500}};
+        Plotly.newPlot('epsilon_plot', epsilon_plot.data, epsilon_plot.layout);
+
+        var delta_plot = {"data":[{"fill":"tozeroy","line":{"color":"green","width":4},"marker":{"size":12},"mode":"lines+markers","name":"RW Correctness","x":{"dtype":"f8","bdata":"AAAAAAAA8D8AAAAAAAAAQAAAAAAAABRAAAAAAAAAJEA="},"y":{"dtype":"f8","bdata":"AAAAAAAAWUAAAAAAAABZQAAAAAAAAFlAAAAAAAAAWUA="},"type":"scatter"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"yaxis":{"title":{"text":"Agreement with FPGrowth (%)"},"range":[0,105]},"xaxis":{"title":{"text":"Delta (% of Dataset)"},"tickformat":".0f","ticksuffix":"%"},"font":{"size":14},"title":{"text":"RW Correctness vs Delta (FPGrowth = Ground Truth)\u003cbr\u003e\u003csub\u003eFixed Epsilon = 350k\u003c\u002fsub\u003e"},"height":500}};
+        Plotly.newPlot('delta_plot', delta_plot.data, delta_plot.layout);
+
+        var runtime_epsilon = {"data":[{"name":"FPGrowth","text":{"dtype":"f8","bdata":"MzMzMzNDZ0AzMzMzM6tjQD0K16NwZXhAmpmZmZmnj0CF61G4HtiVQA=="},"textposition":"outside","x":{"dtype":"f8","bdata":"mpmZmZmZuT8zMzMzMzPTPwAAAAAAAOA\u002fZmZmZmZm5j\u002fNzMzMzMzsPw=="},"y":{"dtype":"f8","bdata":"MzNLo0hDZ0AAAP4\u002fLatjQACA0tJyZXhAM\u002fPzrJ6nj0CaGZAlI9iVQA=="},"type":"bar"},{"name":"RW_Direct","text":{"dtype":"f8","bdata":"ZmZmZmZmAECamZmZmZkBQPYoXI\u002fCtTJAMzMzMzPzUECkcD0K1\u002fNTQA=="},"textposition":"outside","x":{"dtype":"f8","bdata":"mpmZmZmZuT8zMzMzMzPTPwAAAAAAAOA\u002fZmZmZmZm5j\u002fNzMzMzMzsPw=="},"y":{"dtype":"f8","bdata":"Zmbm9OtnAEBmZuZrp6ABQLy7g8cmtTJAiYgM4OvyUEDe3c\u002fnnvNTQA=="},"type":"bar"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":14},"title":{"text":"Runtime: FPGrowth vs RW - Varying Epsilon\u003cbr\u003e\u003csub\u003eShows RW speedup\u003c\u002fsub\u003e"},"xaxis":{"title":{"text":"Epsilon"}},"yaxis":{"title":{"text":"Average Runtime (seconds)"}},"height":500,"barmode":"group"}};
+        Plotly.newPlot('runtime_epsilon_plot', runtime_epsilon.data, runtime_epsilon.layout);
+
+        var runtime_delta = {"data":[{"name":"FPGrowth","text":{"dtype":"f8","bdata":"rkfhetR\u002ftUBI4XoUrmeTQD0K16NwVXtAFK5H4Xq8c0A="},"textposition":"outside","x":{"dtype":"f8","bdata":"AAAAAAAA8D8AAAAAAAAAQAAAAAAAABRAAAAAAAAAJEA="},"y":{"dtype":"f8","bdata":"M3vVNdR\u002ftUCa2fYrsmeTQGbmbuRnVXtAZua9CoC8c0A="},"type":"bar"},{"name":"RW_Direct","text":{"dtype":"f8","bdata":"XI\u002fC9ShcAUDhehSuR+EAQFK4HoXrETpAcT0K16MQREA="},"textposition":"outside","x":{"dtype":"f8","bdata":"AAAAAAAA8D8AAAAAAAAAQAAAAAAAABRAAAAAAAAAJEA="},"y":{"dtype":"f8","bdata":"7+5ugDRkAUAREZEWDtcAQJqZsfdRETpAzcwYtisQREA="},"type":"bar"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"title":{"text":"Delta (% of Dataset)"},"tickformat":".0f","ticksuffix":"%"},"font":{"size":14},"title":{"text":"Runtime: FPGrowth vs RW - Varying Delta\u003cbr\u003e\u003csub\u003eShows RW speedup\u003c\u002fsub\u003e"},"yaxis":{"title":{"text":"Average Runtime (seconds)"}},"height":500,"barmode":"group"}};
+        Plotly.newPlot('runtime_delta_plot', runtime_delta.data, runtime_delta.layout);
+
+        var param_impact = {"data":[{"mode":"lines+markers","name":"FPGrowth","showlegend":true,"x":{"dtype":"f8","bdata":"mpmZmZmZuT8zMzMzMzPTPwAAAAAAAOA\u002fZmZmZmZm5j\u002fNzMzMzMzsPw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAADRAAAAAAAAATkAAAAAAAABUQA=="},"type":"scatter","xaxis":"x","yaxis":"y"},{"mode":"lines+markers","name":"RW_Direct","showlegend":true,"x":{"dtype":"f8","bdata":"mpmZmZmZuT8zMzMzMzPTPwAAAAAAAOA\u002fZmZmZmZm5j\u002fNzMzMzMzsPw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAADRAAAAAAAAATkAAAAAAAABUQA=="},"type":"scatter","xaxis":"x","yaxis":"y"},{"mode":"lines+markers","name":"FPGrowth","showlegend":false,"x":{"dtype":"f8","bdata":"AAAAAAAA8D8AAAAAAAAAQAAAAAAAABRAAAAAAAAAJEA="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAADRAAAAAAAAAVEA="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"mode":"lines+markers","name":"RW_Direct","showlegend":false,"x":{"dtype":"f8","bdata":"AAAAAAAA8D8AAAAAAAAAQAAAAAAAABRAAAAAAAAAJEA="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAADRAAAAAAAAAVEA="},"type":"scatter","xaxis":"x2","yaxis":"y2"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.425],"title":{"text":"Epsilon"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"% Rules Homogeneous"}},"xaxis2":{"anchor":"y2","domain":[0.575,1.0],"title":{"text":"Delta (%)"},"tickformat":".0f","ticksuffix":"%"},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"title":{"text":"% Rules Homogeneous"}},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Impact of Epsilon","x":0.2125,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Impact of Delta","x":0.7875,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"title":{"text":"Parameter Sensitivity: How Epsilon\u002fDelta Affect Results\u003cbr\u003e\u003csub\u003e% of rules where algorithm found homogeneity\u003c\u002fsub\u003e"},"font":{"size":14},"height":500}};
+        Plotly.newPlot('param_impact_plot', param_impact.data, param_impact.layout);
+    </script>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #7f8c8d;">
+        <p>Generated on 2026-11-24 10:53:00</p>
+    </footer>
+</body>
+</html>

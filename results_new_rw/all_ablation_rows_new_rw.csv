@@ -1,0 +1,811 @@
+algorithm,condition,treatment,delta,delta_pct,epsilon,is_homogeneous,num_subgroups_checked,runtime_seconds,dataset_size,experiment,run_number,param_value,rule_idx,job
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,20000.0,False,21,6.678654965013266,612432,varying_epsilon,1,20000.0,1,acs-ablation-00-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,20000.0,False,1,6.36053204536438,612432,varying_epsilon,2,20000.0,1,acs-ablation-00-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,20000.0,False,7,7.249792218208313,612432,varying_epsilon,3,20000.0,1,acs-ablation-00-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,20000.0,False,31,10.708451855927706,998698,varying_epsilon,1,20000.0,2,acs-ablation-00-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,20000.0,False,73,17.25832699611783,998698,varying_epsilon,2,20000.0,2,acs-ablation-00-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,20000.0,False,50,11.50997219234705,998698,varying_epsilon,3,20000.0,2,acs-ablation-00-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,20000.0,False,11,6.905961491167545,612432,varying_epsilon,1,20000.0,3,acs-ablation-00-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,20000.0,False,12,7.455479990690947,612432,varying_epsilon,2,20000.0,3,acs-ablation-00-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,20000.0,False,5,4.033633593469858,612432,varying_epsilon,3,20000.0,3,acs-ablation-00-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,20000.0,True,229,128.67583879083395,612432,varying_epsilon,1,20000.0,4,acs-ablation-00-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,20000.0,True,237,128.51382851600647,612432,varying_epsilon,2,20000.0,4,acs-ablation-00-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,20000.0,True,244,130.26260505989194,612432,varying_epsilon,3,20000.0,4,acs-ablation-00-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,20000.0,False,9,10.327421464025974,998698,varying_epsilon,1,20000.0,5,acs-ablation-00-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,20000.0,False,1,7.28789247572422,998698,varying_epsilon,2,20000.0,5,acs-ablation-00-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,20000.0,False,2,6.343811012804508,998698,varying_epsilon,3,20000.0,5,acs-ablation-00-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,20000.0,False,9,12.499890275299547,998698,varying_epsilon,1,20000.0,6,acs-ablation-00-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,20000.0,False,1,9.30537023767829,998698,varying_epsilon,2,20000.0,6,acs-ablation-00-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,20000.0,False,1,8.921815544366837,998698,varying_epsilon,3,20000.0,6,acs-ablation-00-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,20000.0,False,15,12.493549693375826,998698,varying_epsilon,1,20000.0,7,acs-ablation-00-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,20000.0,False,18,12.387847986072302,998698,varying_epsilon,2,20000.0,7,acs-ablation-00-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,20000.0,False,1,9.272233586758375,998698,varying_epsilon,3,20000.0,7,acs-ablation-00-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,20000.0,False,2,6.287770729511976,612432,varying_epsilon,1,20000.0,8,acs-ablation-00-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,20000.0,False,1,5.547794438898563,612432,varying_epsilon,2,20000.0,8,acs-ablation-00-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,20000.0,False,7,5.805887073278427,612432,varying_epsilon,3,20000.0,8,acs-ablation-00-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,20000.0,False,5,11.41695051640272,998698,varying_epsilon,1,20000.0,9,acs-ablation-00-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,20000.0,False,6,10.0022663064301,998698,varying_epsilon,2,20000.0,9,acs-ablation-00-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,20000.0,False,8,9.98276248946786,998698,varying_epsilon,3,20000.0,9,acs-ablation-00-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,20000.0,False,1,5.546845383942127,612432,varying_epsilon,1,20000.0,10,acs-ablation-00-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,20000.0,False,5,5.638024408370256,612432,varying_epsilon,2,20000.0,10,acs-ablation-00-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,20000.0,False,4,4.853669177740812,612432,varying_epsilon,3,20000.0,10,acs-ablation-00-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,40000.0,True,183,239.16475186869505,612432,varying_epsilon,1,40000.0,1,acs-ablation-01-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,40000.0,True,177,244.7350778952241,612432,varying_epsilon,2,40000.0,1,acs-ablation-01-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,40000.0,True,181,232.794748198241,612432,varying_epsilon,3,40000.0,1,acs-ablation-01-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,40000.0,True,192,198.6077333204448,998698,varying_epsilon,1,40000.0,2,acs-ablation-01-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,40000.0,True,189,201.76529340818524,998698,varying_epsilon,2,40000.0,2,acs-ablation-01-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,40000.0,True,185,187.14677108079195,998698,varying_epsilon,3,40000.0,2,acs-ablation-01-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,40000.0,True,138,230.1171415001154,612432,varying_epsilon,1,40000.0,3,acs-ablation-01-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,40000.0,True,143,220.7072646617889,612432,varying_epsilon,2,40000.0,3,acs-ablation-01-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,40000.0,True,144,231.88674971833825,612432,varying_epsilon,3,40000.0,3,acs-ablation-01-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,40000.0,True,246,132.87192217633128,612432,varying_epsilon,1,40000.0,4,acs-ablation-01-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,40000.0,True,237,138.29791651293635,612432,varying_epsilon,2,40000.0,4,acs-ablation-01-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,40000.0,True,241,145.75404023006558,612432,varying_epsilon,3,40000.0,4,acs-ablation-01-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,40000.0,False,8,8.847283821552992,998698,varying_epsilon,1,40000.0,5,acs-ablation-01-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,40000.0,False,8,9.034676048904656,998698,varying_epsilon,2,40000.0,5,acs-ablation-01-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,40000.0,False,1,8.261591993272305,998698,varying_epsilon,3,40000.0,5,acs-ablation-01-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,40000.0,False,92,29.963017348200083,998698,varying_epsilon,1,40000.0,6,acs-ablation-01-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,40000.0,False,51,17.96960662677884,998698,varying_epsilon,2,40000.0,6,acs-ablation-01-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,40000.0,False,72,25.20817015692592,998698,varying_epsilon,3,40000.0,6,acs-ablation-01-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,40000.0,True,173,311.7988564930856,998698,varying_epsilon,1,40000.0,7,acs-ablation-01-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,40000.0,True,181,321.5152069553733,998698,varying_epsilon,2,40000.0,7,acs-ablation-01-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,40000.0,True,179,327.3037261143327,998698,varying_epsilon,3,40000.0,7,acs-ablation-01-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,40000.0,True,86,190.21228306367996,612432,varying_epsilon,1,40000.0,8,acs-ablation-01-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,40000.0,True,87,189.0918312333524,612432,varying_epsilon,2,40000.0,8,acs-ablation-01-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,40000.0,True,86,174.53265019506216,612432,varying_epsilon,3,40000.0,8,acs-ablation-01-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,40000.0,True,130,317.9501179009676,998698,varying_epsilon,1,40000.0,9,acs-ablation-01-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,40000.0,True,130,362.3357876352966,998698,varying_epsilon,2,40000.0,9,acs-ablation-01-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,40000.0,True,134,370.9751219600439,998698,varying_epsilon,3,40000.0,9,acs-ablation-01-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,40000.0,True,115,166.38066893070936,612432,varying_epsilon,1,40000.0,10,acs-ablation-01-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,40000.0,True,109,146.35977851599455,612432,varying_epsilon,2,40000.0,10,acs-ablation-01-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,40000.0,True,111,206.712397556752,612432,varying_epsilon,3,40000.0,10,acs-ablation-01-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,178,232.74763019010425,612432,varying_epsilon,1,66000.0,1,acs-ablation-02-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,176,252.2282324843109,612432,varying_epsilon,2,66000.0,1,acs-ablation-02-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,175,226.54849645495412,612432,varying_epsilon,3,66000.0,1,acs-ablation-02-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,186,188.93894036114216,998698,varying_epsilon,1,66000.0,2,acs-ablation-02-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,193,163.74744409695268,998698,varying_epsilon,2,66000.0,2,acs-ablation-02-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,185,213.7983096949756,998698,varying_epsilon,3,66000.0,2,acs-ablation-02-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,143,223.17757049575448,612432,varying_epsilon,1,66000.0,3,acs-ablation-02-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,140,227.9730586372316,612432,varying_epsilon,2,66000.0,3,acs-ablation-02-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,139,231.2890531681478,612432,varying_epsilon,3,66000.0,3,acs-ablation-02-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,233,128.4656913653016,612432,varying_epsilon,1,66000.0,4,acs-ablation-02-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,231,128.9630192629993,612432,varying_epsilon,2,66000.0,4,acs-ablation-02-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,248,128.85542638972402,612432,varying_epsilon,3,66000.0,4,acs-ablation-02-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,257.8814650513232,998698,varying_epsilon,1,66000.0,5,acs-ablation-02-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,283.3622353933752,998698,varying_epsilon,2,66000.0,5,acs-ablation-02-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,327.2113854214549,998698,varying_epsilon,3,66000.0,5,acs-ablation-02-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,124,315.3332070708275,998698,varying_epsilon,1,66000.0,6,acs-ablation-02-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,129,297.67761874198914,998698,varying_epsilon,2,66000.0,6,acs-ablation-02-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,130,342.0759635902941,998698,varying_epsilon,3,66000.0,6,acs-ablation-02-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,173,392.51107692718506,998698,varying_epsilon,1,66000.0,7,acs-ablation-02-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,180,347.98147121444345,998698,varying_epsilon,2,66000.0,7,acs-ablation-02-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,183,412.1684100292623,998698,varying_epsilon,3,66000.0,7,acs-ablation-02-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,86,202.46419904008508,612432,varying_epsilon,1,66000.0,8,acs-ablation-02-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,86,187.36965047568083,612432,varying_epsilon,2,66000.0,8,acs-ablation-02-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,86,193.6616124883294,612432,varying_epsilon,3,66000.0,8,acs-ablation-02-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,131,320.3554856777191,998698,varying_epsilon,1,66000.0,9,acs-ablation-02-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,134,333.92229833453894,998698,varying_epsilon,2,66000.0,9,acs-ablation-02-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,138,337.52236511930823,998698,varying_epsilon,3,66000.0,9,acs-ablation-02-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,111,215.79211752861735,612432,varying_epsilon,1,66000.0,10,acs-ablation-02-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,115,217.93020096048716,612432,varying_epsilon,2,66000.0,10,acs-ablation-02-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,116,212.60055236518383,612432,varying_epsilon,3,66000.0,10,acs-ablation-02-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,90000.0,True,181,216.44265013188124,612432,varying_epsilon,1,90000.0,1,acs-ablation-03-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,90000.0,True,168,211.4448384642601,612432,varying_epsilon,2,90000.0,1,acs-ablation-03-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,90000.0,True,186,232.41876624152064,612432,varying_epsilon,3,90000.0,1,acs-ablation-03-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,90000.0,True,199,185.44385186582804,998698,varying_epsilon,1,90000.0,2,acs-ablation-03-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,90000.0,True,192,164.91069542989135,998698,varying_epsilon,2,90000.0,2,acs-ablation-03-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,90000.0,True,186,201.6699856556952,998698,varying_epsilon,3,90000.0,2,acs-ablation-03-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,90000.0,True,138,228.4568390995264,612432,varying_epsilon,1,90000.0,3,acs-ablation-03-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,90000.0,True,139,251.97930059954524,612432,varying_epsilon,2,90000.0,3,acs-ablation-03-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,90000.0,True,137,239.19906067103148,612432,varying_epsilon,3,90000.0,3,acs-ablation-03-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,90000.0,True,246,116.74310860037804,612432,varying_epsilon,1,90000.0,4,acs-ablation-03-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,90000.0,True,242,124.4772678092122,612432,varying_epsilon,2,90000.0,4,acs-ablation-03-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,90000.0,True,242,154.6491708047688,612432,varying_epsilon,3,90000.0,4,acs-ablation-03-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,90000.0,True,79,342.9708766974509,998698,varying_epsilon,1,90000.0,5,acs-ablation-03-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,90000.0,True,79,314.46551639959216,998698,varying_epsilon,2,90000.0,5,acs-ablation-03-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,90000.0,True,79,326.7038750499487,998698,varying_epsilon,3,90000.0,5,acs-ablation-03-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,90000.0,True,128,293.602041747421,998698,varying_epsilon,1,90000.0,6,acs-ablation-03-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,90000.0,True,128,293.5625486411154,998698,varying_epsilon,2,90000.0,6,acs-ablation-03-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,90000.0,True,130,312.80805752798915,998698,varying_epsilon,3,90000.0,6,acs-ablation-03-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,90000.0,True,180,330.2283455990255,998698,varying_epsilon,1,90000.0,7,acs-ablation-03-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,90000.0,True,176,388.30141242593527,998698,varying_epsilon,2,90000.0,7,acs-ablation-03-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,90000.0,True,176,377.1243522018194,998698,varying_epsilon,3,90000.0,7,acs-ablation-03-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,90000.0,True,86,218.7410227432847,612432,varying_epsilon,1,90000.0,8,acs-ablation-03-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,90000.0,True,86,240.56485415622592,612432,varying_epsilon,2,90000.0,8,acs-ablation-03-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,90000.0,True,86,234.1482196263969,612432,varying_epsilon,3,90000.0,8,acs-ablation-03-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,90000.0,True,130,312.46756552532315,998698,varying_epsilon,1,90000.0,9,acs-ablation-03-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,90000.0,True,134,284.74037634953856,998698,varying_epsilon,2,90000.0,9,acs-ablation-03-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,90000.0,True,131,346.1872909888625,998698,varying_epsilon,3,90000.0,9,acs-ablation-03-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,90000.0,True,115,211.62929124757648,612432,varying_epsilon,1,90000.0,10,acs-ablation-03-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,90000.0,True,114,213.7507115751505,612432,varying_epsilon,2,90000.0,10,acs-ablation-03-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,90000.0,True,116,193.8732159845531,612432,varying_epsilon,3,90000.0,10,acs-ablation-03-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,120000.0,True,184,279.328327242285,612432,varying_epsilon,1,120000.0,1,acs-ablation-04-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,120000.0,True,171,260.49967888742685,612432,varying_epsilon,2,120000.0,1,acs-ablation-04-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,120000.0,True,173,263.5862525813281,612432,varying_epsilon,3,120000.0,1,acs-ablation-04-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,120000.0,True,189,186.1126205176115,998698,varying_epsilon,1,120000.0,2,acs-ablation-04-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,120000.0,True,187,188.57851151376963,998698,varying_epsilon,2,120000.0,2,acs-ablation-04-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,120000.0,True,182,202.91904630884528,998698,varying_epsilon,3,120000.0,2,acs-ablation-04-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,120000.0,True,142,239.25392682105303,612432,varying_epsilon,1,120000.0,3,acs-ablation-04-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,120000.0,True,139,248.12473922595385,612432,varying_epsilon,2,120000.0,3,acs-ablation-04-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,120000.0,True,144,250.0637189112604,612432,varying_epsilon,3,120000.0,3,acs-ablation-04-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,120000.0,True,243,146.320173189044,612432,varying_epsilon,1,120000.0,4,acs-ablation-04-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,120000.0,True,242,160.5640081614256,612432,varying_epsilon,2,120000.0,4,acs-ablation-04-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,120000.0,True,233,152.18765564635396,612432,varying_epsilon,3,120000.0,4,acs-ablation-04-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,120000.0,True,79,285.7008095011115,998698,varying_epsilon,1,120000.0,5,acs-ablation-04-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,120000.0,True,79,303.42468083277345,998698,varying_epsilon,2,120000.0,5,acs-ablation-04-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,120000.0,True,79,239.5850216634572,998698,varying_epsilon,3,120000.0,5,acs-ablation-04-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,120000.0,True,126,320.80682577192783,998698,varying_epsilon,1,120000.0,6,acs-ablation-04-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,120000.0,True,128,319.8954619280994,998698,varying_epsilon,2,120000.0,6,acs-ablation-04-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,120000.0,True,126,329.5216142758727,998698,varying_epsilon,3,120000.0,6,acs-ablation-04-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,120000.0,True,179,390.4255670309067,998698,varying_epsilon,1,120000.0,7,acs-ablation-04-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,120000.0,True,183,394.3991081006825,998698,varying_epsilon,2,120000.0,7,acs-ablation-04-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,120000.0,True,181,375.6837582960725,998698,varying_epsilon,3,120000.0,7,acs-ablation-04-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,120000.0,True,87,202.42743776366115,612432,varying_epsilon,1,120000.0,8,acs-ablation-04-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,120000.0,True,86,207.40641301497817,612432,varying_epsilon,2,120000.0,8,acs-ablation-04-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,120000.0,True,87,237.39830432459712,612432,varying_epsilon,3,120000.0,8,acs-ablation-04-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,120000.0,True,128,376.31674682348967,998698,varying_epsilon,1,120000.0,9,acs-ablation-04-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,120000.0,True,131,396.69661739841104,998698,varying_epsilon,2,120000.0,9,acs-ablation-04-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,120000.0,True,134,304.37701595947146,998698,varying_epsilon,3,120000.0,9,acs-ablation-04-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,120000.0,True,113,205.4939868338406,612432,varying_epsilon,1,120000.0,10,acs-ablation-04-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,120000.0,True,115,216.6035381890833,612432,varying_epsilon,2,120000.0,10,acs-ablation-04-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,120000.0,True,117,240.03904597088692,612432,varying_epsilon,3,120000.0,10,acs-ablation-04-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,6124,1.0,66000.0,True,495,185.6958942860365,612432,varying_delta,1,0.01,1,acs-ablation-10-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,6124,1.0,66000.0,True,475,182.68253587186337,612432,varying_delta,2,0.01,1,acs-ablation-10-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,6124,1.0,66000.0,True,479,183.060094896704,612432,varying_delta,3,0.01,1,acs-ablation-10-r00
+RW_Direct,With a disability=2,Educational attainment=21,9986,1.0,66000.0,True,432,261.2063311301172,998698,varying_delta,1,0.01,2,acs-ablation-10-r01
+RW_Direct,With a disability=2,Educational attainment=21,9986,1.0,66000.0,True,451,257.8639442175627,998698,varying_delta,2,0.01,2,acs-ablation-10-r01
+RW_Direct,With a disability=2,Educational attainment=21,9986,1.0,66000.0,True,437,261.22802794352174,998698,varying_delta,3,0.01,2,acs-ablation-10-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,6124,1.0,66000.0,True,482,198.07155568897724,612432,varying_delta,1,0.01,3,acs-ablation-10-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,6124,1.0,66000.0,True,514,204.23691682890055,612432,varying_delta,2,0.01,3,acs-ablation-10-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,6124,1.0,66000.0,True,512,201.0703231729567,612432,varying_delta,3,0.01,3,acs-ablation-10-r02
+RW_Direct,Sex=2,Educational attainment=21,6124,1.0,66000.0,True,415,184.279150262475,612432,varying_delta,1,0.01,4,acs-ablation-10-r03
+RW_Direct,Sex=2,Educational attainment=21,6124,1.0,66000.0,True,455,187.6346661671996,612432,varying_delta,2,0.01,4,acs-ablation-10-r03
+RW_Direct,Sex=2,Educational attainment=21,6124,1.0,66000.0,True,451,187.34871835634112,612432,varying_delta,3,0.01,4,acs-ablation-10-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",9986,1.0,66000.0,False,1,9.868308424949646,998698,varying_delta,1,0.01,5,acs-ablation-10-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",9986,1.0,66000.0,False,27,11.700108021497726,998698,varying_delta,2,0.01,5,acs-ablation-10-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",9986,1.0,66000.0,False,23,12.301503710448742,998698,varying_delta,3,0.01,5,acs-ablation-10-r04
+RW_Direct,With a disability=2,Public health coverage=2,9986,1.0,66000.0,False,20,13.55405654385686,998698,varying_delta,1,0.01,6,acs-ablation-10-r05
+RW_Direct,With a disability=2,Public health coverage=2,9986,1.0,66000.0,False,18,12.919538129121063,998698,varying_delta,2,0.01,6,acs-ablation-10-r05
+RW_Direct,With a disability=2,Public health coverage=2,9986,1.0,66000.0,False,55,17.861332777887583,998698,varying_delta,3,0.01,6,acs-ablation-10-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,9986,1.0,66000.0,True,477,290.9022418670356,998698,varying_delta,1,0.01,7,acs-ablation-10-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,9986,1.0,66000.0,True,509,287.308303065598,998698,varying_delta,2,0.01,7,acs-ablation-10-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,9986,1.0,66000.0,True,503,287.93942249938846,998698,varying_delta,3,0.01,7,acs-ablation-10-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",6124,1.0,66000.0,True,325,220.95168861746788,612432,varying_delta,1,0.01,8,acs-ablation-10-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",6124,1.0,66000.0,True,342,186.55106500908727,612432,varying_delta,2,0.01,8,acs-ablation-10-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",6124,1.0,66000.0,True,317,171.13340452313423,612432,varying_delta,3,0.01,8,acs-ablation-10-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,9986,1.0,66000.0,False,21,10.97772291302681,998698,varying_delta,1,0.01,9,acs-ablation-10-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,9986,1.0,66000.0,False,66,13.471180945634842,998698,varying_delta,2,0.01,9,acs-ablation-10-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,9986,1.0,66000.0,False,160,19.50758416205645,998698,varying_delta,3,0.01,9,acs-ablation-10-r08
+RW_Direct,Sex=2,Public health coverage=2,6124,1.0,66000.0,False,62,10.251672446727753,612432,varying_delta,1,0.01,10,acs-ablation-10-r09
+RW_Direct,Sex=2,Public health coverage=2,6124,1.0,66000.0,False,73,11.245728924870493,612432,varying_delta,2,0.01,10,acs-ablation-10-r09
+RW_Direct,Sex=2,Public health coverage=2,6124,1.0,66000.0,False,6,6.717619217932224,612432,varying_delta,3,0.01,10,acs-ablation-10-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,12248,2.0,66000.0,True,263,154.50737720355392,612432,varying_delta,1,0.02,1,acs-ablation-11-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,12248,2.0,66000.0,True,270,175.75538039952517,612432,varying_delta,2,0.02,1,acs-ablation-11-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,12248,2.0,66000.0,True,289,199.3097887299955,612432,varying_delta,3,0.02,1,acs-ablation-11-r00
+RW_Direct,With a disability=2,Educational attainment=21,19973,2.0,66000.0,True,303,255.0803735628724,998698,varying_delta,1,0.02,2,acs-ablation-11-r01
+RW_Direct,With a disability=2,Educational attainment=21,19973,2.0,66000.0,True,294,238.31470388546583,998698,varying_delta,2,0.02,2,acs-ablation-11-r01
+RW_Direct,With a disability=2,Educational attainment=21,19973,2.0,66000.0,True,293,227.93256102502343,998698,varying_delta,3,0.02,2,acs-ablation-11-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,12248,2.0,66000.0,True,282,207.91243355348703,612432,varying_delta,1,0.02,3,acs-ablation-11-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,12248,2.0,66000.0,True,281,209.43617420643568,612432,varying_delta,2,0.02,3,acs-ablation-11-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,12248,2.0,66000.0,True,288,216.98088469728827,612432,varying_delta,3,0.02,3,acs-ablation-11-r02
+RW_Direct,Sex=2,Educational attainment=21,12248,2.0,66000.0,True,323,160.17986636981368,612432,varying_delta,1,0.02,4,acs-ablation-11-r03
+RW_Direct,Sex=2,Educational attainment=21,12248,2.0,66000.0,True,324,151.75593608245254,612432,varying_delta,2,0.02,4,acs-ablation-11-r03
+RW_Direct,Sex=2,Educational attainment=21,12248,2.0,66000.0,True,307,146.34816333651543,612432,varying_delta,3,0.02,4,acs-ablation-11-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",19973,2.0,66000.0,False,13,10.204923335462809,998698,varying_delta,1,0.02,5,acs-ablation-11-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",19973,2.0,66000.0,False,34,15.40609947964549,998698,varying_delta,2,0.02,5,acs-ablation-11-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",19973,2.0,66000.0,False,94,25.86230118945241,998698,varying_delta,3,0.02,5,acs-ablation-11-r04
+RW_Direct,With a disability=2,Public health coverage=2,19973,2.0,66000.0,False,64,17.25996844470501,998698,varying_delta,1,0.02,6,acs-ablation-11-r05
+RW_Direct,With a disability=2,Public health coverage=2,19973,2.0,66000.0,False,33,13.451821830123665,998698,varying_delta,2,0.02,6,acs-ablation-11-r05
+RW_Direct,With a disability=2,Public health coverage=2,19973,2.0,66000.0,False,51,16.318230777978897,998698,varying_delta,3,0.02,6,acs-ablation-11-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,19973,2.0,66000.0,True,280,304.500489462167,998698,varying_delta,1,0.02,7,acs-ablation-11-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,19973,2.0,66000.0,True,291,306.49147341027856,998698,varying_delta,2,0.02,7,acs-ablation-11-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,19973,2.0,66000.0,True,269,258.2975803948939,998698,varying_delta,3,0.02,7,acs-ablation-11-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",12248,2.0,66000.0,True,192,197.2903826572001,612432,varying_delta,1,0.02,8,acs-ablation-11-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",12248,2.0,66000.0,True,188,188.49100912362337,612432,varying_delta,2,0.02,8,acs-ablation-11-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",12248,2.0,66000.0,True,192,191.51340057700872,612432,varying_delta,3,0.02,8,acs-ablation-11-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,19973,2.0,66000.0,True,265,337.46775893494487,998698,varying_delta,1,0.02,9,acs-ablation-11-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,19973,2.0,66000.0,True,259,335.6600834839046,998698,varying_delta,2,0.02,9,acs-ablation-11-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,19973,2.0,66000.0,True,260,296.34818828850985,998698,varying_delta,3,0.02,9,acs-ablation-11-r08
+RW_Direct,Sex=2,Public health coverage=2,12248,2.0,66000.0,True,269,180.0134943909943,612432,varying_delta,1,0.02,10,acs-ablation-11-r09
+RW_Direct,Sex=2,Public health coverage=2,12248,2.0,66000.0,True,255,198.0287475064397,612432,varying_delta,2,0.02,10,acs-ablation-11-r09
+RW_Direct,Sex=2,Public health coverage=2,12248,2.0,66000.0,True,252,173.15521454438567,612432,varying_delta,3,0.02,10,acs-ablation-11-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,172,235.47083432227373,612432,varying_delta,1,0.05,1,acs-ablation-12-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,178,235.3126511722803,612432,varying_delta,2,0.05,1,acs-ablation-12-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,30621,5.0,66000.0,True,183,210.7771264091134,612432,varying_delta,3,0.05,1,acs-ablation-12-r00
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,192,221.66924503818157,998698,varying_delta,1,0.05,2,acs-ablation-12-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,196,230.38610077649355,998698,varying_delta,2,0.05,2,acs-ablation-12-r01
+RW_Direct,With a disability=2,Educational attainment=21,49934,5.0,66000.0,True,191,211.898093059659,998698,varying_delta,3,0.05,2,acs-ablation-12-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,148,284.04985012859106,612432,varying_delta,1,0.05,3,acs-ablation-12-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,143,271.0026365071535,612432,varying_delta,2,0.05,3,acs-ablation-12-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,30621,5.0,66000.0,True,143,235.3523429520428,612432,varying_delta,3,0.05,3,acs-ablation-12-r02
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,240,147.86259692162275,612432,varying_delta,1,0.05,4,acs-ablation-12-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,239,116.37330649793148,612432,varying_delta,2,0.05,4,acs-ablation-12-r03
+RW_Direct,Sex=2,Educational attainment=21,30621,5.0,66000.0,True,226,154.86844167113304,612432,varying_delta,3,0.05,4,acs-ablation-12-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,315.4642805978656,998698,varying_delta,1,0.05,5,acs-ablation-12-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,301.7206276766956,998698,varying_delta,2,0.05,5,acs-ablation-12-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",49934,5.0,66000.0,True,79,244.174103114754,998698,varying_delta,3,0.05,5,acs-ablation-12-r04
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,130,298.2447545155883,998698,varying_delta,1,0.05,6,acs-ablation-12-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,129,276.2866865955293,998698,varying_delta,2,0.05,6,acs-ablation-12-r05
+RW_Direct,With a disability=2,Public health coverage=2,49934,5.0,66000.0,True,130,260.97183940932155,998698,varying_delta,3,0.05,6,acs-ablation-12-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,176,384.3493250273168,998698,varying_delta,1,0.05,7,acs-ablation-12-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,179,318.40404216200113,998698,varying_delta,2,0.05,7,acs-ablation-12-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,49934,5.0,66000.0,True,178,298.7019600085914,998698,varying_delta,3,0.05,7,acs-ablation-12-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,87,226.40018697083,612432,varying_delta,1,0.05,8,acs-ablation-12-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,87,199.92161663994196,612432,varying_delta,2,0.05,8,acs-ablation-12-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",30621,5.0,66000.0,True,87,189.24082212150097,612432,varying_delta,3,0.05,8,acs-ablation-12-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,127,394.709058150649,998698,varying_delta,1,0.05,9,acs-ablation-12-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,132,342.6229113265872,998698,varying_delta,2,0.05,9,acs-ablation-12-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,49934,5.0,66000.0,True,132,303.5650993138552,998698,varying_delta,3,0.05,9,acs-ablation-12-r08
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,111,192.16839453205463,612432,varying_delta,1,0.05,10,acs-ablation-12-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,114,189.53989347070456,612432,varying_delta,2,0.05,10,acs-ablation-12-r09
+RW_Direct,Sex=2,Public health coverage=2,30621,5.0,66000.0,True,112,178.62090596556664,612432,varying_delta,3,0.05,10,acs-ablation-12-r09
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,61243,10.0,66000.0,True,79,208.12313366308808,612432,varying_delta,1,0.1,1,acs-ablation-13-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,61243,10.0,66000.0,True,81,165.5785293020308,612432,varying_delta,2,0.1,1,acs-ablation-13-r00
+RW_Direct,Sex=2,Insurance through a current or former employer or union=1,61243,10.0,66000.0,True,80,161.05578469485044,612432,varying_delta,3,0.1,1,acs-ablation-13-r00
+RW_Direct,With a disability=2,Educational attainment=21,99869,10.0,66000.0,True,92,171.0452874749899,998698,varying_delta,1,0.1,2,acs-ablation-13-r01
+RW_Direct,With a disability=2,Educational attainment=21,99869,10.0,66000.0,True,84,162.02293637394905,998698,varying_delta,2,0.1,2,acs-ablation-13-r01
+RW_Direct,With a disability=2,Educational attainment=21,99869,10.0,66000.0,True,86,166.45989928767085,998698,varying_delta,3,0.1,2,acs-ablation-13-r01
+RW_Direct,Sex=2,Private health insurance coverage=1,61243,10.0,66000.0,True,75,186.1212226524949,612432,varying_delta,1,0.1,3,acs-ablation-13-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,61243,10.0,66000.0,True,75,193.72256055101752,612432,varying_delta,2,0.1,3,acs-ablation-13-r02
+RW_Direct,Sex=2,Private health insurance coverage=1,61243,10.0,66000.0,True,75,184.5866418555379,612432,varying_delta,3,0.1,3,acs-ablation-13-r02
+RW_Direct,Sex=2,Educational attainment=21,61243,10.0,66000.0,True,99,144.0915164910257,612432,varying_delta,1,0.1,4,acs-ablation-13-r03
+RW_Direct,Sex=2,Educational attainment=21,61243,10.0,66000.0,True,98,124.69602371379732,612432,varying_delta,2,0.1,4,acs-ablation-13-r03
+RW_Direct,Sex=2,Educational attainment=21,61243,10.0,66000.0,True,98,121.0668246038258,612432,varying_delta,3,0.1,4,acs-ablation-13-r03
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",99869,10.0,66000.0,True,41,321.7199613265693,998698,varying_delta,1,0.1,5,acs-ablation-13-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",99869,10.0,66000.0,True,41,269.46344830840826,998698,varying_delta,2,0.1,5,acs-ablation-13-r04
+RW_Direct,With a disability=2,"Medicare, for people 65 and older, or people with certain disabilities=2",99869,10.0,66000.0,True,41,253.6849529035389,998698,varying_delta,3,0.1,5,acs-ablation-13-r04
+RW_Direct,With a disability=2,Public health coverage=2,99869,10.0,66000.0,True,60,257.6452776901424,998698,varying_delta,1,0.1,6,acs-ablation-13-r05
+RW_Direct,With a disability=2,Public health coverage=2,99869,10.0,66000.0,True,60,250.74308006837964,998698,varying_delta,2,0.1,6,acs-ablation-13-r05
+RW_Direct,With a disability=2,Public health coverage=2,99869,10.0,66000.0,True,60,230.3914266899228,998698,varying_delta,3,0.1,6,acs-ablation-13-r05
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,99869,10.0,66000.0,True,81,319.33851324766874,998698,varying_delta,1,0.1,7,acs-ablation-13-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,99869,10.0,66000.0,True,80,262.83766727894545,998698,varying_delta,2,0.1,7,acs-ablation-13-r06
+RW_Direct,With a disability=2,Insurance through a current or former employer or union=1,99869,10.0,66000.0,True,81,254.52503189072013,998698,varying_delta,3,0.1,7,acs-ablation-13-r06
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",61243,10.0,66000.0,True,41,166.7330896966159,612432,varying_delta,1,0.1,8,acs-ablation-13-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",61243,10.0,66000.0,True,41,170.41560325026512,612432,varying_delta,2,0.1,8,acs-ablation-13-r07
+RW_Direct,Sex=2,"Medicare, for people 65 and older, or people with certain disabilities=2",61243,10.0,66000.0,True,41,161.05170997977257,612432,varying_delta,3,0.1,8,acs-ablation-13-r07
+RW_Direct,With a disability=2,Private health insurance coverage=1,99869,10.0,66000.0,True,63,288.306442912668,998698,varying_delta,1,0.1,9,acs-ablation-13-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,99869,10.0,66000.0,True,62,264.5797656662762,998698,varying_delta,2,0.1,9,acs-ablation-13-r08
+RW_Direct,With a disability=2,Private health insurance coverage=1,99869,10.0,66000.0,True,64,237.20090733096004,998698,varying_delta,3,0.1,9,acs-ablation-13-r08
+RW_Direct,Sex=2,Public health coverage=2,61243,10.0,66000.0,True,69,175.77933590486646,612432,varying_delta,1,0.1,10,acs-ablation-13-r09
+RW_Direct,Sex=2,Public health coverage=2,61243,10.0,66000.0,True,70,170.0975940041244,612432,varying_delta,2,0.1,10,acs-ablation-13-r09
+RW_Direct,Sex=2,Public health coverage=2,61243,10.0,66000.0,True,70,161.69635981321335,612432,varying_delta,3,0.1,10,acs-ablation-13-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.1,False,9,3.429120104759932,963,varying_epsilon,1,0.1,1,german-ablation-00-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.1,False,9,3.340726412832737,963,varying_epsilon,2,0.1,1,german-ablation-00-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.1,False,9,3.278434354811907,963,varying_epsilon,3,0.1,1,german-ablation-00-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.1,False,9,3.658602982759476,845,varying_epsilon,1,0.1,2,german-ablation-00-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.1,False,1,3.237285178154707,845,varying_epsilon,2,0.1,2,german-ablation-00-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.1,False,9,3.620297092944384,845,varying_epsilon,3,0.1,2,german-ablation-00-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.1,False,9,3.397605739533901,690,varying_epsilon,1,0.1,3,german-ablation-00-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.1,False,9,3.4172164388000965,690,varying_epsilon,2,0.1,3,german-ablation-00-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.1,False,9,3.355605900287628,690,varying_epsilon,3,0.1,3,german-ablation-00-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.1,False,9,3.1885961294174194,548,varying_epsilon,1,0.1,4,german-ablation-00-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.1,False,9,3.143732771277428,548,varying_epsilon,2,0.1,4,german-ablation-00-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.1,False,9,3.1826894618570805,548,varying_epsilon,3,0.1,4,german-ablation-00-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.1,False,1,2.791648659855128,548,varying_epsilon,1,0.1,5,german-ablation-00-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.1,False,9,3.1374782286584377,548,varying_epsilon,2,0.1,5,german-ablation-00-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.1,False,9,3.118199661374092,548,varying_epsilon,3,0.1,5,german-ablation-00-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.1,False,6,3.0263597890734677,530,varying_epsilon,1,0.1,6,german-ablation-00-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.1,False,1,2.7547154761850834,530,varying_epsilon,2,0.1,6,german-ablation-00-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.1,False,9,3.1130441166460514,530,varying_epsilon,3,0.1,6,german-ablation-00-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.1,False,9,3.2929416187107563,754,varying_epsilon,1,0.1,7,german-ablation-00-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.1,False,1,2.901242710649967,754,varying_epsilon,2,0.1,7,german-ablation-00-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.1,False,1,2.8866869136691093,754,varying_epsilon,3,0.1,7,german-ablation-00-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.1,False,1,2.892930716276169,690,varying_epsilon,1,0.1,8,german-ablation-00-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.1,False,16,3.796226296573877,690,varying_epsilon,2,0.1,8,german-ablation-00-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.1,False,1,2.924539804458618,690,varying_epsilon,3,0.1,8,german-ablation-00-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.1,False,1,3.074586797505617,963,varying_epsilon,1,0.1,9,german-ablation-00-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.1,False,1,2.822062373161316,963,varying_epsilon,2,0.1,9,german-ablation-00-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.1,False,9,3.2279373481869698,963,varying_epsilon,3,0.1,9,german-ablation-00-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.1,False,1,2.710439495742321,530,varying_epsilon,1,0.1,10,german-ablation-00-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.1,False,1,2.6526298075914383,530,varying_epsilon,2,0.1,10,german-ablation-00-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.1,False,1,2.583283629268408,530,varying_epsilon,3,0.1,10,german-ablation-00-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.3,False,11,3.4746368937194347,963,varying_epsilon,1,0.3,1,german-ablation-01-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.3,False,16,3.688289940357208,963,varying_epsilon,2,0.3,1,german-ablation-01-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.3,False,58,5.552674222737551,963,varying_epsilon,3,0.3,1,german-ablation-01-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.3,False,9,3.6597198955714703,845,varying_epsilon,1,0.3,2,german-ablation-01-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.3,False,44,4.7104673981666565,845,varying_epsilon,2,0.3,2,german-ablation-01-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.3,False,35,4.292181599885225,845,varying_epsilon,3,0.3,2,german-ablation-01-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.3,False,43,5.239021793007851,690,varying_epsilon,1,0.3,3,german-ablation-01-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.3,False,20,4.342995699495077,690,varying_epsilon,2,0.3,3,german-ablation-01-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.3,False,9,3.356035090982914,690,varying_epsilon,3,0.3,3,german-ablation-01-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.3,False,17,3.726507768034935,548,varying_epsilon,1,0.3,4,german-ablation-01-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.3,False,12,3.5538078285753727,548,varying_epsilon,2,0.3,4,german-ablation-01-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.3,False,16,3.7116806618869305,548,varying_epsilon,3,0.3,4,german-ablation-01-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.3,False,9,3.3648595437407494,548,varying_epsilon,1,0.3,5,german-ablation-01-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.3,False,17,3.715489596128464,548,varying_epsilon,2,0.3,5,german-ablation-01-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.3,False,25,4.015088625252247,548,varying_epsilon,3,0.3,5,german-ablation-01-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.3,False,9,2.2701075859367847,530,varying_epsilon,1,0.3,6,german-ablation-01-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.3,False,6,2.997670106589794,530,varying_epsilon,2,0.3,6,german-ablation-01-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.3,False,18,3.641774628311396,530,varying_epsilon,3,0.3,6,german-ablation-01-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.3,False,60,5.585573695600033,754,varying_epsilon,1,0.3,7,german-ablation-01-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.3,False,1,2.9314369298517704,754,varying_epsilon,2,0.3,7,german-ablation-01-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.3,False,1,2.549698363989592,754,varying_epsilon,3,0.3,7,german-ablation-01-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.3,False,9,3.4182128719985485,690,varying_epsilon,1,0.3,8,german-ablation-01-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.3,False,1,3.1113737300038338,690,varying_epsilon,2,0.3,8,german-ablation-01-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.3,False,1,2.0115310586988926,690,varying_epsilon,3,0.3,8,german-ablation-01-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.3,False,11,3.241955880075693,963,varying_epsilon,1,0.3,9,german-ablation-01-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.3,False,1,2.793599583208561,963,varying_epsilon,2,0.3,9,german-ablation-01-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.3,False,13,3.317603845149278,963,varying_epsilon,3,0.3,9,german-ablation-01-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.3,False,9,2.7288087755441666,530,varying_epsilon,1,0.3,10,german-ablation-01-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.3,False,17,3.04297348856926,530,varying_epsilon,2,0.3,10,german-ablation-01-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.3,False,17,3.01973719894886,530,varying_epsilon,3,0.3,10,german-ablation-01-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,2957,140.64983640611172,963,varying_epsilon,1,0.5,1,german-ablation-02-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,2879,129.15295012667775,963,varying_epsilon,2,0.5,1,german-ablation-02-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,2880,119.80192449316382,963,varying_epsilon,3,0.5,1,german-ablation-02-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3134,137.4941962212324,845,varying_epsilon,1,0.5,2,german-ablation-02-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3290,146.0706341713667,845,varying_epsilon,2,0.5,2,german-ablation-02-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3139,122.36259420216084,845,varying_epsilon,3,0.5,2,german-ablation-02-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,27,4.177892915904522,690,varying_epsilon,1,0.5,3,german-ablation-02-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,221,12.74648903682828,690,varying_epsilon,2,0.5,3,german-ablation-02-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,952,43.80502856895328,690,varying_epsilon,3,0.5,3,german-ablation-02-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,70,5.428803808987141,548,varying_epsilon,1,0.5,4,german-ablation-02-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,5,2.772870544344187,548,varying_epsilon,2,0.5,4,german-ablation-02-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,23,3.5118821002542973,548,varying_epsilon,3,0.5,4,german-ablation-02-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,59,5.977720499038696,548,varying_epsilon,1,0.5,5,german-ablation-02-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,62,6.335770286619663,548,varying_epsilon,2,0.5,5,german-ablation-02-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,58,5.925366383045912,548,varying_epsilon,3,0.5,5,german-ablation-02-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,27,3.5834793746471405,530,varying_epsilon,1,0.5,6,german-ablation-02-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,28,3.640805989503861,530,varying_epsilon,2,0.5,6,german-ablation-02-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,9,2.83081803843379,530,varying_epsilon,3,0.5,6,german-ablation-02-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,124,8.934564474970102,754,varying_epsilon,1,0.5,7,german-ablation-02-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,358,20.55572690814733,754,varying_epsilon,2,0.5,7,german-ablation-02-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,891,45.63280650600791,754,varying_epsilon,3,0.5,7,german-ablation-02-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,13,3.138093590736389,690,varying_epsilon,1,0.5,8,german-ablation-02-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,39,4.19265865907073,690,varying_epsilon,2,0.5,8,german-ablation-02-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,61,4.99665379524231,690,varying_epsilon,3,0.5,8,german-ablation-02-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,217,14.928514398634434,963,varying_epsilon,1,0.5,9,german-ablation-02-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,49,5.733650345355272,963,varying_epsilon,2,0.5,9,german-ablation-02-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,14,4.1105756387114525,963,varying_epsilon,3,0.5,9,german-ablation-02-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,42,4.54541814699769,530,varying_epsilon,1,0.5,10,german-ablation-02-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,9,2.929743990302086,530,varying_epsilon,2,0.5,10,german-ablation-02-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,17,3.2837909050285816,530,varying_epsilon,3,0.5,10,german-ablation-02-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.7,True,2890,132.00598346814513,963,varying_epsilon,1,0.7,1,german-ablation-03-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.7,True,2973,126.35063993930817,963,varying_epsilon,2,0.7,1,german-ablation-03-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.7,True,2778,112.72609540075064,963,varying_epsilon,3,0.7,1,german-ablation-03-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.7,True,3337,152.26167679578066,845,varying_epsilon,1,0.7,2,german-ablation-03-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.7,True,3221,127.70602878555655,845,varying_epsilon,2,0.7,2,german-ablation-03-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.7,True,3322,132.60251514613628,845,varying_epsilon,3,0.7,2,german-ablation-03-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.7,True,3388,159.78689767047763,690,varying_epsilon,1,0.7,3,german-ablation-03-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.7,True,3333,127.1826041266322,690,varying_epsilon,2,0.7,3,german-ablation-03-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.7,True,3240,124.85819312930109,690,varying_epsilon,3,0.7,3,german-ablation-03-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.7,True,3513,157.2594375871122,548,varying_epsilon,1,0.7,4,german-ablation-03-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.7,True,3539,142.71331573277712,548,varying_epsilon,2,0.7,4,german-ablation-03-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.7,True,3615,149.06318958476186,548,varying_epsilon,3,0.7,4,german-ablation-03-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.7,False,401,15.218139123171568,548,varying_epsilon,1,0.7,5,german-ablation-03-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.7,False,506,16.547558400779963,548,varying_epsilon,2,0.7,5,german-ablation-03-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.7,False,451,16.714540880173445,548,varying_epsilon,3,0.7,5,german-ablation-03-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.7,False,384,20.73875915631652,530,varying_epsilon,1,0.7,6,german-ablation-03-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.7,False,786,35.99171354994178,530,varying_epsilon,2,0.7,6,german-ablation-03-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.7,False,9,2.8509795926511288,530,varying_epsilon,3,0.7,6,german-ablation-03-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.7,True,3495,147.13303593546152,754,varying_epsilon,1,0.7,7,german-ablation-03-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.7,True,3519,141.89845870807767,754,varying_epsilon,2,0.7,7,german-ablation-03-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.7,True,3662,143.4653745740652,754,varying_epsilon,3,0.7,7,german-ablation-03-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.7,False,803,38.14594469591975,690,varying_epsilon,1,0.7,8,german-ablation-03-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.7,False,51,4.898491818457842,690,varying_epsilon,2,0.7,8,german-ablation-03-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.7,False,203,11.421777561306952,690,varying_epsilon,3,0.7,8,german-ablation-03-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.7,True,3238,142.30752312391996,963,varying_epsilon,1,0.7,9,german-ablation-03-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.7,True,3189,110.72040112316608,963,varying_epsilon,2,0.7,9,german-ablation-03-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.7,True,3036,123.03684766963124,963,varying_epsilon,3,0.7,9,german-ablation-03-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.7,False,636,30.225994803011417,530,varying_epsilon,1,0.7,10,german-ablation-03-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.7,False,422,20.16641280055046,530,varying_epsilon,2,0.7,10,german-ablation-03-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.7,False,445,20.64953676611185,530,varying_epsilon,3,0.7,10,german-ablation-03-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.9,True,2910,131.00608517229557,963,varying_epsilon,1,0.9,1,german-ablation-04-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.9,True,2754,107.10880828648806,963,varying_epsilon,2,0.9,1,german-ablation-04-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.9,True,2918,106.41087225452064,963,varying_epsilon,3,0.9,1,german-ablation-04-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.9,True,3307,147.3867793865502,845,varying_epsilon,1,0.9,2,german-ablation-04-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.9,True,3374,158.88054021075368,845,varying_epsilon,2,0.9,2,german-ablation-04-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.9,True,3270,137.4168724231422,845,varying_epsilon,3,0.9,2,german-ablation-04-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.9,True,3289,135.57903400436044,690,varying_epsilon,1,0.9,3,german-ablation-04-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.9,True,3224,136.67496433109045,690,varying_epsilon,2,0.9,3,german-ablation-04-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.9,True,3208,124.51543180644512,690,varying_epsilon,3,0.9,3,german-ablation-04-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.9,True,3435,142.63583523407578,548,varying_epsilon,1,0.9,4,german-ablation-04-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.9,True,3442,136.09783394634724,548,varying_epsilon,2,0.9,4,german-ablation-04-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.9,True,3633,137.51714196801186,548,varying_epsilon,3,0.9,4,german-ablation-04-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.9,False,187,8.690403401851654,548,varying_epsilon,1,0.9,5,german-ablation-04-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.9,False,2815,117.86532969772816,548,varying_epsilon,2,0.9,5,german-ablation-04-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.9,False,2375,91.42124175280333,548,varying_epsilon,3,0.9,5,german-ablation-04-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.9,True,3680,129.41973216086626,530,varying_epsilon,1,0.9,6,german-ablation-04-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.9,True,3670,129.47692320868373,530,varying_epsilon,2,0.9,6,german-ablation-04-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.9,True,3598,128.37375489994884,530,varying_epsilon,3,0.9,6,german-ablation-04-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.9,True,3572,144.7457583397627,754,varying_epsilon,1,0.9,7,german-ablation-04-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.9,True,3453,141.53588486090302,754,varying_epsilon,2,0.9,7,german-ablation-04-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.9,True,3592,146.2935535237193,754,varying_epsilon,3,0.9,7,german-ablation-04-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.9,True,3391,131.79722678288817,690,varying_epsilon,1,0.9,8,german-ablation-04-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.9,True,3040,120.40563545748591,690,varying_epsilon,2,0.9,8,german-ablation-04-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.9,True,3262,132.09368436411023,690,varying_epsilon,3,0.9,8,german-ablation-04-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.9,True,3111,131.3863268867135,963,varying_epsilon,1,0.9,9,german-ablation-04-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.9,True,3066,124.03689840808512,963,varying_epsilon,2,0.9,9,german-ablation-04-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.9,True,3234,132.65657487139106,963,varying_epsilon,3,0.9,9,german-ablation-04-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.9,False,330,15.243508514016868,530,varying_epsilon,1,0.9,10,german-ablation-04-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.9,False,317,15.103769458830357,530,varying_epsilon,2,0.9,10,german-ablation-04-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.9,False,272,12.972111113369465,530,varying_epsilon,3,0.9,10,german-ablation-04-r09
+RW_Direct,foreign_worker=yes,status=no checking account,9,1.0,0.5,False,17,3.623403213918209,963,varying_delta,1,0.01,1,german-ablation-10-r00
+RW_Direct,foreign_worker=yes,status=no checking account,9,1.0,0.5,False,9,3.45075910538435,963,varying_delta,2,0.01,1,german-ablation-10-r00
+RW_Direct,foreign_worker=yes,status=no checking account,9,1.0,0.5,False,17,3.7120794765651226,963,varying_delta,3,0.01,1,german-ablation-10-r00
+RW_Direct,people_liable=1,status=no checking account,8,1.0,0.5,False,9,3.256722275167704,845,varying_delta,1,0.01,2,german-ablation-10-r01
+RW_Direct,people_liable=1,status=no checking account,8,1.0,0.5,False,1,3.05482217669487,845,varying_delta,2,0.01,2,german-ablation-10-r01
+RW_Direct,people_liable=1,status=no checking account,8,1.0,0.5,False,17,3.584311589598656,845,varying_delta,3,0.01,2,german-ablation-10-r01
+RW_Direct,gender=male,status=no checking account,6,1.0,0.5,False,9,2.9858468249440198,690,varying_delta,1,0.01,3,german-ablation-10-r02
+RW_Direct,gender=male,status=no checking account,6,1.0,0.5,False,25,3.389670103788376,690,varying_delta,2,0.01,3,german-ablation-10-r02
+RW_Direct,gender=male,status=no checking account,6,1.0,0.5,False,9,3.0877457559108734,690,varying_delta,3,0.01,3,german-ablation-10-r02
+RW_Direct,personal_status=single,status=no checking account,5,1.0,0.5,False,9,3.1926368474960327,548,varying_delta,1,0.01,4,german-ablation-10-r03
+RW_Direct,personal_status=single,status=no checking account,5,1.0,0.5,False,9,3.0706619918346405,548,varying_delta,2,0.01,4,german-ablation-10-r03
+RW_Direct,personal_status=single,status=no checking account,5,1.0,0.5,False,58,3.693114869296551,548,varying_delta,3,0.01,4,german-ablation-10-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,5,1.0,0.5,False,9,3.147966008633375,548,varying_delta,1,0.01,5,german-ablation-10-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,5,1.0,0.5,False,1,2.472185578197241,548,varying_delta,2,0.01,5,german-ablation-10-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,5,1.0,0.5,False,9,1.7568825483322144,548,varying_delta,3,0.01,5,german-ablation-10-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,5,1.0,0.5,False,1,2.7375403493642807,530,varying_delta,1,0.01,6,german-ablation-10-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,5,1.0,0.5,False,9,2.8955370374023914,530,varying_delta,2,0.01,6,german-ablation-10-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,5,1.0,0.5,False,1,2.699000742286444,530,varying_delta,3,0.01,6,german-ablation-10-r05
+RW_Direct,amount=0,status=no checking account,7,1.0,0.5,False,17,2.080028321594,754,varying_delta,1,0.01,7,german-ablation-10-r06
+RW_Direct,amount=0,status=no checking account,7,1.0,0.5,False,1,1.8101831935346129,754,varying_delta,2,0.01,7,german-ablation-10-r06
+RW_Direct,amount=0,status=no checking account,7,1.0,0.5,False,1,2.258567526936531,754,varying_delta,3,0.01,7,german-ablation-10-r06
+RW_Direct,gender=male,savings=unknown/no savings account,6,1.0,0.5,False,47,3.919782847166061,690,varying_delta,1,0.01,8,german-ablation-10-r07
+RW_Direct,gender=male,savings=unknown/no savings account,6,1.0,0.5,False,1,2.998089987784624,690,varying_delta,2,0.01,8,german-ablation-10-r07
+RW_Direct,gender=male,savings=unknown/no savings account,6,1.0,0.5,False,9,3.267955932766199,690,varying_delta,3,0.01,8,german-ablation-10-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,9,1.0,0.5,False,17,3.599195785820484,963,varying_delta,1,0.01,9,german-ablation-10-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,9,1.0,0.5,False,13,3.478663742542267,963,varying_delta,2,0.01,9,german-ablation-10-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,9,1.0,0.5,False,17,3.63388616964221,963,varying_delta,3,0.01,9,german-ablation-10-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,5,1.0,0.5,False,9,2.9686109721660614,530,varying_delta,1,0.01,10,german-ablation-10-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,5,1.0,0.5,False,1,2.7954820320010185,530,varying_delta,2,0.01,10,german-ablation-10-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,5,1.0,0.5,False,9,2.998417850583792,530,varying_delta,3,0.01,10,german-ablation-10-r09
+RW_Direct,foreign_worker=yes,status=no checking account,19,2.0,0.5,False,17,3.6344380751252174,963,varying_delta,1,0.02,1,german-ablation-11-r00
+RW_Direct,foreign_worker=yes,status=no checking account,19,2.0,0.5,False,14,3.507698256522417,963,varying_delta,2,0.02,1,german-ablation-11-r00
+RW_Direct,foreign_worker=yes,status=no checking account,19,2.0,0.5,False,31,4.146338887512684,963,varying_delta,3,0.02,1,german-ablation-11-r00
+RW_Direct,people_liable=1,status=no checking account,16,2.0,0.5,False,17,3.620347149670124,845,varying_delta,1,0.02,2,german-ablation-11-r01
+RW_Direct,people_liable=1,status=no checking account,16,2.0,0.5,False,9,3.290389034897089,845,varying_delta,2,0.02,2,german-ablation-11-r01
+RW_Direct,people_liable=1,status=no checking account,16,2.0,0.5,False,12,3.4666688181459904,845,varying_delta,3,0.02,2,german-ablation-11-r01
+RW_Direct,gender=male,status=no checking account,13,2.0,0.5,False,9,3.274023585021496,690,varying_delta,1,0.02,3,german-ablation-11-r02
+RW_Direct,gender=male,status=no checking account,13,2.0,0.5,False,15,3.451895996928215,690,varying_delta,2,0.02,3,german-ablation-11-r02
+RW_Direct,gender=male,status=no checking account,13,2.0,0.5,False,28,4.052111249417067,690,varying_delta,3,0.02,3,german-ablation-11-r02
+RW_Direct,personal_status=single,status=no checking account,10,2.0,0.5,False,9,3.229327864944935,548,varying_delta,1,0.02,4,german-ablation-11-r03
+RW_Direct,personal_status=single,status=no checking account,10,2.0,0.5,False,8,3.1923783496022224,548,varying_delta,2,0.02,4,german-ablation-11-r03
+RW_Direct,personal_status=single,status=no checking account,10,2.0,0.5,False,9,3.299276564270258,548,varying_delta,3,0.02,4,german-ablation-11-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,10,2.0,0.5,False,1,2.8425307981669903,548,varying_delta,1,0.02,5,german-ablation-11-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,10,2.0,0.5,False,17,3.391369082033634,548,varying_delta,2,0.02,5,german-ablation-11-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,10,2.0,0.5,False,1,2.823034416884184,548,varying_delta,3,0.02,5,german-ablation-11-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,10,2.0,0.5,False,1,2.636618211865425,530,varying_delta,1,0.02,6,german-ablation-11-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,10,2.0,0.5,False,1,3.0661433786153798,530,varying_delta,2,0.02,6,german-ablation-11-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,10,2.0,0.5,False,1,2.9320800565183163,530,varying_delta,3,0.02,6,german-ablation-11-r05
+RW_Direct,amount=0,status=no checking account,15,2.0,0.5,False,39,4.34759633243084,754,varying_delta,1,0.02,7,german-ablation-11-r06
+RW_Direct,amount=0,status=no checking account,15,2.0,0.5,False,17,3.5999372638762,754,varying_delta,2,0.02,7,german-ablation-11-r06
+RW_Direct,amount=0,status=no checking account,15,2.0,0.5,False,15,3.3751920089125638,754,varying_delta,3,0.02,7,german-ablation-11-r06
+RW_Direct,gender=male,savings=unknown/no savings account,13,2.0,0.5,False,1,2.797090444713831,690,varying_delta,1,0.02,8,german-ablation-11-r07
+RW_Direct,gender=male,savings=unknown/no savings account,13,2.0,0.5,False,1,2.8802828639745712,690,varying_delta,2,0.02,8,german-ablation-11-r07
+RW_Direct,gender=male,savings=unknown/no savings account,13,2.0,0.5,False,9,2.36267052218318,690,varying_delta,3,0.02,8,german-ablation-11-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,19,2.0,0.5,False,17,2.695376917719841,963,varying_delta,1,0.02,9,german-ablation-11-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,19,2.0,0.5,False,9,3.2998521737754345,963,varying_delta,2,0.02,9,german-ablation-11-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,19,2.0,0.5,False,9,2.7680476643145084,963,varying_delta,3,0.02,9,german-ablation-11-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,10,2.0,0.5,False,9,3.121516093611717,530,varying_delta,1,0.02,10,german-ablation-11-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,10,2.0,0.5,False,9,2.9777225330471992,530,varying_delta,2,0.02,10,german-ablation-11-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,10,2.0,0.5,False,9,2.8660492785274982,530,varying_delta,3,0.02,10,german-ablation-11-r09
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,2865,110.03564788401128,963,varying_delta,1,0.05,1,german-ablation-12-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,3006,117.501318115741,963,varying_delta,2,0.05,1,german-ablation-12-r00
+RW_Direct,foreign_worker=yes,status=no checking account,48,5.0,0.5,True,2874,99.7242375202477,963,varying_delta,3,0.05,1,german-ablation-12-r00
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3242,107.88583028316498,845,varying_delta,1,0.05,2,german-ablation-12-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3296,126.7360027730465,845,varying_delta,2,0.05,2,german-ablation-12-r01
+RW_Direct,people_liable=1,status=no checking account,42,5.0,0.5,True,3289,131.32011682912707,845,varying_delta,3,0.05,2,german-ablation-12-r01
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,81,5.389806229621172,690,varying_delta,1,0.05,3,german-ablation-12-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,487,21.623932361602783,690,varying_delta,2,0.05,3,german-ablation-12-r02
+RW_Direct,gender=male,status=no checking account,34,5.0,0.5,False,125,7.336525730788708,690,varying_delta,3,0.05,3,german-ablation-12-r02
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,20,3.323523096740246,548,varying_delta,1,0.05,4,german-ablation-12-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,127,7.559545401483774,548,varying_delta,2,0.05,4,german-ablation-12-r03
+RW_Direct,personal_status=single,status=no checking account,27,5.0,0.5,False,1,2.505820866674185,548,varying_delta,3,0.05,4,german-ablation-12-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,61,4.850724522024393,548,varying_delta,1,0.05,5,german-ablation-12-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,27,3.566641665995121,548,varying_delta,2,0.05,5,german-ablation-12-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,27,5.0,0.5,False,128,7.782510440796614,548,varying_delta,3,0.05,5,german-ablation-12-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,73,3.612978048622608,530,varying_delta,1,0.05,6,german-ablation-12-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,138,6.584008235484362,530,varying_delta,2,0.05,6,german-ablation-12-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,26,5.0,0.5,False,120,4.403025720268488,530,varying_delta,3,0.05,6,german-ablation-12-r05
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,313,14.72515232115984,754,varying_delta,1,0.05,7,german-ablation-12-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,295,13.716820508241652,754,varying_delta,2,0.05,7,german-ablation-12-r06
+RW_Direct,amount=0,status=no checking account,37,5.0,0.5,False,259,13.54629684239626,754,varying_delta,3,0.05,7,german-ablation-12-r06
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,91,6.053954668343067,690,varying_delta,1,0.05,8,german-ablation-12-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,39,3.976803746074438,690,varying_delta,2,0.05,8,german-ablation-12-r07
+RW_Direct,gender=male,savings=unknown/no savings account,34,5.0,0.5,False,86,5.961174625903368,690,varying_delta,3,0.05,8,german-ablation-12-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,14,3.1512366309762,963,varying_delta,1,0.05,9,german-ablation-12-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,62,4.80062622949481,963,varying_delta,2,0.05,9,german-ablation-12-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,48,5.0,0.5,False,186,9.821674220263958,963,varying_delta,3,0.05,9,german-ablation-12-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,46,3.1675400398671627,530,varying_delta,1,0.05,10,german-ablation-12-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,17,1.7809312343597412,530,varying_delta,2,0.05,10,german-ablation-12-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,26,5.0,0.5,False,17,2.6331858560442924,530,varying_delta,3,0.05,10,german-ablation-12-r09
+RW_Direct,foreign_worker=yes,status=no checking account,96,10.0,0.5,True,1248,56.4660154171288,963,varying_delta,1,0.1,1,german-ablation-13-r00
+RW_Direct,foreign_worker=yes,status=no checking account,96,10.0,0.5,True,1272,51.93729335814714,963,varying_delta,2,0.1,1,german-ablation-13-r00
+RW_Direct,foreign_worker=yes,status=no checking account,96,10.0,0.5,True,1196,35.831346955150366,963,varying_delta,3,0.1,1,german-ablation-13-r00
+RW_Direct,people_liable=1,status=no checking account,84,10.0,0.5,True,1303,59.9356194883585,845,varying_delta,1,0.1,2,german-ablation-13-r01
+RW_Direct,people_liable=1,status=no checking account,84,10.0,0.5,True,1310,59.93172721937299,845,varying_delta,2,0.1,2,german-ablation-13-r01
+RW_Direct,people_liable=1,status=no checking account,84,10.0,0.5,True,1493,66.70365544036031,845,varying_delta,3,0.1,2,german-ablation-13-r01
+RW_Direct,gender=male,status=no checking account,69,10.0,0.5,True,1518,53.78118102625013,690,varying_delta,1,0.1,3,german-ablation-13-r02
+RW_Direct,gender=male,status=no checking account,69,10.0,0.5,True,1443,62.06033004820347,690,varying_delta,2,0.1,3,german-ablation-13-r02
+RW_Direct,gender=male,status=no checking account,69,10.0,0.5,True,1575,68.48960996419191,690,varying_delta,3,0.1,3,german-ablation-13-r02
+RW_Direct,personal_status=single,status=no checking account,54,10.0,0.5,True,1639,71.49132243171334,548,varying_delta,1,0.1,4,german-ablation-13-r03
+RW_Direct,personal_status=single,status=no checking account,54,10.0,0.5,True,1774,77.82773182541132,548,varying_delta,2,0.1,4,german-ablation-13-r03
+RW_Direct,personal_status=single,status=no checking account,54,10.0,0.5,True,1753,77.24128009006381,548,varying_delta,3,0.1,4,german-ablation-13-r03
+RW_Direct,personal_status=single,savings=unknown/no savings account,54,10.0,0.5,True,1836,78.25172401219606,548,varying_delta,1,0.1,5,german-ablation-13-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,54,10.0,0.5,True,1905,82.69810609146953,548,varying_delta,2,0.1,5,german-ablation-13-r04
+RW_Direct,personal_status=single,savings=unknown/no savings account,54,10.0,0.5,True,1904,82.76308231055737,548,varying_delta,3,0.1,5,german-ablation-13-r04
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,53,10.0,0.5,False,294,13.05675883963704,530,varying_delta,1,0.1,6,german-ablation-13-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,53,10.0,0.5,False,504,20.827823232859373,530,varying_delta,2,0.1,6,german-ablation-13-r05
+RW_Direct,credit_history=existing credits paid back duly till now,status=no checking account,53,10.0,0.5,False,1006,33.52941972762346,530,varying_delta,3,0.1,6,german-ablation-13-r05
+RW_Direct,amount=0,status=no checking account,75,10.0,0.5,True,1591,69.98851849511266,754,varying_delta,1,0.1,7,german-ablation-13-r06
+RW_Direct,amount=0,status=no checking account,75,10.0,0.5,True,1698,64.85975570231676,754,varying_delta,2,0.1,7,german-ablation-13-r06
+RW_Direct,amount=0,status=no checking account,75,10.0,0.5,True,1634,68.65732517838478,754,varying_delta,3,0.1,7,german-ablation-13-r06
+RW_Direct,gender=male,savings=unknown/no savings account,69,10.0,0.5,True,1543,65.94261431694031,690,varying_delta,1,0.1,8,german-ablation-13-r07
+RW_Direct,gender=male,savings=unknown/no savings account,69,10.0,0.5,True,1557,65.9239349514246,690,varying_delta,2,0.1,8,german-ablation-13-r07
+RW_Direct,gender=male,savings=unknown/no savings account,69,10.0,0.5,True,1558,58.81939106434584,690,varying_delta,3,0.1,8,german-ablation-13-r07
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,96,10.0,0.5,True,1474,65.79300589859486,963,varying_delta,1,0.1,9,german-ablation-13-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,96,10.0,0.5,True,1470,64.49091908708215,963,varying_delta,2,0.1,9,german-ablation-13-r08
+RW_Direct,foreign_worker=yes,savings=unknown/no savings account,96,10.0,0.5,True,1393,63.92168807610869,963,varying_delta,3,0.1,9,german-ablation-13-r08
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,53,10.0,0.5,False,561,24.132288809865717,530,varying_delta,1,0.1,10,german-ablation-13-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,53,10.0,0.5,False,799,27.905669543892145,530,varying_delta,2,0.1,10,german-ablation-13-r09
+RW_Direct,credit_history=existing credits paid back duly till now,savings=unknown/no savings account,53,10.0,0.5,False,639,27.209367152303457,530,varying_delta,3,0.1,10,german-ablation-13-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,20000.0,False,20,4.192906886339188,35296,varying_epsilon,1,20000.0,1,so-ablation-00-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,20000.0,False,9,3.768234509974718,35296,varying_epsilon,2,20000.0,1,so-ablation-00-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,20000.0,False,9,3.4969030059874058,35296,varying_epsilon,3,20000.0,1,so-ablation-00-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,20000.0,False,9,2.9957552328705788,35296,varying_epsilon,1,20000.0,2,so-ablation-00-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,20000.0,False,9,3.022769145667553,35296,varying_epsilon,2,20000.0,2,so-ablation-00-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,20000.0,False,14,3.2254897616803646,35296,varying_epsilon,3,20000.0,2,so-ablation-00-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,20000.0,False,9,2.5760223120450974,31715,varying_epsilon,1,20000.0,3,so-ablation-00-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,20000.0,False,5,2.299443107098341,31715,varying_epsilon,2,20000.0,3,so-ablation-00-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,20000.0,False,9,2.5147273913025856,31715,varying_epsilon,3,20000.0,3,so-ablation-00-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,20000.0,False,15,3.054127309471369,31715,varying_epsilon,1,20000.0,4,so-ablation-00-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,20000.0,False,1,2.3314016945660114,31715,varying_epsilon,2,20000.0,4,so-ablation-00-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,20000.0,False,10,2.755231488496065,31715,varying_epsilon,3,20000.0,4,so-ablation-00-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,20000.0,False,1,1.2129626162350178,35296,varying_epsilon,1,20000.0,5,so-ablation-00-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,20000.0,False,26,3.5037893429398537,35296,varying_epsilon,2,20000.0,5,so-ablation-00-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,20000.0,False,1,1.2123957835137844,35296,varying_epsilon,3,20000.0,5,so-ablation-00-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,20000.0,False,9,3.6450232081115246,29496,varying_epsilon,1,20000.0,6,so-ablation-00-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,20000.0,False,9,3.542147785425186,29496,varying_epsilon,2,20000.0,6,so-ablation-00-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,20000.0,False,9,3.1031981892883778,29496,varying_epsilon,3,20000.0,6,so-ablation-00-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,20000.0,False,9,2.6051488518714905,35112,varying_epsilon,1,20000.0,7,so-ablation-00-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,20000.0,False,1,2.174777634441853,35112,varying_epsilon,2,20000.0,7,so-ablation-00-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,20000.0,False,14,2.914395023137331,35112,varying_epsilon,3,20000.0,7,so-ablation-00-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,20000.0,False,34,3.853599488735199,29496,varying_epsilon,1,20000.0,8,so-ablation-00-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,20000.0,False,12,3.0551024191081524,29496,varying_epsilon,2,20000.0,8,so-ablation-00-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,20000.0,False,12,2.7291545271873474,29496,varying_epsilon,3,20000.0,8,so-ablation-00-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,20000.0,False,7,3.6600465700030327,29496,varying_epsilon,1,20000.0,9,so-ablation-00-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,20000.0,False,25,4.349737752228975,29496,varying_epsilon,2,20000.0,9,so-ablation-00-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,20000.0,False,1,3.3205910064280038,29496,varying_epsilon,3,20000.0,9,so-ablation-00-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,20000.0,False,1,3.424883358180523,35112,varying_epsilon,1,20000.0,10,so-ablation-00-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,20000.0,False,9,3.741216968744993,35112,varying_epsilon,2,20000.0,10,so-ablation-00-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,20000.0,False,9,3.7240276113152495,35112,varying_epsilon,3,20000.0,10,so-ablation-00-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,30000.0,False,189,11.405667182058096,35296,varying_epsilon,1,30000.0,1,so-ablation-01-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,30000.0,False,207,7.895261436700821,35296,varying_epsilon,2,30000.0,1,so-ablation-01-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,30000.0,False,20,4.10554688796401,35296,varying_epsilon,3,30000.0,1,so-ablation-01-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,30000.0,False,25,3.762365534901619,35296,varying_epsilon,1,30000.0,2,so-ablation-01-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,30000.0,False,24,3.484478529542685,35296,varying_epsilon,2,30000.0,2,so-ablation-01-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,30000.0,False,31,4.195292335003614,35296,varying_epsilon,3,30000.0,2,so-ablation-01-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,30000.0,False,22,2.8930518440902238,31715,varying_epsilon,1,30000.0,3,so-ablation-01-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,30000.0,False,48,5.059427108615637,31715,varying_epsilon,2,30000.0,3,so-ablation-01-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,30000.0,False,10,2.6292582266032696,31715,varying_epsilon,3,30000.0,3,so-ablation-01-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,30000.0,False,65,5.426040895283222,31715,varying_epsilon,1,30000.0,4,so-ablation-01-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,30000.0,False,48,4.7029132060706615,31715,varying_epsilon,2,30000.0,4,so-ablation-01-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,30000.0,False,132,8.694606114178896,31715,varying_epsilon,3,30000.0,4,so-ablation-01-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,30000.0,True,35,45.57553790137172,35296,varying_epsilon,1,30000.0,5,so-ablation-01-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,30000.0,True,35,50.02361787110567,35296,varying_epsilon,2,30000.0,5,so-ablation-01-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,30000.0,True,35,44.78035281971097,35296,varying_epsilon,3,30000.0,5,so-ablation-01-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,30000.0,False,9,3.639461785554886,29496,varying_epsilon,1,30000.0,6,so-ablation-01-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,30000.0,False,77,6.5131546929478645,29496,varying_epsilon,2,30000.0,6,so-ablation-01-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,30000.0,False,70,6.200561583042145,29496,varying_epsilon,3,30000.0,6,so-ablation-01-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,30000.0,False,28,3.584750797599554,35112,varying_epsilon,1,30000.0,7,so-ablation-01-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,30000.0,False,31,3.622185155749321,35112,varying_epsilon,2,30000.0,7,so-ablation-01-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,30000.0,False,9,2.5102311074733734,35112,varying_epsilon,3,30000.0,7,so-ablation-01-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,30000.0,True,2764,155.16868336871266,29496,varying_epsilon,1,30000.0,8,so-ablation-01-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,30000.0,True,2839,163.6959152892232,29496,varying_epsilon,2,30000.0,8,so-ablation-01-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,30000.0,True,2670,157.33107315003872,29496,varying_epsilon,3,30000.0,8,so-ablation-01-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,30000.0,False,18,3.867142457515001,29496,varying_epsilon,1,30000.0,9,so-ablation-01-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,30000.0,False,21,3.909067112952471,29496,varying_epsilon,2,30000.0,9,so-ablation-01-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,30000.0,False,18,3.778381112962961,29496,varying_epsilon,3,30000.0,9,so-ablation-01-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,30000.0,False,205,12.447683233767748,35112,varying_epsilon,1,30000.0,10,so-ablation-01-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,30000.0,False,296,13.710119608789682,35112,varying_epsilon,2,30000.0,10,so-ablation-01-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,30000.0,False,38,4.871803093701601,35112,varying_epsilon,3,30000.0,10,so-ablation-01-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,40000.0,False,17,3.102455824613571,35296,varying_epsilon,1,40000.0,1,so-ablation-02-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,40000.0,False,132,9.040049497038126,35296,varying_epsilon,2,40000.0,1,so-ablation-02-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,40000.0,False,101,7.706807088106871,35296,varying_epsilon,3,40000.0,1,so-ablation-02-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,40000.0,True,1315,128.21206625178456,35296,varying_epsilon,1,40000.0,2,so-ablation-02-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,40000.0,True,1328,135.50760603696108,35296,varying_epsilon,2,40000.0,2,so-ablation-02-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,40000.0,True,1286,133.26315142214298,35296,varying_epsilon,3,40000.0,2,so-ablation-02-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,40000.0,False,32,3.671643320471048,31715,varying_epsilon,1,40000.0,3,so-ablation-02-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,40000.0,False,90,7.004913970828056,31715,varying_epsilon,2,40000.0,3,so-ablation-02-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,40000.0,False,56,5.029373399913311,31715,varying_epsilon,3,40000.0,3,so-ablation-02-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,40000.0,False,255,15.008683517575264,31715,varying_epsilon,1,40000.0,4,so-ablation-02-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,40000.0,False,146,9.210066191852093,31715,varying_epsilon,2,40000.0,4,so-ablation-02-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,40000.0,False,585,32.66597582772374,31715,varying_epsilon,3,40000.0,4,so-ablation-02-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,40000.0,True,35,45.5713251195848,35296,varying_epsilon,1,40000.0,5,so-ablation-02-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,40000.0,True,35,44.79976774007082,35296,varying_epsilon,2,40000.0,5,so-ablation-02-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,40000.0,True,35,42.86414444819093,35296,varying_epsilon,3,40000.0,5,so-ablation-02-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,40000.0,False,76,7.017860032618046,29496,varying_epsilon,1,40000.0,6,so-ablation-02-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,40000.0,False,25,4.584338970482349,29496,varying_epsilon,2,40000.0,6,so-ablation-02-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,40000.0,False,27,4.658190555870533,29496,varying_epsilon,3,40000.0,6,so-ablation-02-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,40000.0,False,87,7.150796439498663,35112,varying_epsilon,1,40000.0,7,so-ablation-02-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,40000.0,False,29,3.875034663826227,35112,varying_epsilon,2,40000.0,7,so-ablation-02-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,40000.0,False,72,6.174368336796761,35112,varying_epsilon,3,40000.0,7,so-ablation-02-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,40000.0,True,2805,136.2028354667127,29496,varying_epsilon,1,40000.0,8,so-ablation-02-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,40000.0,True,2983,136.93609526008368,29496,varying_epsilon,2,40000.0,8,so-ablation-02-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,40000.0,True,2772,159.77523799985647,29496,varying_epsilon,3,40000.0,8,so-ablation-02-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,40000.0,False,41,4.93985928222537,29496,varying_epsilon,1,40000.0,9,so-ablation-02-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,40000.0,False,53,5.426354967057705,29496,varying_epsilon,2,40000.0,9,so-ablation-02-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,40000.0,False,9,3.575414642691612,29496,varying_epsilon,3,40000.0,9,so-ablation-02-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,40000.0,True,3167,191.76918845251203,35112,varying_epsilon,1,40000.0,10,so-ablation-02-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,40000.0,True,3225,197.14803850278255,35112,varying_epsilon,2,40000.0,10,so-ablation-02-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,40000.0,True,3016,179.45679818466306,35112,varying_epsilon,3,40000.0,10,so-ablation-02-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,50000.0,False,339,15.72644815966487,35296,varying_epsilon,1,50000.0,1,so-ablation-03-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,50000.0,False,274,13.381563734263182,35296,varying_epsilon,2,50000.0,1,so-ablation-03-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,50000.0,False,75,4.213643204420805,35296,varying_epsilon,3,50000.0,1,so-ablation-03-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,50000.0,True,1325,129.12697728723288,35296,varying_epsilon,1,50000.0,2,so-ablation-03-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,50000.0,True,1355,128.63647851720452,35296,varying_epsilon,2,50000.0,2,so-ablation-03-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,50000.0,True,1349,126.97360134124756,35296,varying_epsilon,3,50000.0,2,so-ablation-03-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,50000.0,True,478,79.65998968109488,31715,varying_epsilon,1,50000.0,3,so-ablation-03-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,50000.0,True,494,77.57436288148165,31715,varying_epsilon,2,50000.0,3,so-ablation-03-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,50000.0,True,464,59.03538327291608,31715,varying_epsilon,3,50000.0,3,so-ablation-03-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,50000.0,True,1305,128.19826343655586,31715,varying_epsilon,1,50000.0,4,so-ablation-03-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,50000.0,True,1331,124.85530245676637,31715,varying_epsilon,2,50000.0,4,so-ablation-03-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,50000.0,True,1427,129.844312351197,31715,varying_epsilon,3,50000.0,4,so-ablation-03-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,50000.0,True,35,52.63186237961054,35296,varying_epsilon,1,50000.0,5,so-ablation-03-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,50000.0,True,35,48.21277080476284,35296,varying_epsilon,2,50000.0,5,so-ablation-03-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,50000.0,True,35,46.59192429110408,35296,varying_epsilon,3,50000.0,5,so-ablation-03-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,50000.0,False,67,5.987162031233311,29496,varying_epsilon,1,50000.0,6,so-ablation-03-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,50000.0,False,34,4.653958730399609,29496,varying_epsilon,2,50000.0,6,so-ablation-03-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,50000.0,False,34,4.608529161661863,29496,varying_epsilon,3,50000.0,6,so-ablation-03-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,50000.0,True,695,94.48137243464588,35112,varying_epsilon,1,50000.0,7,so-ablation-03-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,50000.0,True,697,109.48074927553536,35112,varying_epsilon,2,50000.0,7,so-ablation-03-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,50000.0,True,700,108.59472538158298,35112,varying_epsilon,3,50000.0,7,so-ablation-03-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,50000.0,True,2951,163.53936603292823,29496,varying_epsilon,1,50000.0,8,so-ablation-03-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,50000.0,True,2906,163.70721239596605,29496,varying_epsilon,2,50000.0,8,so-ablation-03-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,50000.0,True,2922,165.72177444398403,29496,varying_epsilon,3,50000.0,8,so-ablation-03-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,50000.0,True,3032,176.05474089458585,29496,varying_epsilon,1,50000.0,9,so-ablation-03-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,50000.0,True,2887,171.8893399350345,29496,varying_epsilon,2,50000.0,9,so-ablation-03-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,50000.0,True,2825,169.1458095498383,29496,varying_epsilon,3,50000.0,9,so-ablation-03-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,50000.0,True,3113,193.57002713158727,35112,varying_epsilon,1,50000.0,10,so-ablation-03-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,50000.0,True,3220,168.9395586438477,35112,varying_epsilon,2,50000.0,10,so-ablation-03-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,50000.0,True,3100,192.672550201416,35112,varying_epsilon,3,50000.0,10,so-ablation-03-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,75000.0,True,3266,181.9352153129876,35296,varying_epsilon,1,75000.0,1,so-ablation-04-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,75000.0,True,3460,204.045852791518,35296,varying_epsilon,2,75000.0,1,so-ablation-04-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,75000.0,True,3247,194.7464959844947,35296,varying_epsilon,3,75000.0,1,so-ablation-04-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,75000.0,True,1309,132.71343474462628,35296,varying_epsilon,1,75000.0,2,so-ablation-04-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,75000.0,True,1309,131.26245003193617,35296,varying_epsilon,2,75000.0,2,so-ablation-04-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,75000.0,True,1322,128.1568514481187,35296,varying_epsilon,3,75000.0,2,so-ablation-04-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,75000.0,True,544,80.05128665268421,31715,varying_epsilon,1,75000.0,3,so-ablation-04-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,75000.0,True,491,75.37769370526075,31715,varying_epsilon,2,75000.0,3,so-ablation-04-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,75000.0,True,500,77.53239184617996,31715,varying_epsilon,3,75000.0,3,so-ablation-04-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,75000.0,True,1361,130.45099029317498,31715,varying_epsilon,1,75000.0,4,so-ablation-04-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,75000.0,True,1317,93.89498956501484,31715,varying_epsilon,2,75000.0,4,so-ablation-04-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,75000.0,True,1454,131.79274951294065,31715,varying_epsilon,3,75000.0,4,so-ablation-04-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,75000.0,True,35,47.92297814786434,35296,varying_epsilon,1,75000.0,5,so-ablation-04-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,75000.0,True,35,47.71183316782117,35296,varying_epsilon,2,75000.0,5,so-ablation-04-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,75000.0,True,35,45.38633566722274,35296,varying_epsilon,3,75000.0,5,so-ablation-04-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,75000.0,True,3914,216.09746004268527,29496,varying_epsilon,1,75000.0,6,so-ablation-04-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,75000.0,True,4041,225.1283765807748,29496,varying_epsilon,2,75000.0,6,so-ablation-04-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,75000.0,True,3788,211.4529834762216,29496,varying_epsilon,3,75000.0,6,so-ablation-04-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,75000.0,True,671,107.29806973040104,35112,varying_epsilon,1,75000.0,7,so-ablation-04-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,75000.0,True,708,110.69363332912326,35112,varying_epsilon,2,75000.0,7,so-ablation-04-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,75000.0,True,659,100.1881630755961,35112,varying_epsilon,3,75000.0,7,so-ablation-04-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,75000.0,True,2955,170.4357058890164,29496,varying_epsilon,1,75000.0,8,so-ablation-04-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,75000.0,True,2906,167.96872574836016,29496,varying_epsilon,2,75000.0,8,so-ablation-04-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,75000.0,True,2927,155.03785064443946,29496,varying_epsilon,3,75000.0,8,so-ablation-04-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,75000.0,True,3103,173.25681851059198,29496,varying_epsilon,1,75000.0,9,so-ablation-04-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,75000.0,True,3032,117.78944021090864,29496,varying_epsilon,2,75000.0,9,so-ablation-04-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,75000.0,True,3153,114.9592141918838,29496,varying_epsilon,3,75000.0,9,so-ablation-04-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,75000.0,True,3068,187.3067904040217,35112,varying_epsilon,1,75000.0,10,so-ablation-04-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,75000.0,True,3073,185.5433497205377,35112,varying_epsilon,2,75000.0,10,so-ablation-04-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,75000.0,True,3039,189.33160800486803,35112,varying_epsilon,3,75000.0,10,so-ablation-04-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",352,1.0,150000.0,True,7413,329.66246032714844,35296,varying_delta,1,0.01,1,so-ablation-10-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",352,1.0,150000.0,True,7417,314.89781165868044,35296,varying_delta,2,0.01,1,so-ablation-10-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",352,1.0,150000.0,True,7746,342.1962288804352,35296,varying_delta,3,0.01,1,so-ablation-10-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,352,1.0,150000.0,True,4772,259.7390209250152,35296,varying_delta,1,0.01,2,so-ablation-10-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,352,1.0,150000.0,True,4571,225.3863336518407,35296,varying_delta,2,0.01,2,so-ablation-10-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,352,1.0,150000.0,True,4526,245.0789504647255,35296,varying_delta,3,0.01,2,so-ablation-10-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,317,1.0,150000.0,True,3648,206.52110347524285,31715,varying_delta,1,0.01,3,so-ablation-10-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,317,1.0,150000.0,True,3718,209.4521858356893,31715,varying_delta,2,0.01,3,so-ablation-10-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,317,1.0,150000.0,True,3521,211.64970561489463,31715,varying_delta,3,0.01,3,so-ablation-10-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,317,1.0,150000.0,False,1668,73.55221001431346,31715,varying_delta,1,0.01,4,so-ablation-10-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,317,1.0,150000.0,False,856,38.14245311170816,31715,varying_delta,2,0.01,4,so-ablation-10-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,317,1.0,150000.0,False,1845,80.59765365347266,31715,varying_delta,3,0.01,4,so-ablation-10-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",352,1.0,150000.0,True,1140,100.8778276629746,35296,varying_delta,1,0.01,5,so-ablation-10-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",352,1.0,150000.0,True,1222,117.35184093937278,35296,varying_delta,2,0.01,5,so-ablation-10-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",352,1.0,150000.0,True,1157,101.9361036159098,35296,varying_delta,3,0.01,5,so-ablation-10-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",294,1.0,150000.0,False,2494,105.66798830404878,29496,varying_delta,1,0.01,6,so-ablation-10-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",294,1.0,150000.0,False,4046,168.20121490955353,29496,varying_delta,2,0.01,6,so-ablation-10-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",294,1.0,150000.0,False,910,34.96206947788596,29496,varying_delta,3,0.01,6,so-ablation-10-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",351,1.0,150000.0,False,1313,62.26318612322211,35112,varying_delta,1,0.01,7,so-ablation-10-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",351,1.0,150000.0,False,1087,50.52324367687106,35112,varying_delta,2,0.01,7,so-ablation-10-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",351,1.0,150000.0,False,1216,57.04802167415619,35112,varying_delta,3,0.01,7,so-ablation-10-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,294,1.0,150000.0,True,8644,384.14790442585945,29496,varying_delta,1,0.01,8,so-ablation-10-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,294,1.0,150000.0,True,8588,336.3008979074657,29496,varying_delta,2,0.01,8,so-ablation-10-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,294,1.0,150000.0,True,8745,410.3605838343501,29496,varying_delta,3,0.01,8,so-ablation-10-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,294,1.0,150000.0,False,2527,97.44679695740342,29496,varying_delta,1,0.01,9,so-ablation-10-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,294,1.0,150000.0,False,806,36.35086113587022,29496,varying_delta,2,0.01,9,so-ablation-10-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,294,1.0,150000.0,False,6447,270.58873016759753,29496,varying_delta,3,0.01,9,so-ablation-10-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,351,1.0,150000.0,True,8358,408.1973918899894,35112,varying_delta,1,0.01,10,so-ablation-10-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,351,1.0,150000.0,True,8142,371.498811993748,35112,varying_delta,2,0.01,10,so-ablation-10-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,351,1.0,150000.0,True,8168,401.4115113057196,35112,varying_delta,3,0.01,10,so-ablation-10-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",705,2.0,150000.0,True,5295,269.0766422972083,35296,varying_delta,1,0.02,1,so-ablation-11-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",705,2.0,150000.0,True,5111,257.67338072136045,35296,varying_delta,2,0.02,1,so-ablation-11-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",705,2.0,150000.0,True,5665,299.6843497939408,35296,varying_delta,3,0.02,1,so-ablation-11-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,705,2.0,150000.0,True,3125,186.91171604394916,35296,varying_delta,1,0.02,2,so-ablation-11-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,705,2.0,150000.0,True,3151,189.9934712871909,35296,varying_delta,2,0.02,2,so-ablation-11-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,705,2.0,150000.0,True,3307,190.03763921558857,35296,varying_delta,3,0.02,2,so-ablation-11-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,634,2.0,150000.0,True,1876,131.66288451477885,31715,varying_delta,1,0.02,3,so-ablation-11-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,634,2.0,150000.0,True,2028,139.10352173820138,31715,varying_delta,2,0.02,3,so-ablation-11-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,634,2.0,150000.0,True,2011,133.74824019894004,31715,varying_delta,3,0.02,3,so-ablation-11-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,634,2.0,150000.0,True,2677,169.26158234477043,31715,varying_delta,1,0.02,4,so-ablation-11-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,634,2.0,150000.0,True,2670,174.81837533041835,31715,varying_delta,2,0.02,4,so-ablation-11-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,634,2.0,150000.0,True,2727,170.97316214069724,31715,varying_delta,3,0.02,4,so-ablation-11-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",705,2.0,150000.0,True,443,93.77554845809937,35296,varying_delta,1,0.02,5,so-ablation-11-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",705,2.0,150000.0,True,452,99.43476190790534,35296,varying_delta,2,0.02,5,so-ablation-11-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",705,2.0,150000.0,True,444,94.06865902617574,35296,varying_delta,3,0.02,5,so-ablation-11-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",589,2.0,150000.0,False,1822,78.97294901311398,29496,varying_delta,1,0.02,6,so-ablation-11-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",589,2.0,150000.0,False,6655,300.2744324505329,29496,varying_delta,2,0.02,6,so-ablation-11-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",589,2.0,150000.0,False,2939,115.87240961566567,29496,varying_delta,3,0.02,6,so-ablation-11-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",702,2.0,150000.0,True,2026,158.27119029313326,35112,varying_delta,1,0.02,7,so-ablation-11-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",702,2.0,150000.0,True,2034,160.11349109187722,35112,varying_delta,2,0.02,7,so-ablation-11-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",702,2.0,150000.0,True,2045,154.6109654083848,35112,varying_delta,3,0.02,7,so-ablation-11-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,589,2.0,150000.0,True,5081,225.31656791642308,29496,varying_delta,1,0.02,8,so-ablation-11-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,589,2.0,150000.0,True,5638,249.36616636812687,29496,varying_delta,2,0.02,8,so-ablation-11-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,589,2.0,150000.0,True,5383,278.8700476884842,29496,varying_delta,3,0.02,8,so-ablation-11-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,589,2.0,150000.0,True,5985,287.65654500201344,29496,varying_delta,1,0.02,9,so-ablation-11-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,589,2.0,150000.0,True,6102,290.50859136506915,29496,varying_delta,2,0.02,9,so-ablation-11-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,589,2.0,150000.0,True,6297,317.54929840937257,29496,varying_delta,3,0.02,9,so-ablation-11-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,702,2.0,150000.0,True,5345,269.7370769716799,35112,varying_delta,1,0.02,10,so-ablation-11-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,702,2.0,150000.0,True,5506,275.428398322314,35112,varying_delta,2,0.02,10,so-ablation-11-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,702,2.0,150000.0,True,5800,276.5531471557915,35112,varying_delta,3,0.02,10,so-ablation-11-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,150000.0,True,3138,191.8851970024407,35296,varying_delta,1,0.05,1,so-ablation-12-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,150000.0,True,3461,208.91295249387625,35296,varying_delta,2,0.05,1,so-ablation-12-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",1764,5.0,150000.0,True,3390,210.82153591513637,35296,varying_delta,3,0.05,1,so-ablation-12-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,150000.0,True,1224,102.5728274807334,35296,varying_delta,1,0.05,2,so-ablation-12-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,150000.0,True,1319,104.19390239566565,35296,varying_delta,2,0.05,2,so-ablation-12-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,1764,5.0,150000.0,True,1318,127.23358883708715,35296,varying_delta,3,0.05,2,so-ablation-12-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,150000.0,True,499,73.51326863467693,31715,varying_delta,1,0.05,3,so-ablation-12-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,150000.0,True,505,77.69066105037928,31715,varying_delta,2,0.05,3,so-ablation-12-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,1585,5.0,150000.0,True,513,76.03052154928446,31715,varying_delta,3,0.05,3,so-ablation-12-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,150000.0,True,1488,128.79542007297275,31715,varying_delta,1,0.05,4,so-ablation-12-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,150000.0,True,1388,124.61541232466698,31715,varying_delta,2,0.05,4,so-ablation-12-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,1585,5.0,150000.0,True,1416,118.99766686558723,31715,varying_delta,3,0.05,4,so-ablation-12-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,150000.0,True,35,48.06851345673204,35296,varying_delta,1,0.05,5,so-ablation-12-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,150000.0,True,35,47.21519273519516,35296,varying_delta,2,0.05,5,so-ablation-12-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",1764,5.0,150000.0,True,35,47.94688635319472,35296,varying_delta,3,0.05,5,so-ablation-12-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,150000.0,True,4107,196.0930314436555,29496,varying_delta,1,0.05,6,so-ablation-12-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,150000.0,True,4186,233.42843576148152,29496,varying_delta,2,0.05,6,so-ablation-12-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",1474,5.0,150000.0,True,3955,219.84425745904448,29496,varying_delta,3,0.05,6,so-ablation-12-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,150000.0,True,690,107.86655680835248,35112,varying_delta,1,0.05,7,so-ablation-12-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,150000.0,True,722,108.88347010314465,35112,varying_delta,2,0.05,7,so-ablation-12-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",1755,5.0,150000.0,True,693,102.5040725953877,35112,varying_delta,3,0.05,7,so-ablation-12-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,150000.0,True,2901,172.5850260220468,29496,varying_delta,1,0.05,8,so-ablation-12-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,150000.0,True,2993,178.99709246307611,29496,varying_delta,2,0.05,8,so-ablation-12-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,1474,5.0,150000.0,True,2661,154.84659351035953,29496,varying_delta,3,0.05,8,so-ablation-12-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,150000.0,True,3170,186.8026890680194,29496,varying_delta,1,0.05,9,so-ablation-12-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,150000.0,True,2808,170.6476181000471,29496,varying_delta,2,0.05,9,so-ablation-12-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,1474,5.0,150000.0,True,2929,183.6421846151352,29496,varying_delta,3,0.05,9,so-ablation-12-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,150000.0,True,3284,200.9338426180184,35112,varying_delta,1,0.05,10,so-ablation-12-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,150000.0,True,3153,201.35893810912967,35112,varying_delta,2,0.05,10,so-ablation-12-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,1755,5.0,150000.0,True,3136,207.5298855677247,35112,varying_delta,3,0.05,10,so-ablation-12-r09
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",3529,10.0,150000.0,True,1343,121.03660782054068,35296,varying_delta,1,0.1,1,so-ablation-13-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",3529,10.0,150000.0,True,1391,122.83091185986996,35296,varying_delta,2,0.1,1,so-ablation-13-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,"FormalEducation=Bachelor’s degree (BA, BS, B.Eng., etc.)",3529,10.0,150000.0,True,1331,123.6102898567915,35296,varying_delta,3,0.1,1,so-ablation-13-r00
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,3529,10.0,150000.0,True,351,82.59741405397654,35296,varying_delta,1,0.1,2,so-ablation-13-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,3529,10.0,150000.0,True,337,63.59413501620293,35296,varying_delta,2,0.1,2,so-ablation-13-r01
+RW_Direct,SexualOrientation=Straight or heterosexual,UndergradMajor=Mathematics or statistics,3529,10.0,150000.0,True,358,77.92507783323526,35296,varying_delta,3,0.1,2,so-ablation-13-r01
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,3171,10.0,150000.0,True,52,27.952510446310043,31715,varying_delta,1,0.1,3,so-ablation-13-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,3171,10.0,150000.0,True,52,28.252375919371843,31715,varying_delta,2,0.1,3,so-ablation-13-r02
+RW_Direct,Student=No,DevType=Data scientist or machine learning specialist,3171,10.0,150000.0,True,52,30.12636878713965,31715,varying_delta,3,0.1,3,so-ablation-13-r02
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,3171,10.0,150000.0,True,434,85.26737709343433,31715,varying_delta,1,0.1,4,so-ablation-13-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,3171,10.0,150000.0,True,424,90.28647362813354,31715,varying_delta,2,0.1,4,so-ablation-13-r03
+RW_Direct,Student=No,UndergradMajor=Mathematics or statistics,3171,10.0,150000.0,True,419,80.24011254310608,31715,varying_delta,3,0.1,4,so-ablation-13-r03
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",3529,10.0,150000.0,True,0,0.345291506499052,35296,varying_delta,1,0.1,5,so-ablation-13-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",3529,10.0,150000.0,True,0,0.3448820561170578,35296,varying_delta,2,0.1,5,so-ablation-13-r04
+RW_Direct,SexualOrientation=Straight or heterosexual,"DevType=C-suite executive (CEO, CTO, etc.)",3529,10.0,150000.0,True,0,0.3466396071016788,35296,varying_delta,3,0.1,5,so-ablation-13-r04
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",2949,10.0,150000.0,True,2139,162.51481380313635,29496,varying_delta,1,0.1,6,so-ablation-13-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",2949,10.0,150000.0,True,2253,163.49362153932452,29496,varying_delta,2,0.1,6,so-ablation-13-r05
+RW_Direct,RaceEthnicity=White or of European descent,"FormalEducation=Master’s degree (MA, MS, M.Eng., MBA, etc.)",2949,10.0,150000.0,True,2204,154.24887462332845,29496,varying_delta,3,0.1,6,so-ablation-13-r05
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",3511,10.0,150000.0,True,173,61.1010460741818,35112,varying_delta,1,0.1,7,so-ablation-13-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",3511,10.0,150000.0,True,164,62.23991199955344,35112,varying_delta,2,0.1,7,so-ablation-13-r06
+RW_Direct,Gender=Male,"FormalEducation=Other doctoral degree (Ph.D, Ed.D., etc.)",3511,10.0,150000.0,True,179,62.13655677437782,35112,varying_delta,3,0.1,7,so-ablation-13-r06
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,2949,10.0,150000.0,True,1827,128.5922290198505,29496,varying_delta,1,0.1,8,so-ablation-13-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,2949,10.0,150000.0,True,1821,131.89521156996489,29496,varying_delta,2,0.1,8,so-ablation-13-r07
+RW_Direct,RaceEthnicity=White or of European descent,DevType=Back-end developer,2949,10.0,150000.0,True,1909,135.60513022542,29496,varying_delta,3,0.1,8,so-ablation-13-r07
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,2949,10.0,150000.0,True,1952,138.16306212171912,29496,varying_delta,1,0.1,9,so-ablation-13-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,2949,10.0,150000.0,True,1870,137.4238688647747,29496,varying_delta,2,0.1,9,so-ablation-13-r08
+RW_Direct,RaceEthnicity=White or of European descent,Exercise=3 - 4 times per week,2949,10.0,150000.0,True,1901,151.03916058316827,29496,varying_delta,3,0.1,9,so-ablation-13-r08
+RW_Direct,Gender=Male,DevType=Back-end developer,3511,10.0,150000.0,True,1601,129.4035332351923,35112,varying_delta,1,0.1,10,so-ablation-13-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,3511,10.0,150000.0,True,1606,132.35930199176073,35112,varying_delta,2,0.1,10,so-ablation-13-r09
+RW_Direct,Gender=Male,DevType=Back-end developer,3511,10.0,150000.0,True,1526,130.77364402636886,35112,varying_delta,3,0.1,10,so-ablation-13-r09

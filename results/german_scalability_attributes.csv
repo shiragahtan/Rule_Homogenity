@@ -1,0 +1,1081 @@
+date,algorithm,chosen_treatment,chosen_condition,num_subgroups,delta,epsilon,status,num_attributes,run_time_seconds
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.033697471022605896
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.14266454055905342
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026653677225112915
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.026506949216127396
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.026644419878721237
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.02614809200167656
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02561478689312935
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02603166177868843
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.026071753352880478
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.025326941162347794
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026753496378660202
+2026-11-21 14:48:05,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02646966278553009
+2026-11-21 14:48:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.025591913610696793
+2026-11-21 14:48:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02588794007897377
+2026-11-21 14:48:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02643030509352684
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.0259195938706398
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.025811925530433655
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.025813493877649307
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.02555164322257042
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.025898654013872147
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.026568159461021423
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02579476684331894
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.026234745979309082
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.026186503469944
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.02605621889233589
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026117436587810516
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026225946843624115
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.025446318089962006
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.026006784290075302
+2026-11-21 14:48:06,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02602037414908409
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026079926639795303
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.026185452938079834
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.026050783693790436
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026036586612462997
+2026-11-21 14:48:06,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026141852140426636
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027539905160665512
+2026-11-21 14:48:06,FPGrowth,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.0281098373234272
+2026-11-21 14:48:06,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.027371466159820557
+2026-11-21 14:48:06,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027837857604026794
+2026-11-21 14:48:06,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02991022914648056
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027449343353509903
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027817144989967346
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027871906757354736
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.027123622596263885
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.027750525623559952
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.02766309678554535
+2026-11-21 14:48:06,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.027328945696353912
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.027601521462202072
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.028230011463165283
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.027198120951652527
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02748570218682289
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.027576301246881485
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.027219180017709732
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.027579739689826965
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02806778997182846
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027048956602811813
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027872081845998764
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027578197419643402
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.026932060718536377
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.02754535898566246
+2026-11-21 14:48:07,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.02774164453148842
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.028419338166713715
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.027763478457927704
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02780844271183014
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027211517095565796
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.02774985134601593
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027775675058364868
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027085985988378525
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027711059898138046
+2026-11-21 14:48:07,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027536220848560333
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.02796555683016777
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.02787192165851593
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.028247099369764328
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.027707021683454514
+2026-11-21 14:48:07,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02785268798470497
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027707181870937347
+2026-11-21 14:48:07,FPGrowth,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.02797863259911537
+2026-11-21 14:48:08,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.027788639068603516
+2026-11-21 14:48:08,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027974791824817657
+2026-11-21 14:48:08,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.027779679745435715
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.02749338001012802
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027758125215768814
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.027898039668798447
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.02750687673687935
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.027027584612369537
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.026312142610549927
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.025480419397354126
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.025907069444656372
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.025979503989219666
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02551010623574257
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02618727833032608
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02603069692850113
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.025629747658967972
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.02603490650653839
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026035521179437637
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02569955214858055
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.026407279074192047
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02615443617105484
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.025784868746995926
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.029016908258199692
+2026-11-21 14:48:08,RW,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.026685163378715515
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.025906778872013092
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02631423994898796
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.02621990069746971
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.028035055845975876
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026745270937681198
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026364386081695557
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02568531036376953
+2026-11-21 14:48:08,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.026399295777082443
+2026-11-21 14:48:09,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.028370238840579987
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026729632169008255
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},,50,0.5,NOT Homogeneous,0,0.02617226541042328
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.026188410818576813
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026226501911878586
+2026-11-21 14:48:09,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},,50,0.5,NOT Homogeneous,0,0.026125017553567886
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.02621709182858467
+2026-11-21 14:48:09,FPGrowth,{'status': 'no checking account'},{'amount': 0},,50,0.5,NOT Homogeneous,0,0.026240404695272446
+2026-11-21 14:48:09,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},,50,0.5,NOT Homogeneous,0,0.0263337641954422
+2026-11-21 14:48:09,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},,50,0.5,NOT Homogeneous,0,0.026387780904769897
+2026-11-21 14:48:09,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},,50,0.5,NOT Homogeneous,0,0.028733767569065094
+2026-11-21 14:48:09,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.4796173423528671
+2026-11-21 14:48:10,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.4771856553852558
+2026-11-21 14:48:10,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.4761442542076111
+2026-11-21 14:48:11,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.3843533769249916
+2026-11-21 14:48:11,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.38512899726629257
+2026-11-21 14:48:11,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.39399566128849983
+2026-11-21 14:48:12,RW,{'status': 'no checking account'},{'gender': 'male'},6,50,0.5,Homogeneous,2,0.23716789856553078
+2026-11-21 14:48:12,RW,{'status': 'no checking account'},{'gender': 'male'},7,50,0.5,Homogeneous,2,0.25579290837049484
+2026-11-21 14:48:12,RW,{'status': 'no checking account'},{'gender': 'male'},7,50,0.5,Homogeneous,2,0.25680092349648476
+2026-11-21 14:48:13,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.2931806594133377
+2026-11-21 14:48:13,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.28728029504418373
+2026-11-21 14:48:13,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.2888541929423809
+2026-11-21 14:48:13,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.26741093397140503
+2026-11-21 14:48:14,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.26237766072154045
+2026-11-21 14:48:14,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.26513438299298286
+2026-11-21 14:48:14,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.3076459653675556
+2026-11-21 14:48:15,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.3048471733927727
+2026-11-21 14:48:15,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.2910357937216759
+2026-11-21 14:48:15,RW,{'status': 'no checking account'},{'amount': 0},7,50,0.5,Homogeneous,2,0.26434221118688583
+2026-11-21 14:48:15,RW,{'status': 'no checking account'},{'amount': 0},7,50,0.5,Homogeneous,2,0.2633577659726143
+2026-11-21 14:48:16,RW,{'status': 'no checking account'},{'amount': 0},7,50,0.5,Homogeneous,2,0.2666337788105011
+2026-11-21 14:48:16,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},11,50,0.5,Homogeneous,2,0.38169100508093834
+2026-11-21 14:48:16,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},11,50,0.5,Homogeneous,2,0.380800224840641
+2026-11-21 14:48:17,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},11,50,0.5,Homogeneous,2,0.38037289306521416
+2026-11-21 14:48:17,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},9,50,0.5,Homogeneous,2,0.32241228967905045
+2026-11-21 14:48:18,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},9,50,0.5,Homogeneous,2,0.32090507075190544
+2026-11-21 14:48:18,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},9,50,0.5,Homogeneous,2,0.32022178173065186
+2026-11-21 14:48:18,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.3226236440241337
+2026-11-21 14:48:19,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.3338491655886173
+2026-11-21 14:48:19,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.33502526208758354
+2026-11-21 14:48:19,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.31923626363277435
+2026-11-21 14:48:19,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.2622813507914543
+2026-11-21 14:48:20,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},7,50,0.5,Homogeneous,2,0.1768094077706337
+2026-11-21 14:48:20,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.19061104580760002
+2026-11-21 14:48:20,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.17778585478663445
+2026-11-21 14:48:20,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.21012864261865616
+2026-11-21 14:48:20,FPGrowth,{'status': 'no checking account'},{'amount': 0},7,50,0.5,Homogeneous,2,0.1784445345401764
+2026-11-21 14:48:21,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},11,50,0.5,Homogeneous,2,0.24317703768610954
+2026-11-21 14:48:21,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},9,50,0.5,Homogeneous,2,0.21324006095528603
+2026-11-21 14:48:21,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.20719622448086739
+2026-11-21 14:48:22,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},13,50,0.5,Homogeneous,2,0.4251255728304386
+2026-11-21 14:48:22,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},13,50,0.5,Homogeneous,2,0.4243556521832943
+2026-11-21 14:48:22,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},13,50,0.5,Homogeneous,2,0.42512210085988045
+2026-11-21 14:48:23,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.45172953978180885
+2026-11-21 14:48:23,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.4530429169535637
+2026-11-21 14:48:24,RW,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.451586589217186
+2026-11-21 14:48:24,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.30819472298026085
+2026-11-21 14:48:25,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.30688389018177986
+2026-11-21 14:48:25,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.31078753620386124
+2026-11-21 14:48:25,RW,{'status': 'no checking account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.26265452429652214
+2026-11-21 14:48:25,RW,{'status': 'no checking account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.2651597522199154
+2026-11-21 14:48:26,RW,{'status': 'no checking account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.2656966559588909
+2026-11-21 14:48:26,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},11,50,0.5,Homogeneous,2,0.4082923009991646
+2026-11-21 14:48:26,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},11,50,0.5,Homogeneous,2,0.4076146222651005
+2026-11-21 14:48:27,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},11,50,0.5,Homogeneous,2,0.4029734842479229
+2026-11-21 14:48:27,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.2241709567606449
+2026-11-21 14:48:27,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.2219207026064396
+2026-11-21 14:48:28,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.2217845842242241
+2026-11-21 14:48:28,RW,{'status': 'no checking account'},{'amount': 0},14,50,0.5,Homogeneous,2,0.44441012293100357
+2026-11-21 14:48:28,RW,{'status': 'no checking account'},{'amount': 0},14,50,0.5,Homogeneous,2,0.4390593059360981
+2026-11-21 14:48:29,RW,{'status': 'no checking account'},{'amount': 0},14,50,0.5,Homogeneous,2,0.4421446919441223
+2026-11-21 14:48:29,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},8,50,0.5,Homogeneous,2,0.2993725538253784
+2026-11-21 14:48:30,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},8,50,0.5,Homogeneous,2,0.2992253340780735
+2026-11-21 14:48:30,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},8,50,0.5,Homogeneous,2,0.2973250485956669
+2026-11-21 14:48:30,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.39562785252928734
+2026-11-21 14:48:31,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.39555127173662186
+2026-11-21 14:48:31,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.3963389955461025
+2026-11-21 14:48:31,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.21739041060209274
+2026-11-21 14:48:32,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.2175290361046791
+2026-11-21 14:48:32,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.2179773710668087
+2026-11-21 14:48:32,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},13,50,0.5,Homogeneous,2,0.28265363723039627
+2026-11-21 14:48:32,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},12,50,0.5,Homogeneous,2,0.2623538449406624
+2026-11-21 14:48:33,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.21247388049960136
+2026-11-21 14:48:33,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},9,50,0.5,Homogeneous,2,0.17730683833360672
+2026-11-21 14:48:33,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},11,50,0.5,Homogeneous,2,0.24281400069594383
+2026-11-21 14:48:33,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.14160072803497314
+2026-11-21 14:48:33,FPGrowth,{'status': 'no checking account'},{'amount': 0},14,50,0.5,Homogeneous,2,0.30378057807683945
+2026-11-21 14:48:34,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},8,50,0.5,Homogeneous,2,0.19198207929730415
+2026-11-21 14:48:34,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.2658062241971493
+2026-11-21 14:48:34,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},5,50,0.5,Homogeneous,2,0.14109360426664352
+2026-11-21 14:48:35,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.5285088270902634
+2026-11-21 14:48:35,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.5268231369554996
+2026-11-21 14:48:36,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.5286036022007465
+2026-11-21 14:48:36,RW,{'status': 'no checking account'},{'people_liable': 1},8,50,0.5,Homogeneous,2,0.28998178243637085
+2026-11-21 14:48:36,RW,{'status': 'no checking account'},{'people_liable': 1},9,50,0.5,Homogeneous,2,0.30747613683342934
+2026-11-21 14:48:37,RW,{'status': 'no checking account'},{'people_liable': 1},8,50,0.5,Homogeneous,2,0.29369665309786797
+2026-11-21 14:48:37,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.2663041390478611
+2026-11-21 14:48:37,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.265528567135334
+2026-11-21 14:48:37,RW,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.2669833265244961
+2026-11-21 14:48:38,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.2891920357942581
+2026-11-21 14:48:38,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.28593024984002113
+2026-11-21 14:48:38,RW,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.2795805409550667
+2026-11-21 14:48:39,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7,50,0.5,Homogeneous,2,0.2617694176733494
+2026-11-21 14:48:39,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7,50,0.5,Homogeneous,2,0.26017922908067703
+2026-11-21 14:48:39,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7,50,0.5,Homogeneous,2,0.2619386725127697
+2026-11-21 14:48:39,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.29489489644765854
+2026-11-21 14:48:40,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.2952137179672718
+2026-11-21 14:48:40,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.29167312756180763
+2026-11-21 14:48:40,RW,{'status': 'no checking account'},{'amount': 0},9,50,0.5,Homogeneous,2,0.3443661890923977
+2026-11-21 14:48:41,RW,{'status': 'no checking account'},{'amount': 0},9,50,0.5,Homogeneous,2,0.3421982228755951
+2026-11-21 14:48:41,RW,{'status': 'no checking account'},{'amount': 0},9,50,0.5,Homogeneous,2,0.346811480820179
+2026-11-21 14:48:42,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},12,50,0.5,Homogeneous,2,0.41734202578663826
+2026-11-21 14:48:42,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},12,50,0.5,Homogeneous,2,0.4177704490721226
+2026-11-21 14:48:42,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},11,50,0.5,Homogeneous,2,0.4032810442149639
+2026-11-21 14:48:43,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.37429575622081757
+2026-11-21 14:48:43,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.39606400206685066
+2026-11-21 14:48:44,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.3878382481634617
+2026-11-21 14:48:44,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,Homogeneous,2,0.3689913861453533
+2026-11-21 14:48:44,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},7,50,0.5,Homogeneous,2,0.33246731758117676
+2026-11-21 14:48:45,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.347229789942503
+2026-11-21 14:48:45,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},15,50,0.5,Homogeneous,2,0.31275499984622
+2026-11-21 14:48:45,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},9,50,0.5,Homogeneous,2,0.21763424202799797
+2026-11-21 14:48:45,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},9,50,0.5,Homogeneous,2,0.17969707027077675
+2026-11-21 14:48:46,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},8,50,0.5,Homogeneous,2,0.19584021344780922
+2026-11-21 14:48:46,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7,50,0.5,Homogeneous,2,0.17695606872439384
+2026-11-21 14:48:46,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8,50,0.5,Homogeneous,2,0.1919277049601078
+2026-11-21 14:48:46,FPGrowth,{'status': 'no checking account'},{'amount': 0},9,50,0.5,Homogeneous,2,0.20891274884343147
+2026-11-21 14:48:47,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},12,50,0.5,Homogeneous,2,0.25513967126607895
+2026-11-21 14:48:47,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},12,50,0.5,Homogeneous,2,0.2692507281899452
+2026-11-21 14:48:47,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},10,50,0.5,Homogeneous,2,0.22253739833831787
+2026-11-21 14:48:49,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},62,50,0.5,Homogeneous,4,1.5391474179923534
+2026-11-21 14:48:50,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},60,50,0.5,Homogeneous,4,1.4973773583769798
+2026-11-21 14:48:52,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},58,50,0.5,Homogeneous,4,1.4723644331097603
+2026-11-21 14:48:53,RW,{'status': 'no checking account'},{'people_liable': 1},50,50,0.5,Homogeneous,4,1.1638848260045052
+2026-11-21 14:48:54,RW,{'status': 'no checking account'},{'people_liable': 1},49,50,0.5,Homogeneous,4,1.1475961990654469
+2026-11-21 14:48:55,RW,{'status': 'no checking account'},{'people_liable': 1},50,50,0.5,Homogeneous,4,1.1669042631983757
+2026-11-21 14:48:56,RW,{'status': 'no checking account'},{'gender': 'male'},48,50,0.5,Homogeneous,4,1.069988302886486
+2026-11-21 14:48:57,RW,{'status': 'no checking account'},{'gender': 'male'},50,50,0.5,Homogeneous,4,1.1021710261702538
+2026-11-21 14:48:58,RW,{'status': 'no checking account'},{'gender': 'male'},51,50,0.5,Homogeneous,4,1.1145058684051037
+2026-11-21 14:48:59,RW,{'status': 'no checking account'},{'personal_status': 'single'},30,50,0.5,Homogeneous,4,0.9065533950924873
+2026-11-21 14:49:00,RW,{'status': 'no checking account'},{'personal_status': 'single'},31,50,0.5,Homogeneous,4,0.9193152040243149
+2026-11-21 14:49:01,RW,{'status': 'no checking account'},{'personal_status': 'single'},31,50,0.5,Homogeneous,4,0.922452911734581
+2026-11-21 14:49:02,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},42,50,0.5,Homogeneous,4,0.9442272856831551
+2026-11-21 14:49:03,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},42,50,0.5,Homogeneous,4,0.9431423246860504
+2026-11-21 14:49:04,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},41,50,0.5,Homogeneous,4,0.9278221651911736
+2026-11-21 14:49:05,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},39,50,0.5,Homogeneous,4,0.9788419976830482
+2026-11-21 14:49:06,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},41,50,0.5,Homogeneous,4,1.0092891864478588
+2026-11-21 14:49:07,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},37,50,0.5,Homogeneous,4,0.9472820945084095
+2026-11-21 14:49:08,RW,{'status': 'no checking account'},{'amount': 0},50,50,0.5,Homogeneous,4,1.1881171874701977
+2026-11-21 14:49:09,RW,{'status': 'no checking account'},{'amount': 0},46,50,0.5,Homogeneous,4,1.1294998675584793
+2026-11-21 14:49:10,RW,{'status': 'no checking account'},{'amount': 0},43,50,0.5,Homogeneous,4,1.0852683782577515
+2026-11-21 14:49:12,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},52,50,0.5,Homogeneous,4,1.2178023308515549
+2026-11-21 14:49:13,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},50,50,0.5,Homogeneous,4,1.186510793864727
+2026-11-21 14:49:14,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},52,50,0.5,Homogeneous,4,1.2213953845202923
+2026-11-21 14:49:15,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},61,50,0.5,Homogeneous,4,1.3440146297216415
+2026-11-21 14:49:17,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},66,50,0.5,Homogeneous,4,1.4215216152369976
+2026-11-21 14:49:18,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},66,50,0.5,Homogeneous,4,1.4294577352702618
+2026-11-21 14:49:19,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},38,50,0.5,Homogeneous,4,0.9299867227673531
+2026-11-21 14:49:20,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},32,50,0.5,Homogeneous,4,0.8278497084975243
+2026-11-21 14:49:21,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},30,50,0.5,Homogeneous,4,0.8014019094407558
+2026-11-21 14:49:22,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},65,50,0.5,Homogeneous,4,1.2313076630234718
+2026-11-21 14:49:23,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},55,50,0.5,Homogeneous,4,1.0458304919302464
+2026-11-21 14:49:24,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},54,50,0.5,Homogeneous,4,0.9996107332408428
+2026-11-21 14:49:25,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},31,50,0.5,Homogeneous,4,0.5965540371835232
+2026-11-21 14:49:26,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},44,50,0.5,Homogeneous,4,0.8244824297726154
+2026-11-21 14:49:26,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},40,50,0.5,Homogeneous,4,0.7452951781451702
+2026-11-21 14:49:27,FPGrowth,{'status': 'no checking account'},{'amount': 0},54,50,0.5,Homogeneous,4,1.0404387414455414
+2026-11-21 14:49:28,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},52,50,0.5,Homogeneous,4,0.9866459332406521
+2026-11-21 14:49:30,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},75,50,0.5,Homogeneous,4,1.4631493501365185
+2026-11-21 14:49:31,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},43,50,0.5,Homogeneous,4,0.8158088512718678
+2026-11-21 14:49:32,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},60,50,0.5,Homogeneous,4,1.3586358614265919
+2026-11-21 14:49:34,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},60,50,0.5,Homogeneous,4,1.3603976517915726
+2026-11-21 14:49:35,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},63,50,0.5,Homogeneous,4,1.4077926278114319
+2026-11-21 14:49:36,RW,{'status': 'no checking account'},{'people_liable': 1},52,50,0.5,Homogeneous,4,1.140692062675953
+2026-11-21 14:49:37,RW,{'status': 'no checking account'},{'people_liable': 1},55,50,0.5,Homogeneous,4,1.1881286315619946
+2026-11-21 14:49:39,RW,{'status': 'no checking account'},{'people_liable': 1},52,50,0.5,Homogeneous,4,1.151749312877655
+2026-11-21 14:49:40,RW,{'status': 'no checking account'},{'gender': 'male'},41,50,0.5,Homogeneous,4,1.119723055511713
+2026-11-21 14:49:41,RW,{'status': 'no checking account'},{'gender': 'male'},40,50,0.5,Homogeneous,4,1.1023544296622276
+2026-11-21 14:49:42,RW,{'status': 'no checking account'},{'gender': 'male'},38,50,0.5,Homogeneous,4,1.0636627487838268
+2026-11-21 14:49:43,RW,{'status': 'no checking account'},{'personal_status': 'single'},40,50,0.5,Homogeneous,4,0.9109141826629639
+2026-11-21 14:49:44,RW,{'status': 'no checking account'},{'personal_status': 'single'},39,50,0.5,Homogeneous,4,0.8979786112904549
+2026-11-21 14:49:45,RW,{'status': 'no checking account'},{'personal_status': 'single'},38,50,0.5,Homogeneous,4,0.8843202628195286
+2026-11-21 14:49:45,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},38,50,0.5,Homogeneous,4,0.9210166521370411
+2026-11-21 14:49:46,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},34,50,0.5,Homogeneous,4,0.8530367277562618
+2026-11-21 14:49:47,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},37,50,0.5,Homogeneous,4,0.904903944581747
+2026-11-21 14:49:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},38,50,0.5,Homogeneous,4,0.9386806823313236
+2026-11-21 14:49:49,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},39,50,0.5,Homogeneous,4,0.9538205377757549
+2026-11-21 14:49:50,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},39,50,0.5,Homogeneous,4,0.9568918347358704
+2026-11-21 14:49:51,RW,{'status': 'no checking account'},{'amount': 0},51,50,0.5,Homogeneous,4,1.207588404417038
+2026-11-21 14:49:53,RW,{'status': 'no checking account'},{'amount': 0},53,50,0.5,Homogeneous,4,1.2341729886829853
+2026-11-21 14:49:54,RW,{'status': 'no checking account'},{'amount': 0},50,50,0.5,Homogeneous,4,1.1908124312758446
+2026-11-21 14:49:55,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},43,50,0.5,Homogeneous,4,1.1236174330115318
+2026-11-21 14:49:56,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},42,50,0.5,Homogeneous,4,1.107434056699276
+2026-11-21 14:49:57,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},44,50,0.5,Homogeneous,4,1.140092771500349
+2026-11-21 14:49:59,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},63,50,0.5,Homogeneous,4,1.4425345100462437
+2026-11-21 14:50:00,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},62,50,0.5,Homogeneous,4,1.4237171858549118
+2026-11-21 14:50:01,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},61,50,0.5,Homogeneous,4,1.414990607649088
+2026-11-21 14:50:03,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},45,50,0.5,Homogeneous,4,0.9909311085939407
+2026-11-21 14:50:03,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},43,50,0.5,Homogeneous,4,0.9615594707429409
+2026-11-21 14:50:04,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},43,50,0.5,Homogeneous,4,0.9619041793048382
+2026-11-21 14:50:06,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},64,50,0.5,Homogeneous,4,1.2206540182232857
+2026-11-21 14:50:07,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},63,50,0.5,Homogeneous,4,1.1782101429998875
+2026-11-21 14:50:08,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},41,50,0.5,Homogeneous,4,0.7848971076309681
+2026-11-21 14:50:09,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},44,50,0.5,Homogeneous,4,0.8228303827345371
+2026-11-21 14:50:09,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},43,50,0.5,Homogeneous,4,0.8167786188423634
+2026-11-21 14:50:10,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},40,50,0.5,Homogeneous,4,0.7484977841377258
+2026-11-21 14:50:11,FPGrowth,{'status': 'no checking account'},{'amount': 0},55,50,0.5,Homogeneous,4,1.0449779368937016
+2026-11-21 14:50:12,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},46,50,0.5,Homogeneous,4,0.8738977313041687
+2026-11-21 14:50:13,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},66,50,0.5,Homogeneous,4,1.2831356972455978
+2026-11-21 14:50:14,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},50,50,0.5,Homogeneous,4,0.9297579824924469
+2026-11-21 14:50:16,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},55,50,0.5,Homogeneous,4,1.1909608878195286
+2026-11-21 14:50:17,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},57,50,0.5,Homogeneous,4,1.2306364439427853
+2026-11-21 14:50:18,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},53,50,0.5,Homogeneous,4,1.1670502498745918
+2026-11-21 14:50:19,RW,{'status': 'no checking account'},{'people_liable': 1},52,50,0.5,Homogeneous,4,1.2097452990710735
+2026-11-21 14:50:20,RW,{'status': 'no checking account'},{'people_liable': 1},50,50,0.5,Homogeneous,4,1.1790802888572216
+2026-11-21 14:50:22,RW,{'status': 'no checking account'},{'people_liable': 1},49,50,0.5,Homogeneous,4,1.165185309946537
+2026-11-21 14:50:23,RW,{'status': 'no checking account'},{'gender': 'male'},42,50,0.5,Homogeneous,4,0.9584574289619923
+2026-11-21 14:50:24,RW,{'status': 'no checking account'},{'gender': 'male'},48,50,0.5,Homogeneous,4,1.0442962050437927
+2026-11-21 14:50:25,RW,{'status': 'no checking account'},{'gender': 'male'},40,50,0.5,Homogeneous,4,0.9184664562344551
+2026-11-21 14:50:25,RW,{'status': 'no checking account'},{'personal_status': 'single'},37,50,0.5,Homogeneous,4,0.9072755500674248
+2026-11-21 14:50:26,RW,{'status': 'no checking account'},{'personal_status': 'single'},36,50,0.5,Homogeneous,4,0.8844550214707851
+2026-11-21 14:50:27,RW,{'status': 'no checking account'},{'personal_status': 'single'},36,50,0.5,Homogeneous,4,0.8839738592505455
+2026-11-21 14:50:28,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},33,50,0.5,Homogeneous,4,0.8871872313320637
+2026-11-21 14:50:29,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},34,50,0.5,Homogeneous,4,0.9008760377764702
+2026-11-21 14:50:30,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},34,50,0.5,Homogeneous,4,0.8922545202076435
+2026-11-21 14:50:31,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},47,50,0.5,Homogeneous,4,1.1094585619866848
+2026-11-21 14:50:32,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},47,50,0.5,Homogeneous,4,1.1105008199810982
+2026-11-21 14:50:33,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},47,50,0.5,Homogeneous,4,1.1105642542243004
+2026-11-21 14:50:34,RW,{'status': 'no checking account'},{'amount': 0},40,50,0.5,Homogeneous,4,1.0887166932225227
+2026-11-21 14:50:36,RW,{'status': 'no checking account'},{'amount': 0},39,50,0.5,Homogeneous,4,1.0699049197137356
+2026-11-21 14:50:37,RW,{'status': 'no checking account'},{'amount': 0},40,50,0.5,Homogeneous,4,1.0864251740276814
+2026-11-21 14:50:38,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},45,50,0.5,Homogeneous,4,1.1669966280460358
+2026-11-21 14:50:39,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},43,50,0.5,Homogeneous,4,1.1363651528954506
+2026-11-21 14:50:40,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},43,50,0.5,Homogeneous,4,1.1368891596794128
+2026-11-21 14:50:41,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},55,50,0.5,Homogeneous,4,1.163008451461792
+2026-11-21 14:50:42,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},54,50,0.5,Homogeneous,4,1.1661430522799492
+2026-11-21 14:50:44,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},57,50,0.5,Homogeneous,4,1.213315136730671
+2026-11-21 14:50:45,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},35,50,0.5,Homogeneous,4,0.9494285210967064
+2026-11-21 14:50:46,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},35,50,0.5,Homogeneous,4,0.9494066908955574
+2026-11-21 14:50:47,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},35,50,0.5,Homogeneous,4,0.9463402219116688
+2026-11-21 14:50:48,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},67,50,0.5,Homogeneous,4,1.2695050090551376
+2026-11-21 14:50:49,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},55,50,0.5,Homogeneous,4,1.062213934957981
+2026-11-21 14:50:50,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},50,50,0.5,Homogeneous,4,0.9535329900681973
+2026-11-21 14:50:51,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},43,50,0.5,Homogeneous,4,0.8201279118657112
+2026-11-21 14:50:52,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},41,50,0.5,Homogeneous,4,0.7762744203209877
+2026-11-21 14:50:53,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},59,50,0.5,Homogeneous,4,1.116807572543621
+2026-11-21 14:50:54,FPGrowth,{'status': 'no checking account'},{'amount': 0},50,50,0.5,Homogeneous,4,0.9512012377381325
+2026-11-21 14:50:55,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},47,50,0.5,Homogeneous,4,0.8929522149264812
+2026-11-21 14:50:56,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},69,50,0.5,Homogeneous,4,1.3090087324380875
+2026-11-21 14:50:57,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},35,50,0.5,Homogeneous,4,0.6693028621375561
+2026-11-21 14:51:00,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},193,50,0.5,Homogeneous,6,3.533866513520479
+2026-11-21 14:51:04,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},186,50,0.5,Homogeneous,6,3.418377824127674
+2026-11-21 14:51:07,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},186,50,0.5,Homogeneous,6,3.428823195397854
+2026-11-21 14:51:10,RW,{'status': 'no checking account'},{'people_liable': 1},153,50,0.5,Homogeneous,6,3.1049267053604126
+2026-11-21 14:51:13,RW,{'status': 'no checking account'},{'people_liable': 1},148,50,0.5,Homogeneous,6,3.0205735340714455
+2026-11-21 14:51:16,RW,{'status': 'no checking account'},{'people_liable': 1},123,50,0.5,Homogeneous,6,2.6014680601656437
+2026-11-21 14:51:19,RW,{'status': 'no checking account'},{'gender': 'male'},162,50,0.5,Homogeneous,6,3.020883198827505
+2026-11-21 14:51:21,RW,{'status': 'no checking account'},{'gender': 'male'},140,50,0.5,Homogeneous,6,2.6768982596695423
+2026-11-21 14:51:24,RW,{'status': 'no checking account'},{'gender': 'male'},159,50,0.5,Homogeneous,6,2.976775784045458
+2026-11-21 14:51:26,RW,{'status': 'no checking account'},{'personal_status': 'single'},69,50,0.5,Homogeneous,6,1.728222370147705
+2026-11-21 14:51:28,RW,{'status': 'no checking account'},{'personal_status': 'single'},67,50,0.5,Homogeneous,6,1.6901777982711792
+2026-11-21 14:51:30,RW,{'status': 'no checking account'},{'personal_status': 'single'},74,50,0.5,Homogeneous,6,1.8109199814498425
+2026-11-21 14:51:32,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},110,50,0.5,Homogeneous,6,2.254872113466263
+2026-11-21 14:51:34,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},114,50,0.5,Homogeneous,6,2.3193662725389004
+2026-11-21 14:51:36,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},105,50,0.5,Homogeneous,6,2.175541512668133
+2026-11-21 14:51:39,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},154,50,0.5,Homogeneous,6,2.999330386519432
+2026-11-21 14:51:43,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},167,50,0.5,Homogeneous,6,3.212500933557749
+2026-11-21 14:51:46,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},154,50,0.5,Homogeneous,6,2.9973388873040676
+2026-11-21 14:51:48,RW,{'status': 'no checking account'},{'amount': 0},111,50,0.5,Homogeneous,6,2.4623703360557556
+2026-11-21 14:51:51,RW,{'status': 'no checking account'},{'amount': 0},116,50,0.5,Homogeneous,6,2.545464038848877
+2026-11-21 14:51:53,RW,{'status': 'no checking account'},{'amount': 0},111,50,0.5,Homogeneous,6,2.4602255932986736
+2026-11-21 14:51:56,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},120,50,0.5,Homogeneous,6,2.607635248452425
+2026-11-21 14:51:59,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},139,50,0.5,Homogeneous,6,2.920610509812832
+2026-11-21 14:52:02,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},135,50,0.5,Homogeneous,6,2.8590607084333897
+2026-11-21 14:52:06,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},215,50,0.5,Homogeneous,6,3.840498812496662
+2026-11-21 14:52:09,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},200,50,0.5,Homogeneous,6,3.588141679763794
+2026-11-21 14:52:13,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},213,50,0.5,Homogeneous,6,3.824983213096857
+2026-11-21 14:52:15,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},100,50,0.5,Homogeneous,6,2.1330018788576126
+2026-11-21 14:52:17,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},94,50,0.5,Homogeneous,6,2.0327507071197033
+2026-11-21 14:52:19,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},96,50,0.5,Homogeneous,6,2.0633420944213867
+2026-11-21 14:52:25,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},279,50,0.5,Homogeneous,6,5.376528192311525
+2026-11-21 14:52:28,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},178,50,0.5,Homogeneous,6,3.428939536213875
+2026-11-21 14:52:32,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},212,50,0.5,Homogeneous,6,3.9435762278735638
+2026-11-21 14:52:34,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},87,50,0.5,Homogeneous,6,1.6603888534009457
+2026-11-21 14:52:36,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},135,50,0.5,Homogeneous,6,2.458534710109234
+2026-11-21 14:52:40,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},217,50,0.5,Homogeneous,6,4.105809845030308
+2026-11-21 14:52:43,FPGrowth,{'status': 'no checking account'},{'amount': 0},133,50,0.5,Homogeneous,6,2.5129782147705555
+2026-11-21 14:52:46,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},153,50,0.5,Homogeneous,6,2.9450474344193935
+2026-11-21 14:52:51,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},269,50,0.5,Homogeneous,6,5.066774349659681
+2026-11-21 14:52:53,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},108,50,0.5,Homogeneous,6,1.9674609042704105
+2026-11-21 14:52:56,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},177,50,0.5,Homogeneous,6,3.5482675656676292
+2026-11-21 14:53:00,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},182,50,0.5,Homogeneous,6,3.632870938628912
+2026-11-21 14:53:04,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},177,50,0.5,Homogeneous,6,3.566160276532173
+2026-11-21 14:53:07,RW,{'status': 'no checking account'},{'people_liable': 1},171,50,0.5,Homogeneous,6,3.1790839210152626
+2026-11-21 14:53:10,RW,{'status': 'no checking account'},{'people_liable': 1},155,50,0.5,Homogeneous,6,2.931547839194536
+2026-11-21 14:53:13,RW,{'status': 'no checking account'},{'people_liable': 1},178,50,0.5,Homogeneous,6,3.290771245956421
+2026-11-21 14:53:15,RW,{'status': 'no checking account'},{'gender': 'male'},86,50,0.5,Homogeneous,6,2.0904568694531918
+2026-11-21 14:53:17,RW,{'status': 'no checking account'},{'gender': 'male'},88,50,0.5,Homogeneous,6,2.131055224686861
+2026-11-21 14:53:19,RW,{'status': 'no checking account'},{'gender': 'male'},85,50,0.5,Homogeneous,6,2.048721347004175
+2026-11-21 14:53:22,RW,{'status': 'no checking account'},{'personal_status': 'single'},101,50,0.5,Homogeneous,6,2.177473586052656
+2026-11-21 14:53:24,RW,{'status': 'no checking account'},{'personal_status': 'single'},97,50,0.5,Homogeneous,6,2.102228172123432
+2026-11-21 14:53:26,RW,{'status': 'no checking account'},{'personal_status': 'single'},98,50,0.5,Homogeneous,6,2.1266285739839077
+2026-11-21 14:53:28,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},110,50,0.5,Homogeneous,6,2.2352691665291786
+2026-11-21 14:53:30,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},111,50,0.5,Homogeneous,6,2.252603355795145
+2026-11-21 14:53:33,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},113,50,0.5,Homogeneous,6,2.292965680360794
+2026-11-21 14:53:35,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},115,50,0.5,Homogeneous,6,2.2840551622211933
+2026-11-21 14:53:37,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},131,50,0.5,Homogeneous,6,2.53611096739769
+2026-11-21 14:53:40,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},117,50,0.5,Homogeneous,6,2.322412859648466
+2026-11-21 14:53:43,RW,{'status': 'no checking account'},{'amount': 0},141,50,0.5,Homogeneous,6,2.8970543406903744
+2026-11-21 14:53:46,RW,{'status': 'no checking account'},{'amount': 0},149,50,0.5,Homogeneous,6,3.017419148236513
+2026-11-21 14:53:49,RW,{'status': 'no checking account'},{'amount': 0},144,50,0.5,Homogeneous,6,2.9427378065884113
+2026-11-21 14:53:52,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},158,50,0.5,Homogeneous,6,2.897595025599003
+2026-11-21 14:53:54,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},136,50,0.5,Homogeneous,6,2.552250239998102
+2026-11-21 14:53:57,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},153,50,0.5,Homogeneous,6,2.8040461614727974
+2026-11-21 14:54:00,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},160,50,0.5,Homogeneous,6,3.0510504506528378
+2026-11-21 14:54:03,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},178,50,0.5,Homogeneous,6,3.3230558410286903
+2026-11-21 14:54:07,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},171,50,0.5,Homogeneous,6,3.1961314864456654
+2026-11-21 14:54:09,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},103,50,0.5,Homogeneous,6,2.114356681704521
+2026-11-21 14:54:11,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},97,50,0.5,Homogeneous,6,2.012210387736559
+2026-11-21 14:54:13,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},103,50,0.5,Homogeneous,6,2.111009832471609
+2026-11-21 14:54:17,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},206,50,0.5,Homogeneous,6,4.003063801676035
+2026-11-21 14:54:22,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},266,50,0.5,Homogeneous,6,5.0363628678023815
+2026-11-21 14:54:24,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},114,50,0.5,Homogeneous,6,2.1876952312886715
+2026-11-21 14:54:26,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},112,50,0.5,Homogeneous,6,2.039435587823391
+2026-11-21 14:54:29,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},143,50,0.5,Homogeneous,6,2.6641819551587105
+2026-11-21 14:54:32,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},153,50,0.5,Homogeneous,6,2.785988014191389
+2026-11-21 14:54:35,FPGrowth,{'status': 'no checking account'},{'amount': 0},169,50,0.5,Homogeneous,6,3.20438327267766
+2026-11-21 14:54:38,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},189,50,0.5,Homogeneous,6,3.442746002227068
+2026-11-21 14:54:43,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},248,50,0.5,Homogeneous,6,4.777182146906853
+2026-11-21 14:54:45,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},120,50,0.5,Homogeneous,6,2.182859718799591
+2026-11-21 14:54:49,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},204,50,0.5,Homogeneous,6,3.7133235335350037
+2026-11-21 14:54:53,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},201,50,0.5,Homogeneous,6,3.684363555163145
+2026-11-21 14:54:57,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},216,50,0.5,Homogeneous,6,3.9006425589323044
+2026-11-21 14:54:59,RW,{'status': 'no checking account'},{'people_liable': 1},129,50,0.5,Homogeneous,6,2.7472532093524933
+2026-11-21 14:55:02,RW,{'status': 'no checking account'},{'people_liable': 1},128,50,0.5,Homogeneous,6,2.7310432977974415
+2026-11-21 14:55:05,RW,{'status': 'no checking account'},{'people_liable': 1},131,50,0.5,Homogeneous,6,2.781556364148855
+2026-11-21 14:55:08,RW,{'status': 'no checking account'},{'gender': 'male'},130,50,0.5,Homogeneous,6,2.658523328602314
+2026-11-21 14:55:10,RW,{'status': 'no checking account'},{'gender': 'male'},135,50,0.5,Homogeneous,6,2.7206937186419964
+2026-11-21 14:55:13,RW,{'status': 'no checking account'},{'gender': 'male'},123,50,0.5,Homogeneous,6,2.5434290878474712
+2026-11-21 14:55:15,RW,{'status': 'no checking account'},{'personal_status': 'single'},115,50,0.5,Homogeneous,6,2.3166127502918243
+2026-11-21 14:55:18,RW,{'status': 'no checking account'},{'personal_status': 'single'},117,50,0.5,Homogeneous,6,2.3450992554426193
+2026-11-21 14:55:20,RW,{'status': 'no checking account'},{'personal_status': 'single'},115,50,0.5,Homogeneous,6,2.32254745811224
+2026-11-21 14:55:22,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},77,50,0.5,Homogeneous,6,1.8120171688497066
+2026-11-21 14:55:24,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},79,50,0.5,Homogeneous,6,1.8434818908572197
+2026-11-21 14:55:25,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},79,50,0.5,Homogeneous,6,1.8432070054113865
+2026-11-21 14:55:28,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},125,50,0.5,Homogeneous,6,2.4984780475497246
+2026-11-21 14:55:30,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},127,50,0.5,Homogeneous,6,2.525503758341074
+2026-11-21 14:55:33,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},117,50,0.5,Homogeneous,6,2.3673813678324223
+2026-11-21 14:55:36,RW,{'status': 'no checking account'},{'amount': 0},182,50,0.5,Homogeneous,6,3.3682876341044903
+2026-11-21 14:55:39,RW,{'status': 'no checking account'},{'amount': 0},143,50,0.5,Homogeneous,6,2.7408559881150723
+2026-11-21 14:55:42,RW,{'status': 'no checking account'},{'amount': 0},169,50,0.5,Homogeneous,6,3.1571256555616856
+2026-11-21 14:55:45,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},133,50,0.5,Homogeneous,6,2.5647853650152683
+2026-11-21 14:55:47,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},125,50,0.5,Homogeneous,6,2.4071387089788914
+2026-11-21 14:55:50,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},122,50,0.5,Homogeneous,6,2.3924041092395782
+2026-11-21 14:55:53,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},180,50,0.5,Homogeneous,6,3.4174320697784424
+2026-11-21 14:55:56,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},185,50,0.5,Homogeneous,6,3.496940817683935
+2026-11-21 14:56:00,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},196,50,0.5,Homogeneous,6,3.6880016028881073
+2026-11-21 14:56:01,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,NOT Homogeneous,6,0.4416991136968136
+2026-11-21 14:56:01,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},9,50,0.5,NOT Homogeneous,6,0.4390781410038471
+2026-11-21 14:56:02,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},34,50,0.5,NOT Homogeneous,6,0.8381237350404263
+2026-11-21 14:56:08,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},291,50,0.5,Homogeneous,6,5.59065380319953
+2026-11-21 14:56:11,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},181,50,0.5,Homogeneous,6,3.523622363805771
+2026-11-21 14:56:14,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},151,50,0.5,Homogeneous,6,2.7919935323297977
+2026-11-21 14:56:17,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},143,50,0.5,Homogeneous,6,2.651016365736723
+2026-11-21 14:56:19,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},107,50,0.5,Homogeneous,6,1.9849685803055763
+2026-11-21 14:56:21,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},147,50,0.5,Homogeneous,6,2.7216695323586464
+2026-11-21 14:56:25,FPGrowth,{'status': 'no checking account'},{'amount': 0},216,50,0.5,Homogeneous,6,4.033779755234718
+2026-11-21 14:56:29,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},178,50,0.5,Homogeneous,6,3.311763897538185
+2026-11-21 14:56:33,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},219,50,0.5,Homogeneous,6,4.18025378882885
+2026-11-21 14:56:35,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},140,50,0.5,NOT Homogeneous,6,2.5495221242308617
+2026-11-21 14:56:43,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},422,50,0.5,Homogeneous,8,7.512291703373194
+2026-11-21 14:56:50,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},412,50,0.5,Homogeneous,8,7.342692863196135
+2026-11-21 14:56:58,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},448,50,0.5,Homogeneous,8,7.937602397054434
+2026-11-21 14:57:04,RW,{'status': 'no checking account'},{'people_liable': 1},282,50,0.5,Homogeneous,8,5.596795242279768
+2026-11-21 14:57:09,RW,{'status': 'no checking account'},{'people_liable': 1},271,50,0.5,Homogeneous,8,5.402539242058992
+2026-11-21 14:57:15,RW,{'status': 'no checking account'},{'people_liable': 1},287,50,0.5,Homogeneous,8,5.679992076009512
+2026-11-21 14:57:20,RW,{'status': 'no checking account'},{'gender': 'male'},280,50,0.5,Homogeneous,8,5.3552249148488045
+2026-11-21 14:57:25,RW,{'status': 'no checking account'},{'gender': 'male'},269,50,0.5,Homogeneous,8,5.161555867642164
+2026-11-21 14:57:31,RW,{'status': 'no checking account'},{'gender': 'male'},282,50,0.5,Homogeneous,8,5.376958936452866
+2026-11-21 14:57:35,RW,{'status': 'no checking account'},{'personal_status': 'single'},216,50,0.5,Homogeneous,8,4.190983470529318
+2026-11-21 14:57:40,RW,{'status': 'no checking account'},{'personal_status': 'single'},248,50,0.5,Homogeneous,8,4.711927101016045
+2026-11-21 14:57:45,RW,{'status': 'no checking account'},{'personal_status': 'single'},274,50,0.5,Homogeneous,8,5.147996962070465
+2026-11-21 14:57:48,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},144,50,0.5,Homogeneous,8,3.263849850744009
+2026-11-21 14:57:51,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},140,50,0.5,Homogeneous,8,3.19308028370142
+2026-11-21 14:57:55,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},148,50,0.5,Homogeneous,8,3.327211894094944
+2026-11-21 14:58:00,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},273,50,0.5,Homogeneous,8,5.115005500614643
+2026-11-21 14:58:05,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},283,50,0.5,Homogeneous,8,5.2780036218464375
+2026-11-21 14:58:11,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},287,50,0.5,Homogeneous,8,5.339336976408958
+2026-11-21 14:58:18,RW,{'status': 'no checking account'},{'amount': 0},393,50,0.5,Homogeneous,8,7.062980908900499
+2026-11-21 14:58:25,RW,{'status': 'no checking account'},{'amount': 0},409,50,0.5,Homogeneous,8,7.3368715681135654
+2026-11-21 14:58:32,RW,{'status': 'no checking account'},{'amount': 0},385,50,0.5,Homogeneous,8,6.93967142701149
+2026-11-21 14:58:37,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},265,50,0.5,Homogeneous,8,5.019193906337023
+2026-11-21 14:58:41,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},237,50,0.5,Homogeneous,8,4.538985870778561
+2026-11-21 14:58:47,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},270,50,0.5,Homogeneous,8,5.118255723267794
+2026-11-21 14:58:55,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},457,50,0.5,Homogeneous,8,7.982609324157238
+2026-11-21 14:59:03,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},460,50,0.5,Homogeneous,8,8.038443993777037
+2026-11-21 14:59:11,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},493,50,0.5,Homogeneous,8,8.613589033484459
+2026-11-21 14:59:18,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},363,50,0.5,Homogeneous,8,6.5433355160057545
+2026-11-21 14:59:24,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},344,50,0.5,Homogeneous,8,6.17419046163559
+2026-11-21 14:59:30,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},328,50,0.5,Homogeneous,8,5.929135847836733
+2026-11-21 14:59:50,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},1010,50,0.5,Homogeneous,8,19.998689744621515
+2026-11-21 15:00:00,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},512,50,0.5,Homogeneous,8,10.143898516893387
+2026-11-21 15:00:08,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},393,50,0.5,Homogeneous,8,7.377168640494347
+2026-11-21 15:00:16,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},431,50,0.5,Homogeneous,8,8.108834974467754
+2026-11-21 15:00:19,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},187,50,0.5,Homogeneous,8,3.5648325383663177
+2026-11-21 15:00:29,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},498,50,0.5,Homogeneous,8,9.363273698836565
+2026-11-21 15:00:39,FPGrowth,{'status': 'no checking account'},{'amount': 0},560,50,0.5,Homogeneous,8,10.61754996329546
+2026-11-21 15:00:48,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},445,50,0.5,Homogeneous,8,8.54204311594367
+2026-11-21 15:01:03,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},767,50,0.5,Homogeneous,8,14.991041652858257
+2026-11-21 15:01:13,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},542,50,0.5,Homogeneous,8,10.216551214456558
+2026-11-21 15:01:20,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},343,50,0.5,Homogeneous,8,6.647700008004904
+2026-11-21 15:01:27,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},383,50,0.5,Homogeneous,8,7.33040539547801
+2026-11-21 15:01:34,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},371,50,0.5,Homogeneous,8,7.136874388903379
+2026-11-21 15:01:41,RW,{'status': 'no checking account'},{'people_liable': 1},376,50,0.5,Homogeneous,8,6.952041994780302
+2026-11-21 15:01:48,RW,{'status': 'no checking account'},{'people_liable': 1},344,50,0.5,Homogeneous,8,6.424932163208723
+2026-11-21 15:01:54,RW,{'status': 'no checking account'},{'people_liable': 1},373,50,0.5,Homogeneous,8,6.891075864434242
+2026-11-21 15:02:00,RW,{'status': 'no checking account'},{'gender': 'male'},314,50,0.5,Homogeneous,8,5.883311666548252
+2026-11-21 15:02:06,RW,{'status': 'no checking account'},{'gender': 'male'},309,50,0.5,Homogeneous,8,5.801865968853235
+2026-11-21 15:02:12,RW,{'status': 'no checking account'},{'gender': 'male'},334,50,0.5,Homogeneous,8,6.204666528850794
+2026-11-21 15:02:16,RW,{'status': 'no checking account'},{'personal_status': 'single'},144,50,0.5,Homogeneous,8,3.2581871040165424
+2026-11-21 15:02:19,RW,{'status': 'no checking account'},{'personal_status': 'single'},159,50,0.5,Homogeneous,8,3.514788031578064
+2026-11-21 15:02:22,RW,{'status': 'no checking account'},{'personal_status': 'single'},127,50,0.5,Homogeneous,8,2.9750820361077785
+2026-11-21 15:02:26,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},170,50,0.5,Homogeneous,8,3.6856848895549774
+2026-11-21 15:02:30,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},185,50,0.5,Homogeneous,8,3.945615455508232
+2026-11-21 15:02:34,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},178,50,0.5,Homogeneous,8,3.8350060172379017
+2026-11-21 15:02:38,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},247,50,0.5,Homogeneous,8,4.776491791009903
+2026-11-21 15:02:43,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},257,50,0.5,Homogeneous,8,4.946533244103193
+2026-11-21 15:02:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},261,50,0.5,Homogeneous,8,4.9992470145225525
+2026-11-21 15:02:55,RW,{'status': 'no checking account'},{'amount': 0},316,50,0.5,Homogeneous,8,6.136636778712273
+2026-11-21 15:03:00,RW,{'status': 'no checking account'},{'amount': 0},300,50,0.5,Homogeneous,8,5.866497598588467
+2026-11-21 15:03:07,RW,{'status': 'no checking account'},{'amount': 0},334,50,0.5,Homogeneous,8,6.442035730928183
+2026-11-21 15:03:13,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},365,50,0.5,Homogeneous,8,6.51848666369915
+2026-11-21 15:03:20,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},348,50,0.5,Homogeneous,8,6.241116154938936
+2026-11-21 15:03:26,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},380,50,0.5,Homogeneous,8,6.784202143549919
+2026-11-21 15:03:34,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},409,50,0.5,Homogeneous,8,7.751618850976229
+2026-11-21 15:03:42,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},433,50,0.5,Homogeneous,8,8.179498665034771
+2026-11-21 15:03:52,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},482,50,0.5,Homogeneous,8,9.097661882638931
+2026-11-21 15:03:57,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},305,50,0.5,Homogeneous,8,5.371934834867716
+2026-11-21 15:04:02,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},280,50,0.5,Homogeneous,8,4.9845859706401825
+2026-11-21 15:04:07,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},285,50,0.5,Homogeneous,8,5.051751710474491
+2026-11-21 15:04:19,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},613,50,0.5,Homogeneous,8,12.370757479220629
+2026-11-21 15:04:29,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},511,50,0.5,Homogeneous,8,9.778726052492857
+2026-11-21 15:04:39,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},538,50,0.5,Homogeneous,8,10.306968279182911
+2026-11-21 15:04:43,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},187,50,0.5,Homogeneous,8,3.5680605731904507
+2026-11-21 15:04:48,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},233,50,0.5,Homogeneous,8,4.454925216734409
+2026-11-21 15:04:55,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},383,50,0.5,Homogeneous,8,7.208677019923925
+2026-11-21 15:05:04,FPGrowth,{'status': 'no checking account'},{'amount': 0},490,50,0.5,Homogeneous,8,9.676989302039146
+2026-11-21 15:05:15,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},541,50,0.5,Homogeneous,8,10.192103315144777
+2026-11-21 15:05:30,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},723,50,0.5,Homogeneous,8,14.91675665229559
+2026-11-21 15:05:39,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},480,50,0.5,Homogeneous,8,8.905618146061897
+2026-11-21 15:05:46,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},425,50,0.5,Homogeneous,8,7.790060203522444
+2026-11-21 15:05:55,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},454,50,0.5,Homogeneous,8,8.27035216242075
+2026-11-21 15:06:01,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},370,50,0.5,Homogeneous,8,6.877967655658722
+2026-11-21 15:06:12,RW,{'status': 'no checking account'},{'people_liable': 1},596,50,0.5,Homogeneous,8,10.47157684341073
+2026-11-21 15:06:22,RW,{'status': 'no checking account'},{'people_liable': 1},552,50,0.5,Homogeneous,8,9.785765659064054
+2026-11-21 15:06:32,RW,{'status': 'no checking account'},{'people_liable': 1},558,50,0.5,Homogeneous,8,9.853273555636406
+2026-11-21 15:06:35,RW,{'status': 'no checking account'},{'gender': 'male'},164,50,0.5,Homogeneous,8,3.6952684111893177
+2026-11-21 15:06:39,RW,{'status': 'no checking account'},{'gender': 'male'},180,50,0.5,Homogeneous,8,3.9519339613616467
+2026-11-21 15:06:43,RW,{'status': 'no checking account'},{'gender': 'male'},168,50,0.5,Homogeneous,8,3.7706262916326523
+2026-11-21 15:06:47,RW,{'status': 'no checking account'},{'personal_status': 'single'},200,50,0.5,Homogeneous,8,4.104746270924807
+2026-11-21 15:06:51,RW,{'status': 'no checking account'},{'personal_status': 'single'},198,50,0.5,Homogeneous,8,4.073900975286961
+2026-11-21 15:06:56,RW,{'status': 'no checking account'},{'personal_status': 'single'},218,50,0.5,Homogeneous,8,4.404450282454491
+2026-11-21 15:07:00,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},231,50,0.5,Homogeneous,8,4.341666352003813
+2026-11-21 15:07:04,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},239,50,0.5,Homogeneous,8,4.427231904119253
+2026-11-21 15:07:09,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},228,50,0.5,Homogeneous,8,4.277383640408516
+2026-11-21 15:07:14,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},267,50,0.5,Homogeneous,8,4.89379495754838
+2026-11-21 15:07:18,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},233,50,0.5,Homogeneous,8,4.354821424931288
+2026-11-21 15:07:23,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},264,50,0.5,Homogeneous,8,4.8490886725485325
+2026-11-21 15:07:30,RW,{'status': 'no checking account'},{'amount': 0},397,50,0.5,Homogeneous,8,7.283839363604784
+2026-11-21 15:07:37,RW,{'status': 'no checking account'},{'amount': 0},393,50,0.5,Homogeneous,8,7.20765483379364
+2026-11-21 15:07:45,RW,{'status': 'no checking account'},{'amount': 0},409,50,0.5,Homogeneous,8,7.467358328402042
+2026-11-21 15:07:49,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},207,50,0.5,Homogeneous,8,4.374321736395359
+2026-11-21 15:07:54,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},209,50,0.5,Homogeneous,8,4.4109242260456085
+2026-11-21 15:07:58,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},199,50,0.5,Homogeneous,8,4.244073528796434
+2026-11-21 15:07:59,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},50,50,0.5,NOT Homogeneous,8,1.3712908178567886
+2026-11-21 15:08:02,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},103,50,0.5,NOT Homogeneous,8,2.2547334507107735
+2026-11-21 15:08:02,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},9,50,0.5,NOT Homogeneous,8,0.6778125204145908
+2026-11-21 15:08:06,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},182,50,0.5,Homogeneous,8,3.75637798756361
+2026-11-21 15:08:10,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},179,50,0.5,Homogeneous,8,3.7113192938268185
+2026-11-21 15:08:14,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},186,50,0.5,Homogeneous,8,3.8330078125
+2026-11-21 15:08:25,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},606,50,0.5,Homogeneous,8,11.783614993095398
+2026-11-21 15:08:46,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},1017,50,0.5,Homogeneous,8,20.165113478899002
+2026-11-21 15:08:50,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},232,50,0.5,Homogeneous,8,4.491979610174894
+2026-11-21 15:08:55,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},242,50,0.5,Homogeneous,8,4.5488058887422085
+2026-11-21 15:09:00,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},310,50,0.5,Homogeneous,8,5.616206247359514
+2026-11-21 15:09:08,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},399,50,0.5,Homogeneous,8,7.235792919993401
+2026-11-21 15:09:19,FPGrowth,{'status': 'no checking account'},{'amount': 0},620,50,0.5,Homogeneous,8,11.963118866086006
+2026-11-21 15:09:26,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},313,50,0.5,Homogeneous,8,6.209358133375645
+2026-11-21 15:09:38,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},577,50,0.5,NOT Homogeneous,8,11.965568542480469
+2026-11-21 15:09:42,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},225,50,0.5,Homogeneous,8,4.198064722120762
+2026-11-21 15:09:54,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},666,50,0.5,Homogeneous,10,12.233022790402174
+2026-11-21 15:10:07,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},719,50,0.5,Homogeneous,10,13.092925380915403
+2026-11-21 15:10:19,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},645,50,0.5,Homogeneous,10,11.871849335730076
+2026-11-21 15:10:37,RW,{'status': 'no checking account'},{'people_liable': 1},968,50,0.5,Homogeneous,10,17.396209061145782
+2026-11-21 15:10:55,RW,{'status': 'no checking account'},{'people_liable': 1},1016,50,0.5,Homogeneous,10,18.174038223922253
+2026-11-21 15:11:11,RW,{'status': 'no checking account'},{'people_liable': 1},939,50,0.5,Homogeneous,10,16.71122058480978
+2026-11-21 15:11:20,RW,{'status': 'no checking account'},{'gender': 'male'},432,50,0.5,Homogeneous,10,8.501869436353445
+2026-11-21 15:11:28,RW,{'status': 'no checking account'},{'gender': 'male'},426,50,0.5,Homogeneous,10,8.377706058323383
+2026-11-21 15:11:37,RW,{'status': 'no checking account'},{'gender': 'male'},439,50,0.5,Homogeneous,10,8.631231732666492
+2026-11-21 15:11:44,RW,{'status': 'no checking account'},{'personal_status': 'single'},334,50,0.5,Homogeneous,10,6.784702204167843
+2026-11-21 15:11:51,RW,{'status': 'no checking account'},{'personal_status': 'single'},358,50,0.5,Homogeneous,10,7.2203662022948265
+2026-11-21 15:11:58,RW,{'status': 'no checking account'},{'personal_status': 'single'},326,50,0.5,Homogeneous,10,6.666395552456379
+2026-11-21 15:12:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},415,50,0.5,Homogeneous,10,7.775056134909391
+2026-11-21 15:12:13,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},413,50,0.5,Homogeneous,10,7.73562852665782
+2026-11-21 15:12:21,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},408,50,0.5,Homogeneous,10,7.64528913795948
+2026-11-21 15:12:30,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},500,50,0.5,Homogeneous,10,8.952555797994137
+2026-11-21 15:12:38,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},462,50,0.5,Homogeneous,10,8.35119541734457
+2026-11-21 15:12:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},524,50,0.5,Homogeneous,10,9.347559448331594
+2026-11-21 15:13:01,RW,{'status': 'no checking account'},{'amount': 0},721,50,0.5,Homogeneous,10,13.117769155651331
+2026-11-21 15:13:12,RW,{'status': 'no checking account'},{'amount': 0},643,50,0.5,Homogeneous,10,11.775377325713634
+2026-11-21 15:13:25,RW,{'status': 'no checking account'},{'amount': 0},674,50,0.5,Homogeneous,10,12.290065970271826
+2026-11-21 15:13:33,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},426,50,0.5,Homogeneous,10,8.310666225850582
+2026-11-21 15:13:41,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},380,50,0.5,Homogeneous,10,7.512459330260754
+2026-11-21 15:13:49,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},426,50,0.5,Homogeneous,10,8.315303057432175
+2026-11-21 15:13:50,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1,50,0.5,NOT Homogeneous,10,0.6275614723563194
+2026-11-21 15:13:51,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},51,50,0.5,NOT Homogeneous,10,1.4412412829697132
+2026-11-21 15:13:53,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},81,50,0.5,NOT Homogeneous,10,1.9669086784124374
+2026-11-21 15:14:00,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},391,50,0.5,Homogeneous,10,7.474562469869852
+2026-11-21 15:14:09,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},459,50,0.5,Homogeneous,10,8.620827231556177
+2026-11-21 15:14:18,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},444,50,0.5,Homogeneous,10,8.373363506048918
+2026-11-21 15:14:44,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},1313,50,0.5,Homogeneous,10,26.200653113424778
+2026-11-21 15:15:46,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},3068,50,0.5,Homogeneous,10,62.20864188671112
+2026-11-21 15:16:03,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},837,50,0.5,Homogeneous,10,16.75819218531251
+2026-11-21 15:16:14,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},583,50,0.5,Homogeneous,10,11.381614901125431
+2026-11-21 15:16:25,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},593,50,0.5,Homogeneous,10,11.153833463788033
+2026-11-21 15:16:43,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},929,50,0.5,Homogeneous,10,17.296308763325214
+2026-11-21 15:17:12,FPGrowth,{'status': 'no checking account'},{'amount': 0},1473,50,0.5,Homogeneous,10,29.21009409800172
+2026-11-21 15:17:28,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},788,50,0.5,Homogeneous,10,15.818704400211573
+2026-11-21 15:17:38,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},317,50,0.5,NOT Homogeneous,10,10.615623239427805
+2026-11-21 15:17:52,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},727,50,0.5,Homogeneous,10,13.878546267747879
+2026-11-21 15:18:10,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1012,50,0.5,Homogeneous,10,18.158444717526436
+2026-11-21 15:18:30,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1078,50,0.5,Homogeneous,10,19.257484413683414
+2026-11-21 15:18:47,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},950,50,0.5,Homogeneous,10,17.083362340927124
+2026-11-21 15:18:57,RW,{'status': 'no checking account'},{'people_liable': 1},539,50,0.5,Homogeneous,10,10.420423410832882
+2026-11-21 15:19:07,RW,{'status': 'no checking account'},{'people_liable': 1},510,50,0.5,Homogeneous,10,9.921463660895824
+2026-11-21 15:19:17,RW,{'status': 'no checking account'},{'people_liable': 1},485,50,0.5,Homogeneous,10,9.673899345099926
+2026-11-21 15:19:25,RW,{'status': 'no checking account'},{'gender': 'male'},429,50,0.5,Homogeneous,10,8.473554965108633
+2026-11-21 15:19:35,RW,{'status': 'no checking account'},{'gender': 'male'},480,50,0.5,Homogeneous,10,9.567304465919733
+2026-11-21 15:19:44,RW,{'status': 'no checking account'},{'gender': 'male'},468,50,0.5,Homogeneous,10,9.163033533841372
+2026-11-21 15:19:51,RW,{'status': 'no checking account'},{'personal_status': 'single'},352,50,0.5,Homogeneous,10,6.977330435067415
+2026-11-21 15:19:58,RW,{'status': 'no checking account'},{'personal_status': 'single'},371,50,0.5,Homogeneous,10,7.294904109090567
+2026-11-21 15:20:06,RW,{'status': 'no checking account'},{'personal_status': 'single'},366,50,0.5,Homogeneous,10,7.207628820091486
+2026-11-21 15:20:13,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},414,50,0.5,Homogeneous,10,7.691341165453196
+2026-11-21 15:20:20,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},368,50,0.5,Homogeneous,10,6.926465786993504
+2026-11-21 15:20:27,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},359,50,0.5,Homogeneous,10,6.765860747545958
+2026-11-21 15:20:35,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},458,50,0.5,Homogeneous,10,8.458436474204063
+2026-11-21 15:20:44,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},446,50,0.5,Homogeneous,10,8.271081931889057
+2026-11-21 15:20:52,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},443,50,0.5,Homogeneous,10,8.20906200259924
+2026-11-21 15:21:02,RW,{'status': 'no checking account'},{'amount': 0},520,50,0.5,Homogeneous,10,10.023993410170078
+2026-11-21 15:21:13,RW,{'status': 'no checking account'},{'amount': 0},553,50,0.5,Homogeneous,10,10.555424306541681
+2026-11-21 15:21:23,RW,{'status': 'no checking account'},{'amount': 0},537,50,0.5,Homogeneous,10,10.272140357643366
+2026-11-21 15:21:35,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},689,50,0.5,Homogeneous,10,12.224659588187933
+2026-11-21 15:21:46,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},623,50,0.5,Homogeneous,10,11.128759998828173
+2026-11-21 15:21:57,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},607,50,0.5,Homogeneous,10,10.754869274795055
+2026-11-21 15:21:58,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1,50,0.5,NOT Homogeneous,10,0.7119222208857536
+2026-11-21 15:21:58,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},8,50,0.5,NOT Homogeneous,10,0.8288485109806061
+2026-11-21 15:22:01,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},84,50,0.5,NOT Homogeneous,10,2.129888642579317
+2026-11-21 15:22:16,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},895,50,0.5,Homogeneous,10,15.424764946103096
+2026-11-21 15:22:30,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},822,50,0.5,Homogeneous,10,14.212522853165865
+2026-11-21 15:22:45,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},828,50,0.5,Homogeneous,10,14.347985304892063
+2026-11-21 15:23:55,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},3426,50,0.5,Homogeneous,10,70.54984799399972
+2026-11-21 15:24:15,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},950,50,0.5,Homogeneous,10,19.403039153665304
+2026-11-21 15:24:32,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},859,50,0.5,Homogeneous,10,17.251225762069225
+2026-11-21 15:24:42,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},517,50,0.5,Homogeneous,10,9.904696337878704
+2026-11-21 15:24:55,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},721,50,0.5,Homogeneous,10,13.577512849122286
+2026-11-21 15:25:10,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},753,50,0.5,Homogeneous,10,14.301275752484798
+2026-11-21 15:25:35,FPGrowth,{'status': 'no checking account'},{'amount': 0},1239,50,0.5,Homogeneous,10,25.04272835329175
+2026-11-21 15:26:09,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},1741,50,0.5,Homogeneous,10,34.45128780603409
+2026-11-21 15:26:32,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1032,50,0.5,NOT Homogeneous,10,22.339810330420732
+2026-11-21 15:27:04,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1715,50,0.5,Homogeneous,10,32.65096338838339
+2026-11-21 15:27:16,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},593,50,0.5,Homogeneous,10,11.466548528522253
+2026-11-21 15:27:28,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},629,50,0.5,Homogeneous,10,12.059899102896452
+2026-11-21 15:27:39,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},602,50,0.5,Homogeneous,10,11.620245680212975
+2026-11-21 15:27:51,RW,{'status': 'no checking account'},{'people_liable': 1},618,50,0.5,Homogeneous,10,11.818012334406376
+2026-11-21 15:28:01,RW,{'status': 'no checking account'},{'people_liable': 1},517,50,0.5,Homogeneous,10,10.050836447626352
+2026-11-21 15:28:13,RW,{'status': 'no checking account'},{'people_liable': 1},603,50,0.5,Homogeneous,10,11.552140291780233
+2026-11-21 15:28:22,RW,{'status': 'no checking account'},{'gender': 'male'},501,50,0.5,Homogeneous,10,9.539395824074745
+2026-11-21 15:28:33,RW,{'status': 'no checking account'},{'gender': 'male'},539,50,0.5,Homogeneous,10,10.181416966021061
+2026-11-21 15:28:43,RW,{'status': 'no checking account'},{'gender': 'male'},521,50,0.5,Homogeneous,10,9.870979338884354
+2026-11-21 15:28:50,RW,{'status': 'no checking account'},{'personal_status': 'single'},381,50,0.5,Homogeneous,10,7.420001965016127
+2026-11-21 15:28:58,RW,{'status': 'no checking account'},{'personal_status': 'single'},389,50,0.5,Homogeneous,10,7.54175715520978
+2026-11-21 15:29:04,RW,{'status': 'no checking account'},{'personal_status': 'single'},351,50,0.5,Homogeneous,10,6.909478861838579
+2026-11-21 15:29:14,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},518,50,0.5,Homogeneous,10,9.300479531288147
+2026-11-21 15:29:22,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},470,50,0.5,Homogeneous,10,8.501854196190834
+2026-11-21 15:29:31,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},461,50,0.5,Homogeneous,10,8.370189655572176
+2026-11-21 15:29:42,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},619,50,0.5,Homogeneous,10,11.71548830717802
+2026-11-21 15:29:52,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},528,50,0.5,Homogeneous,10,9.94686545804143
+2026-11-21 15:30:03,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},539,50,0.5,Homogeneous,10,10.315360806882381
+2026-11-21 15:30:16,RW,{'status': 'no checking account'},{'amount': 0},732,50,0.5,Homogeneous,10,13.66446316242218
+2026-11-21 15:30:28,RW,{'status': 'no checking account'},{'amount': 0},634,50,0.5,Homogeneous,10,11.942617878317833
+2026-11-21 15:30:41,RW,{'status': 'no checking account'},{'amount': 0},663,50,0.5,Homogeneous,10,12.500808145850897
+2026-11-21 15:30:52,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},616,50,0.5,Homogeneous,10,11.603274907916784
+2026-11-21 15:31:04,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},616,50,0.5,Homogeneous,10,11.409791056066751
+2026-11-21 15:31:15,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},617,50,0.5,Homogeneous,10,11.583507463335991
+2026-11-21 15:31:32,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},930,50,0.5,Homogeneous,10,16.528205953538418
+2026-11-21 15:31:47,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},865,50,0.5,Homogeneous,10,15.519754312932491
+2026-11-21 15:32:05,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1008,50,0.5,Homogeneous,10,17.968512497842312
+2026-11-21 15:32:17,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},634,50,0.5,Homogeneous,10,11.199535585939884
+2026-11-21 15:32:28,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},630,50,0.5,Homogeneous,10,11.359764408320189
+2026-11-21 15:32:38,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},568,50,0.5,Homogeneous,10,10.132480844855309
+2026-11-21 15:33:03,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},1178,50,0.5,Homogeneous,10,24.33140616491437
+2026-11-21 15:33:27,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},1198,50,0.5,Homogeneous,10,24.498517151921988
+2026-11-21 15:33:42,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},777,50,0.5,Homogeneous,10,15.316983360797167
+2026-11-21 15:33:54,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},632,50,0.5,Homogeneous,10,12.11688182502985
+2026-11-21 15:34:14,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1007,50,0.5,Homogeneous,10,19.122959051281214
+2026-11-21 15:34:41,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1365,50,0.5,Homogeneous,10,27.031175144016743
+2026-11-21 15:35:26,FPGrowth,{'status': 'no checking account'},{'amount': 0},2218,50,0.5,Homogeneous,10,45.280087415128946
+2026-11-21 15:35:54,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},1401,50,0.5,Homogeneous,10,28.292316149920225
+2026-11-21 15:36:48,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},2617,50,0.5,Homogeneous,10,53.900393694639206
+2026-11-21 15:37:15,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1371,50,0.5,Homogeneous,10,26.763790503144264
+2026-11-21 15:37:37,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1112,50,0.5,Homogeneous,12,21.722938034683466
+2026-11-21 15:38:00,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1209,50,0.5,Homogeneous,12,23.491633143275976
+2026-11-21 15:38:25,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1260,50,0.5,Homogeneous,12,24.451304245740175
+2026-11-21 15:38:40,RW,{'status': 'no checking account'},{'people_liable': 1},806,50,0.5,Homogeneous,12,15.462081529200077
+2026-11-21 15:38:56,RW,{'status': 'no checking account'},{'people_liable': 1},828,50,0.5,Homogeneous,12,15.86140600219369
+2026-11-21 15:39:12,RW,{'status': 'no checking account'},{'people_liable': 1},827,50,0.5,Homogeneous,12,15.849081639200449
+2026-11-21 15:39:29,RW,{'status': 'no checking account'},{'gender': 'male'},918,50,0.5,Homogeneous,12,16.945136718451977
+2026-11-21 15:39:46,RW,{'status': 'no checking account'},{'gender': 'male'},921,50,0.5,Homogeneous,12,17.01195566728711
+2026-11-21 15:40:04,RW,{'status': 'no checking account'},{'gender': 'male'},958,50,0.5,Homogeneous,12,17.64089708030224
+2026-11-21 15:40:15,RW,{'status': 'no checking account'},{'personal_status': 'single'},587,50,0.5,Homogeneous,12,11.605162851512432
+2026-11-21 15:40:27,RW,{'status': 'no checking account'},{'personal_status': 'single'},591,50,0.5,Homogeneous,12,11.46358260139823
+2026-11-21 15:40:40,RW,{'status': 'no checking account'},{'personal_status': 'single'},665,50,0.5,Homogeneous,12,12.9301020167768
+2026-11-21 15:40:56,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},894,50,0.5,Homogeneous,12,16.06900132074952
+2026-11-21 15:41:12,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},883,50,0.5,Homogeneous,12,15.875123303383589
+2026-11-21 15:41:30,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1008,50,0.5,Homogeneous,12,18.02830785140395
+2026-11-21 15:41:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},998,50,0.5,Homogeneous,12,18.505305875092745
+2026-11-21 15:42:08,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1093,50,0.5,Homogeneous,12,20.148967757821083
+2026-11-21 15:42:28,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1066,50,0.5,Homogeneous,12,19.65702173113823
+2026-11-21 15:42:52,RW,{'status': 'no checking account'},{'amount': 0},1290,50,0.5,Homogeneous,12,24.384103413671255
+2026-11-21 15:43:17,RW,{'status': 'no checking account'},{'amount': 0},1306,50,0.5,Homogeneous,12,24.57869167998433
+2026-11-21 15:43:37,RW,{'status': 'no checking account'},{'amount': 0},1083,50,0.5,Homogeneous,12,20.591993384063244
+2026-11-21 15:43:55,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},993,50,0.5,Homogeneous,12,17.843228470534086
+2026-11-21 15:44:13,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},970,50,0.5,Homogeneous,12,17.551150873303413
+2026-11-21 15:44:31,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1033,50,0.5,Homogeneous,12,18.560213278979063
+2026-11-21 15:44:59,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1549,50,0.5,Homogeneous,12,27.23896822333336
+2026-11-21 15:45:25,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1514,50,0.5,Homogeneous,12,26.637332823127508
+2026-11-21 15:45:51,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1463,50,0.5,Homogeneous,12,25.874216500669718
+2026-11-21 15:46:09,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1031,50,0.5,Homogeneous,12,18.03049922734499
+2026-11-21 15:46:26,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},927,50,0.5,Homogeneous,12,16.491690944880247
+2026-11-21 15:46:41,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},866,50,0.5,Homogeneous,12,15.40154068544507
+2026-11-21 15:48:02,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},3778,50,0.5,Homogeneous,12,80.54970438405871
+2026-11-21 15:49:03,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},2972,50,0.5,Homogeneous,12,61.1876156963408
+2026-11-21 15:49:58,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},2765,50,0.5,Homogeneous,12,54.99433531612158
+2026-11-21 15:50:21,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},1174,50,0.5,Homogeneous,12,23.255450502038002
+2026-11-21 15:51:26,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},3281,50,0.5,Homogeneous,12,64.33470007032156
+2026-11-21 15:52:31,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},3296,50,0.5,Homogeneous,12,65.83250258862972
+2026-11-21 15:54:06,FPGrowth,{'status': 'no checking account'},{'amount': 0},4549,50,0.5,Homogeneous,12,94.96347040310502
+2026-11-21 15:55:21,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},3722,50,0.5,Homogeneous,12,74.24511495232582
+2026-11-21 15:57:39,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},6662,50,0.5,Homogeneous,12,138.469088293612
+2026-11-21 15:58:46,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},3488,50,0.5,Homogeneous,12,67.01143968105316
+2026-11-21 15:59:06,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1018,50,0.5,Homogeneous,12,19.31264040991664
+2026-11-21 15:59:25,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1017,50,0.5,Homogeneous,12,19.27987875416875
+2026-11-21 15:59:45,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1073,50,0.5,Homogeneous,12,20.269284293055534
+2026-11-21 16:00:04,RW,{'status': 'no checking account'},{'people_liable': 1},1003,50,0.5,Homogeneous,12,18.570659440010786
+2026-11-21 16:00:23,RW,{'status': 'no checking account'},{'people_liable': 1},1031,50,0.5,Homogeneous,12,19.444456819444895
+2026-11-21 16:00:43,RW,{'status': 'no checking account'},{'people_liable': 1},1040,50,0.5,Homogeneous,12,19.558340210467577
+2026-11-21 16:00:59,RW,{'status': 'no checking account'},{'gender': 'male'},855,50,0.5,Homogeneous,12,16.555945210158825
+2026-11-21 16:01:16,RW,{'status': 'no checking account'},{'gender': 'male'},870,50,0.5,Homogeneous,12,16.804588433355093
+2026-11-21 16:01:32,RW,{'status': 'no checking account'},{'gender': 'male'},805,50,0.5,Homogeneous,12,15.655921284109354
+2026-11-21 16:01:51,RW,{'status': 'no checking account'},{'personal_status': 'single'},1015,50,0.5,Homogeneous,12,19.10873818770051
+2026-11-21 16:02:10,RW,{'status': 'no checking account'},{'personal_status': 'single'},1021,50,0.5,Homogeneous,12,19.192914083600044
+2026-11-21 16:02:28,RW,{'status': 'no checking account'},{'personal_status': 'single'},924,50,0.5,Homogeneous,12,17.540584452450275
+2026-11-21 16:02:40,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},629,50,0.5,Homogeneous,12,12.18472507596016
+2026-11-21 16:02:52,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},657,50,0.5,Homogeneous,12,12.636908795684576
+2026-11-21 16:03:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},622,50,0.5,Homogeneous,12,12.22238875925541
+2026-11-21 16:03:19,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},797,50,0.5,Homogeneous,12,14.699972715228796
+2026-11-21 16:03:34,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},767,50,0.5,Homogeneous,12,14.167778737843037
+2026-11-21 16:03:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},788,50,0.5,Homogeneous,12,14.58711077645421
+2026-11-21 16:04:11,RW,{'status': 'no checking account'},{'amount': 0},1221,50,0.5,Homogeneous,12,22.8125407025218
+2026-11-21 16:04:34,RW,{'status': 'no checking account'},{'amount': 0},1202,50,0.5,Homogeneous,12,22.725639410316944
+2026-11-21 16:04:58,RW,{'status': 'no checking account'},{'amount': 0},1280,50,0.5,Homogeneous,12,23.846783109009266
+2026-11-21 16:05:13,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},843,50,0.5,Homogeneous,12,15.87660588696599
+2026-11-21 16:05:30,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},865,50,0.5,Homogeneous,12,16.229419630020857
+2026-11-21 16:05:45,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},818,50,0.5,NOT Homogeneous,12,15.264025077223778
+2026-11-21 16:06:11,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1510,50,0.5,Homogeneous,12,26.387300927191973
+2026-11-21 16:06:37,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1464,50,0.5,Homogeneous,12,25.59386730566621
+2026-11-21 16:07:02,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1428,50,0.5,Homogeneous,12,25.022442515939474
+2026-11-21 16:07:16,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},705,50,0.5,Homogeneous,12,13.955946311354637
+2026-11-21 16:07:31,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},744,50,0.5,Homogeneous,12,14.693433251231909
+2026-11-21 16:07:45,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},741,50,0.5,Homogeneous,12,14.604981135576963
+2026-11-21 16:08:57,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},3373,50,0.5,Homogeneous,12,71.36431409418583
+2026-11-21 16:09:44,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},2325,50,0.5,Homogeneous,12,47.49675963819027
+2026-11-21 16:10:25,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},1971,50,0.5,Homogeneous,12,40.4054733812809
+2026-11-21 16:11:36,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},3525,50,0.5,Homogeneous,12,71.32147341221571
+2026-11-21 16:12:03,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1319,50,0.5,Homogeneous,12,26.539129965007305
+2026-11-21 16:12:39,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1868,50,0.5,Homogeneous,12,36.03835033997893
+2026-11-21 16:14:18,FPGrowth,{'status': 'no checking account'},{'amount': 0},4769,50,0.5,Homogeneous,12,99.26392984762788
+2026-11-21 16:15:05,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},2262,50,0.5,NOT Homogeneous,12,46.66084402799606
+2026-11-21 16:17:39,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},7441,50,0.5,Homogeneous,12,154.18503351137042
+2026-11-21 16:18:13,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1687,50,0.5,Homogeneous,12,34.51872129738331
+2026-11-21 16:18:34,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1094,50,0.5,Homogeneous,12,20.560718428343534
+2026-11-21 16:18:56,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1163,50,0.5,Homogeneous,12,21.742565371096134
+2026-11-21 16:19:18,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1220,50,0.5,Homogeneous,12,22.78032484278083
+2026-11-21 16:19:37,RW,{'status': 'no checking account'},{'people_liable': 1},946,50,0.5,Homogeneous,12,18.201777923852205
+2026-11-21 16:19:56,RW,{'status': 'no checking account'},{'people_liable': 1},992,50,0.5,Homogeneous,12,19.03890884295106
+2026-11-21 16:20:14,RW,{'status': 'no checking account'},{'people_liable': 1},950,50,0.5,Homogeneous,12,18.299096193164587
+2026-11-21 16:20:37,RW,{'status': 'no checking account'},{'gender': 'male'},1237,50,0.5,Homogeneous,12,23.15216153860092
+2026-11-21 16:20:59,RW,{'status': 'no checking account'},{'gender': 'male'},1151,50,0.5,Homogeneous,12,21.556357577443123
+2026-11-21 16:21:21,RW,{'status': 'no checking account'},{'gender': 'male'},1200,50,0.5,Homogeneous,12,22.5004016533494
+2026-11-21 16:21:35,RW,{'status': 'no checking account'},{'personal_status': 'single'},706,50,0.5,Homogeneous,12,13.79615767672658
+2026-11-21 16:21:48,RW,{'status': 'no checking account'},{'personal_status': 'single'},684,50,0.5,Homogeneous,12,13.408697549253702
+2026-11-21 16:22:01,RW,{'status': 'no checking account'},{'personal_status': 'single'},665,50,0.5,Homogeneous,12,13.030657775700092
+2026-11-21 16:22:19,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},934,50,0.5,Homogeneous,12,17.534203816205263
+2026-11-21 16:22:37,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},954,50,0.5,Homogeneous,12,17.720673494040966
+2026-11-21 16:22:54,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},942,50,0.5,Homogeneous,12,17.466400306671858
+2026-11-21 16:23:10,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},830,50,0.5,Homogeneous,12,15.952166270464659
+2026-11-21 16:23:25,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},787,50,0.5,Homogeneous,12,15.166495516896248
+2026-11-21 16:23:40,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},773,50,0.5,Homogeneous,12,14.905367873609066
+2026-11-21 16:23:59,RW,{'status': 'no checking account'},{'amount': 0},1029,50,0.5,Homogeneous,12,18.827000863850117
+2026-11-21 16:24:17,RW,{'status': 'no checking account'},{'amount': 0},950,50,0.5,Homogeneous,12,17.413908548653126
+2026-11-21 16:24:33,RW,{'status': 'no checking account'},{'amount': 0},920,50,0.5,Homogeneous,12,16.914499010890722
+2026-11-21 16:24:50,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},884,50,0.5,Homogeneous,12,16.058605816215277
+2026-11-21 16:25:05,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},835,50,0.5,Homogeneous,12,15.213587518781424
+2026-11-21 16:25:20,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},861,50,0.5,Homogeneous,12,15.70694175735116
+2026-11-21 16:25:23,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},73,50,0.5,NOT Homogeneous,12,2.192373689264059
+2026-11-21 16:25:25,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},86,50,0.5,NOT Homogeneous,12,2.4004306718707085
+2026-11-21 16:25:27,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},57,50,0.5,NOT Homogeneous,12,1.906734611839056
+2026-11-21 16:25:41,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},763,50,0.5,Homogeneous,12,14.378265272825956
+2026-11-21 16:25:56,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},757,50,0.5,Homogeneous,12,14.128946848213673
+2026-11-21 16:26:10,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},782,50,0.5,Homogeneous,12,14.470861118286848
+2026-11-21 16:27:08,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},2798,50,0.5,Homogeneous,12,58.140454825013876
+2026-11-21 16:28:13,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},3088,50,0.5,Homogeneous,12,64.7616155333817
+2026-11-21 16:29:46,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},4479,50,0.5,Homogeneous,12,92.83050609380007
+2026-11-21 16:30:19,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},1665,50,0.5,Homogeneous,12,33.62903959676623
+2026-11-21 16:31:29,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},3413,50,0.5,Homogeneous,12,69.31860126182437
+2026-11-21 16:32:10,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},2064,50,0.5,Homogeneous,12,41.62458500638604
+2026-11-21 16:33:09,FPGrowth,{'status': 'no checking account'},{'amount': 0},2920,50,0.5,Homogeneous,12,58.182129852473736
+2026-11-21 16:33:38,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},1314,50,0.5,NOT Homogeneous,12,29.57014798000455
+2026-11-21 16:34:30,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},2312,50,0.5,NOT Homogeneous,12,51.320297468453646
+2026-11-21 16:35:19,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},2478,50,0.5,Homogeneous,12,49.21604599431157
+2026-11-21 16:35:52,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1758,50,0.5,Homogeneous,14,33.1199870929122
+2026-11-21 16:36:26,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1842,50,0.5,Homogeneous,14,34.51946426182985
+2026-11-21 16:36:58,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1690,50,0.5,Homogeneous,14,31.24848098680377
+2026-11-21 16:37:26,RW,{'status': 'no checking account'},{'people_liable': 1},1477,50,0.5,Homogeneous,14,28.075477834790945
+2026-11-21 16:37:56,RW,{'status': 'no checking account'},{'people_liable': 1},1542,50,0.5,Homogeneous,14,29.846877731382847
+2026-11-21 16:38:24,RW,{'status': 'no checking account'},{'people_liable': 1},1496,50,0.5,Homogeneous,14,28.31159172579646
+2026-11-21 16:38:53,RW,{'status': 'no checking account'},{'gender': 'male'},1572,50,0.5,Homogeneous,14,29.358343865722418
+2026-11-21 16:39:23,RW,{'status': 'no checking account'},{'gender': 'male'},1584,50,0.5,Homogeneous,14,29.732801038771868
+2026-11-21 16:39:53,RW,{'status': 'no checking account'},{'gender': 'male'},1612,50,0.5,Homogeneous,14,30.088807247579098
+2026-11-21 16:40:15,RW,{'status': 'no checking account'},{'personal_status': 'single'},1117,50,0.5,Homogeneous,14,21.745148103684187
+2026-11-21 16:40:36,RW,{'status': 'no checking account'},{'personal_status': 'single'},1080,50,0.5,Homogeneous,14,20.95284638926387
+2026-11-21 16:40:57,RW,{'status': 'no checking account'},{'personal_status': 'single'},1065,50,0.5,Homogeneous,14,20.71624894440174
+2026-11-21 16:41:20,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1274,50,0.5,Homogeneous,14,23.479649368673563
+2026-11-21 16:41:43,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1219,50,0.5,Homogeneous,14,22.660571664571762
+2026-11-21 16:42:05,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1223,50,0.5,Homogeneous,14,22.685471773147583
+2026-11-21 16:42:27,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1098,50,0.5,Homogeneous,14,21.401191402226686
+2026-11-21 16:42:48,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1068,50,0.5,Homogeneous,14,20.866052728146315
+2026-11-21 16:43:11,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1196,50,0.5,Homogeneous,14,23.15314230322838
+2026-11-21 16:43:38,RW,{'status': 'no checking account'},{'amount': 0},1422,50,0.5,Homogeneous,14,26.854467131197453
+2026-11-21 16:44:04,RW,{'status': 'no checking account'},{'amount': 0},1384,50,0.5,Homogeneous,14,26.156858026981354
+2026-11-21 16:44:33,RW,{'status': 'no checking account'},{'amount': 0},1541,50,0.5,Homogeneous,14,28.954139184206724
+2026-11-21 16:45:00,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1465,50,0.5,Homogeneous,14,27.201587565243244
+2026-11-21 16:45:28,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1498,50,0.5,Homogeneous,14,27.917612358927727
+2026-11-21 16:45:52,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1279,50,0.5,Homogeneous,14,24.026627603918314
+2026-11-21 16:45:58,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},265,50,0.5,NOT Homogeneous,14,5.591016475111246
+2026-11-21 16:45:59,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},25,50,0.5,NOT Homogeneous,14,1.3376369178295135
+2026-11-21 16:46:04,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},217,50,0.5,NOT Homogeneous,14,4.510335344821215
+2026-11-21 16:46:26,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1209,50,0.5,Homogeneous,14,22.47336605936289
+2026-11-21 16:46:49,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1216,50,0.5,Homogeneous,14,22.668783105909824
+2026-11-21 16:47:13,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1285,50,0.5,Homogeneous,14,23.912322036921978
+2026-11-21 16:49:24,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},6121,50,0.5,Homogeneous,14,131.22423497959971
+2026-11-21 16:51:36,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},6135,50,0.5,Homogeneous,14,132.15114616975188
+2026-11-21 16:54:44,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},9036,50,0.5,Homogeneous,14,188.10929115116596
+2026-11-21 16:56:07,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},4085,50,0.5,Homogeneous,14,82.61694307625294
+2026-11-21 16:58:20,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},6653,50,0.5,Homogeneous,14,133.0022380463779
+2026-11-21 16:59:37,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},3831,50,0.5,Homogeneous,14,77.42769388481975
+2026-11-21 17:01:27,FPGrowth,{'status': 'no checking account'},{'amount': 0},5348,50,0.5,Homogeneous,14,109.37786807492375
+2026-11-21 17:03:49,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},7008,50,0.5,Homogeneous,14,142.62141497805715
+2026-11-21 17:04:29,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},809,50,0.5,NOT Homogeneous,14,39.298773132264614
+2026-11-21 17:06:14,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},5048,50,0.5,Homogeneous,14,105.04874285683036
+2026-11-21 17:06:48,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1765,50,0.5,Homogeneous,14,34.06024819239974
+2026-11-21 17:07:25,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1810,50,0.5,Homogeneous,14,36.761655535548925
+2026-11-21 17:07:57,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1689,50,0.5,Homogeneous,14,32.05187605321407
+2026-11-21 17:08:29,RW,{'status': 'no checking account'},{'people_liable': 1},1720,50,0.5,Homogeneous,14,32.79051872342825
+2026-11-21 17:09:01,RW,{'status': 'no checking account'},{'people_liable': 1},1665,50,0.5,Homogeneous,14,31.894276920706034
+2026-11-21 17:09:32,RW,{'status': 'no checking account'},{'people_liable': 1},1602,50,0.5,Homogeneous,14,30.713751137256622
+2026-11-21 17:09:57,RW,{'status': 'no checking account'},{'gender': 'male'},1317,50,0.5,Homogeneous,14,25.450470987707376
+2026-11-21 17:10:22,RW,{'status': 'no checking account'},{'gender': 'male'},1243,50,0.5,Homogeneous,14,24.051831625401974
+2026-11-21 17:10:47,RW,{'status': 'no checking account'},{'gender': 'male'},1343,50,0.5,Homogeneous,14,25.911922939121723
+2026-11-21 17:11:14,RW,{'status': 'no checking account'},{'personal_status': 'single'},1382,50,0.5,Homogeneous,14,26.503149330615997
+2026-11-21 17:11:38,RW,{'status': 'no checking account'},{'personal_status': 'single'},1228,50,0.5,Homogeneous,14,23.695070270448923
+2026-11-21 17:12:04,RW,{'status': 'no checking account'},{'personal_status': 'single'},1348,50,0.5,Homogeneous,14,26.024507366120815
+2026-11-21 17:12:27,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1249,50,0.5,Homogeneous,14,23.369157779961824
+2026-11-21 17:12:51,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1285,50,0.5,Homogeneous,14,24.06553527712822
+2026-11-21 17:13:15,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1253,50,0.5,Homogeneous,14,23.5275474563241
+2026-11-21 17:13:42,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1484,50,0.5,Homogeneous,14,27.30592030286789
+2026-11-21 17:14:11,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1583,50,0.5,Homogeneous,14,28.872294422239065
+2026-11-21 17:14:37,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1437,50,0.5,Homogeneous,14,26.307771626859903
+2026-11-21 17:15:01,RW,{'status': 'no checking account'},{'amount': 0},1290,50,0.5,Homogeneous,14,23.935307521373034
+2026-11-21 17:15:26,RW,{'status': 'no checking account'},{'amount': 0},1362,50,0.5,Homogeneous,14,25.132237635552883
+2026-11-21 17:15:53,RW,{'status': 'no checking account'},{'amount': 0},1464,50,0.5,Homogeneous,14,27.049838088452816
+2026-11-21 17:16:27,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1829,50,0.5,Homogeneous,14,33.94369099661708
+2026-11-21 17:17:01,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1825,50,0.5,Homogeneous,14,33.73146561533213
+2026-11-21 17:17:34,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1769,50,0.5,Homogeneous,14,32.60190063342452
+2026-11-21 17:17:39,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},225,50,0.5,NOT Homogeneous,14,4.92861295118928
+2026-11-21 17:17:45,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},288,50,0.5,NOT Homogeneous,14,6.0730252005159855
+2026-11-21 17:17:47,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},64,50,0.5,NOT Homogeneous,14,1.9674692898988724
+2026-11-21 17:17:51,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},206,50,0.5,NOT Homogeneous,14,4.387943979352713
+2026-11-21 17:17:58,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},371,50,0.5,NOT Homogeneous,14,7.097470175474882
+2026-11-21 17:18:04,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},307,50,0.5,NOT Homogeneous,14,5.966257467865944
+2026-11-21 17:20:34,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},6907,50,0.5,Homogeneous,14,150.22394097968936
+2026-11-21 17:23:26,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},8097,50,0.5,Homogeneous,14,171.1625472009182
+2026-11-21 17:25:21,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},5498,50,0.5,Homogeneous,14,115.7652391679585
+2026-11-21 17:27:24,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},5905,50,0.5,Homogeneous,14,122.45261543244123
+2026-11-21 17:29:17,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},5575,50,0.5,Homogeneous,14,113.51020470634103
+2026-11-21 17:30:54,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},4879,50,0.5,Homogeneous,14,96.90903075411916
+2026-11-21 17:33:27,FPGrowth,{'status': 'no checking account'},{'amount': 0},7446,50,0.5,Homogeneous,14,152.65081837773323
+2026-11-21 17:36:21,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},8334,50,0.5,Homogeneous,14,173.72112587466836
+2026-11-21 17:36:55,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},80,50,0.5,NOT Homogeneous,14,34.15087158232927
+2026-11-21 17:38:24,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},4318,50,0.5,NOT Homogeneous,14,89.48399804905057
+2026-11-21 17:39:02,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1991,50,0.5,Homogeneous,14,37.90038473904133
+2026-11-21 17:39:39,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},1943,50,0.5,Homogeneous,14,37.12995297834277
+2026-11-21 17:40:20,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2140,50,0.5,Homogeneous,14,40.64898416772485
+2026-11-21 17:40:51,RW,{'status': 'no checking account'},{'people_liable': 1},1606,50,0.5,Homogeneous,14,30.808388724923134
+2026-11-21 17:41:19,RW,{'status': 'no checking account'},{'people_liable': 1},1435,50,0.5,Homogeneous,14,27.806476321071386
+2026-11-21 17:41:49,RW,{'status': 'no checking account'},{'people_liable': 1},1591,50,0.5,Homogeneous,14,29.97049142420292
+2026-11-21 17:42:18,RW,{'status': 'no checking account'},{'gender': 'male'},1535,50,0.5,Homogeneous,14,29.350244030356407
+2026-11-21 17:42:48,RW,{'status': 'no checking account'},{'gender': 'male'},1522,50,0.5,Homogeneous,14,29.653359197080135
+2026-11-21 17:43:18,RW,{'status': 'no checking account'},{'gender': 'male'},1565,50,0.5,Homogeneous,14,29.829816587269306
+2026-11-21 17:43:41,RW,{'status': 'no checking account'},{'personal_status': 'single'},1202,50,0.5,Homogeneous,14,23.322278209030628
+2026-11-21 17:44:06,RW,{'status': 'no checking account'},{'personal_status': 'single'},1305,50,0.5,Homogeneous,14,25.026877094060183
+2026-11-21 17:44:29,RW,{'status': 'no checking account'},{'personal_status': 'single'},1212,50,0.5,Homogeneous,14,23.369104117155075
+2026-11-21 17:44:48,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},987,50,0.5,Homogeneous,14,19.044588789343834
+2026-11-21 17:45:09,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1090,50,0.5,Homogeneous,14,20.821626134216785
+2026-11-21 17:45:29,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1034,50,0.5,Homogeneous,14,19.749386493116617
+2026-11-21 17:45:55,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1421,50,0.5,Homogeneous,14,25.93505973741412
+2026-11-21 17:46:19,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1336,50,0.5,Homogeneous,14,24.435453936457634
+2026-11-21 17:46:44,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1363,50,0.5,Homogeneous,14,24.93431280553341
+2026-11-21 17:47:21,RW,{'status': 'no checking account'},{'amount': 0},1963,50,0.5,Homogeneous,14,36.450312212109566
+2026-11-21 17:47:55,RW,{'status': 'no checking account'},{'amount': 0},1852,50,0.5,Homogeneous,14,34.417368687689304
+2026-11-21 17:48:31,RW,{'status': 'no checking account'},{'amount': 0},1899,50,0.5,Homogeneous,14,35.32895775139332
+2026-11-21 17:48:57,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1431,50,0.5,Homogeneous,14,26.71683545783162
+2026-11-21 17:49:27,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1615,50,0.5,Homogeneous,14,29.96083650738001
+2026-11-21 17:49:52,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1337,50,0.5,Homogeneous,14,25.046728283166885
+2026-11-21 17:49:55,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},66,50,0.5,NOT Homogeneous,14,2.4132832698524
+2026-11-21 17:49:56,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},18,50,0.5,NOT Homogeneous,14,1.4101089164614677
+2026-11-21 17:50:01,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},228,50,0.5,NOT Homogeneous,14,5.258395049721003
+2026-11-21 17:50:16,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},730,50,0.5,Homogeneous,14,14.616005085408688
+2026-11-21 17:50:31,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},757,50,0.5,Homogeneous,14,15.169746305793524
+2026-11-21 17:50:46,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},746,50,0.5,Homogeneous,14,14.969129115343094
+2026-11-21 17:54:07,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},9213,50,0.5,Homogeneous,14,200.98259058967233
+2026-11-21 17:56:57,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},7911,50,0.5,Homogeneous,14,169.77579610422254
+2026-11-21 17:59:41,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},7777,50,0.5,Homogeneous,14,164.46834878250957
+2026-11-21 18:01:46,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},6003,50,0.5,Homogeneous,14,124.33892364054918
+2026-11-21 18:02:48,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},3059,50,0.5,Homogeneous,14,62.15414199605584
+2026-11-21 18:04:56,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},6424,50,0.5,Homogeneous,14,127.75910268723965
+2026-11-21 18:08:31,FPGrowth,{'status': 'no checking account'},{'amount': 0},10263,50,0.5,Homogeneous,14,215.00729986280203
+2026-11-21 18:11:11,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},7746,50,0.5,Homogeneous,14,160.41996080055833
+2026-11-21 18:11:55,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},1052,50,0.5,NOT Homogeneous,14,43.505428683012724
+2026-11-21 18:12:25,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1489,50,0.5,Homogeneous,14,30.388743083924055
+2026-11-21 18:13:19,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2718,50,0.5,Homogeneous,16,54.117421463131905
+2026-11-21 18:14:09,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2596,50,0.5,Homogeneous,16,49.431147523224354
+2026-11-21 18:15:02,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2812,50,0.5,Homogeneous,16,53.22964654117823
+2026-11-21 18:15:43,RW,{'status': 'no checking account'},{'people_liable': 1},2079,50,0.5,Homogeneous,16,40.543024733662605
+2026-11-21 18:16:30,RW,{'status': 'no checking account'},{'people_liable': 1},2286,50,0.5,Homogeneous,16,47.57044946402311
+2026-11-21 18:17:17,RW,{'status': 'no checking account'},{'people_liable': 1},2255,50,0.5,Homogeneous,16,46.85578115656972
+2026-11-21 18:17:58,RW,{'status': 'no checking account'},{'gender': 'male'},2112,50,0.5,Homogeneous,16,41.46693942695856
+2026-11-21 18:18:40,RW,{'status': 'no checking account'},{'gender': 'male'},2136,50,0.5,Homogeneous,16,42.01881052181125
+2026-11-21 18:19:24,RW,{'status': 'no checking account'},{'gender': 'male'},2229,50,0.5,Homogeneous,16,43.75127986818552
+2026-11-21 18:20:00,RW,{'status': 'no checking account'},{'personal_status': 'single'},1909,50,0.5,Homogeneous,16,36.247050277888775
+2026-11-21 18:20:37,RW,{'status': 'no checking account'},{'personal_status': 'single'},1900,50,0.5,Homogeneous,16,36.13392071053386
+2026-11-21 18:21:14,RW,{'status': 'no checking account'},{'personal_status': 'single'},1961,50,0.5,Homogeneous,16,37.2008725553751
+2026-11-21 18:21:42,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1448,50,0.5,Homogeneous,16,27.87750916555524
+2026-11-21 18:22:14,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1675,50,0.5,Homogeneous,16,32.09649799391627
+2026-11-21 18:22:44,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1569,50,0.5,Homogeneous,16,30.02893978357315
+2026-11-21 18:23:18,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1788,50,0.5,Homogeneous,16,34.17004983127117
+2026-11-21 18:23:50,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1691,50,0.5,Homogeneous,16,32.31534747034311
+2026-11-21 18:24:21,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1607,50,0.5,Homogeneous,16,30.888288408517838
+2026-11-21 18:25:00,RW,{'status': 'no checking account'},{'amount': 0},1967,50,0.5,Homogeneous,16,38.84524001553655
+2026-11-21 18:25:46,RW,{'status': 'no checking account'},{'amount': 0},2224,50,0.5,Homogeneous,16,45.81650239601731
+2026-11-21 18:26:29,RW,{'status': 'no checking account'},{'amount': 0},2246,50,0.5,Homogeneous,16,43.34623580425978
+2026-11-21 18:26:37,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},372,50,0.5,NOT Homogeneous,16,7.639273151755333
+2026-11-21 18:26:45,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},386,50,0.5,NOT Homogeneous,16,7.912576407194138
+2026-11-21 18:26:49,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},198,50,0.5,NOT Homogeneous,16,4.531293239444494
+2026-11-21 18:26:54,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},182,50,0.5,NOT Homogeneous,16,4.669258829206228
+2026-11-21 18:26:58,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},163,50,0.5,NOT Homogeneous,16,4.246233526617289
+2026-11-21 18:27:02,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},145,50,0.5,NOT Homogeneous,16,3.94587741792202
+2026-11-21 18:27:30,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1390,50,0.5,Homogeneous,16,27.57162458077073
+2026-11-21 18:27:57,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1379,50,0.5,Homogeneous,16,27.353065386414528
+2026-11-21 18:28:25,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1387,50,0.5,Homogeneous,16,27.57368417829275
+2026-11-21 18:35:00,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},18308,50,0.5,Homogeneous,16,395.17431243881583
+2026-11-21 18:40:22,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},14754,50,0.5,Homogeneous,16,322.26403983309865
+2026-11-21 18:45:50,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},14979,50,0.5,Homogeneous,16,327.31506307423115
+2026-11-21 18:50:17,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},12781,50,0.5,Homogeneous,16,266.9045802913606
+2026-11-21 18:52:23,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},6081,50,0.5,Homogeneous,16,126.06768940761685
+2026-11-21 18:55:10,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},8050,50,0.5,Homogeneous,16,167.5055009610951
+2026-11-21 19:00:07,FPGrowth,{'status': 'no checking account'},{'amount': 0},13721,50,0.5,Homogeneous,16,296.4805591441691
+2026-11-21 19:01:46,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},3736,50,0.5,NOT Homogeneous,16,99.57294509187341
+2026-11-21 19:02:43,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},446,50,0.5,NOT Homogeneous,16,56.36363312974572
+2026-11-21 19:04:05,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},3925,50,0.5,Homogeneous,16,81.94933870062232
+2026-11-21 19:04:56,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2624,50,0.5,Homogeneous,16,50.87605284154415
+2026-11-21 19:05:44,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2444,50,0.5,Homogeneous,16,48.61723103374243
+2026-11-21 19:06:34,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2515,50,0.5,Homogeneous,16,49.72480596974492
+2026-11-21 19:07:20,RW,{'status': 'no checking account'},{'people_liable': 1},2295,50,0.5,Homogeneous,16,45.668376095592976
+2026-11-21 19:08:05,RW,{'status': 'no checking account'},{'people_liable': 1},2298,50,0.5,Homogeneous,16,45.73294459655881
+2026-11-21 19:08:52,RW,{'status': 'no checking account'},{'people_liable': 1},2331,50,0.5,Homogeneous,16,46.44993357732892
+2026-11-21 19:09:32,RW,{'status': 'no checking account'},{'gender': 'male'},2111,50,0.5,Homogeneous,16,40.33087234944105
+2026-11-21 19:10:12,RW,{'status': 'no checking account'},{'gender': 'male'},2097,50,0.5,Homogeneous,16,40.00061758607626
+2026-11-21 19:10:50,RW,{'status': 'no checking account'},{'gender': 'male'},2056,50,0.5,Homogeneous,16,38.36022391170263
+2026-11-21 19:11:21,RW,{'status': 'no checking account'},{'personal_status': 'single'},1551,50,0.5,Homogeneous,16,30.155640061944723
+2026-11-21 19:11:49,RW,{'status': 'no checking account'},{'personal_status': 'single'},1462,50,0.5,Homogeneous,16,28.529799696058035
+2026-11-21 19:12:19,RW,{'status': 'no checking account'},{'personal_status': 'single'},1509,50,0.5,Homogeneous,16,29.413566160947084
+2026-11-21 19:12:48,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1549,50,0.5,Homogeneous,16,29.11016832664609
+2026-11-21 19:13:19,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1654,50,0.5,Homogeneous,16,31.042128019034863
+2026-11-21 19:13:47,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1519,50,0.5,Homogeneous,16,28.613073118031025
+2026-11-21 19:14:24,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1880,50,0.5,Homogeneous,16,36.213572934269905
+2026-11-21 19:14:54,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1586,50,0.5,Homogeneous,16,30.75869357213378
+2026-11-21 19:15:26,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1641,50,0.5,Homogeneous,16,31.94051367789507
+2026-11-21 19:16:14,RW,{'status': 'no checking account'},{'amount': 0},2446,50,0.5,Homogeneous,16,47.87911890074611
+2026-11-21 19:16:58,RW,{'status': 'no checking account'},{'amount': 0},2283,50,0.5,Homogeneous,16,43.913635060191154
+2026-11-21 19:17:46,RW,{'status': 'no checking account'},{'amount': 0},2450,50,0.5,Homogeneous,16,47.88296026736498
+2026-11-21 19:18:03,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},861,50,0.5,NOT Homogeneous,16,17.2038686349988
+2026-11-21 19:18:08,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},172,50,0.5,NOT Homogeneous,16,4.2809037789702415
+2026-11-21 19:18:12,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},175,50,0.5,NOT Homogeneous,16,4.342263489961624
+2026-11-21 19:18:15,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},78,50,0.5,NOT Homogeneous,16,2.823297705501318
+2026-11-21 19:18:17,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},73,50,0.5,NOT Homogeneous,16,2.6103693768382072
+2026-11-21 19:18:22,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},196,50,0.5,NOT Homogeneous,16,4.864431273192167
+2026-11-21 19:18:48,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1280,50,0.5,Homogeneous,16,25.661501321941614
+2026-11-21 19:19:15,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1373,50,0.5,Homogeneous,16,27.551365051418543
+2026-11-21 19:19:42,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1316,50,0.5,Homogeneous,16,26.466346193104982
+2026-11-21 19:26:00,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},16803,50,0.5,Homogeneous,16,377.74007756635547
+2026-11-21 19:30:53,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},13415,50,0.5,Homogeneous,16,293.1621718481183
+2026-11-21 19:37:07,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},17567,50,0.5,Homogeneous,16,374.06299828737974
+2026-11-21 19:39:19,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},6367,50,0.5,Homogeneous,16,131.8736008144915
+2026-11-21 19:41:52,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7497,50,0.5,Homogeneous,16,152.8017595782876
+2026-11-21 19:45:09,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},9229,50,0.5,Homogeneous,16,197.29238376021385
+2026-11-21 19:50:36,FPGrowth,{'status': 'no checking account'},{'amount': 0},14854,50,0.5,Homogeneous,16,326.8656297624111
+2026-11-21 19:50:57,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},27,50,0.5,NOT Homogeneous,16,20.729374278336763
+2026-11-21 19:51:39,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},676,50,0.5,NOT Homogeneous,16,42.41167364642024
+2026-11-21 19:53:03,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},3925,50,0.5,Homogeneous,16,83.55109071731567
+2026-11-21 19:53:52,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2483,50,0.5,Homogeneous,16,49.17458322271705
+2026-11-21 19:54:45,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2693,50,0.5,Homogeneous,16,53.31453479453921
+2026-11-21 19:55:37,RW,{'status': 'no checking account'},{'foreign_worker': 'yes'},2497,50,0.5,Homogeneous,16,51.84950768947601
+2026-11-21 19:56:19,RW,{'status': 'no checking account'},{'people_liable': 1},2219,50,0.5,Homogeneous,16,42.23905687406659
+2026-11-21 19:57:03,RW,{'status': 'no checking account'},{'people_liable': 1},2292,50,0.5,Homogeneous,16,43.599428821355104
+2026-11-21 19:57:44,RW,{'status': 'no checking account'},{'people_liable': 1},2226,50,0.5,Homogeneous,16,41.60444887727499
+2026-11-21 19:58:19,RW,{'status': 'no checking account'},{'gender': 'male'},1842,50,0.5,Homogeneous,16,34.72294332459569
+2026-11-21 19:58:53,RW,{'status': 'no checking account'},{'gender': 'male'},1802,50,0.5,Homogeneous,16,34.11294773966074
+2026-11-21 19:59:26,RW,{'status': 'no checking account'},{'gender': 'male'},1705,50,0.5,Homogeneous,16,32.26121161878109
+2026-11-21 19:59:54,RW,{'status': 'no checking account'},{'personal_status': 'single'},1491,50,0.5,Homogeneous,16,28.38758108392358
+2026-11-21 20:00:24,RW,{'status': 'no checking account'},{'personal_status': 'single'},1568,50,0.5,Homogeneous,16,29.632839553058147
+2026-11-21 20:00:53,RW,{'status': 'no checking account'},{'personal_status': 'single'},1573,50,0.5,Homogeneous,16,29.809530209749937
+2026-11-21 20:01:25,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1629,50,0.5,Homogeneous,16,31.63253777474165
+2026-11-21 20:01:56,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1599,50,0.5,Homogeneous,16,31.117562778294086
+2026-11-21 20:02:29,RW,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},1694,50,0.5,Homogeneous,16,32.873980421572924
+2026-11-21 20:02:33,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},155,50,0.5,NOT Homogeneous,16,3.8723728209733963
+2026-11-21 20:02:36,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},107,50,0.5,NOT Homogeneous,16,2.988306265324354
+2026-11-21 20:02:38,RW,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},69,50,0.5,NOT Homogeneous,16,2.293144054710865
+2026-11-21 20:03:15,RW,{'status': 'no checking account'},{'amount': 0},1946,50,0.5,Homogeneous,16,36.641777373850346
+2026-11-21 20:03:52,RW,{'status': 'no checking account'},{'amount': 0},1964,50,0.5,Homogeneous,16,36.85169791802764
+2026-11-21 20:04:29,RW,{'status': 'no checking account'},{'amount': 0},1994,50,0.5,Homogeneous,16,37.45919619500637
+2026-11-21 20:05:01,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1650,50,0.5,Homogeneous,16,32.150686617940664
+2026-11-21 20:05:34,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1701,50,0.5,Homogeneous,16,33.03391645848751
+2026-11-21 20:06:08,RW,{'savings': 'unknown/no savings account'},{'gender': 'male'},1728,50,0.5,Homogeneous,16,33.64730755612254
+2026-11-21 20:06:12,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},118,50,0.5,NOT Homogeneous,16,3.492694914340973
+2026-11-21 20:06:14,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},60,50,0.5,NOT Homogeneous,16,2.456349726766348
+2026-11-21 20:06:18,RW,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},142,50,0.5,NOT Homogeneous,16,3.7824111245572567
+2026-11-21 20:06:47,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1465,50,0.5,Homogeneous,16,28.817969780415297
+2026-11-21 20:07:17,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1529,50,0.5,Homogeneous,16,29.945456236600876
+2026-11-21 20:07:45,RW,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},1421,50,0.5,Homogeneous,16,28.01127678900957
+2026-11-21 20:13:24,FPGrowth,{'status': 'no checking account'},{'foreign_worker': 'yes'},15330,50,0.5,Homogeneous,16,338.90853149071336
+2026-11-21 20:19:03,FPGrowth,{'status': 'no checking account'},{'people_liable': 1},16011,50,0.5,Homogeneous,16,339.24954276159406
+2026-11-21 20:22:16,FPGrowth,{'status': 'no checking account'},{'gender': 'male'},9083,50,0.5,Homogeneous,16,192.82790430262685
+2026-11-21 20:24:59,FPGrowth,{'status': 'no checking account'},{'personal_status': 'single'},7835,50,0.5,Homogeneous,16,162.81124087050557
+2026-11-21 20:27:46,FPGrowth,{'savings': 'unknown/no savings account'},{'personal_status': 'single'},7795,50,0.5,Homogeneous,16,167.89553940668702
+2026-11-21 20:28:34,FPGrowth,{'status': 'no checking account'},{'credit_history': 'existing credits paid back duly till now'},1809,50,0.5,NOT Homogeneous,16,47.70409682765603
+2026-11-21 20:33:05,FPGrowth,{'status': 'no checking account'},{'amount': 0},12639,50,0.5,Homogeneous,16,271.2053890712559
+2026-11-21 20:35:40,FPGrowth,{'savings': 'unknown/no savings account'},{'gender': 'male'},7063,50,0.5,Homogeneous,16,154.1904998794198
+2026-11-21 20:36:16,FPGrowth,{'savings': 'unknown/no savings account'},{'foreign_worker': 'yes'},364,50,0.5,NOT Homogeneous,16,36.21163350716233
+2026-11-21 20:38:45,FPGrowth,{'savings': 'unknown/no savings account'},{'credit_history': 'existing credits paid back duly till now'},6939,50,0.5,Homogeneous,16,148.86926341056824

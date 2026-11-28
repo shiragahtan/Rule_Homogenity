@@ -68,7 +68,11 @@ stays binary at 4,000 DM). Details in
 - Full rerun with the new RW (26 Nov 2026, `RW_OPTIONS` on, 1,830 RW jobs, `experiments/compare_old_new_rw.py` ->
   `calibration_results/rw_old_vs_new_full_runs.csv`): never worse than the old RW, 0 false alarms. Main SO 63% -> 87%
   (8 of 12 non-H found instead of 1), German/ACS 100%; SO ablation 97.8% -> 98.9%; German rows 98.9% -> 99.8%;
-  about 2-4x slower. Awaiting Brit's approval to use it in the paper.
+  about 2-4x slower. Awaiting Brit's approval to use it in the paper. New RW outputs: `results_new_rw/`.
+- Weight-method test (28 Nov 2026, `rw_fix_variants.py`, non-homogeneous rules x 10 seeds; non-H runs found,
+  German/50, ACS/60, SO/40): old RW 50/60/3, config weights + new walk 50/60/10, frozen 50/60/19,
+  **frozen + adapt 50/60/25 (suggested)**, per-check learned 48/60/25. Files `calibration_results/rw_methods10_*.csv`,
+  `rw_seeds10_so.csv`. Full experiments (old run) are in `results/`; only the SO benchmarks are still running.
 
 ## Working rules
 - Run heavy experiments (exact SO, runtimes) on the lab machine in a tmux session, not locally.

@@ -1,0 +1,146 @@
+condition_attr,condition_val,treatment_attr,treatment_val,coverage_pct,rows,treated,treated_share,utility_new,utility_old,current_rule
+credit_history,existing credits paid back duly till now,status,no checking account,53.0,530,187,0.35283018867924526,0.2963719878174652,,0
+people_liable,1,status,no checking account,84.5,845,331,0.39171597633136096,0.27907382837624095,,3
+gender,male,status,no checking account,69.0,690,278,0.4028985507246377,0.2707817749467478,,0
+foreign_worker,yes,status,no checking account,96.3,963,381,0.3956386292834891,0.2707325710171963,,1
+personal_status,single,status,no checking account,54.800000000000004,548,232,0.4233576642335766,0.25993531256250924,,0
+credit_history,existing credits paid back duly till now,savings,... >= 1000 DM,53.0,530,21,0.03962264150943396,0.22705502075925188,,0
+people_liable,1,savings,... >= 1000 DM,84.5,845,41,0.0485207100591716,0.20029664133551517,,0
+credit_history,existing credits paid back duly till now,savings,500 <= ... < 1000 DM,53.0,530,36,0.06792452830188679,0.18400833015016294,,0
+personal_status,single,savings,unknown/no savings account,54.800000000000004,548,116,0.2116788321167883,0.17208968465344987,,0
+foreign_worker,yes,savings,... >= 1000 DM,96.3,963,45,0.04672897196261682,0.16328380720344216,,0
+gender,male,savings,unknown/no savings account,69.0,690,134,0.19420289855072465,0.16026432484635256,,0
+credit_history,existing credits paid back duly till now,other_debtors,guarantor,53.0,530,34,0.06415094339622641,0.15968354327837309,,0
+foreign_worker,yes,savings,unknown/no savings account,96.3,963,176,0.18276220145379024,0.14180264053862046,,8
+gender,male,savings,500 <= ... < 1000 DM,69.0,690,47,0.06811594202898551,0.13159168266367538,,0
+personal_status,single,savings,500 <= ... < 1000 DM,54.800000000000004,548,36,0.06569343065693431,0.12431023508748296,,0
+foreign_worker,yes,savings,500 <= ... < 1000 DM,96.3,963,62,0.06438213914849429,0.12412038462772157,,0
+credit_history,existing credits paid back duly till now,savings,unknown/no savings account,53.0,530,99,0.18679245283018867,0.12357551831628588,,0
+people_liable,1,savings,unknown/no savings account,84.5,845,150,0.17751479289940827,0.12170679464944056,,10
+personal_status,single,housing,1,54.800000000000004,548,408,0.7445255474452555,0.11551054806421535,,0
+people_liable,1,savings,500 <= ... < 1000 DM,84.5,845,54,0.06390532544378698,0.11490183135438437,,0
+credit_history,existing credits paid back duly till now,status,... >= 200 DM / salary for at least 1 year,53.0,530,37,0.06981132075471698,0.11149965490958691,,0
+foreign_worker,yes,housing,1,96.3,963,685,0.711318795430945,0.1107987121579459,,0
+people_liable,1,status,... >= 200 DM / salary for at least 1 year,84.5,845,54,0.06390532544378698,0.10909840981330565,,0
+gender,male,housing,1,69.0,690,517,0.7492753623188406,0.1045121191746442,,0
+people_liable,1,other_installment_plans,none,84.5,845,698,0.8260355029585799,0.09483752084189545,,0
+personal_status,single,other_debtors,none,54.800000000000004,548,495,0.9032846715328468,0.09292128936798838,,0
+foreign_worker,yes,other_debtors,guarantor,96.3,963,46,0.04776739356178609,0.09036261697974601,,0
+credit_history,existing credits paid back duly till now,number_credits,1,53.0,530,478,0.9018867924528302,0.0898281910999057,,0
+people_liable,1,other_debtors,none,84.5,845,767,0.9076923076923077,0.08629050799282656,,0
+personal_status,single,savings,100 <= ... < 500 DM,54.800000000000004,548,54,0.09854014598540146,0.08587384765333506,,0
+gender,male,savings,... >= 1000 DM,69.0,690,29,0.042028985507246375,0.07719323950554546,,0
+personal_status,single,other_installment_plans,none,54.800000000000004,548,433,0.7901459854014599,0.07656036090905327,,0
+people_liable,1,housing,1,84.5,845,607,0.7183431952662722,0.07649528486107393,,0
+gender,male,other_installment_plans,none,69.0,690,554,0.8028985507246377,0.07640789905957768,,0
+foreign_worker,yes,other_installment_plans,none,96.3,963,782,0.8120456905503635,0.0646692311849606,,0
+foreign_worker,yes,status,... >= 200 DM / salary for at least 1 year,96.3,963,59,0.0612668743509865,0.06190340470364308,,0
+people_liable,1,job,unemployed/unskilled - non-resident,84.5,845,19,0.022485207100591716,0.06174893531556769,,0
+personal_status,single,present_residence,1,54.800000000000004,548,54,0.09854014598540146,0.06087827458324646,,0
+foreign_worker,yes,present_residence,1,96.3,963,126,0.1308411214953271,0.06014182949043401,,0
+credit_history,existing credits paid back duly till now,housing,1,53.0,530,368,0.6943396226415094,0.05920098265365337,,0
+gender,male,other_debtors,none,69.0,690,624,0.9043478260869565,0.05534640854016826,,0
+credit_history,existing credits paid back duly till now,other_installment_plans,none,53.0,530,452,0.8528301886792453,0.05319721920303455,,0
+people_liable,1,present_residence,1,84.5,845,115,0.13609467455621302,0.053116928347389014,,0
+personal_status,single,number_credits,3,54.800000000000004,548,21,0.03832116788321168,0.0526076042221294,,0
+personal_status,single,savings,... >= 1000 DM,54.800000000000004,548,21,0.03832116788321168,0.051489765774377916,,0
+gender,male,job,unemployed/unskilled - non-resident,69.0,690,10,0.014492753623188406,0.051219170768622146,,0
+credit_history,existing credits paid back duly till now,job,management/self-employed/highly qualified employee/officer,53.0,530,74,0.13962264150943396,0.0478673875736777,,0
+gender,male,savings,100 <= ... < 500 DM,69.0,690,71,0.10289855072463767,0.04488309534299606,,0
+foreign_worker,yes,other_debtors,none,96.3,963,880,0.9138110072689511,0.04117906156499773,,0
+gender,male,number_credits,3,69.0,690,24,0.034782608695652174,0.0407177838421201,,0
+credit_history,existing credits paid back duly till now,present_residence,4,53.0,530,206,0.3886792452830189,0.03833100420431057,,0
+credit_history,existing credits paid back duly till now,present_residence,1,53.0,530,82,0.15471698113207547,0.03305077426488201,,0
+credit_history,existing credits paid back duly till now,other_debtors,none,53.0,530,472,0.8905660377358491,0.023791984895456975,,0
+people_liable,1,number_credits,2,84.5,845,273,0.3230769230769231,0.022237059469943476,,0
+personal_status,single,number_credits,1,54.800000000000004,548,320,0.583941605839416,0.02037634537949118,,0
+people_liable,1,present_residence,4,84.5,845,346,0.40946745562130177,0.014554998937725161,,4
+foreign_worker,yes,job,unemployed/unskilled - non-resident,96.3,963,20,0.020768431983385256,0.014178833299267057,,0
+gender,male,present_residence,3,69.0,690,114,0.16521739130434782,0.01188954523085406,,0
+gender,male,other_debtors,guarantor,69.0,690,37,0.0536231884057971,0.011676893053220283,,0
+personal_status,single,job,management/self-employed/highly qualified employee/officer,54.800000000000004,548,94,0.17153284671532848,0.011546011397291944,,0
+personal_status,single,job,skilled employee/official,54.800000000000004,548,340,0.6204379562043796,0.01153745871736267,,0
+foreign_worker,yes,present_residence,3,96.3,963,143,0.14849428868120457,0.01088315280510066,,0
+foreign_worker,yes,job,skilled employee/official,96.3,963,611,0.6344755970924195,0.01006300447677988,,0
+people_liable,1,number_credits,3,84.5,845,18,0.021301775147928994,0.009257903391739375,,0
+people_liable,1,savings,100 <= ... < 500 DM,84.5,845,87,0.10295857988165681,0.008558923375144079,,0
+people_liable,1,job,skilled employee/official,84.5,845,551,0.6520710059171597,0.006218989034461719,,0
+people_liable,1,job,unskilled - resident,84.5,845,148,0.17514792899408285,0.006159141177626837,,0
+credit_history,existing credits paid back duly till now,job,skilled employee/official,53.0,530,338,0.6377358490566037,0.0054629828818874016,,0
+foreign_worker,yes,number_credits,2,96.3,963,321,0.3333333333333333,0.004661694285402751,,0
+gender,male,status,... >= 200 DM / salary for at least 1 year,69.0,690,43,0.06231884057971015,0.0035657272907414495,,0
+gender,male,job,unskilled - resident,69.0,690,136,0.19710144927536233,0.003364351465194315,,0
+gender,male,number_credits,1,69.0,690,416,0.6028985507246377,0.002625078890018062,,0
+credit_history,existing credits paid back duly till now,present_residence,3,53.0,530,73,0.13773584905660377,0.002141934432135506,,0
+people_liable,1,present_residence,3,84.5,845,120,0.14201183431952663,0.0010713777325310758,,0
+foreign_worker,yes,present_residence,4,96.3,963,404,0.4195223260643821,0.0009795460581971671,,2
+personal_status,single,other_debtors,guarantor,54.800000000000004,548,28,0.051094890510948905,0.0002990575267937112,,0
+gender,male,job,skilled employee/official,69.0,690,433,0.6275362318840579,-0.0002341293860415039,,0
+personal_status,single,present_residence,3,54.800000000000004,548,84,0.15328467153284672,-0.001404958364356057,,0
+gender,male,present_residence,2,69.0,690,225,0.32608695652173914,-0.0017252571570457453,,0
+personal_status,single,present_residence,4,54.800000000000004,548,234,0.42700729927007297,-0.002220425800918302,,0
+gender,male,present_residence,4,69.0,690,271,0.3927536231884058,-0.002727586756241074,,0
+foreign_worker,yes,number_credits,1,96.3,963,609,0.632398753894081,-0.002735008039059572,,0
+foreign_worker,yes,job,management/self-employed/highly qualified employee/officer,96.3,963,146,0.15160955347871236,-0.004287891522990694,,0
+foreign_worker,yes,savings,100 <= ... < 500 DM,96.3,963,99,0.102803738317757,-0.004760494849718078,,0
+foreign_worker,yes,number_credits,3,96.3,963,27,0.028037383177570093,-0.005612197916903039,,0
+gender,male,present_residence,1,69.0,690,80,0.11594202898550725,-0.007224168469279535,,0
+gender,male,job,management/self-employed/highly qualified employee/officer,69.0,690,111,0.1608695652173913,-0.008681856559196177,,0
+gender,male,number_credits,2,69.0,690,246,0.3565217391304348,-0.008780173985475148,,0
+people_liable,1,other_debtors,guarantor,84.5,845,41,0.0485207100591716,-0.013354216575403144,,0
+foreign_worker,yes,job,unskilled - resident,96.3,963,186,0.19314641744548286,-0.014079144999218585,,0
+credit_history,existing credits paid back duly till now,job,unemployed/unskilled - non-resident,53.0,530,10,0.018867924528301886,-0.01657987775766112,,0
+people_liable,1,number_credits,1,84.5,845,550,0.650887573964497,-0.01798734645744382,,0
+personal_status,single,status,... >= 200 DM / salary for at least 1 year,54.800000000000004,548,33,0.060218978102189784,-0.02109267445787799,,0
+personal_status,single,present_residence,2,54.800000000000004,548,176,0.32116788321167883,-0.022676497430071052,,0
+foreign_worker,yes,other_installment_plans,stores,96.3,963,47,0.04880581516095535,-0.02414810368094711,,0
+personal_status,single,job,unskilled - resident,54.800000000000004,548,106,0.19343065693430658,-0.02879236082920511,,0
+people_liable,1,job,management/self-employed/highly qualified employee/officer,84.5,845,127,0.1502958579881657,-0.029511140763491595,,0
+personal_status,single,number_credits,2,54.800000000000004,548,203,0.3704379562043796,-0.02959420018378134,,0
+personal_status,single,other_installment_plans,stores,54.800000000000004,548,33,0.060218978102189784,-0.03498805060324872,,0
+credit_history,existing credits paid back duly till now,savings,100 <= ... < 500 DM,53.0,530,56,0.10566037735849057,-0.03740192628231964,,0
+foreign_worker,yes,present_residence,2,96.3,963,290,0.3011422637590862,-0.038887190691318185,,0
+credit_history,existing credits paid back duly till now,job,unskilled - resident,53.0,530,108,0.2037735849056604,-0.041538945525932736,,0
+people_liable,1,present_residence,2,84.5,845,264,0.31242603550295855,-0.04342879403702593,,0
+credit_history,existing credits paid back duly till now,other_installment_plans,bank,53.0,530,60,0.11320754716981132,-0.04363184153667676,,0
+personal_status,single,status,0 <= ... < 200 DM,54.800000000000004,548,135,0.24635036496350365,-0.05458946539141685,,0
+credit_history,existing credits paid back duly till now,housing,0,53.0,530,162,0.30566037735849055,-0.059200982653653145,,0
+gender,male,status,0 <= ... < 200 DM,69.0,690,183,0.26521739130434785,-0.06249116927175824,,0
+credit_history,existing credits paid back duly till now,present_residence,2,53.0,530,169,0.31886792452830187,-0.06476620311258874,,0
+gender,male,other_installment_plans,bank,69.0,690,99,0.14347826086956522,-0.06479226629988877,,0
+credit_history,existing credits paid back duly till now,other_installment_plans,stores,53.0,530,18,0.033962264150943396,-0.06867989315646428,,0
+foreign_worker,yes,other_installment_plans,bank,96.3,963,134,0.1391484942886812,-0.07080798704576408,,0
+gender,male,other_installment_plans,stores,69.0,690,37,0.0536231884057971,-0.07236910843144917,,0
+credit_history,existing credits paid back duly till now,number_credits,2,53.0,530,46,0.08679245283018867,-0.0731368629466036,,0
+people_liable,1,housing,0,84.5,845,238,0.2816568047337278,-0.0764952848610736,,0
+foreign_worker,yes,status,0 <= ... < 200 DM,96.3,963,264,0.27414330218068533,-0.07679582323975398,,0
+personal_status,single,other_installment_plans,bank,54.800000000000004,548,82,0.14963503649635038,-0.0805510735170114,,0
+people_liable,1,other_installment_plans,stores,84.5,845,39,0.046153846153846156,-0.08195081185690256,,0
+people_liable,1,other_installment_plans,bank,84.5,845,108,0.12781065088757396,-0.08846091965803282,,0
+people_liable,1,status,0 <= ... < 200 DM,84.5,845,238,0.2816568047337278,-0.0891909624990943,,0
+credit_history,existing credits paid back duly till now,status,0 <= ... < 200 DM,53.0,530,146,0.27547169811320754,-0.10036178427754106,,0
+gender,male,housing,0,69.0,690,173,0.25072463768115943,-0.10451211917464431,,0
+foreign_worker,yes,housing,0,96.3,963,278,0.28868120456905505,-0.11079871215794568,,0
+personal_status,single,housing,0,54.800000000000004,548,140,0.25547445255474455,-0.11551054806421457,,0
+gender,male,other_debtors,co-applicant,69.0,690,29,0.042028985507246375,-0.1283894770838453,,0
+people_liable,1,savings,... < 100 DM,84.5,845,513,0.6071005917159763,-0.14516695501164623,,0
+foreign_worker,yes,savings,... < 100 DM,96.3,963,581,0.6033229491173416,-0.14825240866533063,,0
+credit_history,existing credits paid back duly till now,savings,... < 100 DM,53.0,530,318,0.6,-0.14870982541012212,,0
+people_liable,1,other_debtors,co-applicant,84.5,845,37,0.04378698224852071,-0.15536308046966685,,0
+gender,male,savings,... < 100 DM,69.0,690,409,0.5927536231884057,-0.1677724362528238,,0
+personal_status,single,other_debtors,co-applicant,54.800000000000004,548,25,0.04562043795620438,-0.17938062933714294,,0
+personal_status,single,savings,... < 100 DM,54.800000000000004,548,321,0.5857664233576643,-0.18872312297423754,,0
+foreign_worker,yes,other_debtors,co-applicant,96.3,963,37,0.03842159916926272,-0.19241272598718384,,0
+personal_status,single,status,... < 100 DM,54.800000000000004,548,148,0.27007299270072993,-0.25878688955227236,,0
+credit_history,existing credits paid back duly till now,other_debtors,co-applicant,53.0,530,24,0.045283018867924525,-0.2591657520107301,,0
+foreign_worker,yes,status,... < 100 DM,96.3,963,259,0.26895119418483904,-0.2620522478861883,,0
+credit_history,existing credits paid back duly till now,status,... < 100 DM,53.0,530,160,0.3018867924528302,-0.2627757660535917,,0
+gender,male,status,... < 100 DM,69.0,690,186,0.26956521739130435,-0.2643371254554716,,0
+people_liable,1,status,... < 100 DM,84.5,845,222,0.26272189349112424,-0.2797152367123583,,0
+gender,male,number_credits,4,69.0,690,4,0.005797101449275362,,,0
+personal_status,single,number_credits,4,54.800000000000004,548,4,0.0072992700729927005,,,0
+personal_status,single,job,unemployed/unskilled - non-resident,54.800000000000004,548,8,0.014598540145985401,,,0
+foreign_worker,yes,number_credits,4,96.3,963,6,0.006230529595015576,,,0
+credit_history,existing credits paid back duly till now,number_credits,3,53.0,530,4,0.007547169811320755,,,0
+credit_history,existing credits paid back duly till now,number_credits,4,53.0,530,2,0.0037735849056603774,,,0
+people_liable,1,number_credits,4,84.5,845,4,0.004733727810650888,,,0
