@@ -73,6 +73,16 @@ stays binary at 4,000 DM). Details in
   German/50, ACS/60, SO/40): old RW 50/60/3, config weights + new walk 50/60/10, frozen 50/60/19,
   **frozen + adapt 50/60/25 (suggested)**, per-check learned 48/60/25. Files `calibration_results/rw_methods10_*.csv`,
   `rw_seeds10_so.csv`. Full experiments (old run) are in `results/`; only the SO benchmarks are still running.
+- RW speed (28 Nov 2026): ~80% of a check's time was the candidate filter (size / arm checks over all rows), redone
+  at every step even for subgroups already seen. `algorithms/RW.py` now caches the candidates of each subgroup:
+  identical results (checked with a fixed hash seed), ACS with the new options 2-3x faster. RW's walks varied from
+  run to run with Python's hash randomization (verdicts did not); parallel_runner jobs now get `PYTHONHASHSEED=0`.
+- Paper figures without Jupyter: `scripts/make_figures.py --out DIR [--rw-run COPY]` (RW rows of a rerun copy
+  replace the old RW rows; also writes PNGs). Notebook: the stale "exclude ACS rule 10" filter was removed.
+- Benchmarks (Problems 2-3): `problem_2_3_algorithms/run_benchmarks_parallel.py` runs one process per (rule, value)
+  (same workers and outputs as run_all_benchmarks.py, checked by replaying the ACS results). Open questions for
+  Brit: SO uses `problem_2_3_algorithms/Chosen10Treatments.json` (an older SO list, as in the original code), not
+  the paper's SO rules; ACS Problem 2 uses ε 5k-20k (the old ablation values).
 
 ## Working rules
 - Run heavy experiments (exact SO, runtimes) on the lab machine in a tmux session, not locally.

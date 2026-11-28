@@ -89,22 +89,31 @@ def main():
     ap.add_argument("--walks", type=int, default=500)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--use-test-rules", action="store_true",
+                    help="learn on the 10 test rules themselves instead of other candidates (biased; only to measure "
+                         "how much that would change)")
+    ap.add_argument("--out", default=None, help="output file (default configs/rw_learned_weights_<ds>[_seed<s>].json)")
     args = ap.parse_args()
     os.environ["HOMOGENEITY_DATASET"] = args.dataset
     from RW import weights_from_stats
     config = json.load(open(REPO / "configs" / "config.json"))
     ds = config["DATASETS"][args.dataset]
-    chosen = {_key(json.loads(l)) for l in open(REPO / ds["RULES_FILE"], encoding="utf-8") if l.strip()}
-    cand = pd.read_csv(REPO / CANDIDATES[args.dataset])
-    pool_rules = []
-    for r in cand.itertuples():
-        rule = {"condition": {r.condition_attr: _value(r.condition_val)},
-                "treatment": {r.treatment_attr: _value(r.treatment_val)}}
-        if _key(rule) not in chosen:
-            pool_rules.append(rule)
+    test_rules = [json.loads(l) for l in open(REPO / ds["RULES_FILE"], encoding="utf-8") if l.strip()]
+    if args.use_test_rules:
+        pool_rules = list(test_rules)
+        print(f"{args.dataset}: learning on the {len(pool_rules)} test rules themselves", flush=True)
+    else:
+        chosen = {_key(r) for r in test_rules}
+        cand = pd.read_csv(REPO / CANDIDATES[args.dataset])
+        pool_rules = []
+        for r in cand.itertuples():
+            rule = {"condition": {r.condition_attr: _value(r.condition_val)},
+                    "treatment": {r.treatment_attr: _value(r.treatment_val)}}
+            if _key(rule) not in chosen:
+                pool_rules.append(rule)
+        print(f"{args.dataset}: {len(cand)} candidates, {len(pool_rules)} not among the 10 chosen rules", flush=True)
     rng = random.Random(args.seed)
     rng.shuffle(pool_rules)
-    print(f"{args.dataset}: {len(cand)} candidates, {len(pool_rules)} not among the 10 chosen rules", flush=True)
 
     # draw until --train-rules usable rules (a candidate may be unusable for this data, e.g. too few rows)
     jobs = [(args.dataset, rule, args.walks, args.seed * 1000 + i) for i, rule in enumerate(pool_rules)]
@@ -130,10 +139,11 @@ def main():
     full_cols = pd.read_csv(REPO / ds["FULL_DATASET_PATH"], nrows=1).columns
     attributes = sorted({re.sub(r'[,:\[\]\{\}"]', '_', c) for c in full_cols if c != outcome} | set(stats))
     weights = weights_from_stats(stats, attributes)
-    out = REPO / "configs" / f"rw_learned_weights_{args.dataset}{'' if args.seed == 0 else f'_seed{args.seed}'}.json"
+    out = Path(args.out) if args.out else \
+        REPO / "configs" / f"rw_learned_weights_{args.dataset}{'' if args.seed == 0 else f'_seed{args.seed}'}.json"
     json.dump(dict(dataset=args.dataset, weights=weights, sum=sum(weights.values()),
                    how="1/n + mean |effect change|/epsilon per added attribute, normalized to sum 1",
-                   train_rules=used, walks_per_rule=args.walks, seed=args.seed,
+                   train_rules=used, train_on_test_rules=args.use_test_rules, walks_per_rule=args.walks, seed=args.seed,
                    delta=ds["DELTAS"][0], epsilon=ds["EPSILONS"][0],
                    times_added={a: stats.get(a, [0, 0])[1] for a in weights}),
               open(out, "w"), indent=1, ensure_ascii=False)

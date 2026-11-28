@@ -18,6 +18,8 @@ Variants (see the options at the top of algorithms/RW.py; all use the weighted8 
                same in every walk (configs/rw_learned_weights_<ds>.json, experiments/learn_rw_weights.py)
                + prefilter + revisit + depth10
   frozen+adapt the frozen weights as the START, still adapted inside each check (not learned from scratch)
+  adapt+pre    frozen+adapt weights with only the prefilter (no revisit, at most 5 added predicates)
+  adapt+pre+d10  frozen+adapt weights with prefilter and depth10, no revisit
 
     python experiments/rw_fix_variants.py --dataset so --seeds 3 --workers 12
     python experiments/rw_fix_variants.py --dataset german --variants baseline,pre+rev+d10
@@ -54,11 +56,15 @@ VARIANTS = {
     "frozen":      dict(frozen_weights=True, arm_prefilter=True, revisit=True, max_depth=10),
     "frozen+adapt": dict(frozen_weights=True, learned_weights=True, warm_start=True, arm_prefilter=True,
                          revisit=True, max_depth=10),
+    # what revisit and the longer walks cost and bring (the frozen+adapt weights, with fewer walk options)
+    "adapt+pre":     dict(frozen_weights=True, learned_weights=True, warm_start=True, arm_prefilter=True),
+    "adapt+pre+d10": dict(frozen_weights=True, learned_weights=True, warm_start=True, arm_prefilter=True,
+                          max_depth=10),
 }
 
 
 def run_one(job):
-    dataset, rule_idx, seed, variant = job
+    dataset, rule_idx, seed, variant, weights_file = job
     from preprocessing import clean_dataset, prepare_rule_df
     from ATE_update import calculate_ate_safe
     from RW import calc_utility_for_subgroups as rw
@@ -75,7 +81,7 @@ def run_one(job):
     k = opts.pop("k_walks", 2000)
     weights = ds.get("ATTRIBUTE_WEIGHTS", {})
     if opts.pop("frozen_weights", False):
-        weights = json.load(open(REPO / "configs" / f"rw_learned_weights_{dataset}.json"))["weights"]
+        weights = json.load(open(weights_file))["weights"]
     t0 = time.time()
     homogeneous, checked = rw(mode=0, algorithm=apriori, df=df, treatment_col=treat, tgtO=outcome, delta=delta,
                               epsilon=eps, utility_all=overall, k_walks=k, size_stop=0.8,
@@ -93,8 +99,12 @@ def main():
     ap.add_argument("--rules", default="all", help="comma separated rule numbers or all")
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--weights", default=None,
+                    help="frozen weights file for the frozen variants (default configs/rw_learned_weights_<ds>.json)")
     args = ap.parse_args()
     os.environ["HOMOGENEITY_DATASET"] = args.dataset
+    weights_file = str(Path(args.weights).resolve() if args.weights
+                       else REPO / "configs" / f"rw_learned_weights_{args.dataset}.json")
     import contextlib, io
     config = json.load(open(REPO / "configs" / "config.json"))
     eps = config["DATASETS"][args.dataset]["EPSILONS"][0]
@@ -104,7 +114,7 @@ def main():
     unknown = [v for v in variants if v not in VARIANTS]
     if unknown:
         raise SystemExit(f"unknown variants: {unknown}")
-    jobs = [(args.dataset, r, s, v) for v in variants for s in range(args.seeds) for r in rules]
+    jobs = [(args.dataset, r, s, v, weights_file) for v in variants for s in range(args.seeds) for r in rules]
     out = Path(args.out or REPO / "calibration_results" / f"rw_fix_{args.dataset}.csv")
     rows = []
     with Pool(args.workers) as pool:

@@ -161,6 +161,9 @@ def _homog_rw_direct(
     # ------------------ SEARCH ------------------
     visited: Set[frozenset] = set()
     cate_cache: Dict[frozenset, float] = {}
+    # the predicates that can extend a subgroup depend only on the subgroup, so they are computed once per subgroup
+    # (walks pass through the same subgroups many times, above all with revisit; the results do not change)
+    cand_cache: Dict[frozenset, List[int]] = {}
     checked = 0
 
     def eval_subset(mask, idxs):
@@ -205,20 +208,23 @@ def _homog_rw_direct(
 
         # ---------- GREEDY EXPANSION ----------
         for _ in range(max_depth):
-            candidates = []
+            ckey = frozenset(idxs)
+            candidates = cand_cache.get(ckey)
+            if candidates is None:
+                candidates = []
+                for i in range(n_features):
+                    if i in idxs:
+                        continue
+                    attr = lookup[col_names[i]][0]
+                    if attr in attrs_used:
+                        continue
 
-            for i in range(n_features):
-                if i in idxs:
-                    continue
-                attr = lookup[col_names[i]][0]
-                if attr in attrs_used:
-                    continue
+                    new_mask = mask & X[:, i]
+                    if new_mask.sum() < delta or not arms_ok(new_mask):
+                        continue
 
-                new_mask = mask & X[:, i]
-                if new_mask.sum() < delta or not arms_ok(new_mask):
-                    continue
-
-                candidates.append(i)
+                    candidates.append(i)
+                cand_cache[ckey] = candidates
 
             if not candidates:
                 break

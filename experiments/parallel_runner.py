@@ -205,6 +205,9 @@ def _start(job):
             out.rename(out.with_name(out.name + f"_backup_{datetime.datetime.now():%Y%m%d_%H%M%S}"))
     env = dict(os.environ, HOMOGENEITY_DATASET=job["dataset"], HOMOGENEITY_OUT_DIR=str(d), PYTHONUNBUFFERED="1")
     env.update({v: "1" for v in THREAD_VARS})
+    # Python's hash randomization changes the order of some sets of strings between processes, which changed RW's
+    # walks (not its verdicts) from run to run; a fixed hash seed makes every job reproducible.
+    env["PYTHONHASHSEED"] = "0"
     logf = open(d / "log.txt", "w")
     return subprocess.Popen(_command(job), cwd=REPO, env=env, stdout=logf, stderr=subprocess.STDOUT)
 
